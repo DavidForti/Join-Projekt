@@ -18,7 +18,6 @@
 }
 
 .summary-logo {
-
     top: 303.14px;
     left: 54px;
 }
@@ -35,4 +34,62 @@
     font-size: 16px;
     line-height: 120%;
     color: #FFFFFF;
+}
+
+.board-contianer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    top: 365.47px;
+}
+
+.board-logo {
+    width: 22px;
+    height: 26px;
+    transform: rotate(-90deg);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.headline-borad {
+    width: 53px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #CDCDCD;
+}
+
+.addTask-contianer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    top: 426.97px;
+
+}
+
+.addTask-logo {
+    width: 30px;
+    height: 30px;
+    flex: none;
+}
+
+.headline-addTask {
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #CDCDCD;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
