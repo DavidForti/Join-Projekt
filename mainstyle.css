@@ -16,3 +16,23 @@
     width: 100.03px;
     height: 121.97px;
 }
+
+.summary-logo {
+
+    top: 303.14px;
+    left: 54px;
+}
+
+.summary-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+
+.headline-summary {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
