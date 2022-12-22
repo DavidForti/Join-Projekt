@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="mainstyle.css">
     <title>Backend-Integration</title>
-    <script src="./mini_backend.js"></script>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
     <script src="summary.js"></script> <!--checken ob bei summary, board und addTotask ./ gebraucht wird ???-->
     <script src="board.js"></script>
     <script src="addToTask.js"></script>
 </head>
 
-<body onload="init()">
+<body>
     <!-- return false nicht vergessen damit nicht neu geladen wird. Ansonsten gibt es Fehler beim speichern des Task im Backend !!! -->
     <form onsubmit="addTask(); return false;">
     </form>
