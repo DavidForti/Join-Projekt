@@ -19,7 +19,7 @@ function signUpUser() {
     alert('SignUp-User-Function');
 }
 
-function logAsGuest() {
+function loginAsGuest() {
     alert('LoginAsGuest-Function');
 }
 
