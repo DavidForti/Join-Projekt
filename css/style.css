@@ -2,6 +2,10 @@ body {
     margin: 0;
 }
 
+.d-none {
+    display: none;
+}
+
 .form-login-container {
     width: 100%;
     height: 100vh;
@@ -39,8 +43,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     
+}
+
+.form-login-box h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+
+.form-input-container {
+    min-height: 100px;
+}
+
+.form-input-container span {
+    color: red;
+    font-size: 12px;
 }
 
 .form-input-box {
@@ -51,8 +70,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
     padding: 0 10px;
+    margin-bottom: 5px;
 }
 
 .form-input-box input {
