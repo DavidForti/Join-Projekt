@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+}
+
+.form-login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-join-user-box {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+.no-join-user-box span {
+    margin-right: 20px;
+}
+
+.sign-up-btn {
+    height: 44px;
+    width: 90px;
+    background-color: #2A3647;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;    
+    cursor: pointer;
+}
+
+.form-login-box {
+    width: 652px;    
+    height: 513px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.form-input-box {
+    width: 422px;
+    height: 51px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.form-input-box input {
+    width: 100%;
+    height: 48px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+.forgot-my-password-box {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.forgot-my-password-box input {
+    margin-right: 13px;
+}
+
+.forgot-my-password-box a {
+    color: #5FC0E9;
+    cursor: pointer;
+}
+
+.form-btn-box {
+    display: flex;
+    justify-content: center;
+}
+
+.form-btn-user {
+    height: 51px;
+    width: 161px;
+    margin: 10px;
+    background-color: #2A3647;
+    color: white;
+    border: none;
+    font-size: 21px;
+    border-radius: 8px;    
+    cursor: pointer;
+}
+
+.form-btn-guest {
+    height: 51px;
+    width: 161px;
+    margin: 10px;
+    background-color: white;
+    color: #2A3647;
+    border: 1px solid  #2A3647;
+    font-size: 21px;
+    border-radius: 8px;    
+    cursor: pointer;
+}

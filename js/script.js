@@ -11,5 +11,20 @@ async function init() {
     users = JSON.parse(backend.getItem('users')) || [];
 }
 
+function loginUser() {
+    alert('Login-User-Function');
+}
+
+function signUpUser() {
+    alert('SignUp-User-Function');
+}
+
+function logAsGuest() {
+    alert('LoginAsGuest-Function');
+}
+
+
+
+
 
 
