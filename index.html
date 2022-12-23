@@ -20,17 +20,19 @@
             <span>Not a Join user?</span>
             <button type="button" class="sign-up-btn" onclick="signUpUser()">Sign up</button>
         </div>
-        <form class="form-login-box" onsubmit="loginUser(); return false">
+        <form class="form-login-box" onsubmit="loginUser(); return false;">
             <h1>Log in</h1>
             <div class="form-input-container">
                 <div class="form-input-box">
-                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="email" id="email" placeholder="Email" required onkeydown="resetWarningMsg()">
+                    <img src="./img/email.png">
                 </div>
                 <span id="email-address-not-found" class="d-none">Email-Address not found</span>
             </div>
             <div class="form-input-container">
                 <div class="form-input-box">
-                    <input type="password" id="password" placeholder="Password" required minlength="5">
+                    <input type="password" id="password" placeholder="Password" required minlength="4" onkeydown="resetWarningMsg()">
+                    <img src="./img/encrypted.png">
                 </div>
                 <span id="wrong-password" class="d-none">Wrong Password</span>
             </div>

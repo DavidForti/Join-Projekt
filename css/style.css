@@ -62,6 +62,14 @@ body {
     font-size: 12px;
 }
 
+
+/*Avoid internal-autofill-selected:
+  https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+
+
 .form-input-box {
     width: 422px;
     height: 51px;
@@ -72,6 +80,7 @@ body {
     align-items: center;
     padding: 0 10px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .form-input-box input {
@@ -79,8 +88,8 @@ body {
     height: 48px;
     border: none;
     outline: none;
-    cursor: pointer;
     font-size: 24px;
+    cursor: pointer;
 }
 
 
