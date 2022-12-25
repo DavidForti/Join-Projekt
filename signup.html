@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Project Management Tool - Sign Up</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/signup.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="form-signup-container">
+        <form class="form-login-box" onsubmit="signUpNewUser(); return false;">
+            <h1>Sign up</h1>
+            <div class="form-input-container">
+                <div class="form-input-box">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <img src="./img/email.png">
+                </div>
+            </div>
+            <div class="form-input-container">
+                <div class="form-input-box">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <img src="./img/email.png">
+                </div>
+                <span id="email-address-exists" class="d-none">Email address already exists</span>
+            </div>
+            <div class="form-input-container">
+                <div class="form-input-box">
+                    <input type="password" id="password" placeholder="Password" required minlength="4">
+                    <img src="./img/encrypted.png">
+                </div>
+            </div>
+            <div class="form-btn-box">
+                <button type="submit" class="form-btn-user">Sign up</button>
+            </div>
+        </form>
+        <img src="./img/arrow-left-line.png" class="signup-arrow-left" onclick="goToLoginPage()">
+    </div>
+</body>
+
+</html>

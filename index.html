@@ -7,18 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban Project Management Tool</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
     <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/login.js"></script>
-
-
 </head>
 
 <body onload="init()">
     <div class="form-login-container">
         <div class="no-join-user-box">
             <span>Not a Join user?</span>
-            <button type="button" class="sign-up-btn" onclick="signUpUser()">Sign up</button>
+            <button type="button" class="sign-up-btn" onclick="goToSignUpPage()">Sign up</button>
         </div>
         <form class="form-login-box" onsubmit="loginUser(); return false;">
             <h1>Log in</h1>
@@ -47,6 +46,7 @@
                 <button type="submit" class="form-btn-user">Log in</button>
                 <button type="button" class="form-btn-guest" onclick="loginAsGuest()">Guest Log in</button>
             </div>
+            <div id="msgbox" class="msgbox d-none"></div>
         </form>
     </div>
 </body>

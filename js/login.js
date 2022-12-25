@@ -20,11 +20,6 @@ function loginUser() {
 }
 
 
-function signUpUser() {
-    alert('SignUp-User-Function');
-}
-
-
 function loginAsGuest() {
     alert('LoginAsGuest-Function');
 }
