@@ -31,7 +31,7 @@ function loginAsGuest() {
  * @returns - Founded user with the entered email address
  */
 function getUserFromEmailAddress(email) {
-    return (users.find(u => u.email == email))
+    return (joinUsers.find(u => u.email == email))
 }
 
 

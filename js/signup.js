@@ -1,4 +1,4 @@
-// let users = [];
+let joinUsers = [];
 
 // Change BASE_SERVER_URL for smallest_backend_ever
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
@@ -8,12 +8,12 @@ setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
  */
 async function init() {
     await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
+    joinUsers = JSON.parse(backend.getItem('users')) || [];
 }
 
 
 async function saveUsersToBackend() {
-    await backend.setItem('users', JSON.stringify(users));
+    await backend.setItem('users', JSON.stringify(joinUsers));
 }
 
 
@@ -37,8 +37,8 @@ async function signUpNewUser() {
                 "password": password
     }
 
-    users.push(user);
-    await saveUsersToBackend()
+    joinUsers.push(user);
+    await saveUsersToBackend();
     window.location.href='index.html?msg=Benutzer erfolgreich registriert';
 }
 
@@ -49,7 +49,7 @@ async function signUpNewUser() {
  * @returns - Founded user with the entered email address
  */
 function getUserFromEmailAddress(email) {
-    return (users.find(u => u.email == email))
+    return (joinUsers.find(u => u.email == email))
 }
 
 /**
@@ -58,9 +58,9 @@ function getUserFromEmailAddress(email) {
  * @param {string} errorMessageElement - Error Message Element which is displayed
  * @param {string} elementSetFocus - Input Element that get's the focus
  */
-function showErrorMessage(errorMessageElement, elementSetFocus) {
-    document.getElementById(errorMessageElement).classList.remove('d-none');
-    document.getElementById(elementSetFocus).focus();
-}
+// function showErrorMessage(errorMessageElement, elementSetFocus) {
+//     document.getElementById(errorMessageElement).classList.remove('d-none');
+//     document.getElementById(elementSetFocus).focus();
+// }
 
 

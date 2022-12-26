@@ -1,5 +1,5 @@
-let users = [];
-let tasks = [];
+let joinUsers = [];
+let editTasks = [];
 
 // Change BASE_SERVER_URL for smallest_backend_ever
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
@@ -19,17 +19,28 @@ async function init() {
 
     // await deleteAll();
     // await saveUsersToBackend();
-    //await saveTasksToBackend();
+    // await saveTasksToBackend();
+    
     await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
 
-    // tasks = JSON.parse(backend.getItem('tasks')) || [];
+    await loadUsersFromBackend();
+    await loadTasksFromBackend();
 
+}
+
+async function loadUsersFromBackend() {
+    joinUsers = JSON.parse(await backend.getItem('users')) || [];
+    console.log('Users geladen:',joinUsers);
+}
+
+async function loadTasksFromBackend() {
+    editTasks = JSON.parse(await backend.getItem('tasks')) || [];
+    console.log('Tasks geladen:',editTasks);
 }
 
 
 async function saveUsersToBackend() {
-    users = [
+    joinUsers = [
         {
             "name": "Fritz Meier",
             "email": "f.meier@web.de",
@@ -39,14 +50,19 @@ async function saveUsersToBackend() {
             "name": "Andreas Huber",
             "email": "a.huber@web.de",
             "password": "4321"
+        },
+        {
+            "name": "Helmut Dunz",
+            "email": "h.duber@web.de",
+            "password": "4321"
         }
     ];
 
-    await backend.setItem('users', JSON.stringify(users));
+    await backend.setItem('users', JSON.stringify(joinUsers));
 }
 
 async function saveTasksToBackend() {
-    tasks = [
+    editTasks = [
         {
             "title": "Webdesign redesign",
             "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
@@ -67,14 +83,8 @@ async function saveTasksToBackend() {
         }
     ];
 
-    await backend.setItem('tasks', JSON.stringify(tasks));
+    await backend.setItem('tasks', JSON.stringify(editTasks));
 }
-
-
-function goToSignUpPage() {
-    window.location.href = 'signup.html';
-}
-
 
 async function deleteAll() {
     await backend.deleteItem('users');
@@ -82,6 +92,9 @@ async function deleteAll() {
 }
 
 
+function goToSignUpPage() {
+    window.location.href = 'signup.html';
+}
 
 
 /**
