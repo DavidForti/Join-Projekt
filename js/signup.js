@@ -1,4 +1,4 @@
-let joinUsers = [];
+// let joinUsers = [];
 
 // Change BASE_SERVER_URL for smallest_backend_ever
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
@@ -8,7 +8,8 @@ setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
  */
 async function init() {
     await downloadFromServer();
-    joinUsers = JSON.parse(backend.getItem('users')) || [];
+    joinUsers = loadUsersFromBackend('signup.js');
+    // joinUsers = JSON.parse(backend.getItem('users')) || [];
 }
 
 
@@ -17,50 +18,44 @@ async function saveUsersToBackend() {
 }
 
 
-function goToLoginPage() {
-    window.location.href = 'index.html';
-}
-
 async function signUpNewUser() {
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
-    if (getUserFromEmailAddress(email)) {
-        showErrorMessage('email-address-exists','email');
+    if (userExists(email)) {
+        showErrorMessage('email-address-exists', 'email');
         return;
     }
 
-    let user = {
-                "name": name,
-                "email": email,
-                "password": password
-    }
-
+    let user = getUserAsObject(name, email, password);
     joinUsers.push(user);
     await saveUsersToBackend();
-    window.location.href='index.html?msg=Benutzer erfolgreich registriert';
+    goToPage('index.html','Benutzer erfolgreich registriert.');
+}
+
+function getUserAsObject(name, email, password) {
+    return {
+        "name": name,
+        "email": email,
+        "password": password
+    };
 }
 
 
 /**
  * 
  * @param {string} email - Email address to check 
- * @returns - Founded user with the entered email address
+ * @returns - True/False if user with email address exists
  */
-function getUserFromEmailAddress(email) {
-    return (joinUsers.find(u => u.email == email))
+function userExists(email) {
+    // In combination with two negation operators !! you’ll receive a boolean value. 
+    return !!(joinUsers.find(u => u.email == email))
 }
 
 /**
- * Show error message
- * 
- * @param {string} errorMessageElement - Error Message Element which is displayed
- * @param {string} elementSetFocus - Input Element that get's the focus
+ * Hide displayed warning messages
  */
-// function showErrorMessage(errorMessageElement, elementSetFocus) {
-//     document.getElementById(errorMessageElement).classList.remove('d-none');
-//     document.getElementById(elementSetFocus).focus();
-// }
-
-
+function resetWarningMsg() {
+    document.getElementById('email-address-exists').classList.add('d-none');
+}

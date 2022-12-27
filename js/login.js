@@ -9,13 +9,13 @@ function loginUser() {
     let user = getUserFromEmailAddress(email);
 
     if (!user) {
-        showErrorMessage('email-address-not-found','email');
+        showErrorMessage('email-address-not-found', 'email');
         return;
     } else {
         if (user.password == password)
             console.log('Password korrekt:', user);
-        else 
-            showErrorMessage('wrong-password','password');
+        else
+            showErrorMessage('wrong-password', 'password');
     }
 }
 
@@ -54,3 +54,33 @@ function resetWarningMsg() {
     document.getElementById('email-address-not-found').classList.add('d-none');
     document.getElementById('wrong-password').classList.add('d-none');
 }
+
+
+async function onSubmit(event) {
+    event.preventDefault(); // Prevent Default Form Action
+    let formData = new FormData(event.target); // Create a FormData based on our Form Element in HTML
+    let response = await action(formData);
+    if (response.ok)
+        alert('Email was sent!');
+    else
+        alert('Email NOT sent!');
+}
+
+function action(formData) {
+    const input = 'https://gruppe-411.developerakademie.net/reset_password/send_mail.php';
+    const requestInit = {
+        method: 'post',
+        body: formData
+    };
+
+    return fetch(input, requestInit);
+}
+
+function forgotPassword() {
+    window.location.href = 'forgot_password.html';
+}
+
+function resertPasswordOnlyForTesting() {
+    window.location.href = 'reset_password/reset_password.html?email=test@web.de';
+}
+

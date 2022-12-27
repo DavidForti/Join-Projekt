@@ -11,7 +11,7 @@ async function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const msg = urlParams.get('msg');
 
-    if (msg) {
+    if (msg !== 'undefined') {
         let msgbox = document.getElementById('msgbox');
         msgbox.classList.remove('d-none');
         msgbox.innerHTML = msg;
@@ -23,14 +23,14 @@ async function init() {
     
     await downloadFromServer();
 
-    await loadUsersFromBackend();
+    await loadUsersFromBackend('script.js');
     await loadTasksFromBackend();
 
 }
 
-async function loadUsersFromBackend() {
+async function loadUsersFromBackend(page) {
     joinUsers = JSON.parse(await backend.getItem('users')) || [];
-    console.log('Users geladen:',joinUsers);
+    console.log(`Users geladen (${page}):`,joinUsers);
 }
 
 async function loadTasksFromBackend() {
@@ -95,6 +95,11 @@ async function deleteAll() {
 function goToSignUpPage() {
     window.location.href = 'signup.html';
 }
+
+function goToPage(page, message) {
+    window.location.href = `${page}?msg=${message}`;
+}
+
 
 
 /**

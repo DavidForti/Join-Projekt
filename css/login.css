@@ -6,56 +6,122 @@ body {
     display: none;
 }
 
-.form-login-container,  .form-signup-container  {
+.form-container {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #F5F5F5;
 }
 
 .no-join-user-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 35px;
     position: absolute;
-    top: 40px;
-    right: 50px;
+    width: 287px;
+    height: 51px;
+    left: 1039px;
+    top: 67px;
 }
 
 .no-join-user-box span {
-    margin-right: 20px;
+    width: 161px;
+    height: 25px;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .sign-up-btn {
-    height: 44px;
-    width: 90px;
-    background-color: #2A3647;
-    color: white;
-    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    gap: 10px;
+    width: 91px;
+    height: 51px;
+    background: #2A3647;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
     font-size: 16px;
-    border-radius: 8px;    
+    line-height: 120%;
+    color: #FFFFFF;
     cursor: pointer;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .form-login-box {
-    width: 652px;    
-    height: 513px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
+    /* Auto layout */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-    
+    padding: 35px 0px;
+    gap: 35px;
+    position: absolute;
+    width: 652px;
+    height: 513px;
+    left: 394px;
+    top: 274px;
+    /* white */
+    background: #FFFFFF;
+    /* shadow backlog box */
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
 }
+
+.form-signup-box {
+    height: 559px;
+    isolation: isolate;
+    /* position: absolute; */
+}
+
+.signup-arrow-left-box {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    left: 31px;
+    top: 35px;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    z-index: 3;
+}
+
+
 
 .form-login-box h1 {
-    font-size: 50px;
-    margin-bottom: 30px;
+    width: 315px;
+    height: 73px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    /* or 73px */
+    text-align: center;
+    color: #000000;
 }
 
-
-.form-input-container {
-    min-height: 100px;
-}
 
 .form-input-container span {
     color: red;
@@ -67,76 +133,157 @@ body {
   https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
-  }
+}
 
 
 .form-input-box {
     width: 422px;
     height: 51px;
-    border: 1px solid lightgrey;
+    border: 1px solid #D1D1D1;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    padding: 0 10px;
-    margin-bottom: 5px;
+    /* justify-content: space-between; */
+    padding: 13px 21px;
+    gap: 10px;
     cursor: pointer;
 }
 
 .form-input-box input {
     width: 100%;
-    height: 48px;
+    height: 25px;
     border: none;
     outline: none;
-    font-size: 24px;
+    font-size: 21px;
     cursor: pointer;
 }
 
 
-.forgot-my-password-box {
-    width: 300px;
+.remember-forgot-password-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 35px;
+    width: 335px;
+    height: 19px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.remember-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 0px;
+    gap: 20px;
+    width: 146px;
+    height: 19px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
-.forgot-my-password-box input {
-    margin-right: 13px;
+.remember-box input {
+    width: 16px;
+    height: 16px;
+    /* Boton gradient */
+    background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%);
+    border: 1px solid #000000;
+    border-radius: 3px;
+    /* margin-right: 13px; */
 }
 
-.forgot-my-password-box a {
+.remember-box span {
+    width: 110px;
+    height: 19px;
+    /* Version 2/body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+
+.remember-forgot-password-container a {
     color: #5FC0E9;
     cursor: pointer;
 }
 
 .form-btn-box {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 35px;
+    width: 341px;
+    height: 51px;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
 }
 
 .form-btn-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
+    width: 145px;
     height: 51px;
-    width: 161px;
-    margin: 10px;
-    background-color: #2A3647;
-    color: white;
-    border: none;
+    background: #2A3647;
+    border-radius: 8px;
+    font-weight: 700;
     font-size: 21px;
-    border-radius: 8px;    
+    line-height: 120%;
+    /* or 25px */
     cursor: pointer;
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .form-btn-guest {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    gap: 10px;
+    width: 163px;
     height: 51px;
-    width: 161px;
-    margin: 10px;
-    background-color: white;
-    color: #2A3647;
-    border: 1px solid  #2A3647;
-    font-size: 21px;
-    border-radius: 8px;    
+    /* Version 2/ main color */
+    border: 1px solid #2A3647;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    /* Version 2/ main color */
+    color: #2A3647;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .msgbox {
@@ -144,9 +291,141 @@ input:-webkit-autofill {
 }
 
 
-.signup-arrow-left {
+/* FORGOT PASSWORD - BEGIN*/
+
+.form-forgot-password-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 85px;
+    gap: 35px;
+    isolation: isolate;
     position: absolute;
-    top: 30px;
-    left: 30px;
-    cursor: pointer;
+    width: 826px;
+    height: 462px;
+    left: calc(50% - 826px/2);
+    top: calc(50% - 462px/2 - 0.5px);
+    border: 1px solid lightgrey;
+    background: #FFFFFF;
+    /* shadow backlog box */
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
 }
+
+.forgot-password-arrow-left {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    left: 31px;
+    top: 34.5px;
+    cursor: pointer;
+    /* Inside auto layout */
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    z-index: 4;
+}
+
+.form-forgot-password-box h1 {
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+}
+
+.form-forgot-password-box span {
+    width: 656px;
+    height: 50px;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+.form-forgot-password-box button {
+    width: 264px;
+    height: 51px;
+    background-color: #2A3647;
+    border-radius: 8px;
+    font-size: 21px;
+    font-weight: 700;
+
+}
+
+/* FORGOT PASSWORD - END*/
+
+
+/* RESET PASSWORD - BEGIN*/
+.form-reset-password-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 85px;
+    gap: 35px;
+    isolation: isolate;
+    position: absolute;
+    height: 537px;
+    left: 21.32%;
+    right: 21.32%;
+    top: calc(50% - 537px/2 - 0.5px);
+    /* white */
+    background: #FFFFFF;
+    /* shadoe backlog box */
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+}
+
+.reset-password-arrow-left {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    left: 31px;
+    top: 35px;
+    cursor: pointer;
+    /* Inside auto layout */
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    z-index: 4;
+}
+
+.form-reset-password-box h1 {
+    width: 627px;
+    height: 73px;    
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+}
+
+.form-reset-password-box span {
+    width: 589px;
+    height: 25px;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+.form-reset-password-box button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;    
+    width: 264px;
+    height: 51px;
+    background-color: #2A3647;
+    border-radius: 8px;
+    font-size: 21px;
+    font-weight: 700;
+
+}
+/* RESET PASSWORD - END*/

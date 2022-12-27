@@ -8,23 +8,24 @@
     <title>Kanban Project Management Tool</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel=“stylesheet“ href="./css/fonts.css">
     <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/login.js"></script>
 </head>
 
 <body onload="init()">
-    <div class="form-login-container">
+    <div class="form-container">
         <div class="no-join-user-box">
             <span>Not a Join user?</span>
-            <button type="button" class="sign-up-btn" onclick="goToSignUpPage()">Sign up</button>
+            <button type="button" class="sign-up-btn" onclick="goToPage('signup.html')">Sign up</button>
         </div>
         <form class="form-login-box" onsubmit="loginUser(); return false;">
             <h1>Log in</h1>
             <div class="form-input-container">
                 <div class="form-input-box">
                     <input type="email" id="email" placeholder="Email" required onkeydown="resetWarningMsg()">
-                    <img src="./img/email.png">
+                    <img src="img/email.png">
                 </div>
                 <span id="email-address-not-found" class="d-none">Email-Address not found</span>
             </div>
@@ -36,11 +37,12 @@
                 <span id="wrong-password" class="d-none">Wrong Password</span>
             </div>
 
-            <div class="forgot-my-password-box">
-                <div>
-                    <input type="checkbox"><span>Remember me</span>
+            <div class="remember-forgot-password-container">
+                <div class="remember-box">
+                    <input type="checkbox">
+                    <span>Remember me</span>
                 </div>
-                <a onclick="forgotMyPassword()">Forgot my password</a>
+                <a onclick="forgotPassword()">Forgot my password</a>
             </div>
             <div class="form-btn-box">
                 <button type="submit" class="form-btn-user">Log in</button>

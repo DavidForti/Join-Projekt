@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
     <script src="./js/mini_backend.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/signup.js"></script>
 </head>
 
 <body onload="init()">
-    <div class="form-signup-container">
-        <form class="form-login-box" onsubmit="signUpNewUser(); return false;">
+    <div class="form-container">
+        <form class="form-login-box form-signup-box" onsubmit="signUpNewUser(); return false;">
+            <div class="signup-arrow-left-box">
+                <img src="./img/arrow-left-line.png" class="signup-arrow-left" onclick="goToPage('index.html')">
+            </div>
             <h1>Sign up</h1>
             <div class="form-input-container">
                 <div class="form-input-box">
@@ -24,7 +28,7 @@
             </div>
             <div class="form-input-container">
                 <div class="form-input-box">
-                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="email" id="email" placeholder="Email" required onkeydown="resetWarningMsg()">
                     <img src="./img/email.png">
                 </div>
                 <span id="email-address-exists" class="d-none">Email address already exists</span>
@@ -39,7 +43,6 @@
                 <button type="submit" class="form-btn-user">Sign up</button>
             </div>
         </form>
-        <img src="./img/arrow-left-line.png" class="signup-arrow-left" onclick="goToLoginPage()">
     </div>
 </body>
 
