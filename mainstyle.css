@@ -122,3 +122,17 @@
     line-height: 120%;
     color: #000000;
 }
+
+.head-of-summary{
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 120%;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    position: absolute;
+    left: 355px;
+    top: 171px;
+
+}
