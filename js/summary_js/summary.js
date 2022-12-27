@@ -1,6 +1,7 @@
 let taskInBoard = [0];
-// let tasInProgress = [4];
-// let feedBack = [];
+let tasInProgress = [0];
+let feedBack = [0];
+let urgant = [0];
 
 function summary() {
     let contantSummary = document.getElementById('contantSummary');
@@ -8,7 +9,11 @@ function summary() {
     contantSummary.innerHTML = hedalineSummary();
     for (let i = 0; i < taskInBoard.length; i++) {
         const board = taskInBoard[i];
-        contantSummary.innerHTML += progrsses(board);
+        const progress = tasInProgress[i];
+        const feedBacks = feedBack[i];
+        const urgants = urgant[i];
+        contantSummary.innerHTML += progrssesBox(board, progress, feedBacks);
+        contantSummary.innerHTML += urgentBox(urgants);
     }
 }
 
@@ -23,13 +28,27 @@ function hedalineSummary() {
     `;
 }
 
-function progrsses(board) {
+function progrssesBox(board, progress, feedBacks) {
     return/*html*/`
-     <div class="boxes">
+    <div class="boxes">
         <div class="box"> ${board}</div>
-        <div class="box"> ${board}</div>
-        <div class="box"> ${board}</div>
-     </div>
+        <div class="box"> ${progress}</div>
+        <div class="box"> ${feedBacks}</div>
+    </div>
     
+    `;
+}
+
+function urgentBox(urgants) {
+    return /*html*/`
+    <div class="urgent-box">
+        <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
+        <img src="/img/urgant.png" class="urgant">
+        <img src="/img/Ellipse.png" class="ellipse">        
+        <h1 class="show-urgent">${urgants} <img src="/img/text.png"></h1>
+        <h3 class="deadline">hier muss die deadline stehen von add Task <img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
+           
+    </div>
+
     `;
 }
