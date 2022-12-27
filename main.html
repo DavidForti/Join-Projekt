@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="mainstyle.css">
     <title>Backend-Integration</title>
-    <script src="./js/script.js"></script>
-    <script src="summary.js"></script> <!--checken ob bei summary, board und addTotask ./ gebraucht wird ???-->
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/summary_js/summary.js"></script> <!--checken ob bei summary, board und addTotask ./ gebraucht wird ???-->
     <script src="board.js"></script>
     <script src="addToTask.js"></script>
 </head>
@@ -22,7 +22,8 @@
 
         <img src="/img/joinLogo.png" class="main-img">
 
-        <div class="summary-container" onclick="summary()">
+        <div class="summary-container" onclick="summary()" >
+            <div id="contantSummary"> </div>
             <img src="/img/summary.png" class="summary-logo">
             <h3 class="headline-summary">Summary</h3>
         </div>
