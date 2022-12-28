@@ -4,16 +4,16 @@ let feedBack = [0];
 let urgant = [0];
 
 
-async function downloadFromServer(){
+async function downloadFromServer() {
     await init();
     const joinUser = getFromLocalStorage('joinUser');
-   filterById(joinUser);
+    filterById(joinUser);
     summary();
 }
 
 
 
- async function summary() {
+async function summary() {
     let contantSummary = document.getElementById('contantSummary');
     contantSummary.innerHTML = '';
     contantSummary.innerHTML = hedalineSummary();
@@ -26,15 +26,24 @@ async function downloadFromServer(){
         contantSummary.innerHTML += urgentBox(urgants);
         contantSummary.innerHTML += toDoBox();
     }
-   //await init();
-   //const joinUser = getFromLocalStorage('joinUser');
-   //filterById(joinUser);
+    //await init();
+    //const joinUser = getFromLocalStorage('joinUser');
+    //filterById(joinUser);
 }
 
-function filterById(user){
+function filterById(user) {
     let task = editTasks.filter(task => task.userId == user.id);
 
 }
+
+//function amounts(){
+//  if (xxxx) {
+//      emptyscreen()
+//  }else{
+//  die restlichen funktionen
+//  }
+//}
+
 
 //function emptyscreen(){} => schreiben wenn keine task angelegt sind
 
