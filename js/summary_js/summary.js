@@ -14,6 +14,7 @@ function summary() {
         const urgants = urgant[i];
         contantSummary.innerHTML += progrssesBox(board, progress, feedBacks);
         contantSummary.innerHTML += urgentBox(urgants);
+        contantSummary.innerHTML += toDoBox();
     }
 }
 
@@ -50,5 +51,15 @@ function urgentBox(urgants) {
            
     </div>
 
+    `;
+}
+
+function toDoBox() {
+    return/*html*/`
+    <div class="toDo-done-box">
+        <div class="toDo-done"></div>
+        <div class="toDo-done"></div>
+    </div>
+    
     `;
 }
