@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="mainstyle.css">
     <title>Backend-Integration</title>
-    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/mini_backend.js"></script> 
+    <script src="./js/script.js"></script> 
     <script src="./js/summary_js/summary.js"></script> <!--checken ob bei summary, board und addTotask ./ gebraucht wird ???-->
-    <script src="board.js"></script>
-    <script src="addToTask.js"></script>
+    <script src="./js/board_js/board.js"></script>
+    <script src="./js/addToTask_js/addToTask.js"></script>
 </head>
 
 <body onload="summary()">
@@ -28,12 +29,13 @@
             <h3 class="headline-summary">Summary</h3>
         </div>
 
-        <div class="board-contianer" onclick="board()">
+        <div class="board-container" onclick="board()">
+
             <img src="/img/board.png" class="board-logo">
             <h3 class="headline-borad">Board</h3>
         </div>
 
-        <div class="addTask-contianer" onclick="addToTask()">
+        <div class="addTask-container" onclick="addToTask()">
             <img src="/img/addTask.png" class="addTask-logo">
             <h3 class="headline-addTask">Add Task</h3>
         </div>

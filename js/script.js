@@ -42,16 +42,19 @@ async function loadTasksFromBackend() {
 async function saveUsersToBackend() {
     joinUsers = [
         {
+            "id":0,
             "name": "Fritz Meier",
             "email": "f.meier@web.de",
             "password": "1234"
         },
         {
+            "id":1,
             "name": "Andreas Huber",
             "email": "a.huber@web.de",
             "password": "4321"
         },
         {
+            "id":2,
             "name": "Helmut Dunz",
             "email": "h.duber@web.de",
             "password": "4321"
@@ -64,19 +67,31 @@ async function saveUsersToBackend() {
 async function saveTasksToBackend() {
     editTasks = [
         {
+            "userId": 0,
             "title": "Webdesign redesign",
             "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
             "category": "Sales",
-            "assignedTo": ['You', 'Maximilian Vogel', 'Fritz Meier'],
+            "assignedTo": [],
             "dueDate": "01.01.2023",
             "priority": "Medium",
             "subTasks": ['Create new icons']
         },
         {
+            "userId": 1,
             "title": "Price increase",
             "description": "Price increase Description...",
             "category": "Back Office",
-            "assignedTo": ['You'],
+            "assignedTo": [],
+            "dueDate": "01.02.2023",
+            "priority": "High",
+            "subTasks": ['Inform customers', 'Sales Manager Meeting']
+        },
+        {
+            "userId": 2,
+            "title": "Price increase",
+            "description": "Price increase Description...",
+            "category": "Back Office",
+            "assignedTo": [],
             "dueDate": "01.02.2023",
             "priority": "High",
             "subTasks": ['Inform customers', 'Sales Manager Meeting']

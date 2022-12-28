@@ -3,7 +3,7 @@ let tasInProgress = [0];
 let feedBack = [0];
 let urgant = [0];
 
-function summary() {
+ async function summary() {
     let contantSummary = document.getElementById('contantSummary');
     contantSummary.innerHTML = '';
     contantSummary.innerHTML = hedalineSummary();
@@ -16,6 +16,14 @@ function summary() {
         contantSummary.innerHTML += urgentBox(urgants);
         contantSummary.innerHTML += toDoBox();
     }
+   await init();
+   filterById();
+}
+
+function filterById(){
+    let task = editTasks.filter(task => task.userId == 1 );
+
+
 }
 
 function hedalineSummary() {
