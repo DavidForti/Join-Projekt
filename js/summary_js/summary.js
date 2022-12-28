@@ -4,16 +4,9 @@ let feedBack = [0];
 let urgant = [0];
 
 
-async function downloadFromServer() {
-    await init();
-    const joinUser = getFromLocalStorage('joinUser');
-    filterById(joinUser);
-    summary();
-}
 
 
-
-async function summary() {
+ async function summary() {
     let contantSummary = document.getElementById('contantSummary');
     contantSummary.innerHTML = '';
     contantSummary.innerHTML = hedalineSummary();
@@ -26,14 +19,20 @@ async function summary() {
         contantSummary.innerHTML += urgentBox(urgants);
         contantSummary.innerHTML += toDoBox();
     }
-    //await init();
-    //const joinUser = getFromLocalStorage('joinUser');
-    //filterById(joinUser);
+   //await downloadFromServer();
+    await init();
+    const joinUser = getFromLocalStorage('joinUser');
+    filterById(joinUser);
 }
 
-function filterById(user) {
-    let task = editTasks.filter(task => task.userId == user.id);
+//async function downloadFromServer() {
+  //  await init();
+  //  const joinUser = getFromLocalStorage('joinUser');
+  //  filterById(joinUser);
+//}
 
+function filterById(user) {
+    let task = editTasks.filter(task => task.userId == user['id']);
 }
 
 //function amounts(){
@@ -62,7 +61,7 @@ function hedalineSummary() {
 function progrssesBox(board, progress, feedBacks) {
     return/*html*/`
     <div class="boxes">
-        <div class="box"> ${board}</div>
+        <div class="box"> ${editTasks.length}</div>
         <div class="box"> ${progress}</div>
         <div class="box"> ${feedBacks}</div>
     </div>
