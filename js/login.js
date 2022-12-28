@@ -13,9 +13,8 @@ async function loginUser() {
         return;
     } else {
         if (user.password == password) {
-            await backend.setItem('currentUser', JSON.stringify(newUser));
-            // newUser = user;
-            window.location.href = `main.html?id=${user.id}`;
+            saveToLocalStorage('joinUser', user);
+            window.location.href = 'main.html';
             // console.log('Password korrekt:', user);
         } else {
             showErrorMessage('wrong-password', 'password');
