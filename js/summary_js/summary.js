@@ -17,12 +17,13 @@ let urgant = [0];
         contantSummary.innerHTML += toDoBox();
     }
    await init();
-   filterById();
+   const urlParams = new URLSearchParams(window.location.search);
+   const userId = urlParams.get('id');
+   filterById(userId);
 }
 
-function filterById(){
-    let task = editTasks.filter(task => task.userId == newUser.id);
-
+function filterById(userId){
+    let task = editTasks.filter(task => task.userId == userId);
 
 }
 

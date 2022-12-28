@@ -11,7 +11,7 @@ setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
 async function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const msg = urlParams.get('msg');
-
+   
     if (msg && msg !== 'undefined') {
         let msgbox = document.getElementById('msgbox');
         msgbox.classList.remove('d-none');

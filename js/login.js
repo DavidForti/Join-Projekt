@@ -15,7 +15,7 @@ async function loginUser() {
         if (user.password == password) {
             await backend.setItem('currentUser', JSON.stringify(newUser));
             // newUser = user;
-            window.location.href = 'main.html';
+            window.location.href = `main.html?id=${user.id}`;
             // console.log('Password korrekt:', user);
         } else {
             showErrorMessage('wrong-password', 'password');
