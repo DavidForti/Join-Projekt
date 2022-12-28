@@ -1,39 +1,70 @@
-let taskInBoard = [0];
-let tasInProgress = [0];
-let feedBack = [0];
-let urgant = [0];
+let workflowToDo = 0;
+let workflowInProgress = 0;
+let workflowAwaitingFeedback = 0;
+let workflowDone = 0;
+let workflowUrgent = 0;
+let workflowLow = 0;
+let workflowMedium = 0;
+
+
+const taskStatus = {
+    todo: 'To do',
+    inProgress: 'In progress',
+    awaitingFeedback: 'Awaiting Feedback',
+    done: 'Done',
+  
+}
+
+const taskPriority = {
+    low : 'Low',
+    medium: 'Medium',
+    urgent: 'Urgent'
+}
 
 
 
-
- async function summary() {
+async function summary() {
+    await init();
+    workflowStatus();
+    workflowPriority();
     let contantSummary = document.getElementById('contantSummary');
     contantSummary.innerHTML = '';
     contantSummary.innerHTML = hedalineSummary();
-    for (let i = 0; i < taskInBoard.length; i++) {
-        const board = taskInBoard[i];
-        const progress = tasInProgress[i];
-        const feedBacks = feedBack[i];
-        const urgants = urgant[i];
-        contantSummary.innerHTML += progrssesBox(board, progress, feedBacks);
-        contantSummary.innerHTML += urgentBox(urgants);
-        contantSummary.innerHTML += toDoBox();
-    }
-   //await downloadFromServer();
-    await init();
+    contantSummary.innerHTML += progrssesBox();
+    contantSummary.innerHTML += urgentBox();
+    contantSummary.innerHTML += toDoBox();
     const joinUser = getFromLocalStorage('joinUser');
-    filterById(joinUser);
+    
 }
+
+function workflowStatus() {
+    workflowToDo = editTasks.filter(task => task.status == taskStatus.todo).length;
+    workflowInProgress = editTasks.filter(task => task.status == taskStatus.inProgress).length; 
+    workflowAwaitingFeedback = editTasks.filter(task => task.status == taskStatus.awaitingFeedback).length; 
+    workflowDone = editTasks.filter(task => task.status == taskStatus.done).length; 
+}
+
+function  workflowPriority(){
+    workflowLow = editTasks.filter(task => task.priority == taskPriority.low).length; 
+    workflowMedium = editTasks.filter(task => task.priority == taskPriority.medium).length;
+    workflowUrgent= editTasks.filter(task => task.priority == taskPriority.urgent).length;
+}
+
+
+
+ //function summaryclick()
+
+//await downloadFromServer();
+
+
+
 
 //async function downloadFromServer() {
-  //  await init();
-  //  const joinUser = getFromLocalStorage('joinUser');
-  //  filterById(joinUser);
+//  await init();
+//  const joinUser = getFromLocalStorage('joinUser');
+//  filterById(joinUser);
 //}
 
-function filterById(user) {
-    let task = editTasks.filter(task => task.userId == user['id']);
-}
 
 //function amounts(){
 //  if (xxxx) {
@@ -58,12 +89,12 @@ function hedalineSummary() {
     `;
 }
 
-function progrssesBox(board, progress, feedBacks) {
+function progrssesBox() {
     return/*html*/`
     <div class="boxes">
         <div class="box"> ${editTasks.length}</div>
-        <div class="box"> ${progress}</div>
-        <div class="box"> ${feedBacks}</div>
+        <div class="box"> ${workflowInProgress}</div>
+        <div class="box"> ${workflowAwaitingFeedback}</div>
     </div>
     
     `;
@@ -75,7 +106,7 @@ function urgentBox(urgants) {
         <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
         <img src="/img/urgant.png" class="urgant">
         <img src="/img/Ellipse.png" class="ellipse">        
-        <h1 class="show-urgent">${urgants} <img src="/img/text.png"></h1>
+        <h1 class="show-urgent">${workflowUrgent} <img src="/img/text.png"></h1>
         <h3 class="deadline">hier muss die deadline stehen von add Task <img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
            
     </div>
@@ -86,7 +117,7 @@ function urgentBox(urgants) {
 function toDoBox() {
     return/*html*/`
     <div class="toDo-done-box">
-        <div class="toDo-done"></div>
+        <div class="toDo-done">${workflowToDo}</div>
         <div class="toDo-done"></div>
     </div>
     

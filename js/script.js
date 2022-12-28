@@ -75,7 +75,9 @@ async function saveTasksToBackend() {
             "assignedTo": [],
             "dueDate": "01.01.2023",
             "priority": "Medium",
-            "subTasks": ['Create new icons']
+            "subTasks": ['Create new icons'],
+            "status": 'To do'     // es gibt noch die werte in Progress, awaiting Feedback , done (To do wird als standart verwendet)
+                         
         },
         {
             "userId": 1,
@@ -84,8 +86,9 @@ async function saveTasksToBackend() {
             "category": "Back Office",
             "assignedTo": [],
             "dueDate": "01.02.2023",
-            "priority": "High",
-            "subTasks": ['Inform customers', 'Sales Manager Meeting']
+            "priority": "Urgent",
+            "subTasks": ['Inform customers', 'Sales Manager Meeting'],
+            "status": 'To do'
         },
         {
             "userId": 2,
@@ -94,8 +97,9 @@ async function saveTasksToBackend() {
             "category": "Back Office",
             "assignedTo": [],
             "dueDate": "01.02.2023",
-            "priority": "High",
-            "subTasks": ['Inform customers', 'Sales Manager Meeting']
+            "priority": "Urgent", // als string und auf Urgent umschreiben danach neu speichern HOCHLADEN !!!!!!!!!!!!!
+            "subTasks": ['Inform customers', 'Sales Manager Meeting'],
+            "status": 'To do'
         }
     ];
 
