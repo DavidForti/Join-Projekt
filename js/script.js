@@ -1,6 +1,6 @@
 let joinUsers = [];
 let editTasks = [];
-let newUser = {};
+let newUser = [];
 
 // Change BASE_SERVER_URL for smallest_backend_ever
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');

@@ -3,7 +3,7 @@
  * 
  * @returns 
  */
-function loginUser() {
+async function loginUser() {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let user = getUserFromEmailAddress(email);
@@ -12,14 +12,14 @@ function loginUser() {
         showErrorMessage('email-address-not-found', 'email');
         return;
     } else {
-        if (user.password == password)
-            {
-            console.log('Password korrekt:', user);
-            }
-        if 
-            
-        else
+        if (user.password == password) {
+            await backend.setItem('currentUser', JSON.stringify(newUser));
+            // newUser = user;
+            window.location.href = 'main.html';
+            // console.log('Password korrekt:', user);
+        } else {
             showErrorMessage('wrong-password', 'password');
+        }
     }
 }
 
