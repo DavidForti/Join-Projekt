@@ -21,7 +21,7 @@ let urgant = [0];
 }
 
 function filterById(){
-    let task = editTasks.filter(task => task.userId == );
+    let task = editTasks.filter(task => task.userId == newUser.id);
 
 
 }
