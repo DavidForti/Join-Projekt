@@ -13,7 +13,11 @@ function loginUser() {
         return;
     } else {
         if (user.password == password)
+            {
             console.log('Password korrekt:', user);
+            }
+        if 
+            
         else
             showErrorMessage('wrong-password', 'password');
     }

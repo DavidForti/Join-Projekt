@@ -1,5 +1,6 @@
 let joinUsers = [];
 let editTasks = [];
+let newUser = {};
 
 // Change BASE_SERVER_URL for smallest_backend_ever
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
@@ -17,10 +18,10 @@ async function init() {
         msgbox.innerHTML = msg;
     }
 
-    // await deleteAll();
-    // await saveUsersToBackend();
-    // await saveTasksToBackend();
-    
+    //await deleteAll();
+    //await saveUsersToBackend();
+    //await saveTasksToBackend();
+
     await downloadFromServer();
 
     await loadUsersFromBackend('script.js');
@@ -30,31 +31,31 @@ async function init() {
 
 async function loadUsersFromBackend(page) {
     joinUsers = JSON.parse(await backend.getItem('users')) || [];
-    console.log(`Users geladen (${page}):`,joinUsers);
+    console.log(`Users geladen (${page}):`, joinUsers);
 }
 
 async function loadTasksFromBackend() {
     editTasks = JSON.parse(await backend.getItem('tasks')) || [];
-    console.log('Tasks geladen:',editTasks);
+    console.log('Tasks geladen:', editTasks);
 }
 
 
 async function saveUsersToBackend() {
     joinUsers = [
         {
-            "id":0,
+            "id": 0,
             "name": "Fritz Meier",
             "email": "f.meier@web.de",
             "password": "1234"
         },
         {
-            "id":1,
+            "id": 1,
             "name": "Andreas Huber",
             "email": "a.huber@web.de",
             "password": "4321"
         },
         {
-            "id":2,
+            "id": 2,
             "name": "Helmut Dunz",
             "email": "h.duber@web.de",
             "password": "4321"
