@@ -11,7 +11,7 @@ async function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const msg = urlParams.get('msg');
 
-    if (msg !== 'undefined') {
+    if (msg && msg !== 'undefined') {
         let msgbox = document.getElementById('msgbox');
         msgbox.classList.remove('d-none');
         msgbox.innerHTML = msg;
