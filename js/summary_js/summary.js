@@ -118,7 +118,7 @@ function toDoBox() {
     return/*html*/`
     <div class="toDo-done-box">
         <div class="toDo-done">${workflowToDo}</div>
-        <div class="toDo-done"></div>
+        <div class="toDo-done">${workflowDone}</div>
     </div>
     
     `;
