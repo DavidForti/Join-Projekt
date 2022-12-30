@@ -10,15 +10,15 @@ async function onSubmitForgotPassword(event) {
 
     if (!getUserFromEmailAddress(email))
         showNotifyMessage('Email Address not found !!');
-    else
-        showNotifyMessage('An E-Mail has been sent to you');
-
-    // let response = await action(formData);
-    // if (response.ok)
-    //     alert('Email was sent!');
-    // else
-    //     alert('Email NOT sent!');
+    else {
+        let response = await action(formData);
+        if (response.ok)
+            showNotifyMessage('An E-Mail has been sent to you');
+        else
+            showNotifyMessage('E-Mail was not sent !!');
+    }
 }
+
 
 function action(formData) {
     const input = 'https://gruppe-411.developerakademie.net/reset_password/send_mail.php';
