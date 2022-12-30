@@ -1,7 +1,6 @@
 function legalNotice() {
     let content = document.getElementById('contentNotice');
-    content = "";
-    content += `
+    content.innerHTML = `
     <h1 class="h1n">
     Legal Notice
 </h1>
