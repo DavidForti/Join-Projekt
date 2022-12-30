@@ -11,22 +11,28 @@ setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
 async function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const msg = urlParams.get('msg');
-   
+
     if (msg && msg !== 'undefined') {
         let msgbox = document.getElementById('msgbox');
         msgbox.classList.remove('d-none');
         msgbox.innerHTML = msg;
     }
 
-    //await deleteAll();
-    //await saveUsersToBackend();
-    //await saveTasksToBackend();
+    // await deleteAll();
+    //  await saveUsersToBackend();
+    //  await saveTasksToBackend();
 
     await downloadFromServer();
 
     await loadUsersFromBackend('script.js');
     await loadTasksFromBackend();
 
+}
+
+function animateLogo() {
+    document.getElementById('join-logo').classList.add('join-logo-animate');
+    document.getElementById('join-animation-container').classList.add('join-animation-container-animate');
+    document.getElementById('join-animation-container').classList.add('join-animation-container-animate');
 }
 
 async function loadUsersFromBackend(page) {
@@ -40,25 +46,41 @@ async function loadTasksFromBackend() {
 }
 
 
+/**
+ * 
+ * @param {string} email - Email address to check 
+ * @returns - Founded user with the entered email address
+ */
+function getUserFromEmailAddress(email) {
+    return (joinUsers.find(u => u.email == email))
+}
+
+
 async function saveUsersToBackend() {
     joinUsers = [
         {
             "id": 0,
-            "name": "Fritz Meier",
-            "email": "f.meier@web.de",
-            "password": "1234"
+            "name": "Guest",
+            "email": "guest@web.de",
+            "password": "0000"
         },
         {
             "id": 1,
-            "name": "Andreas Huber",
-            "email": "a.huber@web.de",
-            "password": "4321"
+            "name": "Fritz Meier",
+            "email": "f.meier@web.de",
+            "password": "1111"
         },
         {
             "id": 2,
+            "name": "Andreas Huber",
+            "email": "a.huber@web.de",
+            "password": "2222"
+        },
+        {
+            "id": 3,
             "name": "Helmut Dunz",
-            "email": "h.duber@web.de",
-            "password": "4321"
+            "email": "h.dunz@web.de",
+            "password": "3333"
         }
     ];
 
@@ -68,27 +90,16 @@ async function saveUsersToBackend() {
 async function saveTasksToBackend() {
     editTasks = [
         {
-            "userId": 0,
+            "userId": 1,
             "title": "Webdesign redesign",
             "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
             "category": "Sales",
             "assignedTo": [],
             "dueDate": "01.01.2023",
-            "priority": "Medium",
-            "subTasks": ['Create new icons'],
-            "status": 'To do'     // es gibt noch die werte in Progress, awaiting Feedback , done (To do wird als standart verwendet)
-                         
-        },
-        {
-            "userId": 1,
-            "title": "Price increase",
-            "description": "Price increase Description...",
-            "category": "Back Office",
-            "assignedTo": [],
-            "dueDate": "01.02.2023",
             "priority": "Urgent",
-            "subTasks": ['Inform customers', 'Sales Manager Meeting'],
-            "status": 'To do'
+            "subTasks": ['Create new icons'],
+            "status": 'To do'     // Es gibt noch die Werte: "In Progress", "Awaiting Feedback", "Done" ("To do" wird als Standart verwendet)
+
         },
         {
             "userId": 2,
@@ -97,9 +108,53 @@ async function saveTasksToBackend() {
             "category": "Back Office",
             "assignedTo": [],
             "dueDate": "01.02.2023",
-            "priority": "Urgent", // als string und auf Urgent umschreiben danach neu speichern HOCHLADEN !!!!!!!!!!!!!
+            "priority": "Medium",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
             "status": 'To do'
+        },
+        {
+            "userId": 3,
+            "title": "Task 3",
+            "description": "Description Task 3...",
+            "category": "Back Office",
+            "assignedTo": [],
+            "dueDate": "01.02.2023",
+            "priority": "Urgent",
+            "subTasks": ['Inform customers', 'Sales Manager Meeting'],
+            "status": 'In Progress'
+        },
+        {
+            "userId": 2,
+            "title": "Task 4",
+            "description": "Description Task 4...",
+            "category": "Sale",
+            "assignedTo": [],
+            "dueDate": "01.05.2023",
+            "priority": "Low",
+            "subTasks": [],
+            "status": 'Awaiting Feedback'
+        },
+        {
+            "userId": 2,
+            "title": "Task 5",
+            "description": "Description Task 5...",
+            "category": "Sale",
+            "assignedTo": [],
+            "dueDate": "01.06.2023",
+            "priority": "Medium",
+            "subTasks": [],
+            "status": 'Done'
+        },
+        {
+            "userId": 3,
+            "title": "Task 6",
+            "description": "Description Task 6...",
+            "category": "Sale",
+            "assignedTo": [],
+            "dueDate": "01.07.2023",
+            "priority": "Low",
+            "subTasks": [],
+            "status": 'Done'
         }
     ];
 

@@ -14,7 +14,10 @@
     <script src="./js/login.js"></script>
 </head>
 
-<body onload="init()">
+<body onload="init(); animateLogo()">
+    <div id="join-animation-container" class="join-animation-container"></div>
+    <img id="join-logo" src="img/joinLogoMain.png" class="join-logo-start">
+
     <div class="form-container">
         <div class="no-join-user-box">
             <span>Not a Join user?</span>
@@ -31,7 +34,8 @@
             </div>
             <div class="form-input-container">
                 <div class="form-input-box">
-                    <input type="password" id="password" placeholder="Password" required minlength="4" onkeydown="resetWarningMsg()">
+                    <input type="password" id="password" placeholder="Password" required minlength="4"
+                        onkeydown="resetWarningMsg()">
                     <img src="./img/encrypted.png">
                 </div>
                 <span id="wrong-password" class="d-none">Wrong Password</span>
@@ -42,7 +46,7 @@
                     <input type="checkbox">
                     <span>Remember me</span>
                 </div>
-                <a onclick="forgotPassword()">Forgot my password</a>
+                <a onclick="goToPage('forgot_password.html')">Forgot my password</a>
             </div>
             <div class="form-btn-box">
                 <button type="submit" class="form-btn-user">Log in</button>
