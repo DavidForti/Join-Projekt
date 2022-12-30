@@ -40,10 +40,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
         header("Access-Control-Allow-Origin: *");
 
         $email = $_POST['email'];
+        $timestamp = $_POST['timestamp'];
 
         $message = "Hello,\n
         \nFollow this link to reset your JOIN password for your " . $email . "\n 
-        \nhttps://gruppe-411.developerakademie.net/reset_password/reset_password.html?email=" . $email . "\n
+        \nhttps://gruppe-411.developerakademie.net/reset_password/reset_password.html?email=" . $email . "&timestamp=" . $_timestamp ."\n
         \nIf you didn't ask to reset your password, you can ignore this email. \n
         \nThanks,\n
         \nYour Join team\n";
