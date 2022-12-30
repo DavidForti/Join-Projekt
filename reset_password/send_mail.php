@@ -44,7 +44,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         $message = "Hello,\n
         \nFollow this link to reset your JOIN password for your " . $email . "\n 
-        \nhttps://gruppe-411.developerakademie.net/reset_password/reset_password.html?email=" . $email . "&timestamp=" . $_timestamp ."\n
+        \nhttps://gruppe-411.developerakademie.net/reset_password/reset_password.html?email=" . $email . "&timestamp=" . $timestamp ."\n
         \nIf you didn't ask to reset your password, you can ignore this email. \n
         \nThanks,\n
         \nYour Join team\n";
