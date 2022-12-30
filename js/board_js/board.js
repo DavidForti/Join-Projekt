@@ -32,8 +32,26 @@ function headlineBoard() {
 }
 
 function addTaskBnt(){
-    
+     let contantAddToTask = document.getElementById('contantAddToTask');
+     contantAddToTask.innerHTML = '';
+     contantAddToTask.innerHTML += addTask();
 }
+
+// input felder noch hinzufügen und namen vergeben 
+function addTask(){
+    return/*html*/`
+        <div>
+        <input type="text">     
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
+
+
+        </div>
+    `;
+}
+
 
 function dragAndDrop() {
     return/*html*/`
