@@ -14,7 +14,7 @@ async function loginUser() {
     } else {
         if (user.password == password) {
             saveToLocalStorage('joinUser', user);
-            window.location.href = 'main.html';
+            goToMainPage();
             // console.log('Password korrekt:', user);
         } else {
             showErrorMessage('wrong-password', 'password');
@@ -24,18 +24,16 @@ async function loginUser() {
 
 
 function loginAsGuest() {
-    alert('LoginAsGuest-Function');
+    let guestUser = getUserFromEmailAddress('guest@web.de');
+    saveToLocalStorage('joinUser', guestUser);
+    goToMainPage();
 }
 
 
-/**
- * 
- * @param {string} email - Email address to check 
- * @returns - Founded user with the entered email address
- */
-function getUserFromEmailAddress(email) {
-    return (joinUsers.find(u => u.email == email))
+function goToMainPage() {
+    window.location.href = 'main.html';
 }
+
 
 
 /**
@@ -59,31 +57,4 @@ function resetWarningMsg() {
 }
 
 
-async function onSubmit(event) {
-    event.preventDefault(); // Prevent Default Form Action
-    let formData = new FormData(event.target); // Create a FormData based on our Form Element in HTML
-    let response = await action(formData);
-    if (response.ok)
-        alert('Email was sent!');
-    else
-        alert('Email NOT sent!');
-}
-
-function action(formData) {
-    const input = 'https://gruppe-411.developerakademie.net/reset_password/send_mail.php';
-    const requestInit = {
-        method: 'post',
-        body: formData
-    };
-
-    return fetch(input, requestInit);
-}
-
-function forgotPassword() {
-    window.location.href = 'forgot_password.html';
-}
-
-function resertPasswordOnlyForTesting() {
-    window.location.href = 'reset_password/reset_password.html?email=test@web.de';
-}
 

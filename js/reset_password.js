@@ -1,15 +1,16 @@
 let email = "";
-let joinUsers = [];
+// let joinUsers = [];
 
 // Change BASE_SERVER_URL for smallest_backend_ever
-setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
+// setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
 
 
 async function onPageLoad() {
     email = getEmailUrlParameter();
+    await init();
 
-    await downloadFromServer();
-    joinUsers = await getUsers();
+    // await downloadFromServer();
+    // joinUsers = await getUsers();
 }
 
 function getEmailUrlParameter() {
@@ -19,10 +20,13 @@ function getEmailUrlParameter() {
     return email;
 }
 
-async function getUsers() {
-    return JSON.parse(await backend.getItem('users')) || [];
-}
 
-function onSubmit(event) {
+function onSubmitResetPassword(event) {
     event.preventDefault();
 }
+
+
+// async function getUsers() {
+//     return JSON.parse(await backend.getItem('users')) || [];
+// }
+
