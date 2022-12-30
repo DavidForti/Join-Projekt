@@ -18,7 +18,7 @@ async function init() {
         msgbox.innerHTML = msg;
     }
 
-    // await deleteAll();
+    //  await deleteAll();
     //  await saveUsersToBackend();
     //  await saveTasksToBackend();
 
@@ -55,6 +55,10 @@ function getUserFromEmailAddress(email) {
     return (joinUsers.find(u => u.email == email))
 }
 
+async function saveToBackend(arrayName, array) {
+    await backend.setItem(arrayName, JSON.stringify(array));
+}
+
 
 async function saveUsersToBackend() {
     joinUsers = [
@@ -62,25 +66,33 @@ async function saveUsersToBackend() {
             "id": 0,
             "name": "Guest",
             "email": "guest@web.de",
-            "password": "0000"
+            "password": "0000",
+            "rememberMe": 0,
+            "resetPasswordToken": 0
         },
         {
             "id": 1,
             "name": "Bernd Trossmann",
             "email": "mcptopgun@gmail.com",
-            "password": "1111"
+            "password": "1111",
+            "rememberMe": 0,
+            "resetPasswordToken": 0
         },
         {
             "id": 2,
             "name": "Andreas Huber",
             "email": "a.huber@web.de",
-            "password": "2222"
+            "password": "2222",
+            "rememberMe": 0,
+            "resetPasswordToken": 0
         },
         {
             "id": 3,
             "name": "Helmut Dunz",
             "email": "h.dunz@web.de",
-            "password": "3333"
+            "password": "3333",
+            "rememberMe": 0,
+            "resetPasswordToken": 0
         }
     ];
 
