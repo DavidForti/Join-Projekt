@@ -17,7 +17,7 @@ async function onSubmitForgotPassword(event) {
 
 async function sendForgotPasswordMail(formData) {
     const timeStamp = Date.now();
-    formData.set('timestamp',timeStamp);
+    formData.set('timestamp',timeStamp.toString());
     // TODO: Save timestamp to user-Object
     let response = await action(formData);
     if (response.ok)
