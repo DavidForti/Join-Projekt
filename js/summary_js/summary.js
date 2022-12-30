@@ -12,11 +12,11 @@ const taskStatus = {
     inProgress: 'In progress',
     awaitingFeedback: 'Awaiting Feedback',
     done: 'Done',
-  
+
 }
 
 const taskPriority = {
-    low : 'Low',
+    low: 'Low',
     medium: 'Medium',
     urgent: 'Urgent'
 }
@@ -35,31 +35,31 @@ async function summary() {
     contantSummary.innerHTML += urgentBox();
     contantSummary.innerHTML += toDoBox();
     const joinUser = getFromLocalStorage('joinUser');
-    
+
 }
 
-function  summaryclick(){
+function summaryclick() {
     document.getElementById('contantSummary').classList.remove("d-none");
     document.getElementById('contantBoard').classList.add("d-none");
-    
+
 }
 
 function workflowStatus() {
     workflowToDo = editTasks.filter(task => task.status == taskStatus.todo).length;
-    workflowInProgress = editTasks.filter(task => task.status == taskStatus.inProgress).length; 
-    workflowAwaitingFeedback = editTasks.filter(task => task.status == taskStatus.awaitingFeedback).length; 
-    workflowDone = editTasks.filter(task => task.status == taskStatus.done).length; 
+    workflowInProgress = editTasks.filter(task => task.status == taskStatus.inProgress).length;
+    workflowAwaitingFeedback = editTasks.filter(task => task.status == taskStatus.awaitingFeedback).length;
+    workflowDone = editTasks.filter(task => task.status == taskStatus.done).length;
 }
 
-function  workflowPriority(){
-    workflowLow = editTasks.filter(task => task.priority == taskPriority.low).length; 
+function workflowPriority() {
+    workflowLow = editTasks.filter(task => task.priority == taskPriority.low).length;
     workflowMedium = editTasks.filter(task => task.priority == taskPriority.medium).length;
-    workflowUrgent= editTasks.filter(task => task.priority == taskPriority.urgent).length;
+    workflowUrgent = editTasks.filter(task => task.priority == taskPriority.urgent).length;
 }
 
 
 
- //function summaryclick()
+//function summaryclick()
 
 //await downloadFromServer();
 

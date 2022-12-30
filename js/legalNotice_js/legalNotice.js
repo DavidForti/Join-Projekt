@@ -1,5 +1,5 @@
 function legalNotice() {
-    let content = document.getElementById('legal-notice-container');
+    let content = document.getElementById('contentNotice');
     content = "";
     content += `
     <h1 class="h1n">
@@ -38,5 +38,4 @@ function legalNotice() {
     voluptatum illum culpa voluptatibus itaque laudantium a ipsum voluptate, similique labore cumque molestias
     delectus?</p>
     `;
-
 }

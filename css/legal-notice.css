@@ -9,3 +9,7 @@
 .h2n {
     margin: unset;
 }
+
+.legal-notice-container {
+    cursor: pointer;
+}
