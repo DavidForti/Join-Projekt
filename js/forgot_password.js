@@ -9,18 +9,26 @@ async function onSubmitForgotPassword(event) {
     let email = formData.get('email');
 
     if (!getUserFromEmailAddress(email))
-        showNotifyMessage('Email Address not found !!');
+        showNotifyMessage('Email Address not found !!', true);
     else {
-        let response = await action(formData);
-        if (response.ok)
-            showNotifyMessage('An E-Mail has been sent to you');
-        else
-            showNotifyMessage('E-Mail was not sent !!');
+        sendForgotPasswordMail(formData);
     }
+}
+
+async function sendForgotPasswordMail(formData) {
+    const timeStamp = Date.now();
+    formData.set('timestamp',timeStamp);
+    // TODO: Save timestamp to user-Object
+    let response = await action(formData);
+    if (response.ok)
+        showNotifyMessage('An E-Mail has been sent to you', false);
+    else
+        showNotifyMessage('E-Mail was not sent !!', true);
 }
 
 
 function action(formData) {
+
     const input = 'https://gruppe-411.developerakademie.net/reset_password/send_mail.php';
     const requestInit = {
         method: 'post',
@@ -30,15 +38,18 @@ function action(formData) {
     return fetch(input, requestInit);
 }
 
-function showNotifyMessage(message) {
-    let notifyMsg = document.getElementById('notification-container');
+function showNotifyMessage(message, hideImage) {
+    let notifyMsg = document.getElementById('notification-forgot-password-container');
     notifyMsg.classList.remove('d-none');
     notifyMsg.classList.add('notification-container-animate');
     document.getElementById('notification-message').innerHTML = message;
-    // window.location.href = 'reset_password/reset_password.html?email=test@web.de';
+    if (hideImage)
+        document.getElementById('email-sent').classList.add('d-none');
+    else
+        document.getElementById('email-sent').classList.remove('d-none');
 
     setTimeout(() => {
-        document.getElementById('notification-container').classList.add('d-none');
+        document.getElementById('notification-forgot-password-container').classList.add('d-none');
     }, 2500)
 }
 
