@@ -9,9 +9,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./css/summary.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/board.css">
     <title>Backend-Integration</title>
-    <script src="./js/mini_backend.js"></script> 
-    <script src="./js/script.js"></script> 
-    <script src="./js/summary_js/summary.js"></script> <!--checken ob bei summary, board und addTotask ./ gebraucht wird ???-->
+    <script src="./js/mini_backend.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/summary_js/summary.js"></script>
+    <!--checken ob bei summary, board und addTotask ./ gebraucht wird ???-->
     <script src="./js/board_js/board.js"></script>
     <script src="./js/addToTask_js/addToTask.js"></script>
 </head>
@@ -25,7 +26,7 @@
 
         <img src="/img/joinLogo.png" class="main-img">
 
-        <div class="summary-container" onclick="summaryclick()" >
+        <div class="summary-container" onclick="summaryclick()">
             <div id="contantSummary" class="d-none"> </div>
             <img src="/img/summary.png" class="summary-logo">
             <h3 class="headline-summary">Summary</h3>
@@ -41,6 +42,11 @@
         <div class="addTask-container" onclick="addToTask()">
             <img src="/img/addTask.png" class="addTask-logo">
             <h3 class="headline-addTask">Add Task</h3>
+        </div>
+
+        <div class="legal-notice-container" onclick="legalNotice()">
+            <img src="/img/legal-notice.png" class="board-logo">
+            <h3 class="headline-borad">Board</h3>
         </div>
 
     </div>
