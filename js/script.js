@@ -66,8 +66,8 @@ async function saveUsersToBackend() {
         },
         {
             "id": 1,
-            "name": "Fritz Meier",
-            "email": "f.meier@web.de",
+            "name": "Bernd Trossmann",
+            "email": "mcptopgun@gmail.com",
             "password": "1111"
         },
         {
