@@ -517,6 +517,14 @@ input:-webkit-autofill {
     height: 74px;
 }
 
+#notification-container-reset-password {
+    position: absolute;
+    bottom: 0;
+    width: 424px;
+    height: 74px;
+}
+
+
 .notification-container-animate {
     animation: showNotification 500ms ease-in-out;
     animation-fill-mode: forwards;

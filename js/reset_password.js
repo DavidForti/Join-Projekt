@@ -23,10 +23,27 @@ function getEmailUrlParameter() {
 
 function onSubmitResetPassword(event) {
     event.preventDefault();
+    let formData = new FormData(event.target); // Create a FormData based on our Form Element in HTML
+
+    let newPassword = formData.get('password');
+    let confirmPassword = formData.get('confirm-password');
+
+    if (newPassword != confirmPassword)
+        showNotifyMessage('The passwords do not match');
+    else
+        showNotifyMessage('You reset your password');
 }
 
 
-// async function getUsers() {
-//     return JSON.parse(await backend.getItem('users')) || [];
-// }
+function showNotifyMessage(message) {
+    let notifyMsg = document.getElementById('notification-container-reset-password');
+    notifyMsg.classList.remove('d-none');
+    notifyMsg.classList.add('notification-container-animate');
+    document.getElementById('notification-message').innerHTML = message;
+
+    setTimeout(() => {
+        document.getElementById('notification-container-reset-password').classList.add('d-none');
+    }, 2500)
+}
+
 
