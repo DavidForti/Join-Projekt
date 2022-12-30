@@ -1,19 +1,21 @@
+let urlParams;
 let email;
-
+let timeStamp;
 
 async function onPageLoad() {
-    email = getEmailFromUrlParameter();
+    urlParams = getUrlParameter();
+    email = urlParams.get('email');
+    timeStamp = urlParams.get('timestamp');
     await init();
 
     // await downloadFromServer();
     // joinUsers = await getUsers();
 }
 
-function getEmailFromUrlParameter() {
+function getUrlParameter() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const emailAddress = urlParams.get('email');
-    return emailAddress ;
+    return urlParams;
 }
 
 
