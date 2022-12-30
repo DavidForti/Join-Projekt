@@ -78,9 +78,18 @@ body {
 
 
 @keyframes animateJoinLogo {
-    0% { scale: 2; }
+    0% {
+        scale: 2;
+    }
+
     /* 50% { left: 50%; top: 50%; } */
-    100% { left: 77px; top: 80px; scale: 1; margin-top: 0; margin-left: 0 }
+    100% {
+        left: 77px;
+        top: 80px;
+        scale: 1;
+        margin-top: 0;
+        margin-left: 0
+    }
 }
 
 
@@ -133,7 +142,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     /* padding: 4px 16px; */
     gap: 10px;
     width: 91px;
@@ -184,8 +193,6 @@ body {
     z-index: 3;
 }
 
-
-
 .form-login-box h1 {
     width: 315px;
     height: 73px;
@@ -199,6 +206,9 @@ body {
     color: #000000;
 }
 
+.form-input-container {
+    min-height: 70px;
+}
 
 .form-input-container span {
     color: red;
@@ -510,17 +520,17 @@ input:-webkit-autofill {
 
 /* FORGOT PASSWORD - BEGIN*/
 
-#notification-container {
+#notification-forgot-password-container {
     position: absolute;
     bottom: 0;
     width: 424px;
     height: 74px;
 }
 
-#notification-container-reset-password {
+#notification-reset-password-container {
     position: absolute;
     bottom: 0;
-    width: 424px;
+    width: 326px;
     height: 74px;
 }
 
@@ -549,12 +559,20 @@ input:-webkit-autofill {
     align-items: center;
     padding: 0px 20px;
     gap: 13px;
-    width: 424px;
-    height: 74px;
     /* Version 2/ main color */
     background: #2A3647;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
+}
+
+.notification-reset-password-box {
+    width: 326px;
+    height: 74px;
+}
+
+.notification-forgot-password-box {
+    width: 424px;
+    height: 74px;
 }
 
 .email-sent {
@@ -563,8 +581,6 @@ input:-webkit-autofill {
 }
 
 #notification-message {
-    width: 330px;
-    height: 28px;
     /* Version 2/t5 */
     font-family: 'Open Sans';
     font-style: normal;
@@ -574,7 +590,6 @@ input:-webkit-autofill {
     /* identical to box height, or 28px */
     color: #FFFFFF;
 }
-
 
 #email-address-not-found {
     color: red;
