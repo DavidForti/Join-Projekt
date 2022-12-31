@@ -42,11 +42,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $email = $_POST['email'];
         $timestamp = $_POST['timestamp'];
 
-        $message = "Hello,\n
-        \nFollow this link to reset your JOIN password for your " . $email . "\n 
-        \nhttps://gruppe-411.developerakademie.net/reset_password/reset_password.html?email=" . $email . "&timestamp=" . $timestamp ."\n
-        \nIf you didn't ask to reset your password, you can ignore this email. \n
-        \nThanks,\n
+        $message = "Hello,
+        \nFollow this link to reset your JOIN password for your account with the following email address " . $email . "
+        \nhttps://gruppe-411.developerakademie.net/reset_password/reset_password.html?email=" . $email . "&timestamp=" . $timestamp ."
+        \nIf you didn't ask to reset your password, you can ignore this email.
+        \nThanks,
         \nYour Join team\n";
 
         $recipient = $email;
