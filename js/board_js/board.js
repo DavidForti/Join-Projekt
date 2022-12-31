@@ -1,4 +1,4 @@
-let subjectObject = ["Sales","Backoffice"]
+let subjectObject = {'Sales':'Backoffice'}
 
 
 
@@ -32,9 +32,9 @@ function addTaskBnt() {
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
-   
-}
 
+}
+// funktion noch verkrüzen 
 function addTask() {
     return/*html*/`
         <div class="input-container">
@@ -44,7 +44,12 @@ function addTask() {
                 <label for="description">Description</label>   
                 <input type="text" placeholder="Enter a Description " class="description">
                 <label for="category">Category</label> 
-                <input type="text" placeholder="Select task category" class="category">
+
+                <select name="category" id="category" class="category">
+                <option value="" selected="selected" >Select task category</option>  
+                </select>
+
+               
                 <label for="assigned-to">Assigned to</label> 
                 <input type="text" placeholder="Select contacts to assign " class="assigned-to">
             </div>  
@@ -65,8 +70,31 @@ function addTask() {
     `;
 }
 
-
-
+// hier nach einr anderen funktion schuaen
+window.onload =  function() {
+    let dropDownCategory = document.getElementById("category");
+    for (let x in subjectObject) {
+        dropDownCategory.options[dropDownCategory.options.length] = new Option(x, x);
+    }
+    dropDownCategory.onchange = function () {
+        //empty Chapters- and Topics- dropdowns
+        chapterSel.length = 1;
+        topicSel.length = 1;
+        //display correct values
+        for (let y in dropDownCategory[this.value]) {
+            topicSel.options[topicSel.options.length] = new Option(y, y);
+        }
+    };
+    topicSel.onchange = function () {
+        //empty Chapters dropdown
+        chapterSel.length = 1;
+        //display correct values
+        let z = dropDownCategory[dropDownCategory.value][this.value];
+        for (var i = 0; i < z.length; i++) {
+            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+        }
+    };
+}
 
 function dragAndDrop() {
     return/*html*/`
