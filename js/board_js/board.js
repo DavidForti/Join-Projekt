@@ -1,16 +1,13 @@
-
-
+let subjectObject = ["Sales","Backoffice"]
 
 
 
 function board() {
     addAndRemove();
-
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
-
 }
 
 function addAndRemove() {
@@ -31,26 +28,44 @@ function headlineBoard() {
     `;
 }
 
-function addTaskBnt(){
-     let contantAddToTask = document.getElementById('contantAddToTask');
-     contantAddToTask.innerHTML = '';
-     contantAddToTask.innerHTML += addTask();
+function addTaskBnt() {
+    let contantAddToTask = document.getElementById('contantAddToTask');
+    contantAddToTask.innerHTML = '';
+    contantAddToTask.innerHTML += addTask();
+   
 }
 
-// input felder noch hinzufügen und namen vergeben 
-function addTask(){
+function addTask() {
     return/*html*/`
-        <div>
-        <input type="text">     
-        <input type="text">
-        <input type="text">
-        <input type="text">
-
-
-
-        </div>
+        <div class="input-container">
+            <div class="selections">
+                <label for="title">Title</label>
+                <input type="Enter a title"  placeholder="Enter a title" class="title">  
+                <label for="description">Description</label>   
+                <input type="text" placeholder="Enter a Description " class="description">
+                <label for="category">Category</label> 
+                <input type="text" placeholder="Select task category" class="category">
+                <label for="assigned-to">Assigned to</label> 
+                <input type="text" placeholder="Select contacts to assign " class="assigned-to">
+            </div>  
+        
+    
+            <div class="selections-sec">
+                <label for="due-date" class="correction-due-date">Due Date</label>
+                <input type="date" id="dueDate" class ="due-date">
+                    <label for="status" class="correction-due-date">Prio</label>
+                    <div class="status">
+                        <div class="urgent-status"></div>
+                        <div class="medium-status"></div>
+                        <div class="low-status"></div>
+                    </div>
+                <label for="subtask">Subtask</label> 
+                <input type="text" name="" id="" placeholder="Add new subtask" class ="subtask">
+            </div>   
     `;
 }
+
+
 
 
 function dragAndDrop() {
