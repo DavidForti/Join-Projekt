@@ -59,6 +59,18 @@ async function saveToBackend(arrayName, array) {
     await backend.setItem(arrayName, JSON.stringify(array));
 }
 
+/**
+ * 
+ * @param {object} user - User-Object
+ * @param {string} key - User property that is updated
+ * @param {string} value - Value that is stored
+ */
+async function updateUser(user, key, value) {
+    joinUsers[user['id']][key] = value;
+    await saveToBackend('users', joinUsers);
+}
+
+
 
 async function saveUsersToBackend() {
     joinUsers = [

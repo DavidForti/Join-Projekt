@@ -1,16 +1,15 @@
 let urlParams;
 let email;
-let timeStamp;
+let timeStampFromEmail;
+
 
 async function onPageLoad() {
     urlParams = getUrlParameter();
     email = urlParams.get('email');
-    timeStamp = urlParams.get('timestamp');
+    timeStampFromEmail = urlParams.get('timestamp');
     await init();
-
-    // await downloadFromServer();
-    // joinUsers = await getUsers();
 }
+
 
 function getUrlParameter() {
     const queryString = window.location.search;
@@ -21,8 +20,7 @@ function getUrlParameter() {
 
 function onSubmitResetUserPassword(event) {
     event.preventDefault();
-    let formData = new FormData(event.target); // Create a FormData based on our Form Element in HTML
-
+    let formData = new FormData(event.target); // Create FormData based on Form Element in HTML
     let newPassword = formData.get('password');
     let confirmPassword = formData.get('confirm-password');
 
@@ -37,14 +35,37 @@ function onSubmitResetUserPassword(event) {
         showNotifyMessage('The passwords do not match !!');
 }
 
+
 async function resetUserPassword(newPassword) {
     let user = getUserFromEmailAddress(email);
-    if (user) {
-        joinUsers[user['id']]['password'] = newPassword;
-        await saveToBackend('users',joinUsers);
-        showNotifyMessage('You reset your password');
-    } else
+
+    if (!user)
         showNotifyMessage('User not found');
+    else if (!checkTimestampIsValid(user)) {
+        showNotifyMessage('Email link is no longer valid');
+        goToPage('forgot_password.html');
+    } else {
+        await updateUser(user, 'password', newPassword);
+        await updateUser(user, 'timestamp', 0);
+        showNotifyMessage('You reset your password');
+    }
+}
+
+
+function checkTimestampIsValid(user) {
+    if (user['timestamp'] == timeStampFromEmail && timeStampIsInTime())
+        return true;
+    else
+        return false;
+}
+
+
+function timeStampIsInTime() {
+    let timeDifference = new Date(Date.now() - timeStampFromEmail).getMinutes();
+    if (timeDifference <= 10)
+        return true;
+    else
+        return false;
 }
 
 
@@ -58,5 +79,3 @@ function showNotifyMessage(message) {
         document.getElementById('notification-reset-password-container').classList.add('d-none');
     }, 2500)
 }
-
-

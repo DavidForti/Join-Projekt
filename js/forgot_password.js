@@ -7,21 +7,24 @@ async function onSubmitForgotPassword(event) {
     let formData = new FormData(event.target); // Create a FormData based on our Form Element in HTML
 
     let email = formData.get('email');
+    let user = getUserFromEmailAddress(email);
 
-    if (!getUserFromEmailAddress(email))
+    if (!user)
         showNotifyMessage('Email Address not found !!', true);
     else {
-        sendForgotPasswordMail(formData);
+        sendForgotPasswordMail(formData, user);
     }
 }
 
-async function sendForgotPasswordMail(formData) {
+
+async function sendForgotPasswordMail(formData, user) {
     const timeStamp = Date.now();
-    formData.set('timestamp',timeStamp.toString());
-    // TODO: Save timestamp to user-Object
+    formData.set('timestamp', timeStamp.toString());
     let response = await action(formData);
-    if (response.ok)
+    if (response.ok) {
+        await updateUser(user, 'timestamp', timeStamp);
         showNotifyMessage('An E-Mail has been sent to you', false);
+    }
     else
         showNotifyMessage('E-Mail was not sent !!', true);
 }
