@@ -1,4 +1,4 @@
-let subjectObject = {'Sales':'Backoffice'}
+
 
 
 
@@ -42,16 +42,26 @@ function addTask() {
                 <label for="title">Title</label>
                 <input type="Enter a title"  placeholder="Enter a title" class="title">  
                 <label for="description">Description</label>   
-                <input type="text" placeholder="Enter a Description " class="description">
+                <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
+                <!--dropDown-->
+                <form >
                 <label for="category">Category</label> 
-
-                <select name="category" id="category" class="category">
-                <option value="" selected="selected" >Select task category</option>  
+                <select id = "chgeCategory"   class="category">                
+                <option>Select task category</option>  
+                <option>New category</option> 
+                <option>Sales</option>  
+                <option>Backoffice</option>  
                 </select>
-
-               
+                </form>
+                <form >
                 <label for="assigned-to">Assigned to</label> 
-                <input type="text" placeholder="Select contacts to assign " class="assigned-to">
+                <select id = "chgeAssigend"  class="assigned-to">
+                <option>Selsect contacts to assing</option>  
+                <option>You</option> 
+                <option>Musstermann</option>  
+                <option>Invite new contact</option>  
+                </select>
+                </form>    
             </div>  
         
     
@@ -64,37 +74,29 @@ function addTask() {
                         <div class="medium-status"></div>
                         <div class="low-status"></div>
                     </div>
-                <label for="subtask">Subtask</label> 
-                <input type="text" name="" id="" placeholder="Add new subtask" class ="subtask">
+                <!-- nach subtask nachfragen -->
+                <label for="subtask">Subtask</label>
+                <input type="text" name="" id="" placeholder="Add new subtask" class ="subtask">   
             </div>   
+            <div class="bnts">
+                <button class="bnt-cancel">Cancel <img src="img/cancelSymbol.png" ></button>
+                <button class="bnt-Task">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
+            </div>
     `;
 }
 
-// hier nach einr anderen funktion schuaen
-window.onload =  function() {
-    let dropDownCategory = document.getElementById("category");
-    for (let x in subjectObject) {
-        dropDownCategory.options[dropDownCategory.options.length] = new Option(x, x);
-    }
-    dropDownCategory.onchange = function () {
-        //empty Chapters- and Topics- dropdowns
-        chapterSel.length = 1;
-        topicSel.length = 1;
-        //display correct values
-        for (let y in dropDownCategory[this.value]) {
-            topicSel.options[topicSel.options.length] = new Option(y, y);
-        }
-    };
-    topicSel.onchange = function () {
-        //empty Chapters dropdown
-        chapterSel.length = 1;
-        //display correct values
-        let z = dropDownCategory[dropDownCategory.value][this.value];
-        for (var i = 0; i < z.length; i++) {
-            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-        }
-    };
-}
+// wird evtl später gebraucht 
+//function changeWorkCategory() {
+  //  let chgeCategory= document.getElementById("myList");
+   // document.getElementById("favourite").value = chgeCategory.options[mylist.selectedIndex].text;
+   // }
+
+
+
+
+
+
+
 
 function dragAndDrop() {
     return/*html*/`
