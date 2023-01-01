@@ -18,6 +18,7 @@ async function init() {
         msgbox.innerHTML = msg;
     }
 
+    getLastJoinUser();
     //  await deleteAll();
     //  await saveUsersToBackend();
     //  await saveTasksToBackend();
@@ -27,6 +28,18 @@ async function init() {
     await loadUsersFromBackend('script.js');
     await loadTasksFromBackend();
 
+}
+
+function getLastJoinUser() {
+    lastJoinUser = getFromLocalStorage('joinUser');
+    if (lastJoinUser && lastJoinUser['rememberMe'] == 1)
+        fillLastJoinUserInputFields(lastJoinUser);
+}
+
+function fillLastJoinUserInputFields(joinUser) {
+    document.getElementById('email').value = joinUser['email'];
+    document.getElementById('password').value = joinUser['password'];
+    document.getElementById('rememberMeChk').checked = joinUser['rememberMe'];
 }
 
 function animateLogo() {
@@ -65,11 +78,14 @@ async function saveToBackend(arrayName, array) {
  * @param {string} key - User property that is updated
  * @param {string} value - Value that is stored
  */
-async function updateUser(user, key, value) {
-    joinUsers[user['id']][key] = value;
+async function updateUser(user, keyValueArray) {
+    for (let i = 0; i < keyValueArray.length; i++) {
+        const element = keyValueArray[i];
+        joinUsers[user['id']][element['key']] = element['value'];
+    }
+
     await saveToBackend('users', joinUsers);
 }
-
 
 
 async function saveUsersToBackend() {
@@ -80,7 +96,7 @@ async function saveUsersToBackend() {
             "email": "guest@web.de",
             "password": "0000",
             "rememberMe": 0,
-            "resetPasswordToken": 0
+            "resetPasswordTimestamp": 0
         },
         {
             "id": 1,
@@ -88,7 +104,7 @@ async function saveUsersToBackend() {
             "email": "mcptopgun@gmail.com",
             "password": "1111",
             "rememberMe": 0,
-            "resetPasswordToken": 0
+            "resetPasswordTimestamp": 0
         },
         {
             "id": 2,
@@ -96,7 +112,7 @@ async function saveUsersToBackend() {
             "email": "a.huber@web.de",
             "password": "2222",
             "rememberMe": 0,
-            "resetPasswordToken": 0
+            "resetPasswordTimestamp": 0
         },
         {
             "id": 3,
@@ -104,7 +120,7 @@ async function saveUsersToBackend() {
             "email": "h.dunz@web.de",
             "password": "3333",
             "rememberMe": 0,
-            "resetPasswordToken": 0
+            "resetPasswordTimestamp": 0
         }
     ];
 

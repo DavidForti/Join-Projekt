@@ -13,6 +13,7 @@ async function loginUser() {
         return;
     } else {
         if (user.password == password) {
+            rememberMeIsChecked(user);
             saveToLocalStorage('joinUser', user);
             goToMainPage();
             // console.log('Password korrekt:', user);
@@ -20,6 +21,13 @@ async function loginUser() {
             showErrorMessage('wrong-password', 'password');
         }
     }
+}
+
+function rememberMeIsChecked(user) {
+    if (document.getElementById('rememberMeChk').checked)
+        user['rememberMe'] = 1;
+    else
+        user['rememberMe'] = 0;
 }
 
 
