@@ -278,3 +278,25 @@
     height: 12px;
     width: 16px;
 }
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 19px;
+    gap: 10px;
+    width: 250px;
+    height: 239px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.test{
+    color: #000000;
+    font-size: 20px;
+}
