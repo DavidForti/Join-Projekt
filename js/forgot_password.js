@@ -22,7 +22,7 @@ async function sendForgotPasswordMail(formData, user) {
     formData.set('timestamp', timeStamp.toString());
     let response = await action(formData);
     if (response.ok) {
-        await updateUser(user, 'timestamp', timeStamp);
+        await updateUser(user, [{'key': 'resetPasswordTimestamp', 'value': timeStamp}]);
         showNotifyMessage('An E-Mail has been sent to you', false);
     }
     else

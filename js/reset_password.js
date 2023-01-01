@@ -45,15 +45,17 @@ async function resetUserPassword(newPassword) {
         showNotifyMessage('Email link is no longer valid');
         goToPage('forgot_password.html');
     } else {
-        await updateUser(user, 'password', newPassword);
-        await updateUser(user, 'timestamp', 0);
+        let userProperties = [];
+        userProperties.push({ 'key': 'password', 'value': newPassword });
+        userProperties.push({ 'key': 'resetPasswordTimestamp', 'value': 0 });
+        await updateUser(user, userProperties);
         showNotifyMessage('You reset your password');
     }
 }
 
 
 function checkTimestampIsValid(user) {
-    if (user['timestamp'] == timeStampFromEmail && timeStampIsInTime())
+    if (user['resetPasswordTimestamp'] == timeStampFromEmail && timeStampIsInTime())
         return true;
     else
         return false;
