@@ -126,8 +126,8 @@ function showTask() {
         let task = addedTasks[i];
         contantToDo.innerHTML +=/*html*/`
           
-                <h3 class="test">${task['titel']}</h3>
-                <h2 class="">${task['description']}</h2>
+                <h3 >${task['titel']}</h3>
+                <h2 >${task['description']}</h2>
         
         
         `;
@@ -158,6 +158,7 @@ function dragAndDrop() {
     return/*html*/`
         <div class="dad-container">
             <div>Todo</div>
+            <div id="contantToDo" class="testdiv"></div>
             <div>In progress</div>
             <div>Awatinig Feedback</div>
             <div>Done</div>
