@@ -1,4 +1,4 @@
-let addedTasks = [];
+
 
 
 
@@ -110,8 +110,9 @@ function pushTaskInArr(titel, description, category, assigned, dueDate, prio, su
         "subtask": subtask.value
     };
     showTask();
-    console.log(addedTasks);
-    addedTasks.push(headOfTask);
+    console.log(editTasks);
+    editTasks.push(headOfTask);
+    saveToBackend('tasks', editTasks);
     titel.value = '';
     description.value = '';
     category.value = '';
@@ -124,8 +125,8 @@ function pushTaskInArr(titel, description, category, assigned, dueDate, prio, su
 function showTask() {
      let contantToDo = document.getElementById('contantToDo').innerHTML = '';
 
-    for (let i = 0; i < addedTasks.length; i++) {
-        let task = addedTasks[i];
+    for (let i = 0; i < editTasks.length; i++) {
+        let task = editTasks[i];
         contantToDo.innerHTML +=/*html*/`
           
                 <h3 >${task['titel']}</h3>

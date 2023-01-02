@@ -25,31 +25,47 @@
     </form>
     <!-- Main container !-->
     <div class="from-contianer">
-        <div class="main-container"></div>
+        <div class="main-container">
+            <img src="/img/joinLogo.png" class="main-img">
+            <div class="menu">
+                <div class="menu-list" onclick="summaryclick()">
+                    <img src="/img/summary.png" class="summary-logo">
+                    <h3 class="headline-summary">Summary</h3>
+                </div>
+                <div class="menu-list" onclick="board()">
+                    <img src="/img/board.png" class="board-logo">
+                    <h3 class="headline-borad">Board</h3>
+                </div>
+                <div class="menu-list">
+                    <img src="/img/addTask.png" class="addTask-logo">
+                    <h3 class="headline-addTask">Add Task</h3>
+                </div>
+                <div class="menu-list">
+                    <img src="/img/legal-notice.png" class="board-logo">
+                    <h3 class="headline-borad">Legal Notice</h3>
+                </div>
+            </div>
 
-        <img src="/img/joinLogo.png" class="main-img">
 
-        <div class="summary-container" onclick="summaryclick()">
+        </div>
+
+       
+
+        <div class="summary-container" >
             <div id="contantSummary" class="d-none"> </div>
-            <img src="/img/summary.png" class="summary-logo">
-            <h3 class="headline-summary">Summary</h3>
         </div>
 
         <div class="board-container" onclick="board()">
             <div id="contantAddToTask"></div>
             <div id="contantBoard" class="d-none"></div>
-            <img src="/img/board.png" class="board-logo">
-            <h3 class="headline-borad">Board</h3>
+
         </div>
 
         <div class="addTask-container" onclick="addToTask()">
-            <img src="/img/addTask.png" class="addTask-logo">
-            <h3 class="headline-addTask">Add Task</h3>
+
         </div>
 
         <div class="board-container" onclick="legalNotice()">
-            <img src="/img/legal-notice.png" class="board-logo">
-            <h3 class="headline-borad">Legal Notice</h3>
             <div id="contentNotice"></div>
         </div>
 

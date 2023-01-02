@@ -12,6 +12,7 @@
     height: 100vh;
     left: 0px;
     top: 0px;
+    z-index: 1;
     background-color: #2A3647;
 }
 
@@ -19,6 +20,16 @@
     padding-top: 66px;
     width: 100.03px;
     height: 121.97px;
+}
+.menu{
+    margin-top: 0px;
+}
+.menu-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    margin-top: 60px;
 }
 
 .summary-logo {
@@ -99,9 +110,10 @@
 }
 
 .main-headline {
+    z-index: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 34px;
     position: absolute;
