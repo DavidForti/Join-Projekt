@@ -38,6 +38,27 @@ function loginAsGuest() {
 }
 
 
+function getLastJoinUser() {
+    lastJoinUser = getFromLocalStorage('joinUser');
+    if (lastJoinUser && lastJoinUser['rememberMe'] == 1)
+        fillLastJoinUserInputFields(lastJoinUser);
+}
+
+function fillLastJoinUserInputFields(joinUser) {
+    document.getElementById('email').value = joinUser['email'];
+    document.getElementById('password').value = joinUser['password'];
+    document.getElementById('rememberMeChk').checked = joinUser['rememberMe'];
+}
+
+function emtpyInputFields() {
+    document.getElementById('email').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('rememberMeChk').checked = false;
+}
+
+
+
+
 function goToMainPage() {
     window.location.href = 'main.html';
 }
