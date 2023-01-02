@@ -1,5 +1,6 @@
 let joinUsers = [];
 let editTasks = [];
+let contacts = [];
 let newUser = [];
 
 // Change BASE_SERVER_URL for smallest_backend_ever
@@ -19,14 +20,17 @@ async function init() {
     }
 
     getLastJoinUser();
-    //  await deleteAll();
-    //  await saveUsersToBackend();
-    //  await saveTasksToBackend();
+    
+    // await deleteAll();
+    // await saveUsersToBackend();
+    // await saveTasksToBackend();
+    // await saveContactsToBackend();
 
     await downloadFromServer();
 
     await loadUsersFromBackend('script.js');
-    await loadTasksFromBackend();
+    await loadTasksFromBackend('script.js');
+    await loadContactsFromBackend('script.js');
 
 }
 
@@ -53,11 +57,15 @@ async function loadUsersFromBackend(page) {
     console.log(`Users geladen (${page}):`, joinUsers);
 }
 
-async function loadTasksFromBackend() {
+async function loadTasksFromBackend(page) {
     editTasks = JSON.parse(await backend.getItem('tasks')) || [];
-    console.log('Tasks geladen:', editTasks);
+    console.log(`Tasks geladen (${page}):`, editTasks);
 }
 
+async function loadContactsFromBackend(page) {
+    contacts = JSON.parse(await backend.getItem('contacts')) || [];
+    console.log(`Contacts geladen (${page}):`, contacts);
+}
 
 /**
  * 
@@ -200,6 +208,33 @@ async function saveTasksToBackend() {
 
     await backend.setItem('tasks', JSON.stringify(editTasks));
 }
+
+
+async function saveContactsToBackend() {
+    contacts = [
+        {
+            "name": "Bernd Trossmann",
+            "email": "mcptopgun@gmail.com",
+            "phone": "+49 6666 1111",
+            "color": '#df7821'
+        },
+        {
+            "name": "Andreas Huber",
+            "email": "a.huber@web.de",
+            "phone": "+49 4444 9999",
+            "color": '#85c1e0'
+        },
+        {
+            "name": "Helmut Dunz",
+            "email": "h.dunz@web.de",
+            "phone": "+49 2222 3333",
+            "color": '#ed474b'
+        }
+    ];
+
+    await backend.setItem('contacts', JSON.stringify(contacts));
+}
+
 
 async function deleteAll() {
     await backend.deleteItem('users');
