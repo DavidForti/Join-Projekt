@@ -1,5 +1,5 @@
-async function onLoad() {
-    await init();
+async function init() {
+    await initData();
 }
 
 async function onSubmitForgotPassword(event) {

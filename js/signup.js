@@ -1,20 +1,8 @@
-// let joinUsers = [];
-
-// Change BASE_SERVER_URL for smallest_backend_ever
-setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
-
 /**
  * Get Users from Backend-Server
  */
 async function init() {
-    await downloadFromServer();
-    joinUsers = loadUsersFromBackend('signup.js');
-    // joinUsers = JSON.parse(backend.getItem('users')) || [];
-}
-
-
-async function saveUsersToBackend() {
-    await backend.setItem('users', JSON.stringify(joinUsers));
+    initData();
 }
 
 
@@ -30,16 +18,23 @@ async function signUpNewUser() {
 
     let user = getUserAsObject(name, email, password);
     joinUsers.push(user);
-    await saveUsersToBackend();
+    await saveToBackend('users', joinUsers);
     goToPage('index.html','Benutzer erfolgreich registriert.');
 }
 
+
 function getUserAsObject(name, email, password) {
+    let newUserId = getMaxUserId(); 
     return {
+        "id": newUserId,
         "name": name,
         "email": email,
         "password": password
     };
+}
+
+function getMaxUserId() {
+    return joinUsers.length;
 }
 
 

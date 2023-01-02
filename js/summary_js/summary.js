@@ -24,7 +24,7 @@ const taskPriority = {
 
 
 async function summary() {
-    await init();
+    await initData();
     workflowStatus();
     workflowPriority();
     summaryclick();

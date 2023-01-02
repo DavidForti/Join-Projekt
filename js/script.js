@@ -17,13 +17,18 @@ async function init() {
         let msgbox = document.getElementById('msgbox');
         msgbox.classList.remove('d-none');
         msgbox.innerHTML = msg;
-    }
+        emtpyInputFields();
+    } else
+        getLastJoinUser();
 
-    getLastJoinUser();
+    await initData();
+}
 
+
+async function initData() {
     // await deleteAll();
     // await saveUsersToBackend();
-    // await saveTasksToBackend();
+    //  await saveTasksToBackend();
     // await saveContactsToBackend();
 
     await downloadFromServer();
@@ -31,20 +36,10 @@ async function init() {
     await loadUsersFromBackend('script.js');
     await loadTasksFromBackend('script.js');
     await loadContactsFromBackend('script.js');
-
 }
 
-function getLastJoinUser() {
-    lastJoinUser = getFromLocalStorage('joinUser');
-    if (lastJoinUser && lastJoinUser['rememberMe'] == 1)
-        fillLastJoinUserInputFields(lastJoinUser);
-}
 
-function fillLastJoinUserInputFields(joinUser) {
-    document.getElementById('email').value = joinUser['email'];
-    document.getElementById('password').value = joinUser['password'];
-    document.getElementById('rememberMeChk').checked = joinUser['rememberMe'];
-}
+
 
 function animateLogo() {
     document.getElementById('join-logo').classList.add('join-logo-animate');
@@ -266,10 +261,3 @@ function showErrorMessage(errorMessageElement, elementSetFocus) {
     document.getElementById(errorMessageElement).classList.remove('d-none');
     document.getElementById(elementSetFocus).focus();
 }
-
-
-
-
-
-
-

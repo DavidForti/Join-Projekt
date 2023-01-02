@@ -3,11 +3,11 @@ let email;
 let timeStampFromEmail;
 
 
-async function onPageLoad() {
+async function init() {
     urlParams = getUrlParameter();
     email = urlParams.get('email');
     timeStampFromEmail = urlParams.get('timestamp');
-    await init();
+    await initData();
 }
 
 
