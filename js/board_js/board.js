@@ -8,7 +8,7 @@ function board() {
     contantBoard.innerHTML = '';
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
-    
+
 }
 
 function addAndRemove() {
@@ -99,7 +99,7 @@ function add() {
     pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask);
 }
 
- async function pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask) {
+async function pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask) {
     let headOfTask = {
         "titel": titel.value,
         "description": description.value,
@@ -109,7 +109,7 @@ function add() {
         "prio": prio.value,
         "subtask": subtask.value
     };
-    
+
     editTasks.push(headOfTask);
     await saveToBackend('tasks', editTasks);
     showTask();
@@ -124,19 +124,19 @@ function add() {
 }
 
 function showTask() {
-     let contantToDo = document.getElementById('contantToDo');
-     contantToDo.innerHTML = '';
+    let contantToDo = document.getElementById('contantToDo');
+    contantToDo.innerHTML = '';
     let html = '';
     for (let i = 0; i < editTasks.length; i++) {
         let task = editTasks[i];
         html += `
-                <h3 >${task['titel']}</h3>
-                <h2 >${task['description']}</h2>
-        
-        
-        `;
+                    <h3 >${task['titel']}</h3>
+                    <h2 >${task['description']}</h2>
+
+
+         `;
     }
- 
+
     contantToDo.innerHTML = html;
 }
 
