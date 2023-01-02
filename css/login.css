@@ -185,6 +185,7 @@ body {
     width: 37px;
     height: 37px;
     left: 31px;
+    cursor: pointer;
     top: 35px;
     /* Inside auto layout */
     flex: none;
