@@ -24,7 +24,7 @@ async function init() {
     // await deleteAll();
     // await saveUsersToBackend();
     //  await saveTasksToBackend();
-    //  await saveContactsToBackend();
+    // await saveContactsToBackend();
 
     await downloadFromServer();
 
