@@ -82,7 +82,7 @@ function addTask() {
             </div>   
             <div class="bnts">
                 <button class="bnt-cancel">Cancel <img src="img/cancelSymbol.png" ></button>
-                <button class="bnt-Task" onclick="add()">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
+                <button class="bnt-Task" onclick="add(); return false;">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
             </div>
         </div>
     `;
@@ -123,20 +123,20 @@ function pushTaskInArr(titel, description, category, assigned, dueDate, prio, su
 }
 
 function showTask() {
-     let contantToDo = document.getElementById('contantToDo').innerHTML = '';
-
+     let contantToDo = document.getElementById('contantToDo');
+     contantToDo.innerHTML = '';
+    let html = '';
     for (let i = 0; i < editTasks.length; i++) {
         let task = editTasks[i];
-        contantToDo.innerHTML +=/*html*/`
-          
+        html += `
                 <h3 >${task['titel']}</h3>
                 <h2 >${task['description']}</h2>
         
         
         `;
-
-//class="todo-list"
     }
+ 
+    contantToDo.innerHTML = html;
 }
 
 
