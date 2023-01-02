@@ -82,7 +82,7 @@ function addTask() {
             </div>   
             <div class="bnts">
                 <button class="bnt-cancel">Cancel <img src="img/cancelSymbol.png" ></button>
-                <button class="bnt-Task" onclick="add(); return false;">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
+                <button class="bnt-Task" onclick="add()">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
             </div>
         </div>
     `;
@@ -99,7 +99,7 @@ function add() {
     pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask);
 }
 
-function pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask) {
+ async function pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask) {
     let headOfTask = {
         "titel": titel.value,
         "description": description.value,
@@ -109,10 +109,11 @@ function pushTaskInArr(titel, description, category, assigned, dueDate, prio, su
         "prio": prio.value,
         "subtask": subtask.value
     };
+    
+    editTasks.push(headOfTask);
+    await saveToBackend('tasks', editTasks);
     showTask();
     console.log(editTasks);
-    editTasks.push(headOfTask);
-    saveToBackend('tasks', editTasks);
     titel.value = '';
     description.value = '';
     category.value = '';
