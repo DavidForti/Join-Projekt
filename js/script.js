@@ -20,10 +20,10 @@ async function init() {
     }
 
     getLastJoinUser();
-    
+
     // await deleteAll();
     // await saveUsersToBackend();
-    //  await saveTasksToBackend();
+    // await saveTasksToBackend();
     // await saveContactsToBackend();
 
     await downloadFromServer();
