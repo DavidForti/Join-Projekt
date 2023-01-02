@@ -46,30 +46,31 @@ function addTask() {
                 <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
                 <!--dropDown-->
                 <form >
-                <label for="category">Category</label> 
-                <select id = "chgeCategory"   class="category">                
-                <option>Select task category</option>  
-                <option>New category</option> 
-                <option>Sales</option>  
-                <option>Backoffice</option>  
-                </select>
+                    <label for="category">Category</label> 
+                    <select id = "chgeCategory"   class="category">                
+                        <option>Select task category</option>  
+                        <option>New category</option> 
+                        <option>Sales</option>  
+                        <option>Backoffice</option>  
+                    </select>
                 </form>
                 <form >
-                <label for="assigned-to">Assigned to</label> 
-                <select id = "chgeAssigend"  class="assigned-to">
-                <option>Selsect contacts to assing</option>  
-                <option>You</option> 
-                <option>Musstermann</option>  
-                <option>Invite new contact</option>  
-                </select>
+                    <label for="assigned-to">Assigned to</label> 
+                    <select id = "chgeAssigend"  class="assigned-to">
+                        <option>Selsect contacts to assing</option>  
+                        <option>You</option> 
+                        <option>Musstermann</option>  
+                        <option>Invite new contact</option>  
+                    </select>
                 </form>    
             </div>  
         
-    
+        
+        
             <div class="selections-sec">
                 <label for="due-date" class="correction-due-date">Due Date</label>
                 <input type="date" id="dueDate" class ="due-date">
-                    <label for="status" class="correction-due-date">Prio</label>
+                <label for="status" class="correction-due-date">Prio</label>
                     <div class="status" id="chgeprio">
                         <div class="urgent-status"></div>
                         <div class="medium-status"></div>
@@ -83,6 +84,7 @@ function addTask() {
                 <button class="bnt-cancel">Cancel <img src="img/cancelSymbol.png" ></button>
                 <button class="bnt-Task" onclick="add()">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
             </div>
+        </div>
     `;
 }
 
@@ -126,8 +128,8 @@ function showTask() {
         let task = addedTasks[i];
         contantToDo.innerHTML +=/*html*/`
           
-                <h3 class="test">${task['titel']}</h3>
-                <h2 class="">${task['description']}</h2>
+                <h3 >${task['titel']}</h3>
+                <h2 >${task['description']}</h2>
         
         
         `;
@@ -158,6 +160,7 @@ function dragAndDrop() {
     return/*html*/`
         <div class="dad-container">
             <div>Todo</div>
+            <div id="contantToDo" class="testdiv"></div>
             <div>In progress</div>
             <div>Awatinig Feedback</div>
             <div>Done</div>
