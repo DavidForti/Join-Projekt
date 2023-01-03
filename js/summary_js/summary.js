@@ -110,12 +110,16 @@ function progrssesBox() {
 function urgentBox(urgants) {
     return /*html*/`
     <div class="urgent-box">
-        <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
-        <img src="/img/urgant.png" class="urgant">
-        <img src="/img/Ellipse.png" class="ellipse">        
-        <h1 class="show-urgent">${workflowUrgent} <img src="/img/text.png"></h1>
-        <h3 class="deadline">hier muss die deadline stehen von add Task <img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
-           
+        <div class="urgent-style-box">
+            <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
+            <div class="red-circel">
+                <img src="/img/urgant.png" class="urgant">
+                <img src="/img/Ellipse.png" class="ellipse">   
+            </div>     
+                <h1 class="show-urgent">${workflowUrgent} <img src="/img/text.png"></h1>
+            
+            <h3 class="deadline">hier muss die deadline stehen von add Task <img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
+        </div>
     </div>
 
     `;
