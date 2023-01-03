@@ -17,11 +17,12 @@
 <body onload="init()">
     <img id="join-logo" src="img/joinLogoMain.png" class="join-logo">
     <div class="form-container">
-        <form class="form-login-box form-signup-box" onsubmit="signUpNewUser(); return false;">
+        <form class="form-signup-box" onsubmit="signUpNewUser(); return false;">
             <div class="signup-arrow-left-box">
                 <img src="./img/arrow-left-line.png" class="signup-arrow-left" onclick="goToPage('index.html')">
             </div>
-            <h1>Sign up</h1>
+            <h1 id="form-signup-box-h1">Sign up</h1>
+            <div class="separator"></div>
             <div class="form-input-container">
                 <div class="form-input-box">
                     <input type="text" id="name" placeholder="Name" required>
@@ -41,7 +42,7 @@
                     <img src="./img/encrypted.png">
                 </div>
             </div>
-            <div class="form-btn-box">
+            <div class="form-btn-box mt-6">
                 <button type="submit" class="form-btn-user">Sign up</button>
             </div>
         </form>

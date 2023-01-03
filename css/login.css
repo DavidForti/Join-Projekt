@@ -1,4 +1,8 @@
-/* GLOBAL */
+:root {
+    --color-background: #2A3647;
+}
+
+/* GLOBAL-STYLES */
 /*#region*/
 body {
     margin: 0;
@@ -20,6 +24,15 @@ body {
     margin-bottom: 29px;
 }
 
+form h1 {
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+}
+
 .form-btn-box {
     width: 341px;
     height: 51px;
@@ -30,10 +43,11 @@ body {
     padding: 0px;
     gap: 35px;
 }
+
 /*#endregion*/
 
 
-/* JOIN ANIMATION CONTAINER - OPACITY*/
+/* JOIN CONTAINER ANIMATION - OPACITY*/
 /*#region*/
 .join-animation-container {
     position: absolute;
@@ -66,9 +80,10 @@ body {
         z-index: -1;
     }
 }
+
 /*#endregion*/
 
-/* JOIN ANIMATION LOGO - MOVE*/
+/* JOIN LOGO ANIMATION - MOVE*/
 /*#region*/
 
 .join-logo-box {
@@ -79,19 +94,10 @@ body {
     bottom: 0;
     width: 100%;
     height: 100vh;
-    /* opacity: 1; */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 20;
-}
-
-.join-logo {
-    position: fixed;
-    top: 80px;
-    left: 77px;
-    width: 101px;
-    height: 122px;
 }
 
 .join-logo-start {
@@ -103,7 +109,7 @@ body {
     width: 101px;
     height: 122px;
     scale: 2;
-    z-index: 21;
+    z-index: 6;
 }
 
 .join-logo-animate {
@@ -125,9 +131,10 @@ body {
         margin-left: 0
     }
 }
+
 /*#endregion*/
 
-/* NOT A JOIN USER? - SIGN UP */
+/* LOG-IN PAGE - NOT A JOIN USER? - SIGN UP */
 /*#region*/
 .no-join-user-box {
     display: flex;
@@ -138,7 +145,6 @@ body {
     position: absolute;
     width: 287px;
     height: 51px;
-    /* left: 1039px; */
     right: 114px;
     top: 67px;
 }
@@ -153,10 +159,6 @@ body {
     line-height: 120%;
     /* or 25px */
     color: #000000;
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .sign-up-btn {
@@ -164,43 +166,22 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* padding: 4px 16px; */
-    gap: 10px;
+    padding: 4px 10px;
+    /* gap: 10px; */
     width: 91px;
     height: 51px;
-    background: #2A3647;
+    background: var(--color-background);
     border-radius: 8px;
     font-size: 16px;
     font-weight: 700;
+    line-height: 120%;
     color: #FFFFFF;
     cursor: pointer;
 }
+
 /*#endregion*/
 
-/* SIGN UP */
-/*#region*/
-.form-signup-box {
-    height: 559px;
-    isolation: isolate;
-    /* position: absolute; */
-}
-
-.signup-arrow-left-box {
-    position: absolute;
-    width: 37px;
-    height: 37px;
-    left: 31px;
-    cursor: pointer;
-    top: 35px;
-    /* Inside auto layout */
-    flex: none;
-    order: 3;
-    flex-grow: 0;
-    z-index: 3;
-}
-/*#endregion*/
-
-/* LOG IN */
+/* LOG-IN PAGE */
 /*#region*/
 .form-login-box {
     /* Auto layout */
@@ -212,8 +193,6 @@ body {
     position: absolute;
     width: 652px;
     height: 513px;
-    /* left: 394px; */
-    /* top: 274px; */
     /* white */
     background: #FFFFFF;
     /* shadow backlog box */
@@ -221,16 +200,9 @@ body {
     border-radius: 30px;
 }
 
-.form-login-box h1 {
+#form-login-box-h1 {
     width: 315px;
     height: 97px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 61px;
-    line-height: 120%;
-    /* or 73px */
-    text-align: center;
-    color: #000000;
 }
 
 .separator {
@@ -272,6 +244,7 @@ input:-webkit-autofill {
     font-size: 21px;
     cursor: pointer;
 }
+
 /*#endregion*/
 
 /* REMEMBER ME - FORGOT PASSWORD*/
@@ -288,6 +261,7 @@ input:-webkit-autofill {
     padding: 0px;
     gap: 35px;
 }
+
 .remember-box {
     width: 146px;
     height: 19px;
@@ -327,6 +301,7 @@ input:-webkit-autofill {
     color: #29ABE2;
     cursor: pointer;
 }
+
 /*#endregion*/
 
 /* LOG IN - GUEST LOG IN - BUTTONS */
@@ -340,7 +315,7 @@ input:-webkit-autofill {
     gap: 10px;
     width: 145px;
     height: 51px;
-    background: #2A3647;
+    background: var(--color-background);
     border-radius: 8px;
     font-weight: 700;
     font-size: 21px;
@@ -360,7 +335,7 @@ input:-webkit-autofill {
     width: 164px;
     height: 51px;
     /* Version 2/ main color */
-    border: 1px solid #2A3647;
+    border: 1px solid var(--color-background);
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
@@ -368,11 +343,49 @@ input:-webkit-autofill {
     line-height: 120%;
     /* or 25px */
     /* Version 2/ main color */
-    color: #2A3647;
+    color: var(--color-background);
 }
+
 /*#endregion*/
 
-/* FORGOT PASSWORD PAGE*/
+/* SIGN-UP PAGE */
+/*#region*/
+.form-signup-box {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 0px;
+    /* gap: 35px; */
+    position: absolute;
+    isolation: isolate;
+    width: 652px;
+    height: 559px;
+    /* white */
+    background: #FFFFFF;
+    /* shadow backlog box */
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+}
+
+#form-signup-box-h1 {
+    width: 315px;
+    height: 97px;
+}
+
+.signup-arrow-left-box {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    left: 31px;
+    top: 35px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/*#endregion*/
+
+/* FORGOT-PASSWORD PAGE*/
 /*#region*/
 .form-forgot-password-box {
     display: flex;
@@ -403,15 +416,9 @@ input:-webkit-autofill {
     z-index: 4;
 }
 
-.form-forgot-password-box h1 {
+#form-forgot-password-box-h1 {
     width: 626px;
     height: 97px;
-    font-style: normal ;
-    font-size: 61px;
-    font-weight: 700;
-    line-height: 120%;
-    text-align: center;
-    color: #000000;
 }
 
 .form-forgot-password-box span {
@@ -435,7 +442,7 @@ input:-webkit-autofill {
     gap: 10px;
     width: 264px;
     height: 51px;
-    background: #2A3647;
+    background: var(--color-background);
     border-radius: 8px;
     font-size: 21px;
     font-weight: 700;
@@ -443,16 +450,17 @@ input:-webkit-autofill {
     cursor: pointer;
 
 }
+
 /*#endregion*/
 
-/* RESET PASSWORD PAGE*/
+/* RESET-PASSWORD PAGE*/
 /*#region*/
 .form-reset-password-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 44px 85px;
-    gap: 35px;
+    /* gap: 35px; */
     isolation: isolate;
     position: absolute;
     height: 537px;
@@ -473,21 +481,12 @@ input:-webkit-autofill {
     left: 31px;
     top: 35px;
     cursor: pointer;
-    /* Inside auto layout */
-    flex: none;
-    order: 4;
-    flex-grow: 0;
     z-index: 4;
 }
 
-.form-reset-password-box h1 {
+#form-reset-password-box-h1 {
     width: 627px;
-    height: 73px;
-    font-size: 61px;
-    font-weight: 700;
-    line-height: 120%;
-    text-align: center;
-    color: #000000;
+    height: 97px;
 }
 
 .form-reset-password-box span {
@@ -510,12 +509,13 @@ input:-webkit-autofill {
     gap: 10px;
     width: 264px;
     height: 51px;
-    background-color: #2A3647;
+    background-color: var(--color-background);
     border-radius: 8px;
     font-size: 21px;
     font-weight: 700;
 
 }
+
 /*#endregion*/
 
 /* NOTIFICATION - SECTION*/
@@ -530,7 +530,7 @@ input:-webkit-autofill {
 #notification-reset-password-container {
     position: absolute;
     bottom: 0;
-    width: 324px;
+    width: 350px;
     height: 74px;
 }
 
@@ -566,13 +566,13 @@ input:-webkit-autofill {
     padding: 0px 20px;
     gap: 13px;
     /* Version 2/ main color */
-    background: #2A3647;
+    background: var(--color-background);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
 }
 
 .notification-reset-password-box {
-    width: 324px;
+    width: 350px;
     height: 74px;
 }
 
@@ -606,4 +606,5 @@ input:-webkit-autofill {
     color: red;
     font-size: 12px;
 }
+
 /*#endregion*/

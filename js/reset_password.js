@@ -40,9 +40,9 @@ async function resetUserPassword(newPassword) {
     let user = getUserFromEmailAddress(email);
 
     if (!user)
-        showNotifyMessage('notification-reset-password-container', 'User not found');
+        showNotifyMessage('notification-reset-password-container', 'User not found !!');
     else if (!checkTimestampIsValid(user)) {
-        showNotifyMessage('notification-reset-password-container', 'Email link is no longer valid');
+        showNotifyMessage('notification-reset-password-container', 'Email link is no longer valid !!');
         emtpyInputFields(['password', 'confirm-password']);
     } else {
         let userProperties = [];
