@@ -85,6 +85,7 @@
     flex-direction: column;
     padding: -6px;
     height: 70%;
+    width: 20%;
     margin-top: 10%;
     margin-left: 10%;
     
@@ -96,6 +97,7 @@
     flex-direction: column;
     padding: -6px;
     height: 47%;
+    width: 20%;
     margin-top: 12%;
     margin-right: 10%;
 }
@@ -105,7 +107,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 422px;
     height: 51px;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
@@ -119,7 +120,6 @@
     padding: 18px 21px;
     gap: 10px;
     isolation: isolate;
-    width: 422px;
     height: 119px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -135,7 +135,6 @@
     align-items: center;
     gap: 10px;
     isolation: isolate;
-    width: 422px;
     height: 51px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -149,7 +148,6 @@
     align-items: center;
     gap: 10px;
     isolation: isolate;
-    width: 422px;
     height: 51px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -164,7 +162,7 @@
     padding: 18px 21px;
     gap: 10px;
     isolation: isolate;
-    width: 422px;
+   
     height: 51px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -179,7 +177,6 @@
     padding: 18px 21px;
     gap: 10px;
     isolation: isolate;
-    width: 422px;
     height: 51px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -196,7 +193,7 @@
     align-items: center;
     padding: 0px;
     gap: 10px;
-    width: 422px;
+    
 
 }
 
