@@ -11,13 +11,11 @@ setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
  */
 async function init() {
     const urlParams = new URLSearchParams(window.location.search);
-    const msg = urlParams.get('msg');
+    const message = urlParams.get('msg');
 
-    if (msg && msg !== 'undefined') {
-        let msgbox = document.getElementById('msgbox');
-        msgbox.classList.remove('d-none');
-        msgbox.innerHTML = msg;
-        emtpyInputFields();
+    if (message && message !== 'undefined') {
+        showNotifyMessage('notification-login-container', message);
+        emtpyInputFields(['email','password']);
     } else
         getLastJoinUser();
 
@@ -28,7 +26,7 @@ async function init() {
 async function initData() {
     // await deleteAll();
     // await saveUsersToBackend();
-    //  await saveTasksToBackend();
+    // await saveTasksToBackend();
     // await saveContactsToBackend();
 
     await downloadFromServer();
@@ -39,28 +37,30 @@ async function initData() {
 }
 
 
-
-
 function animateLogo() {
     document.getElementById('join-logo').classList.add('join-logo-animate');
     document.getElementById('join-animation-container').classList.add('join-animation-container-animate');
     document.getElementById('join-animation-container').classList.add('join-animation-container-animate');
 }
 
+
 async function loadUsersFromBackend(page) {
     joinUsers = JSON.parse(await backend.getItem('users')) || [];
     console.log(`Users geladen (${page}):`, joinUsers);
 }
+
 
 async function loadTasksFromBackend(page) {
     editTasks = JSON.parse(await backend.getItem('tasks')) || [];
     console.log(`Tasks geladen (${page}):`, editTasks);
 }
 
+
 async function loadContactsFromBackend(page) {
     contacts = JSON.parse(await backend.getItem('contacts')) || [];
     console.log(`Contacts geladen (${page}):`, contacts);
 }
+
 
 /**
  * 
@@ -71,9 +71,11 @@ function getUserFromEmailAddress(email) {
     return (joinUsers.find(u => u.email == email))
 }
 
+
 async function saveToBackend(arrayName, array) {
     await backend.setItem(arrayName, JSON.stringify(array));
 }
+
 
 /**
  * 
@@ -129,6 +131,7 @@ async function saveUsersToBackend() {
 
     await backend.setItem('users', JSON.stringify(joinUsers));
 }
+
 
 async function saveTasksToBackend() {
     editTasks = [
@@ -248,6 +251,48 @@ function saveToLocalStorage(key, value) {
 
 function getFromLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
+}
+
+
+function showNotifyMessage(messageId, message, imageId, show) {
+    let notifyMsg = document.getElementById(messageId);
+    notifyMsg.classList.remove('d-none');
+    document.getElementById('notification-message').innerHTML = message;
+    notifyMsg.classList.add('notification-container-animate');
+    if (imageId)
+        showElement(imageId, show)
+
+    setTimeout(() => {
+        notifyMsg.classList.add('d-none');
+    }, 2500)
+}
+
+
+function showElement(elementId, show) {
+    let element = document.getElementById(elementId);
+    if (show)
+        element.classList.remove('d-none');
+    else
+        element.classList.add('d-none');
+}
+
+
+function emtpyInputFields(inputFields) {
+    for (let i = 0; i < inputFields.length; i++) {
+        let inputField = document.getElementById(inputFields[i]);
+        inputField.classList.add('d-none');
+    }
+}
+
+
+/**
+ * Hide displayed warning messages
+ */
+function resetWarningMessages(messageIds) {
+    for (let i = 0; i < messageIds.length; i++) {
+        let messageId = document.getElementById(messageIds[i]);
+        messageId.classList.add('d-none');
+    }
 }
 
 
