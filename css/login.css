@@ -1,8 +1,40 @@
+/* GLOBAL */
+/*#region*/
 body {
     margin: 0;
     overflow: hidden;
 }
 
+.form-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F5F5F5;
+}
+
+.form-input-container {
+    width: 422px;
+    min-height: 71px;
+    margin-bottom: 29px;
+}
+
+.form-btn-box {
+    width: 341px;
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 35px;
+}
+/*#endregion*/
+
+
+/* JOIN ANIMATION CONTAINER - OPACITY*/
+/*#region*/
 .join-animation-container {
     position: absolute;
     top: 0;
@@ -34,7 +66,10 @@ body {
         z-index: -1;
     }
 }
+/*#endregion*/
 
+/* JOIN ANIMATION LOGO - MOVE*/
+/*#region*/
 
 .join-logo-box {
     position: absolute;
@@ -90,24 +125,7 @@ body {
         margin-left: 0
     }
 }
-
-.form-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #F5F5F5;
-}
-
-.message-info-box {
-    min-height: 18px;
-}
-
-.msgbox {
-    margin-top: 20px;
-}
-
+/*#endregion*/
 
 /* NOT A JOIN USER? - SIGN UP */
 /*#region*/
@@ -206,7 +224,6 @@ body {
 .form-login-box h1 {
     width: 315px;
     height: 97px;
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 61px;
@@ -217,15 +234,9 @@ body {
 }
 
 .separator {
-    width: 100px;
+    width: 157px;
     height: 35px;
     border-top: 3px solid #29abe2
-}
-
-.form-input-container {
-    width: 422px;
-    min-height: 71px;
-    margin-bottom: 29px;
 }
 
 .form-input-container span {
@@ -320,17 +331,6 @@ input:-webkit-autofill {
 
 /* LOG IN - GUEST LOG IN - BUTTONS */
 /*#region*/
-.form-btn-box {
-    width: 341px;
-    height: 51px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 35px;
-}
-
 .form-btn-user {
     display: flex;
     flex-direction: row;
@@ -348,10 +348,6 @@ input:-webkit-autofill {
     /* or 25px */
     cursor: pointer;
     color: #FFFFFF;
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .form-btn-guest {
@@ -373,10 +369,6 @@ input:-webkit-autofill {
     /* or 25px */
     /* Version 2/ main color */
     color: #2A3647;
-    /* Inside auto layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 /*#endregion*/
 
@@ -387,7 +379,7 @@ input:-webkit-autofill {
     flex-direction: column;
     align-items: center;
     padding: 44px 85px;
-    gap: 35px;
+    /* gap: 35px; */
     isolation: isolate;
     position: absolute;
     width: 826px;
@@ -408,14 +400,13 @@ input:-webkit-autofill {
     left: 31px;
     top: 34.5px;
     cursor: pointer;
-    /* Inside auto layout */
-    flex: none;
-    order: 4;
-    flex-grow: 0;
     z-index: 4;
 }
 
 .form-forgot-password-box h1 {
+    width: 626px;
+    height: 97px;
+    font-style: normal ;
     font-size: 61px;
     font-weight: 700;
     line-height: 120%;
@@ -429,18 +420,27 @@ input:-webkit-autofill {
     font-size: 21px;
     font-weight: 400;
     line-height: 120%;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    padding: 0px 21px;
     text-align: center;
     color: #000000;
 }
 
 .form-forgot-password-box button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
     width: 264px;
     height: 51px;
-    background-color: #2A3647;
+    background: #2A3647;
     border-radius: 8px;
     font-size: 21px;
     font-weight: 700;
+    color: #FFFFFF;
+    cursor: pointer;
 
 }
 /*#endregion*/

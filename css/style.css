@@ -16,3 +16,7 @@ h1 {
 .d-none {
     display: none;
 }
+
+.mt-6 {
+    margin-top: 6px;
+}
