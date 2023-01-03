@@ -3,12 +3,15 @@
 }
 
 .board-container{
-    margin-top: 180px;
+    margin-top: -30px;
     align-items: baseline;
     justify-content: center;
     display: flex;
-    width: 90%;
     margin-left: 166px;
+}
+
+.container-Board{
+    width: 84%;
 }
 
 .headline-board-continaer {
@@ -55,45 +58,46 @@
 }
 
 .dad-container {
-    align-items: center;
     justify-content: space-between;
     display: flex;
-    padding: 35px;
-    width: 1200px;
-    height: auto;
-    
+    padding: 35px;  
 }
 
 .input-container {
+    
     z-index: 1;
     justify-content: space-between;
-    top: 60px;
+    top: 150px;
     display: flex;
     position: absolute;
-    width: 1116px;
+    width: 60%;
     height: 700px;
     background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
     border-radius: 30px;
+    left: 25%;
+    
 }
 
 .selections {
-    height: 420PX;
     justify-content: space-between;
-    margin-left: 74px;
-    margin-top: 156PX;
     display: flex;
     flex-direction: column;
+    padding: -6px;
+    height: 70%;
+    margin-top: 10%;
+    margin-left: 10%;
+    
 }
 
 .selections-sec {
-    height: 300PX;
     justify-content: space-between;
-    margin-left: 614px;
-    margin-top: 155PX;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    padding: -6px;
+    height: 47%;
+    margin-top: 12%;
+    margin-right: 10%;
 }
 
 .title {
@@ -239,11 +243,11 @@
 }
 
 .bnts {
+    margin-left: 51px;
+    top: 43%;
+    position: relative;
     display: flex;
     justify-content: space-between;
-    margin-top: 63vh;
-    margin-right: 78px;
-    width: 390px;
 }
 
 .bnt-cancel {

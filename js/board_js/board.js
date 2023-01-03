@@ -63,7 +63,7 @@ function addTask() {
                         <option>Invite new contact</option>  
                     </select>
                 </form>    
-            </div>  
+            </div> 
         
         
         
@@ -78,13 +78,17 @@ function addTask() {
                     </div>
                 <!-- nach subtask nachfragen -->
                 <label for="subtask">Subtask</label>
-                <input type="text" name="chgesubtask" id="chgesubtask" placeholder="Add new subtask" class ="subtask">   
-            </div>   
-            <div class="bnts">
-                <button class="bnt-cancel">Cancel <img src="img/cancelSymbol.png" ></button>
-                <button class="bnt-Task" onclick="add()">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
-            </div>
+                <input type="text" name="chgesubtask" id="chgesubtask" placeholder="Add new subtask" class ="subtask">  
+                <div class="bnts">
+                    <button class="bnt-cancel">Cancel <img src="img/cancelSymbol.png" ></button>
+                    <button class="bnt-Task" onclick="add()">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
+                </div> 
+             
+            </div> 
+            
+            
         </div>
+   
     `;
 }
 
