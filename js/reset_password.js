@@ -25,14 +25,14 @@ function onSubmitResetUserPassword(event) {
     let confirmPassword = formData.get('confirm-password');
 
     if (!email) {
-        showNotifyMessage('Email address not available !!');
+        showNotifyMessage('notification-reset-password-container', 'Email address not available !!');
         return;
     }
 
     if (newPassword == confirmPassword)
         resetUserPassword(newPassword);
     else
-        showNotifyMessage('The passwords do not match !!');
+        showNotifyMessage('notification-reset-password-container', 'The passwords do not match !!');
 }
 
 
@@ -40,16 +40,16 @@ async function resetUserPassword(newPassword) {
     let user = getUserFromEmailAddress(email);
 
     if (!user)
-        showNotifyMessage('User not found');
+        showNotifyMessage('notification-reset-password-container', 'User not found');
     else if (!checkTimestampIsValid(user)) {
-        showNotifyMessage('Email link is no longer valid');
-        goToPage('forgot_password.html');
+        showNotifyMessage('notification-reset-password-container', 'Email link is no longer valid');
+        emtpyInputFields(['password', 'confirm-password']);
     } else {
         let userProperties = [];
         userProperties.push({ 'key': 'password', 'value': newPassword });
         userProperties.push({ 'key': 'resetPasswordTimestamp', 'value': 0 });
         await updateUser(user, userProperties);
-        showNotifyMessage('You reset your password');
+        showNotifyMessage('notification-reset-password-container', 'You reset your password');
     }
 }
 
@@ -68,16 +68,4 @@ function timeStampIsInTime() {
         return true;
     else
         return false;
-}
-
-
-function showNotifyMessage(message) {
-    let notifyMsg = document.getElementById('notification-reset-password-container');
-    notifyMsg.classList.remove('d-none');
-    notifyMsg.classList.add('notification-container-animate');
-    document.getElementById('notification-message').innerHTML = message;
-
-    setTimeout(() => {
-        document.getElementById('notification-reset-password-container').classList.add('d-none');
-    }, 2500)
 }

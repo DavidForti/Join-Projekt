@@ -10,7 +10,7 @@ async function onSubmitForgotPassword(event) {
     let user = getUserFromEmailAddress(email);
 
     if (!user)
-        showNotifyMessage('Email Address not found !!', true);
+        showNotifyMessage('notification-forgot-password-container', 'Email Address not found !!', 'email-sent', false);
     else {
         sendForgotPasswordMail(formData, user);
     }
@@ -22,41 +22,24 @@ async function sendForgotPasswordMail(formData, user) {
     formData.set('timestamp', timeStamp.toString());
     let response = await action(formData);
     if (response.ok) {
-        await updateUser(user, [{'key': 'resetPasswordTimestamp', 'value': timeStamp}]);
-        showNotifyMessage('An E-Mail has been sent to you', false);
+        await updateUser(user, [{ 'key': 'resetPasswordTimestamp', 'value': timeStamp }]);
+        showNotifyMessage('notification-forgot-password-container', 'An E-Mail has been sent to you', 'email-sent', true);
     }
     else
-        showNotifyMessage('E-Mail was not sent !!', true);
+        showNotifyMessage('notification-forgot-password-container', 'E-Mail was not sent !!', 'email-sent', false);
 }
 
 
 function action(formData) {
-
     const input = 'https://gruppe-411.developerakademie.net/reset_password/send_mail.php';
     const requestInit = {
         method: 'post',
         body: formData
     };
-
     return fetch(input, requestInit);
 }
 
-function showNotifyMessage(message, hideImage) {
-    let notifyMsg = document.getElementById('notification-forgot-password-container');
-    notifyMsg.classList.remove('d-none');
-    notifyMsg.classList.add('notification-container-animate');
-    document.getElementById('notification-message').innerHTML = message;
-    if (hideImage)
-        document.getElementById('email-sent').classList.add('d-none');
-    else
-        document.getElementById('email-sent').classList.remove('d-none');
-
-    setTimeout(() => {
-        document.getElementById('notification-forgot-password-container').classList.add('d-none');
-    }, 2500)
-}
-
-
+/* TESTING */
 function resertPasswordOnlyForTesting() {
-    showNotifyMessage('An E-Mail has been sent to you');
+    showNotifyMessage('notification-forgot-password-container', 'An E-Mail has been sent to you', 'email-sent', true);
 }

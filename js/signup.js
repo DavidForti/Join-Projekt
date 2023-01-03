@@ -49,10 +49,9 @@ function userExists(email) {
 }
 
 
-
 /**
  * Hide displayed warning messages
  */
-function resetWarningMsg() {
-    document.getElementById('email-address-exists').classList.add('d-none');
+function resetWarningMessagesSignup() {
+    resetWarningMessages(['email-address-exists']);
 }

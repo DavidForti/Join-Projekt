@@ -76,14 +76,11 @@ function showErrorMessage(errorMessageElement, elementSetFocus) {
     document.getElementById(elementSetFocus).focus();
 }
 
-
-/**
- * Hide displayed warning messages
- */
-function resetWarningMsg() {
-    document.getElementById('email-address-not-found').classList.add('d-none');
-    document.getElementById('wrong-password').classList.add('d-none');
+function resetWarningMessagesLogin() {
+  resetWarningMessages(['email-address-not-found','wrong-password']);
 }
+
+
 
 
 
