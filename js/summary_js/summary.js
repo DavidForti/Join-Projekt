@@ -111,14 +111,18 @@ function urgentBox(urgants) {
     return /*html*/`
     <div class="urgent-box">
         <div class="urgent-style-box">
-            <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
             <div class="red-circel">
-                <img src="/img/urgant.png" class="urgant">
-                <img src="/img/Ellipse.png" class="ellipse">   
-            </div>     
+                <div class="put-pic-togheter">
+                    <img src="/img/Ellipse.png"  class="ellipse">  
+                    <img src="/img/urgant.png" class="urgant">
+                </div>
                 <h1 class="show-urgent">${workflowUrgent} <img src="/img/text.png"></h1>
-            
-            <h3 class="deadline">hier muss die deadline stehen von add Task <img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
+            </div>     
+            <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
+            <div class="show-deadline">
+                
+                <h3 class="deadline">hier muss die deadline stehen von add Task <img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
+            </div>            
         </div>
     </div>
 
@@ -128,8 +132,22 @@ function urgentBox(urgants) {
 function toDoBox() {
     return/*html*/`
     <div class="toDo-done-box">
-        <div class="toDo-done">${workflowToDo}</div>
-        <div class="toDo-done">${workflowDone}</div>
+        <div class="toDo-done">
+            <div class="show-up-todo">
+                <div class="show-up-style">
+                    <img src="/img/todo.png">  
+                    ${workflowToDo}
+                </div>
+            </div>
+        </div>
+        <div class="toDo-done">
+            <div class="show-up-todo">
+                <div class="show-up-style">
+                    <img src="/img/done.png">  
+                    ${workflowDone}
+                </div>
+            </div>
+        </div>
     </div>
     
     `;

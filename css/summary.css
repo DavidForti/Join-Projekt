@@ -53,33 +53,52 @@
 }
 
 .urgent-box {
-    position: relative;
     margin-top: 5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 28px 48px;
+    gap: 61px;
     height: 150px;
     background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
     border-radius: 30px;
 
 }
 
+.urgent-style-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red-circel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 63%;
+    margin-left: -25%;
+}
+
+.put-pic-togheter {
+    display: flex;
+    position: relative;
+    margin-left: 40%;
+}
+
 .urgant {
     z-index: 1;
-    margin-top: 0px;
-    position: absolute;
 }
 
 .ellipse {
     z-index: 0;
     position: absolute;
+    margin-top: -14px;
+    margin-left: -12px;
 }
 
 .show-urgent {
-    position: absolute;
-    left: 230px;
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -93,6 +112,11 @@
     flex-direction: column;
 }
 
+.show-deadline {
+    display: flex;
+    margin-right: -6%;
+}
+
 .updead-line {
     margin-top: 20px;
     width: 148px;
@@ -104,20 +128,32 @@
 
 .toDo-done-box {
     margin-top: 5%;
-    position: relative;
-    margin-top: 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .toDo-done {
-    display: flex;
     width: 272px;
     height: 150px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
     border-radius: 30px;
+}
+
+.show-up-todo{
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+.show-up-style{
+    display: flex;
+   justify-content: space-between;
+   width: 50%;
+   align-items: center;
 }
 
 .head-summary {
@@ -147,10 +183,3 @@
     width: 100%;
 }
 
-.red-circel {
-    position: relative;
-    margin-right: 120px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
