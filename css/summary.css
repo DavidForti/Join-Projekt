@@ -152,8 +152,13 @@
 .show-up-style{
     display: flex;
    justify-content: space-between;
-   width: 50%;
+   width: 60%;
    align-items: center;
+}
+.show-up-style-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .head-summary {

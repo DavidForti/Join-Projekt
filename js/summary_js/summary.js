@@ -136,7 +136,10 @@ function toDoBox() {
             <div class="show-up-todo">
                 <div class="show-up-style">
                     <img src="/img/todo.png">  
-                    ${workflowToDo}
+                        <div class="show-up-style-1">
+                            ${workflowToDo}
+                            <img src="/img/text-todo.png">
+                        </div>
                 </div>
             </div>
         </div>
@@ -144,11 +147,13 @@ function toDoBox() {
             <div class="show-up-todo">
                 <div class="show-up-style">
                     <img src="/img/done.png">  
-                    ${workflowDone}
+                        <div class="show-up-style-1">
+                            ${workflowDone}
+                            <img src="/img/text-done.png">
+                        </div>
                 </div>
             </div>
         </div>
     </div>
-    
     `;
 }
