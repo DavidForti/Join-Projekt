@@ -99,9 +99,9 @@ function hedalineSummary() {
 function progrssesBox() {
     return/*html*/`
     <div class="boxes">
-        <div class="box"> ${editTasks.length}</div>
-        <div class="box"> ${workflowInProgress}</div>
-        <div class="box"> ${workflowAwaitingFeedback}</div>
+        <div class="box"> ${editTasks.length}<div class="tasks-in-Board">Tasks in <br>Board </div></div>
+        <div class="box"> ${workflowInProgress}<div class="tasks-in-Board">Tasks in <br>Progress </div></div>
+        <div class="box"> ${workflowAwaitingFeedback}<div class="tasks-in-Board">Awaiting<br>Feedback</div></div>
     </div>
     
     `;

@@ -1,12 +1,20 @@
 .summary-container {
-    justify-content: space-between;
-    display: flex;
-    margin-top: 180px;
-    flex-direction: column;
-    margin-left: 353px;
+    left: 355px;
+    position: absolute;
+    justify-content: flex-start;
     align-items: center;
+    width: 37%;
+    top: 188px;
 }
 
+.reander-contianer-summary {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    width: 120%;
+}
 
 
 .head-of-summary {
@@ -17,15 +25,10 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-  display: flex;
-    
-}
-
-.head-of-summary {
     display: flex;
-    width: 600px;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .box {
@@ -33,8 +36,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 115px;
-    height: 115px;
+    width: 150px;
+    height: 150px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
@@ -42,23 +45,22 @@
 }
 
 .boxes {
+    margin-top: 12%;
     justify-content: space-between;
     display: flex;
-   
-    
-    top: 300px
+    position: relative;
+
 }
 
 .urgent-box {
-    
-   
+    position: relative;
+    margin-top: 5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 28px 48px;
-    width: 365px;
-    height: 115px;
+    height: 150px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
@@ -66,7 +68,7 @@
 }
 
 .urgant {
-  
+
     left: 112px;
     z-index: 1;
 }
@@ -86,7 +88,7 @@
 }
 
 .deadline {
-    
+
     left: 390px;
     font-size: 14px;
     display: flex;
@@ -103,19 +105,18 @@
 }
 
 .toDo-done-box {
-    width: 463px;
+    margin-top: 5%;
+    position: relative;
+    margin-top: 35px;
     display: flex;
-    position: absolute;
     justify-content: space-between;
     align-items: center;
-    left: 355px;
-    margin-top: 340px;
 }
 
 .toDo-done {
     display: flex;
-    width: 180px;
-    height: 115px;
+    width: 272px;
+    height: 150px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
     border-radius: 30px;
@@ -123,4 +124,20 @@
 
 .head-summary {
     font-size: 50px;
+}
+
+.box {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tasks-in-Board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    align-items: center;
+    font-weight: normal;
+    color: #2A3647;
+    text-align: center;
 }
