@@ -4,7 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 37%;
-    top: 188px;
+    top: 160px;
 }
 
 .reander-contianer-summary {
@@ -59,7 +59,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 28px 48px;
     height: 150px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
@@ -68,15 +67,14 @@
 }
 
 .urgant {
-
-    left: 112px;
     z-index: 1;
+    margin-top: 0px;
+    position: absolute;
 }
 
 .ellipse {
     z-index: 0;
     position: absolute;
-    left: 100px;
 }
 
 .show-urgent {
@@ -140,4 +138,19 @@
     font-weight: normal;
     color: #2A3647;
     text-align: center;
+}
+
+.urgent-style-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.red-circel {
+    position: relative;
+    margin-right: 21px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
