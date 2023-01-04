@@ -53,7 +53,7 @@ function addTask() {
                 <label for="description">Description</label>   
                 <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
                 <!--dropDown-->
-                <form >
+                <form class="form-container">
                     <label for="category">Category</label> 
                     <select id = "chgeCategory"   class="category">                
                         <option>Select task category</option>  
@@ -62,7 +62,7 @@ function addTask() {
                         <option>Backoffice</option>  
                     </select>
                 </form>
-                <form >
+                <form class="form-container">
                     <label for="assigned-to">Assigned to</label> 
                     <select id = "chgeAssigend"  class="assigned-to">
                         <option>Selsect contacts to assing</option>  
@@ -84,6 +84,7 @@ function addTask() {
                 <!-- nach subtask nachfragen -->
                 <label for="subtask">Subtask</label>
                 <input type="text" name="chgesubtask" id="chgesubtask" placeholder="Add new subtask" class ="subtask">  
+           
                 <div class="bnts">
                     <button class="bnt-cancel" onclick="cancelBnt()"> Cancel <img src="img/cancelSymbol.png" ></button>
                     <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
