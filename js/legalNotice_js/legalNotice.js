@@ -1,4 +1,8 @@
 function legalNotice() {
+    document.getElementById('contantSummary').classList.add("d-none");
+    document.getElementById('contantBoard').classList.add("d-none");
+    document.getElementById('contantAddToTask').classList.add("d-none");
+    document.getElementById('contentNotice').classList.remove("d-none");
     let content = document.getElementById('contentNotice');
     content.innerHTML = `
     <h1 class="h1n">

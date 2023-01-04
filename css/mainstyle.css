@@ -1,7 +1,8 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -21,15 +22,25 @@
     width: 100.03px;
     height: 121.97px;
 }
-.menu{
+
+.menu {
     margin-top: 0px;
 }
-.menu-list{
+
+.menu-list {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
     align-items: center;
     width: 100px;
     margin-top: 60px;
+}
+
+div:focus  {
+    padding: 10px 10px;
+    width: 180px;
+    height: 20px;
+    background: #091931;
 }
 
 .summary-logo {
@@ -136,4 +147,3 @@
     line-height: 120%;
     color: #000000;
 }
-

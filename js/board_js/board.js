@@ -1,4 +1,5 @@
 function board() {
+    document.getElementById('contentNotice').classList.add("d-none");
     addAndRemove();
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';
@@ -8,8 +9,12 @@ function board() {
 
 function addAndRemove() {
     document.getElementById('contantSummary').classList.add("d-none");
+    document.getElementById('contantAddToTask').classList.add("d-none");
     document.getElementById('contantBoard').classList.remove("d-none");
+    
 }
+
+
 
 function cancelBnt() {
     document.getElementById('contantAddToTask').classList.add("d-none");

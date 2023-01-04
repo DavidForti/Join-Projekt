@@ -41,7 +41,8 @@ async function summary() {
 function summaryclick() {
     document.getElementById('contantSummary').classList.remove("d-none");
     document.getElementById('contantBoard').classList.add("d-none");
-
+    document.getElementById('contentNotice').classList.add("d-none");
+    document.getElementById('contantAddToTask').classList.add("d-none");
 }
 
 function workflowStatus() {
