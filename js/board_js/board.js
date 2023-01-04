@@ -18,7 +18,7 @@ function addAndRemove() {
 
 function cancelBnt(){
     document.getElementById('contantAddToTask').classList.add("d-none");
-    document.getElementById('removeDnone').classList.remove("d-none");
+   
    
 }
 
@@ -28,14 +28,15 @@ function headlineBoard() {
         <h1 class="headline-board">Board</h1>
         <div class="input-feld">
             <input type="Find Task" class="input">
-            <button class="bnt-board" id="removeDnone"  onclick="addTaskBnt()"> Add task +</button>
+            <button class="bnt-board" onclick="addTaskBnt()"> Add task +</button>
         </div>
     </div>
         
     `;
 }
 
-function addTaskBnt() {  
+function addTaskBnt() { 
+     document.getElementById('contantAddToTask').classList.remove("d-none"); 
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
