@@ -16,23 +16,30 @@ function addAndRemove() {
     document.getElementById('contantBoard').classList.remove("d-none");
 }
 
+function cancelBnt(){
+    document.getElementById('contantAddToTask').classList.add("d-none");
+    document.getElementById('removeDnone').classList.remove("d-none");
+   
+}
+
 function headlineBoard() {
     return /*html*/`
     <div class="headline-board-continaer">
         <h1 class="headline-board">Board</h1>
         <div class="input-feld">
             <input type="Find Task" class="input">
-            <button class="bnt-board" onclick="addTaskBnt()"> Add task +</button>
+            <button class="bnt-board" id="removeDnone"  onclick="addTaskBnt()"> Add task +</button>
         </div>
     </div>
         
     `;
 }
 
-function addTaskBnt() {
+function addTaskBnt() {  
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
+    // contantAddToTask.innerHTML = ('removeDnone').classList.remove("d-none");
 
 }
 // funktion noch verkrüzen 
@@ -64,9 +71,6 @@ function addTask() {
                     </select>
                 </form>    
             </div> 
-        
-        
-        
             <div class="selections-sec">
                 <label for="due-date" class="correction-due-date">Due Date</label>
                 <input type="date" id="dueDate" class ="due-date">
@@ -80,8 +84,8 @@ function addTask() {
                 <label for="subtask">Subtask</label>
                 <input type="text" name="chgesubtask" id="chgesubtask" placeholder="Add new subtask" class ="subtask">  
                 <div class="bnts">
-                    <button class="bnt-cancel">Cancel <img src="img/cancelSymbol.png" ></button>
-                    <button class="bnt-Task" onclick="add()">Create Task  <img src="img/checkSymbol.png" class="check-symbol">   </button>
+                    <button class="bnt-cancel" onclick="cancelBnt()"> Cancel <img src="img/cancelSymbol.png" ></button>
+                    <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
                 </div> 
              
             </div> 
@@ -91,6 +95,10 @@ function addTask() {
    
     `;
 }
+
+
+
+
 
 function add() {
     let titel = document.getElementById('title');
