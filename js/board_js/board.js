@@ -18,9 +18,9 @@ function addAndRemove() {
 
 function cancelBnt(){
     document.getElementById('contantAddToTask').classList.add("d-none");
-   
-   
 }
+
+
 
 function headlineBoard() {
     return /*html*/`
@@ -46,7 +46,10 @@ function addTaskBnt() {
 // funktion noch verkrüzen 
 function addTask() {
     return/*html*/`
-        <div class="input-container">
+        <div class="input-container animation">
+            <div>
+            <p class="headline-task">Add Task</p>
+        </div>
             <div class="selections">
                 <label for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
                 <input type="Enter a title"  placeholder="Enter a title" class="title" id="title">  
@@ -103,6 +106,7 @@ function addTask() {
 
 
 function add() {
+    document.getElementById('contantAddToTask').classList.add("d-none")
     let titel = document.getElementById('title');
     let description = document.getElementById('description');
     let category = document.getElementById('chgeCategory');
@@ -146,8 +150,6 @@ function showTask() {
         html += `
                     <h3 >${task['titel']}</h3>
                     <h2 >${task['description']}</h2>
-
-
          `;
     }
 

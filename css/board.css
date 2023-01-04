@@ -305,3 +305,23 @@
     order: 1;
     flex-grow: 0;
 }
+
+.animation {
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-name: slidein;
+}
+
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+    
+    }
+    to {
+        margin-left: 0%;
+        filter:drop-shadow(-1000px 1000px 1000px  rgb(85, 85, 85));
+        
+    }
+
+}
