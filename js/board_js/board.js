@@ -1,14 +1,9 @@
-
-
-
-
 function board() {
     addAndRemove();
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
-
 }
 
 function addAndRemove() {
@@ -16,11 +11,9 @@ function addAndRemove() {
     document.getElementById('contantBoard').classList.remove("d-none");
 }
 
-function cancelBnt(){
+function cancelBnt() {
     document.getElementById('contantAddToTask').classList.add("d-none");
 }
-
-
 
 function headlineBoard() {
     return /*html*/`
@@ -35,8 +28,8 @@ function headlineBoard() {
     `;
 }
 
-function addTaskBnt() { 
-     document.getElementById('contantAddToTask').classList.remove("d-none"); 
+function addTaskBnt() {
+    document.getElementById('contantAddToTask').classList.remove("d-none");
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
@@ -47,8 +40,9 @@ function addTaskBnt() {
 function addTask() {
     return/*html*/`
         <div class="input-container animation">
-            <div>
+            <div class ="headlinetask-container">
             <p class="headline-task">Add Task</p>
+            <img src="/img/close.png" class="close-button" onclick="closeTask()">
         </div>
             <div class="selections">
                 <label for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
@@ -101,6 +95,9 @@ function addTask() {
     `;
 }
 
+function closeTask(){
+    document.getElementById('contantAddToTask').classList.add("d-none");
+}
 
 
 
@@ -152,7 +149,6 @@ function showTask() {
                     <h2 >${task['description']}</h2>
          `;
     }
-
     contantToDo.innerHTML = html;
 }
 
@@ -166,13 +162,6 @@ function showTask() {
 //  let chgeCategory= document.getElementById("myList");
 // document.getElementById("favourite").value = chgeCategory.options[mylist.selectedIndex].text;
 // }
-
-
-
-
-
-
-
 
 function dragAndDrop() {
     return/*html*/`

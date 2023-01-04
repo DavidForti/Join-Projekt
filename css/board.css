@@ -86,7 +86,7 @@
     padding: -6px;
     height: 70%;
     width: 42%;
-    margin-top: 10%;
+    margin-top: 14%;
     margin-left: 5%;
 
 }
@@ -98,8 +98,29 @@
     padding: -6px;
     height: 52%;
     width: 42%;
-    margin-top: 11%;
+    margin-top: 15%;
     margin-right: 5%;
+}
+
+.headlinetask-container {
+    display: flex;
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    justify-content: space-between;
+    width: 91%;
+}
+
+.close-button {
+    height: 23px;
+}
+
+.headline-task {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
 }
 
 .title {
@@ -316,12 +337,13 @@
 @keyframes slidein {
     from {
         margin-left: 100%;
-    
+
     }
+
     to {
         margin-left: 0%;
-        filter:drop-shadow(-1000px 1000px 1000px  rgb(85, 85, 85));
-        
+        filter: drop-shadow(-1000px 1000px 1000px rgb(85, 85, 85));
+
     }
 
 }
