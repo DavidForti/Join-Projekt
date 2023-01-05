@@ -28,19 +28,21 @@
         <div class="main-container">
             <img src="/img/joinLogo.png" class="main-img">
             <div class="menu">
-                <div class="menu-list" tabindex="1" onclick="summaryclick()">
-                    <img src="/img/summary.png" class="summary-logo">
-                    <h3 class="headline-summary">Summary</h3>
+                <div class="menu-list"  onclick="summaryclick()">
+                    <div id="changeColor">
+                        <h3 class="headline-summary">  <img src="/img/summary.png" class="summary-logo">Summary </h3>
+                    </div>
                 </div>
-                <div class="menu-list" tabindex="2" onclick="board()">
-                    <img src="/img/board.png" class="board-logo">
-                    <h3 class="headline-borad">Board</h3>
+                <div class="menu-list"  onclick="board()">
+                    <div id="changeColorboard">
+                        <h3 class="headline-borad"><img src="/img/board.png" class="board-logo">Board</h3>
+                    </div>
                 </div>
-                <div class="menu-list">
-                    <img src="/img/addTask.png" tabindex="3" class="addTask-logo">
+                <div class="menu-list" onclick="addToTask()">
+                    <img src="/img/addTask.png"  class="addTask-logo">
                     <h3 class="headline-addTask">Add Task</h3>
                 </div>
-                <div class="menu-list" tabindex="4" onclick="legalNotice()">
+                <div class="menu-list"  onclick="legalNotice()">
                     <img src="/img/legal-notice.png" class="board-logo">
                     <h3 class="headline-borad">Legal Notice</h3>
                 </div>
@@ -56,7 +58,7 @@
             <div id="contantBoard" class="container-Board"></div>
         </div>
 
-        <div class="addTask-container" onclick="addToTask()">
+        <div class="addTask-container">
 
         </div>
 

@@ -1,10 +1,13 @@
 function board() {
+    document.getElementById('changeColorboard').style.backgroundColor = "black";
     document.getElementById('contentNotice').classList.add("d-none");
     addAndRemove();
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
+    showTask();
+   
 }
 
 function addAndRemove() {
@@ -86,25 +89,18 @@ function addTask() {
                 <!-- nach subtask nachfragen -->
                 <label for="subtask">Subtask</label>
                 <input type="text" name="chgesubtask" id="chgesubtask" placeholder="Add new subtask" class ="subtask">  
-           
                 <div class="bnts">
                     <button class="bnt-cancel" onclick="cancelBnt()"> Cancel <img src="img/cancelSymbol.png" ></button>
                     <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
-                </div> 
-             
-            </div> 
-            
-            
+                </div>  
+            </div>     
         </div>
-   
     `;
 }
 
 function closeTask(){
     document.getElementById('contantAddToTask').classList.add("d-none");
 }
-
-
 
 
 function add() {

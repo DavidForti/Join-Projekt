@@ -29,23 +29,26 @@
 
 .menu-list {
     display: flex;
-    justify-content: space-between;
     cursor: pointer;
     align-items: center;
-    width: 100px;
+    width: 200px;
     margin-top: 60px;
 }
 
-div:focus  {
-    padding: 10px 10px;
-    width: 180px;
-    height: 20px;
-    background: #091931;
+#changeColor {
+    width: 200px;
+    height: 40px;
+
+}
+
+#changeColorboard{
+    width: 200px;
+    height: 40px;
 }
 
 .summary-logo {
-    top: 303.14px;
-    left: 54px;
+    top: 7px;
+    position: relative;
 }
 
 .summary-container {
@@ -60,6 +63,11 @@ div:focus  {
     font-size: 16px;
     line-height: 120%;
     color: #CDCDCD;
+    justify-content: space-between;
+    display: flex;
+    width: 100px;
+    align-items: baseline;
+    margin-left: 25%;
 }
 
 .board-contianer {
@@ -72,6 +80,8 @@ div:focus  {
 }
 
 .board-logo {
+    top: 7px;
+    position: relative;
     width: 22px;
     height: 26px;
     transform: rotate(-90deg);
@@ -81,14 +91,15 @@ div:focus  {
 }
 
 .headline-borad {
-    width: 53px;
-    height: 19px;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
     color: #CDCDCD;
+    justify-content: space-between;
+    display: flex;
+    width: 80px;
+    align-items: baseline;
+    margin-left: 25%;
 }
 
 .addTask-contianer {

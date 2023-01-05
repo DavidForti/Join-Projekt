@@ -35,10 +35,11 @@ async function summary() {
     contantSummary.innerHTML += urgentBox();
     contantSummary.innerHTML += toDoBox();
     const joinUser = getFromLocalStorage('joinUser');
-
+    
 }
 
 function summaryclick() {
+    document.getElementById('changeColor').style.backgroundColor = "black";
     document.getElementById('contantSummary').classList.remove("d-none");
     document.getElementById('contantBoard').classList.add("d-none");
     document.getElementById('contentNotice').classList.add("d-none");

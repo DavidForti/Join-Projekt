@@ -189,7 +189,6 @@
     padding: 18px 21px;
     gap: 10px;
     isolation: isolate;
-
     height: 51px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -332,7 +331,6 @@
     animation-duration: 0.5s;
     animation-name: slidein;
 }
-
 
 @keyframes slidein {
     from {
