@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./css/mainstyle.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/summary.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/board.css">
-    <link rel="stylesheet" href="css/legal-notice.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/legal-notice.css">
     <title>Backend-Integration</title>
     <script src="./js/mini_backend.js"></script>
-    <script src="js/legalNotice_js/legalNotice.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/summary_js/summary.js"></script>
+    <script src="js/legalNotice_js/legalNotice.js"></script>
     <!--checken ob bei summary, board und addTotask ./ gebraucht wird ???-->
     <script src="./js/board_js/board.js"></script>
     <script src="./js/addToTask_js/addToTask.js"></script>
@@ -26,48 +26,45 @@
     <!-- Main container !-->
     <div class="from-contianer">
         <div class="main-container">
-            <img src="/img/joinLogo.png" class="main-img">
+            <img src="/img/join-logo-white.png" class="main-img">
             <div class="menu">
-                <div class="menu-list"  onclick="summaryclick()">
+                <div class="menu-list" onclick="summaryclick()">
                     <div id="changeColor">
-                        <h3 class="headline-summary">  <img src="/img/summary.png" class="summary-logo">Summary </h3>
+                        <h3 class="headline-summary"> <img src="/img/summary.png" class="summary-logo">Summary </h3>
                     </div>
                 </div>
-                <div class="menu-list"  onclick="board()">
+                <div class="menu-list" onclick="board()">
                     <div id="changeColorboard">
                         <h3 class="headline-borad"><img src="/img/board.png" class="board-logo">Board</h3>
                     </div>
                 </div>
                 <div class="menu-list" onclick="addToTask()">
-                    <img src="/img/addTask.png"  class="addTask-logo">
+                    <img src="/img/addTask.png" class="addTask-logo">
                     <h3 class="headline-addTask">Add Task</h3>
                 </div>
-                <div class="menu-list"  onclick="legalNotice()">
-                    <img src="/img/legal-notice.png" class="board-logo">
-                    <h3 class="headline-borad">Legal Notice</h3>
+                <div class="menu-list" onclick="legalNotice()">
+                    <div id="changeColorNotice">
+                            <h3 class="headline-notice"> <img src="/img/legal-notice.png" class="notice-logo">Legal Notice</h3>     
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="summary-container" >
+        <div class="summary-container">
             <div id="contantSummary" class="d-none reander-contianer-summary"> </div>
         </div>
 
-        <div class="board-container" >
+        <div class="board-container">
             <div id="contantAddToTask"></div>
             <div id="contantBoard" class="container-Board"></div>
         </div>
 
-        <div class="addTask-container">
+        <div class="addTask-container"></div>
 
-        </div>
-
-        <div class="" onclick="legalNotice()">
-            <div id="contentNotice"></div>
-        </div>
+        <div id="contentNotice" class="contant-notice"></div>
 
         <div class="main-headline">
-            <h2 class="main-headline-text">Kanban Project Management Tool</h2>
+             <h2 class="main-headline-text">Kanban Project Management Tool</h2>
         </div>
     </div>
 </body>

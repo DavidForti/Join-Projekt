@@ -46,6 +46,12 @@
     height: 40px;
 }
 
+#changeColorNotice{
+    margin-top: 250px;
+    width: 200px;
+    height: 40px;
+}
+
 .summary-logo {
     top: 7px;
     position: relative;
