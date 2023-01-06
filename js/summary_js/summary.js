@@ -40,6 +40,8 @@ async function summary() {
 
 function summaryclick() {
     document.getElementById('changeColor').style.backgroundColor = "black";
+    document.getElementById('changeColorboard').classList.add("backgorund");
+    document.getElementById('changeColor').classList.remove("backgorund")
     document.getElementById('contantSummary').classList.remove("d-none");
     document.getElementById('contantBoard').classList.add("d-none");
     document.getElementById('contentNotice').classList.add("d-none");

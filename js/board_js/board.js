@@ -1,4 +1,6 @@
 function board() {
+    document.getElementById('changeColor').classList.add("backgorund");
+    document.getElementById('changeColorboard').classList.remove("backgorund")
     document.getElementById('changeColorboard').style.backgroundColor = "black";
     document.getElementById('contentNotice').classList.add("d-none");
     addAndRemove();

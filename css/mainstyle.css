@@ -102,6 +102,10 @@
     margin-left: 25%;
 }
 
+.backgorund{
+    background-color: #2A3647 !important;
+}
+
 .addTask-contianer {
     position: absolute;
     display: flex;
