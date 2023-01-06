@@ -11,14 +11,14 @@ function board() {
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
     showTask();
-   
+
 }
 
 function addAndRemove() {
     document.getElementById('contantSummary').classList.add("d-none");
     document.getElementById('contantAddToTask').classList.add("d-none");
     document.getElementById('contantBoard').classList.remove("d-none");
-    
+
 }
 
 
@@ -81,20 +81,21 @@ function addTask() {
                     </select>
                 </form>    
             </div> 
+            <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>  
             <div class="selections-sec">
                 <label for="due-date" class="correction-due-date">Due Date</label>
                 <input type="date" id="dueDate" class ="due-date">
                 <label for="status" class="correction-due-date">Prio</label>
                     <div class="status" id="chgeprio">
-                        <div class="urgent-status"></div>
-                        <div class="medium-status"></div>
-                        <div class="low-status"></div>
+                        <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
+                        <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
+                        <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
                     </div>
                 <!-- nach subtask nachfragen -->
                 <label for="subtask">Subtask</label>
                 <input type="text" name="chgesubtask" id="chgesubtask" placeholder="Add new subtask" class ="subtask">  
                 <div class="bnts">
-                    <button class="bnt-cancel" onclick="cancelBnt()"> Cancel <img src="img/cancelSymbol.png" ></button>
+                    <button class="bnt-cancel" onclick="cancelBnt()" > Cancel <img src="img/cancelSymbol.png" ></button>
                     <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
                 </div>  
             </div>     
@@ -102,7 +103,35 @@ function addTask() {
     `;
 }
 
-function closeTask(){
+function statusUrgent() {
+    document.getElementById('stautsUrgent').classList.add("backgorund-urgent-status");
+    document.getElementById('imgStatusUrgent').classList.add("img-urgent-color-change");
+    document.getElementById('statusMedium').classList.remove("backgorund-medium-status");
+    document.getElementById('imgStatusMedium').classList.remove("img-medium-color-change");
+    document.getElementById('statusLow').classList.remove("backgorund-low-status");
+    document.getElementById('imgStatusLow').classList.remove("img-low-color-change");
+}
+
+function statusMedium() {
+    document.getElementById('statusMedium').classList.add("backgorund-medium-status");
+    document.getElementById('imgStatusMedium').classList.add("img-medium-color-change");
+    document.getElementById('stautsUrgent').classList.remove("backgorund-urgent-status");
+    document.getElementById('imgStatusUrgent').classList.remove("img-urgent-color-change");
+    document.getElementById('statusLow').classList.remove("backgorund-low-status");
+    document.getElementById('imgStatusLow').classList.remove("img-low-color-change");
+
+}
+
+function statusLow() {
+    document.getElementById('statusLow').classList.add("backgorund-low-status");
+    document.getElementById('imgStatusLow').classList.add("img-low-color-change");
+    document.getElementById('statusMedium').classList.remove("backgorund-medium-status");
+    document.getElementById('imgStatusMedium').classList.remove("img-medium-color-change");
+    document.getElementById('stautsUrgent').classList.remove("backgorund-urgent-status");
+    document.getElementById('imgStatusUrgent').classList.remove("img-urgent-color-change");
+}
+
+function closeTask() {
     document.getElementById('contantAddToTask').classList.add("d-none");
 }
 
