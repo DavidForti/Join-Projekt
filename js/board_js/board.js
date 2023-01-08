@@ -1,3 +1,5 @@
+let timer = false;
+
 function board() {
     document.getElementById('changeColor').classList.add("backgorund");
     document.getElementById('changeColorboard').classList.remove("backgorund")
@@ -10,7 +12,7 @@ function board() {
     contantBoard.innerHTML = '';
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
-    showTask();
+    showTask(editTasks);
 
 }
 
@@ -32,7 +34,7 @@ function headlineBoard() {
     <div class="headline-board-continaer">
         <h1 class="headline-board">Board</h1>
         <div class="input-feld">
-            <input type="Find Task" class="input">
+            <input id="task-search-input" type="Find Task" class="input" onkeyup="searchTasks()">
             <button class="bnt-board" onclick="addTaskBnt()"> Add task +</button>
         </div>
     </div>
@@ -161,7 +163,7 @@ async function pushTaskInArr(titel, description, category, assigned, dueDate, pr
 
     editTasks.push(headOfTask);
     await saveToBackend('tasks', editTasks);
-    showTask();
+    showTask(editTasks);
     console.log(editTasks);
     titel.value = '';
     description.value = '';
@@ -172,12 +174,12 @@ async function pushTaskInArr(titel, description, category, assigned, dueDate, pr
     subtask.value = '';
 }
 
-function showTask() {
+function showTask(tasksArray) {
     let contantToDo = document.getElementById('contantToDo');
     contantToDo.innerHTML = '';
     let html = '';
-    for (let i = 0; i < editTasks.length; i++) {
-        let task = editTasks[i];
+    for (let i = 0; i < tasksArray.length; i++) {
+        let task = tasksArray[i];
         html += `
                     <h3 >${task['titel']}</h3>
                     <h2 >${task['description']}</h2>
@@ -187,8 +189,39 @@ function showTask() {
 }
 
 
+/**
+ * Search Tasks based on task search input value
+ * 
+ */
+function searchTasks() {
+    let foundedTasks = [];
+    if (!this.timer) {
+        this.timer = true;
+        setTimeout(() => {
+            let searchInputValue = document.getElementById('task-search-input').value;
+            foundedTasks = getFilteredTasks(searchInputValue);
+            showTask(foundedTasks);
+            this.timer = false;
+        }, 250);
+    }
+}
 
 
+/**
+ * Get filterd Tasks or all tasks based on task search input value
+ * 
+ * @param {string} searchInputValue -  Task search input value
+ * @returns - Founded Tasks
+ */
+function getFilteredTasks(searchInputValue) {
+    let foundedTasks = [];
+
+    if (searchInputValue.length > 0)
+        foundedTasks = editTasks.filter(t => t['description'].toLowerCase().includes(searchInputValue.toLowerCase()));
+    else
+        foundedTasks = editTasks;
+    return foundedTasks;
+}
 
 
 // wird evtl später gebraucht 
