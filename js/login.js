@@ -57,8 +57,6 @@ function emtpyInputFields() {
 }
 
 
-
-
 function goToMainPage() {
     window.location.href = 'main.html';
 }

@@ -1,21 +1,12 @@
-:root {
-    --color-background: #2A3647;
-}
-
 /* GLOBAL-STYLES */
 /*#region*/
-body {
-    margin: 0;
-    overflow: hidden;
-}
-
 .form-container {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #F5F5F5;
+    background: var(--color-form-background);
 }
 
 .form-input-container {
@@ -24,28 +15,45 @@ body {
     margin-bottom: 29px;
 }
 
+.form-input-box {
+    width: 422px;
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    padding: 13px 21px;
+    cursor: pointer;
+}
+
+.form-input-box input {
+    width: 100%;
+    height: 25px;
+    border: none;
+    outline: none;
+    font-size: 21px;
+    cursor: pointer;
+}
+
 form h1 {
     font-size: 61px;
     font-style: normal;
     font-weight: 700;
-    line-height: 120%;
     text-align: center;
     color: #000000;
 }
 
-.form-btn-box {
-    width: 341px;
-    height: 51px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 35px;
+.separator {
+    width: 157px;
+    height: 35px;
+    border-top: 3px solid #29abe2
 }
 
+button {
+    font-family: 'Inter', sans-serif;
+}
 /*#endregion*/
-
 
 /* JOIN CONTAINER ANIMATION - OPACITY*/
 /*#region*/
@@ -59,14 +67,14 @@ form h1 {
     height: 100vh;
     background-color: white;
     opacity: 1;
-    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .join-animation-container-animate {
-    animation: animateJoinLogoContainer 1s ease-in-out;
+    animation: animateJoinLogoContainer 2s ease-in-out;
     animation-fill-mode: forwards;
 }
 
@@ -80,132 +88,129 @@ form h1 {
         z-index: -1;
     }
 }
-
 /*#endregion*/
 
 /* JOIN LOGO ANIMATION - MOVE*/
 /*#region*/
-
-.join-logo-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 20;
-}
-
-
 .join-logo {
     position: fixed;
-    top: 80px;
-    left: 77px;
+    left: 5.35%;
+    right: 87.71%;
+    top: 7.81%;
+    bottom: 80.28%;
     width: 101px;
     height: 122px;
 }
-
 
 .join-logo-start {
-    position: fixed;
-    top: 50vh;
-    left: 50%;
-    margin-top: -61px;
-    margin-left: -50.5px;
     width: 101px;
     height: 122px;
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    margin-left: -50.5px;
+    margin-top: -61px;
     scale: 2;
-    z-index: 6;
 }
 
-.join-logo-animate {
-    animation: animateJoinLogo 1s ease-in-out;
+.join-logo-animate-gray {
+    animation: animateJoinLogoGray 1s ease-in-out;
     animation-fill-mode: forwards;
 }
 
-@keyframes animateJoinLogo {
+@keyframes animateJoinLogoGray {
     0% {
         scale: 2;
+        z-index: 10;
     }
 
-    /* 50% { left: 50%; top: 50%; } */
     100% {
-        left: 77px;
-        top: 80px;
+        left: 5.35%;
+        right: 87.71%;
+        top: 7.81%;
+        bottom: 80.28%;
         scale: 1;
         margin-top: 0;
-        margin-left: 0
+        margin-left: 0;
     }
 }
 
+.join-logo-animate-white {
+    animation: animateJoinLogoWhite 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animateJoinLogoWhite {
+    0% {
+        scale: 2;
+        z-index: 9;
+        opacity: 0;
+    }
+
+    100% {
+        left: 5.35%;
+        right: 87.71%;
+        top: 7.81%;
+        bottom: 80.28%;
+        scale: 1;
+        margin-top: 0;
+        margin-left: 0;
+        opacity: 0;
+    }
+}
 /*#endregion*/
 
 /* LOG-IN PAGE - NOT A JOIN USER? - SIGN UP */
 /*#region*/
 .no-join-user-box {
+    width: 287px;
+    height: 51px;
+    position: absolute;
+    top: 67px;
+    right: 114px;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 35px;
-    position: absolute;
-    width: 287px;
-    height: 51px;
-    right: 114px;
-    top: 67px;
 }
 
 .no-join-user-box span {
     width: 161px;
-    height: 25px;
-    /* Version 2/t6 */
+    /* height: 25px; */
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
-    line-height: 120%;
-    /* or 25px */
     color: #000000;
 }
 
 .sign-up-btn {
+    width: 91px;
+    height: 51px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 4px 10px;
-    /* gap: 10px; */
-    width: 91px;
-    height: 51px;
     background: var(--color-background);
     border-radius: 8px;
     font-size: 16px;
     font-weight: 700;
-    line-height: 120%;
     color: #FFFFFF;
     cursor: pointer;
 }
-
 /*#endregion*/
 
 /* LOG-IN PAGE */
 /*#region*/
 .form-login-box {
-    /* Auto layout */
+    width: 652px;
+    height: 513px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 35px 0px;
-    /* gap: 35px; */
-    position: absolute;
-    width: 652px;
-    height: 513px;
-    /* white */
     background: #FFFFFF;
-    /* shadow backlog box */
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
     border-radius: 30px;
 }
@@ -215,15 +220,20 @@ form h1 {
     height: 97px;
 }
 
-.separator {
-    width: 157px;
-    height: 35px;
-    border-top: 3px solid #29abe2
-}
-
 .form-input-container span {
     color: red;
     font-size: 12px;
+}
+
+.form-btn-box-login {
+    width: 341px;
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 35px;
 }
 
 /*Avoid internal-autofill-selected:
@@ -231,30 +241,6 @@ form h1 {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
-
-.form-input-box {
-    width: 422px;
-    height: 51px;
-    border: 1px solid #D1D1D1;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* justify-content: space-between; */
-    padding: 13px 21px;
-    /* gap: 10px; */
-    cursor: pointer;
-}
-
-.form-input-box input {
-    width: 100%;
-    height: 25px;
-    border: none;
-    outline: none;
-    font-size: 21px;
-    cursor: pointer;
-}
-
 /*#endregion*/
 
 /* REMEMBER ME - FORGOT PASSWORD*/
@@ -279,15 +265,12 @@ input:-webkit-autofill {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0px;
     gap: 20px;
 }
 
 .remember-box input {
     width: 16px;
     height: 16px;
-    /* Boton gradient */
-    background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%);
     border: 1px solid #000000;
     border-radius: 3px;
     margin: 0;
@@ -296,12 +279,9 @@ input:-webkit-autofill {
 .remember-box span {
     width: 110px;
     height: 19px;
-    /* Version 2/body */
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
-    line-height: 120%;
-    /* or 19px */
+    font-weight: 400;
+    font-style: normal;
     color: #000000;
 }
 
@@ -310,70 +290,50 @@ input:-webkit-autofill {
     height: 19px;
     color: #29ABE2;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
 }
-
 /*#endregion*/
 
 /* LOG IN - GUEST LOG IN - BUTTONS */
 /*#region*/
 .form-btn-user {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    gap: 10px;
     width: 145px;
     height: 51px;
+    padding: 4px 0px;
     background: var(--color-background);
     border-radius: 8px;
-    font-weight: 700;
     font-size: 21px;
-    line-height: 120%;
-    /* or 25px */
+    font-weight: 700;
     cursor: pointer;
     color: #FFFFFF;
 }
 
 .form-btn-guest {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 16px;
-    gap: 10px;
     width: 164px;
     height: 51px;
-    /* Version 2/ main color */
     border: 1px solid var(--color-background);
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 700;
     font-size: 21px;
-    line-height: 120%;
-    /* or 25px */
-    /* Version 2/ main color */
+    font-weight: 700;
     color: var(--color-background);
+    background: white;
 }
-
 /*#endregion*/
 
 /* SIGN-UP PAGE */
 /*#region*/
 .form-signup-box {
-    /* Auto layout */
+    width: 652px;
+    height: 559px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 35px 0px;
-    /* gap: 35px; */
-    position: absolute;
-    isolation: isolate;
-    width: 652px;
-    height: 559px;
-    /* white */
+    padding: 29px 0px;
     background: #FFFFFF;
-    /* shadow backlog box */
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
     border-radius: 30px;
 }
@@ -384,44 +344,50 @@ input:-webkit-autofill {
 }
 
 .signup-arrow-left-box {
-    position: absolute;
     width: 37px;
     height: 37px;
+    position: absolute;
     left: 31px;
     top: 35px;
     cursor: pointer;
     z-index: 3;
 }
 
+.form-btn-signup {
+    width: 145px;
+    height: 51px;
+    padding: 4px 0px;
+    background: var(--color-background);
+    border-radius: 8px;
+    font-size: 21px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-top: 6px;
+}
 /*#endregion*/
 
 /* FORGOT-PASSWORD PAGE*/
 /*#region*/
 .form-forgot-password-box {
+    width: 826px;
+    height: 462px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 44px 85px;
-    /* gap: 35px; */
-    isolation: isolate;
-    position: absolute;
-    width: 826px;
-    height: 462px;
-    left: calc(50% - 826px/2);
-    top: calc(50% - 462px/2 - 0.5px);
-    border: 1px solid lightgrey;
     background: #FFFFFF;
-    /* shadow backlog box */
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
     border-radius: 30px;
 }
 
-.forgot-password-arrow-left {
-    position: absolute;
+.forgot-password-arrow-left-box {
     width: 37px;
     height: 37px;
+    position: absolute;
     left: 31px;
-    top: 34.5px;
+    top: 35px;
     cursor: pointer;
     z-index: 4;
 }
@@ -436,58 +402,45 @@ input:-webkit-autofill {
     height: 50px;
     font-size: 21px;
     font-weight: 400;
-    line-height: 120%;
     margin-bottom: 35px;
     padding: 0px 21px;
     text-align: center;
     color: #000000;
 }
 
-.form-forgot-password-box button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    gap: 10px;
+.form-btn-forgot-password {
     width: 264px;
     height: 51px;
+    padding: 4px 0px;
     background: var(--color-background);
     border-radius: 8px;
     font-size: 21px;
     font-weight: 700;
-    color: #FFFFFF;
     cursor: pointer;
-
+    color: #FFFFFF;
+    margin-top: 6px;
 }
-
 /*#endregion*/
 
 /* RESET-PASSWORD PAGE*/
 /*#region*/
 .form-reset-password-box {
+    width: 826px;
+    height: 537px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 44px 85px;
-    /* gap: 35px; */
-    isolation: isolate;
-    position: absolute;
-    height: 537px;
-    left: 21.32%;
-    right: 21.32%;
-    top: calc(50% - 537px/2 - 0.5px);
-    /* white */
     background: #FFFFFF;
-    /* shadoe backlog box */
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
     border-radius: 30px;
 }
 
-.reset-password-arrow-left {
-    position: absolute;
+.reset-password-arrow-left-box {
     width: 37px;
     height: 37px;
+    position: absolute;
     left: 31px;
     top: 35px;
     cursor: pointer;
@@ -504,28 +457,23 @@ input:-webkit-autofill {
     height: 25px;
     font-size: 21px;
     font-weight: 400;
-    line-height: 120%;
     margin-bottom: 25px;
     text-align: center;
     color: #000000;
 }
 
-.form-reset-password-box button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    gap: 10px;
+.form-btn-reset-password {
     width: 264px;
     height: 51px;
-    background-color: var(--color-background);
+    padding: 4px 0px;
+    background: var(--color-background);
     border-radius: 8px;
     font-size: 21px;
     font-weight: 700;
-
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-top: 6px;
 }
-
 /*#endregion*/
 
 /* NOTIFICATION - SECTION*/
@@ -575,7 +523,6 @@ input:-webkit-autofill {
     align-items: center;
     padding: 0px 20px;
     gap: 13px;
-    /* Version 2/ main color */
     background: var(--color-background);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
@@ -602,13 +549,10 @@ input:-webkit-autofill {
 }
 
 #notification-message {
-    /* Version 2/t5 */
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
-    line-height: 120%;
-    /* identical to box height, or 28px */
     color: #FFFFFF;
 }
 
@@ -616,5 +560,4 @@ input:-webkit-autofill {
     color: red;
     font-size: 12px;
 }
-
 /*#endregion*/

@@ -19,9 +19,10 @@
 
 <body onload="init(); animateLogo();">
     <div id="join-animation-container" class="join-animation-container"></div>
-    <img id="join-logo" src="img/join-logo-gray.png" class="join-logo-start">
+    <img id="join-logo-gray" src="img/join-logo-gray.png" class="join-logo-start">
+    <img id="join-logo-white" src="img/join-logo-white.png" class="join-logo-start">
 
-    <div class="form-container">
+    <div id="form-container" class="form-container">
         <div class="no-join-user-box">
             <span>Not a Join user?</span>
             <button type="button" class="sign-up-btn" onclick="goToPage('signup.html')">Sign up</button>
@@ -44,7 +45,6 @@
                 </div>
                 <span id="wrong-password" class="d-none">Wrong Password</span>
             </div>
-
             <div class="remember-forgot-password-container">
                 <div class="remember-box">
                     <input id="rememberMeChk" type="checkbox">
@@ -52,13 +52,13 @@
                 </div>
                 <a onclick="goToPage('forgot_password.html')">Forgot my password</a>
             </div>
-            <div class="form-btn-box">
+            <div class="form-btn-box-login">
                 <button type="submit" class="form-btn-user">Log in</button>
                 <button type="button" class="form-btn-guest" onclick="loginAsGuest()">Guest Log in</button>
             </div>
-            <div id="notification-login-container" class="d-none">
-                <div id="notification-box" class="notification-login-password-box">
-                    <span id="notification-message"></span>
+            <div id="notification-login-container" class="d-none notification-mobil">
+                <div id="notification-box" class="notification-login-password-box notification-mobil">
+                    <span id="notification-message">Benutzer erfolgreich registriert.</span>
                 </div>
             </div>
         </form>

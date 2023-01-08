@@ -1,0 +1,527 @@
+/* MAX-WIDTH: 950px */
+@media screen and (max-width: 950px) {
+
+    /* GLOBAL-STYLES */
+    /*#region*/
+    .form-input-container {
+        width: 327px;
+        min-height: 61px;
+    }
+
+    .form-input-container-mobil {
+        margin-bottom: 4px;
+    }
+
+    .form-input-box {
+        width: 327px;
+        height: 41px;
+    }
+
+    form h1 {
+        font-size: 47px;
+    }
+
+    /*#endregion*/
+
+    /* JOIN CONTAINER ANIMATION - OPACITY*/
+    /*#region*/
+    .join-animation-container {
+        background-color: var(--color-background);
+    }
+
+    /*#endregion*/
+
+    /* JOIN LOGO ANIMATION - MOVE*/
+    /*#region*/
+    .join-logo {
+        position: fixed;
+        left: 38px;
+        top: 37px;
+        width: 64px;
+        height: 78px;
+    }
+
+    .join-logo-start {
+        width: 64px;
+        height: 78px;
+        margin-left: -32px;
+        margin-top: -39px;
+    }
+
+    .join-logo-animate-gray {
+        animation: animateJoinLogoGray 1s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes animateJoinLogoGray {
+        0% {
+            scale: 2;
+            opacity: 0;
+        }
+
+        100% {
+            left: 38px;
+            top: 37px;
+            scale: 1;
+            margin-top: 0;
+            margin-left: 0;
+            opacity: 1;
+        }
+    }
+
+    .join-logo-animate-white {
+        animation: animateJoinLogoWhite 1s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes animateJoinLogoWhite {
+        0% {
+            scale: 2;
+            opacity: 1;
+            z-index: 11;
+        }
+
+        100% {
+            left: 38px;
+            top: 37px;
+            scale: 1;
+            margin-top: 0;
+            margin-left: 0;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+
+    /*#endregion*/
+
+    /* LOG-IN PAGE - NOT A JOIN USER? - SIGN UP */
+    /*#region*/
+    .no-join-user-box {
+        position: absolute;
+        top: calc(50vh + 573px/2 + 25px);
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*#endregion*/
+
+    /* LOG-IN PAGE */
+    /*#region*/
+    .form-login-box {
+        width: 372px;
+        height: 573px;
+    }
+
+    #form-login-box-h1 {
+        height: 80px;
+    }
+
+    .form-btn-box-login {
+        width: 180px;
+        height: 123px;
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+    }
+
+    /*#endregion*/
+
+    /* REMEMBER ME - FORGOT PASSWORD*/
+    /*#region*/
+    .remember-forgot-password-container {
+        width: 327px;
+        height: 69px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-top: 6px;
+        gap: 31px;
+    }
+
+    /*#endregion*/
+
+    /* LOG IN - GUEST LOG IN - BUTTONS */
+    /*#region*/
+    .form-btn-user {
+        width: 180px;
+        font-size: 16px;
+    }
+
+    .form-btn-guest {
+        padding: 4px 0px;
+        width: 180px;
+        height: 51px;
+        font-size: 16px;
+    }
+
+    /*#endregion*/
+
+    /* SIGN-UP PAGE */
+    /*#region*/
+    .form-signup-box {
+        width: 372px;
+        height: 501px;
+    }
+
+    #form-signup-box-h1 {
+        height: 80px;
+    }
+
+    .signup-arrow-left-box {
+        width: 24px;
+        height: 24px;
+        left: 29px;
+        top: 23px;
+    }
+
+    .signup-arrow-left-black {
+        display: block;
+    }
+
+    .signup-arrow-left-blue {
+        display: none;
+    }
+
+    .form-btn-signup {
+        width: 180px;
+        font-size: 16px;
+    }
+
+    /*#endregion*/
+
+    /* FORGOT-PASSWORD PAGE */
+    /*#region*/
+    .form-forgot-password-box {
+        /* width: calc(100vw - 240px); */
+        width: 372px;
+        height: 502px;
+    }
+
+    .forgot-password-arrow-left-box {
+        width: 24px;
+        height: 24px;
+        left: 29px;
+        top: 23px;
+    }
+
+    .forgot-password-arrow-left-black {
+        display: block;
+    }
+
+    .forgot-password-arrow-left-blue {
+        display: none;
+    }
+
+
+    #form-forgot-password-box-h1 {
+        width: 315px;
+        height: 120px;
+        font-size: 40px;
+    }
+
+    .form-forgot-password-box span {
+        width: 322px;
+        height: 75px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .form-btn-forgot-password {
+        width: 180px;
+        height: 51px;
+        font-size: 16px;
+    }
+
+    /*#endregion*/
+
+    /* RESET-PASSWORD PAGE */
+    /*#region*/
+    .form-reset-password-box {
+        width: 372px;
+        height: 525px;
+    }
+
+    .reset-password-arrow-left-box {
+        width: 24px;
+        height: 24px;
+        left: 29px;
+        top: 23px;
+    }
+
+    .reset-password-arrow-left-black {
+        display: block;
+    }
+
+    .reset-password-arrow-left-blue {
+        display: none;
+    }
+
+    #form-reset-password-box-h1 {
+        width: 315px;
+        height: 120px;
+        font-size: 40px;
+    }
+
+    .form-reset-password-box span {
+        width: 322px;
+        height: 50px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .form-btn-reset-password {
+        width: 180px;
+        height: 51px;
+        font-size: 16px;
+    }
+
+    /*#endregion*/
+
+    /* NOTIFICATION - SECTION*/
+    /*#region*/
+    .notification-mobil {
+        width: calc(372px - 34px) !important;
+    }
+
+    @keyframes showNotification {
+        from {
+            top: 100vh;
+        }
+    
+        to {
+            top: 82vh;
+        }
+    }
+
+    #notification-message {
+        font-size: 19px;
+    }    
+
+    .email-sent {
+        width: 36px;
+        height: 36px;
+    }
+    /*#endregion*/
+}
+
+
+
+/* MAX-WIDTH: 420px */
+@media screen and (max-width: 420px) {
+
+    /* GLOBAL-STYLES */
+    /*#region*/
+    .form-input-container {
+        /* 327px*/
+        width: calc(100vw - 56px - 45px);
+        margin-bottom: 10px;
+    }
+
+    .form-input-box {
+        /* 327px*/
+        width: calc(100vw - 56px - 45px);
+    }
+
+    .form-input-box input {
+        font-size: 16px;
+    }
+
+    .form-input-box img {
+        width: 15px;
+        height: 15px;
+    }
+
+    form h1 {
+        font-size: 39px;
+    }
+
+    .separator {
+        width: 85px;
+    }
+
+    /*#endregion*/
+
+    /* LOG-IN PAGE - NOT A JOIN USER? - SIGN UP */
+    /*#region*/
+    .no-join-user-box {
+        width: calc(100vw - 140px);
+        top: calc(50vh + 510px/2 + 25px);
+        gap: 5px
+    }
+
+    .no-join-user-box span {
+        font-size: 14px;
+    }
+
+    .sign-up-btn {
+        font-size: 14px;
+        padding: 4px 5px;
+        height: 40px;
+    }
+
+    /*#endregion*/
+
+    /* LOG-IN PAGE */
+    /*#region*/
+    .form-login-box {
+        width: calc(100vw - 56px);
+        height: 510px;
+    }
+
+    #form-login-box-h1 {
+        height: 67px;
+    }
+
+    /*#endregion*/
+
+    /* REMEMBER ME - FORGOT PASSWORD*/
+    /*#region*/
+    .remember-forgot-password-container {
+        width: calc(100vw - 56px - 45px);
+        height: 50px;
+        margin-bottom: 10px;
+        gap: 15px;
+    }
+
+    .remember-box span {
+        font-size: 14px;
+    }
+
+    .remember-forgot-password-container a {
+        font-size: 14px;
+    }
+
+
+    /*#endregion*/
+
+    /* LOG IN - GUEST LOG IN - BUTTONS */
+    /*#region*/
+    .form-btn-user {
+        width: calc(100vw - 56px - 138px);
+        height: 40px;
+    }
+
+    .form-btn-guest {
+        width: calc(100vw - 56px - 138px);
+        height: 40px;
+    }
+
+    /*#endregion*/
+
+    /* SIGN-UP PAGE */
+    /*#region*/
+    .form-signup-box {
+        width: calc(100vw - 56px);
+        height: 444px;
+    }
+
+    #form-signup-box-h1 {
+        height: 67px;
+    }
+
+    /*#endregion*/
+
+    /* FORGOT-PASSWORD PAGE */
+    /*#region*/
+    .form-forgot-password-box {
+        width: calc(100vw - 56px);
+        height: 444px;
+    }
+
+    #form-forgot-password-box-h1 {
+        font-size: 36px;
+        margin-bottom: 24px;
+    }    
+
+    .form-forgot-password-box span {
+        width: calc(100vw - 56px - 50px);
+        font-size: 14px;
+        margin-top: 24px;
+    }
+
+    /*#endregion*/
+
+    /* RESET-PASSWORD PAGE */
+    /*#region*/
+    .form-reset-password-box {
+        width: calc(100vw - 56px);
+        height: 444px;
+    }
+
+    #form-reset-password-box-h1 {
+        font-size: 36px;
+        margin-bottom: 24px;        
+    }    
+
+    .form-reset-password-box span {
+        width: calc(100vw - 56px - 50px);
+        font-size: 16px;
+        margin-top: 24px;
+    }
+
+    /*#endregion*/
+
+    /* NOTIFICATION - SECTION*/
+    /*#region*/
+    .notification-mobil {
+        width: calc(100vw - 56px - 34px) !important;
+    }
+
+    #notification-message {
+        font-size: 16px;
+        text-align: center;
+    }    
+
+    .email-sent {
+        width: 25px;
+        height: 25px;
+    }
+    /*#endregion*/
+}
+
+
+/* MAX-WIDTH: 370px */
+@media screen and (max-width: 370px) {
+
+    /* GLOBAL-STYLES */
+    /*#region*/
+    .form-input-box input {
+        font-size: 12px;
+    }
+    /*#endregion*/
+
+    /* LOG-IN PAGE - NOT A JOIN USER? - SIGN UP */
+    /*#region*/
+    .no-join-user-box span {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .sign-up-btn {
+        font-size: 12px;
+    }
+
+    /*#endregion*/
+
+    /* LOG IN - GUEST LOG IN - BUTTONS */
+    /*#region*/
+    .form-btn-user {
+        font-size: 14px;
+    }
+
+    .form-btn-guest {
+        font-size: 14px;
+    }
+
+    /*#endregion*/
+
+    /* SIGN-UP PAGE */
+    /*#region*/
+    .form-btn-signup {
+        font-size: 14px;
+    }
+
+    /*#endregion*/
+}

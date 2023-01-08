@@ -1,12 +1,17 @@
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+:root {
+    --color-background: #2A3646;
+    --color-form-background: #F5F5F5;
 }
 
 * {
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
 
 h1 {
     margin-block-start: 0;

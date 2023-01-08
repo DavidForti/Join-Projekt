@@ -8,6 +8,7 @@
     <title>Kanban Project Management Tool - Sign Up</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/login_responsive.css">
     <script src="./js/mini_backend.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/signup.js"></script>
@@ -19,7 +20,9 @@
     <div class="form-container">
         <form class="form-signup-box" onsubmit="signUpNewUser(); return false;">
             <div class="signup-arrow-left-box">
-                <img src="./img/arrow-left-line.png" class="signup-arrow-left" onclick="goToPage('index.html')">
+                <img src="./img/arrow-left-blue.png" class="signup-arrow-left-blue" onclick="goToPage('index.html')">
+                <img src="./img/arrow-left-black.png" class="signup-arrow-left-black d-none"
+                    onclick="goToPage('index.html')">
             </div>
             <h1 id="form-signup-box-h1">Sign up</h1>
             <div class="separator"></div>
@@ -31,7 +34,8 @@
             </div>
             <div class="form-input-container">
                 <div class="form-input-box">
-                    <input type="email" id="email" placeholder="Email" required onkeydown="resetWarningMessagesSignup()">
+                    <input type="email" id="email" placeholder="Email" required
+                        onkeydown="resetWarningMessagesSignup()">
                     <img src="./img/email.png">
                 </div>
                 <span id="email-address-exists" class="d-none">Email address already exists</span>
@@ -42,9 +46,7 @@
                     <img src="./img/encrypted.png">
                 </div>
             </div>
-            <div class="form-btn-box mt-6">
-                <button type="submit" class="form-btn-user">Sign up</button>
-            </div>
+            <button type="submit" class="form-btn-signup">Sign up</button>
         </form>
     </div>
 </body>

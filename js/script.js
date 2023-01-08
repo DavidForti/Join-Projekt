@@ -38,9 +38,9 @@ async function initData() {
 
 
 function animateLogo() {
-    document.getElementById('join-logo').classList.add('join-logo-animate');
     document.getElementById('join-animation-container').classList.add('join-animation-container-animate');
-    document.getElementById('join-animation-container').classList.add('join-animation-container-animate');
+    document.getElementById('join-logo-gray').classList.add('join-logo-animate-gray');
+    document.getElementById('join-logo-white').classList.add('join-logo-animate-white');
 }
 
 
