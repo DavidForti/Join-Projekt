@@ -1,9 +1,9 @@
 function renderFields() {
-    let content = document.getElementById('contantBoard');    // DAS VERÄNDERN ZU DEM CONTAINER INDEM DU DAS GANZE GERENDERT HABEN WILLST
-    content.innerHTML += /*html*/ `
+    let content = document.getElementById('contantBoard');
+    content.innerHTML = /*html*/ `
 <div class="main">
     <div class="second">
-        <h3>TITLE</h3>
+        <h3>To Do</h3>
         <div class="list">
         <p class="list-item" draggable="true">1</p>
         <p class="list-item" draggable="true">2</p>
@@ -12,15 +12,15 @@ function renderFields() {
         </div>
     </div>
     <div class="second">
-        <h3>TITLE</h3>
+        <h3>In Progress</h3>
         <div class="list"></div>
     </div>
     <div class="second">
-        <h3>TITLE</h3>
+        <h3>Awaiting Feedback</h3>
         <div class="list"></div>
     </div>
     <div class="second">
-        <h3>TITLE</h3>
+        <h3>Done</h3>
         <div class="list"></div>
     </div>
 </div>
