@@ -13,7 +13,6 @@ function board() {
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
     showTask(editTasks);
-
 }
 
 function addAndRemove() {
@@ -22,8 +21,6 @@ function addAndRemove() {
     document.getElementById('contantBoard').classList.remove("d-none");
 
 }
-
-
 
 function cancelBnt() {
     document.getElementById('contantAddToTask').classList.add("d-none");
@@ -47,8 +44,6 @@ function addTaskBnt() {
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
-    // contantAddToTask.innerHTML = ('removeDnone').classList.remove("d-none");
-
 }
 // funktion noch verkrüzen 
 function addTask() {
@@ -69,7 +64,7 @@ function addTask() {
                     <select id = "chgeCategory"   class="category">                
                         <option>Select task category</option>  
                         <option>New category</option> 
-                        <option>Sales</option>  
+                        <option style= "backgorund-color = red;">Sales</option>  
                         <option>Backoffice</option>  
                     </select>
                 </form>
@@ -93,9 +88,6 @@ function addTask() {
                         <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
                         <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
                     </div>
-                <!-- nach subtask nachfragen -->
-                <label for="subtask">Subtask</label>
-                <input type="text" name="chgesubtask" id="chgesubtask" placeholder="Add new subtask" class ="subtask">  
                 <div class="bnts">
                     <button class="bnt-cancel" onclick="cancelBnt()" > Cancel <img src="img/cancelSymbol.png" ></button>
                     <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
@@ -147,10 +139,10 @@ function add() {
     let dueDate = document.getElementById('dueDate');
     let prio = document.getElementById('chgeprio');
     let subtask = document.getElementById('chgesubtask');
-    pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask);
+    pushTaskInArr(titel, description, category, assigned, dueDate, prio);
 }
 
-async function pushTaskInArr(titel, description, category, assigned, dueDate, prio, subtask) {
+async function pushTaskInArr(titel, description, category, assigned, dueDate, prio) {
     let headOfTask = {
         "titel": titel.value,
         "description": description.value,
@@ -158,7 +150,7 @@ async function pushTaskInArr(titel, description, category, assigned, dueDate, pr
         "assigned": assigned.value,
         "dueDate": dueDate.value,
         "prio": prio.value,
-        "subtask": subtask.value
+       
     };
 
     editTasks.push(headOfTask);
@@ -171,7 +163,7 @@ async function pushTaskInArr(titel, description, category, assigned, dueDate, pr
     assigned.value = '';
     dueDate.value = '';
     prio.value = '';
-    subtask.value = '';
+  
 }
 
 function showTask(tasksArray) {
@@ -180,13 +172,27 @@ function showTask(tasksArray) {
     let html = '';
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
-        html += `
+        html +=/*html*/ `
+                <div class="contant-card">
+                    <p class="category-desing" id ="salesColor" >${task['category']}</p>
                     <h3 >${task['titel']}</h3>
                     <h2 >${task['description']}</h2>
+                    <h2 >${task['assigned']}</h2>
+                    <h2 >${task['prio']}</h2>
+                </div>
          `;
     }
     contantToDo.innerHTML = html;
 }
+
+
+
+function salesCategory(){
+    document.getElementById('salesColor').style.backgroundColor = "black";
+}
+
+
+
 
 
 /**
@@ -206,7 +212,6 @@ function searchTasks() {
     }
 }
 
-
 /**
  * Get filterd Tasks or all tasks based on task search input value
  * 
@@ -223,24 +228,17 @@ function getFilteredTasks(searchInputValue) {
     return foundedTasks;
 }
 
-
-// wird evtl später gebraucht 
-//function changeWorkCategory() {
-//  let chgeCategory= document.getElementById("myList");
-// document.getElementById("favourite").value = chgeCategory.options[mylist.selectedIndex].text;
-// }
-
 function dragAndDrop() {
     return/*html*/`
         <div class="dad-container">
-            <div>Todo</div>
-            <div id="contantToDo" class="testdiv"></div>
+            <div class="main-contant-todo">
+                <div>Todo</div>
+                <div id="contantToDo" class="contant-todo"></div>
+            </div>
             <div>In progress</div>
             <div>Awatinig Feedback</div>
             <div>Done</div>
-        </div>
-    
-    
+        </div> 
     `;
 }
 
