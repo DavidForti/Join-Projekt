@@ -29,6 +29,7 @@
 
 .menu-list {
     display: flex;
+    justify-content: center;
     cursor: pointer;
     align-items: center;
     width: 200px;
