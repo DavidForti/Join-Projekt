@@ -1,5 +1,7 @@
 let timer = false;
 
+let color = ['FC71FF', '#1FD7C1']
+
 function board() {
     document.getElementById('changeColor').classList.add("backgorund");
     document.getElementById('changeColorboard').classList.remove("backgorund")
@@ -12,8 +14,9 @@ function board() {
     contantBoard.innerHTML = '';
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
-    showTask(editTasks);
     renderFields();
+    showTask(editTasks);
+    eventListener();
 }
 
 function addAndRemove() {
@@ -101,10 +104,17 @@ function addTask() {
     `;
 }
 
-function changeColor(getColor) {
-    let bg = document.querySelector('.bg');
-    let category = getColor.value;
-    bg.style.background = category;
+function changeColor() {
+    let categoryDesing = document.querySelectorAll('.category-desing');
+    for (let i = 0; i < categoryDesing.length; i++) {
+        categoryDesing[i];
+        if (categoryDesing[i].innerHTML == 'Sales') {
+            categoryDesing[i].style.background = "#FC71FF";
+        }
+        if (categoryDesing[i].innerHTML == 'Backoffice') {
+            categoryDesing[i].style.background = "#1FD7C1";
+        }
+    }
 }
 
 function statusUrgent() {
@@ -177,13 +187,13 @@ async function pushTaskInArr(titel, description, category, assigned, dueDate, pr
 }
 
 function showTask(tasksArray) {
-    let contantToDo = document.getElementById('contantToDo');
+    let contantToDo = document.querySelector('.list');
     contantToDo.innerHTML = '';
     let html = '';
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
         html +=/*html*/ `
-                <div class="contant-card">
+                <div class="contant-card list-item" draggable="true">
                     <p class="category-desing">${task['category']}</p>
                     <h3 >${task['titel']}</h3>
                     <h2 >${task['description']}</h2>
@@ -193,6 +203,8 @@ function showTask(tasksArray) {
          `;
     }
     contantToDo.innerHTML = html;
+    changeColor();
+    eventListener();
 }
 
 /**

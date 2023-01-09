@@ -15,7 +15,7 @@ async function init() {
 
     if (message && message !== 'undefined') {
         showNotifyMessage('notification-login-container', message);
-        emtpyInputFields(['email','password']);
+        emtpyInputFields(['email', 'password']);
     } else
         getLastJoinUser();
 
@@ -25,9 +25,9 @@ async function init() {
 
 async function initData() {
     // await deleteAll();
-    // await saveUsersToBackend();
-    // await saveTasksToBackend();
-    // await saveContactsToBackend();
+    await saveUsersToBackend();
+    await saveTasksToBackend();
+    await saveContactsToBackend();
 
     await downloadFromServer();
 

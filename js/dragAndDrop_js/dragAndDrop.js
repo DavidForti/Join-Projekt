@@ -1,14 +1,18 @@
 function renderFields() {
     let content = document.getElementById('contantBoard');
     content.innerHTML = /*html*/ `
+    <div class="headline-board-continaer">
+        <h1 class="headline-board">Board</h1>
+        <div class="input-feld">
+            <input id="task-search-input" type="Find Task" class="input" onkeyup="searchTasks()">
+            <button class="bnt-board" onclick="addTaskBnt()"> Add task +</button>
+        </div>
+    </div>
 <div class="main">
     <div class="second">
         <h3>To Do</h3>
         <div class="list">
-        <p class="list-item" draggable="true">1</p>
-        <p class="list-item" draggable="true">2</p>
-        <p class="list-item" draggable="true">3</p>
-        <p class="list-item" draggable="true">4</p>
+            <p class="list-item" draggable="true">1</p>
         </div>
     </div>
     <div class="second">
@@ -32,7 +36,7 @@ function eventListener() {
     const list_items = document.querySelectorAll('.list-item');
     const lists = document.querySelectorAll('.list');
 
-    let draggedItem = null;
+    let draggedItem = "";
 
     for (let i = 0; i < list_items.length; i++) {
         const item = list_items[i];
@@ -47,7 +51,6 @@ function eventListener() {
         item.addEventListener('dragend', function () {
             setTimeout(function () {
                 draggedItem.style.display = 'block';
-                draggedItem = null;
             }, 0);
         })
 
