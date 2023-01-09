@@ -1,0 +1,31 @@
+.div-contacts {
+    flex: 1;
+    display: flex;
+}
+
+.absolute-contacts {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px !important;
+    overflow: auto;
+}
+
+.grey-stripe {
+    border-bottom: solid 1px grey;
+}
+
+#contact-view {
+    flex: 1;
+    padding: 20px !important;
+}
+
+#contact-list {
+    width: 300px;
+    background-color: white;
+    overflow-y: auto;
+    box-shadow: 2px 0px 2px rgb(0 0 0 / 10%);
+    position: relative;
+}
