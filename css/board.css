@@ -317,9 +317,6 @@
 }
 
 
-
-
-
 .bnts {
     top: 31%;
     position: relative;
@@ -412,7 +409,7 @@
     gap: 10px;
     width: 103px;
     height: 27px;
-    
+    background: #c42d2d;
     border-radius: 8px;
     flex: none;
     order: 0;

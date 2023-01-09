@@ -60,13 +60,16 @@ function addTask() {
                 <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
                 <!--dropDown-->
                 <form class="form-container">
-                    <label for="category">Category</label> 
-                    <select id = "chgeCategory"   class="category">                
-                        <option>Select task category</option>  
-                        <option>New category</option> 
-                        <option style= "backgorund-color = red;">Sales</option>  
-                        <option>Backoffice</option>  
-                    </select>
+                  
+                       
+                        <div class="bg">Category</div>
+                            <select id = "chgeCategory"   class="category" onchange="changeColor(this);" >                
+                                <option>Select task category</option>  
+                                <option >New category</option> 
+                                <option vlaue="#FC71FF">Sales</option>  
+                                <option vlaue="#1FD7C1">Backoffice</option>  
+                            </select>
+                    
                 </form>
                 <form class="form-container">
                     <label for="assigned-to">Assigned to</label> 
@@ -95,6 +98,12 @@ function addTask() {
             </div>     
         </div>
     `;
+}
+
+function changeColor(getColor){
+    let bg = document.querySelector('.bg');
+    let category = getColor.value;
+    bg.style.background = category;
 }
 
 function statusUrgent() {
@@ -129,7 +138,6 @@ function closeTask() {
     document.getElementById('contantAddToTask').classList.add("d-none");
 }
 
-
 function add() {
     document.getElementById('contantAddToTask').classList.add("d-none")
     let titel = document.getElementById('title');
@@ -150,20 +158,21 @@ async function pushTaskInArr(titel, description, category, assigned, dueDate, pr
         "assigned": assigned.value,
         "dueDate": dueDate.value,
         "prio": prio.value,
-       
+
     };
 
     editTasks.push(headOfTask);
     await saveToBackend('tasks', editTasks);
     showTask(editTasks);
     console.log(editTasks);
+    // backgroundchange(category);
     titel.value = '';
     description.value = '';
     category.value = '';
     assigned.value = '';
     dueDate.value = '';
     prio.value = '';
-  
+
 }
 
 function showTask(tasksArray) {
@@ -174,7 +183,7 @@ function showTask(tasksArray) {
         let task = tasksArray[i];
         html +=/*html*/ `
                 <div class="contant-card">
-                    <p class="category-desing" id ="salesColor" >${task['category']}</p>
+                    <p class="category-desing">${task['category']}</p>
                     <h3 >${task['titel']}</h3>
                     <h2 >${task['description']}</h2>
                     <h2 >${task['assigned']}</h2>
@@ -184,16 +193,6 @@ function showTask(tasksArray) {
     }
     contantToDo.innerHTML = html;
 }
-
-
-
-function salesCategory(){
-    document.getElementById('salesColor').style.backgroundColor = "black";
-}
-
-
-
-
 
 /**
  * Search Tasks based on task search input value
