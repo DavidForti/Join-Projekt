@@ -107,7 +107,6 @@ function addTask() {
 function changeColor() {
     let categoryDesing = document.querySelectorAll('.category-desing');
     for (let i = 0; i < categoryDesing.length; i++) {
-        categoryDesing[i];
         if (categoryDesing[i].innerHTML == 'Sales') {
             categoryDesing[i].style.background = "#FC71FF";
         }
