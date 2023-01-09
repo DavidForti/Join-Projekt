@@ -13,6 +13,7 @@ function board() {
     contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
     showTask(editTasks);
+    renderFields();
 }
 
 function addAndRemove() {
@@ -100,7 +101,7 @@ function addTask() {
     `;
 }
 
-function changeColor(getColor){
+function changeColor(getColor) {
     let bg = document.querySelector('.bg');
     let category = getColor.value;
     bg.style.background = category;
@@ -229,15 +230,14 @@ function getFilteredTasks(searchInputValue) {
 
 function dragAndDrop() {
     return/*html*/`
-        <div class="dad-container">
-            <div class="main-contant-todo">
-                <div>Todo</div>
-                <div id="contantToDo" class="contant-todo"></div>
-            </div>
-            <div>In progress</div>
-            <div>Awatinig Feedback</div>
-            <div>Done</div>
-        </div> 
-    `;
+   <div class="dad-container">
+   <div class="main-contant-todo">
+        <div>Todo</div>
+        <div id="contantToDo" class="contant-todo"></div>
+    </div>
+    <div>In progress</div>
+    <div>Awatinig Feedback</div>
+    <div>Done</div>
+</div> 
+`;
 }
-

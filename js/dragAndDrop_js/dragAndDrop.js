@@ -1,6 +1,5 @@
 function renderFields() {
-    let content = document.body;    // DAS VERÄNDERN ZU DEM CONTAINER INDEM DU DAS GANZE GERENDERT HABEN WILLST
-    content.innerHTML = "";
+    let content = document.getElementById('contantBoard');    // DAS VERÄNDERN ZU DEM CONTAINER INDEM DU DAS GANZE GERENDERT HABEN WILLST
     content.innerHTML += /*html*/ `
 <div class="main">
     <div class="second">
@@ -26,52 +25,53 @@ function renderFields() {
     </div>
 </div>
 `;
+    eventListener();
 }
 
-renderFields();
+function eventListener() {
+    const list_items = document.querySelectorAll('.list-item');
+    const lists = document.querySelectorAll('.list');
 
-const list_items = document.querySelectorAll('.list-item');
-const lists = document.querySelectorAll('.list');
+    let draggedItem = null;
 
-let draggedItem = null;
+    for (let i = 0; i < list_items.length; i++) {
+        const item = list_items[i];
 
-for (let i = 0; i < list_items.length; i++) {
-    const item = list_items[i];
-
-    item.addEventListener('dragstart', function () {
-        draggedItem = item;
-        setTimeout(function () {
-            item.style.display = 'none';
-        }, 0)
-    });
-
-    item.addEventListener('dragend', function () {
-        setTimeout(function () {
-            draggedItem.style.display = 'block';
-            draggedItem = null;
-        }, 0);
-    })
-
-    for (let j = 0; j < lists.length; j++) {
-        const list = lists[j];
-
-        list.addEventListener('dragover', function (e) {
-            e.preventDefault();
+        item.addEventListener('dragstart', function () {
+            draggedItem = item;
+            setTimeout(function () {
+                item.style.display = 'none';
+            }, 0)
         });
 
-        list.addEventListener('dragenter', function (e) {
-            e.preventDefault();
-            this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-        });
+        item.addEventListener('dragend', function () {
+            setTimeout(function () {
+                draggedItem.style.display = 'block';
+                draggedItem = null;
+            }, 0);
+        })
 
-        list.addEventListener('dragleave', function (e) {
-            this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-        });
+        for (let j = 0; j < lists.length; j++) {
+            const list = lists[j];
 
-        list.addEventListener('drop', function (e) {
-            console.log('drop');
-            this.append(draggedItem);
-            this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-        });
+            list.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            });
+
+            list.addEventListener('dragenter', function (e) {
+                e.preventDefault();
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+            });
+
+            list.addEventListener('dragleave', function (e) {
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+            });
+
+            list.addEventListener('drop', function (e) {
+                console.log('drop');
+                this.append(draggedItem);
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+            });
+        }
     }
 }
