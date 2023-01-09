@@ -110,7 +110,7 @@ function changeColor() {
         if (categoryDesing[i].innerHTML == 'Sales') {
             categoryDesing[i].style.background = "#FC71FF";
         }
-        if (categoryDesing[i].innerHTML == 'Backoffice') {
+        if (categoryDesing[i].innerHTML == 'Back Office') {
             categoryDesing[i].style.background = "#1FD7C1";
         }
     }
