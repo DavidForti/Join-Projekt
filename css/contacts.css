@@ -122,6 +122,9 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    top: 33%;
-    left: 33%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    background-color: #f6f7f8;
 }
