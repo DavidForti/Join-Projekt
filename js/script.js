@@ -24,10 +24,10 @@ async function init() {
 
 
 async function initData() {
-    // await deleteAll();
-    await saveUsersToBackend();
-    await saveTasksToBackend();
-    await saveContactsToBackend();
+    //  await deleteAll();
+    // await saveUsersToBackend();
+    // await saveTasksToBackend();
+    // await saveContactsToBackend();
 
     await downloadFromServer();
 
@@ -151,7 +151,7 @@ async function saveTasksToBackend() {
             "userId": 2,
             "title": "Price increase",
             "description": "Price increase Description...",
-            "category": "Back Office",
+            "category": "Backoffice",
             "assignedTo": [],
             "dueDate": "01.02.2023",
             "priority": "Medium",
@@ -162,7 +162,7 @@ async function saveTasksToBackend() {
             "userId": 3,
             "title": "Task 3",
             "description": "Description Task 3...",
-            "category": "Back Office",
+            "category": "Backoffice",
             "assignedTo": [],
             "dueDate": "01.02.2023",
             "priority": "Urgent",
@@ -173,7 +173,7 @@ async function saveTasksToBackend() {
             "userId": 2,
             "title": "Task 4",
             "description": "Description Task 4...",
-            "category": "Sale",
+            "category": "Sales",
             "assignedTo": [],
             "dueDate": "01.05.2023",
             "priority": "Low",
@@ -184,7 +184,7 @@ async function saveTasksToBackend() {
             "userId": 2,
             "title": "Task 5",
             "description": "Description Task 5...",
-            "category": "Sale",
+            "category": "Sales",
             "assignedTo": [],
             "dueDate": "01.06.2023",
             "priority": "Medium",
@@ -195,7 +195,7 @@ async function saveTasksToBackend() {
             "userId": 3,
             "title": "Task 6",
             "description": "Description Task 6...",
-            "category": "Sale",
+            "category": "Sales",
             "assignedTo": [],
             "dueDate": "01.07.2023",
             "priority": "Low",
