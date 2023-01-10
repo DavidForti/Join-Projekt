@@ -94,7 +94,9 @@ function randomizer() {
 
 function randomColor(x) {
     let item = document.getElementsByClassName('circle')[x];
-    item.style.background = `rgba(${randomizer()}, ${randomizer()}, ${randomizer()})`;
+    let fullColor = `rgba(${randomizer()}, ${randomizer()}, ${randomizer()})`;
+    item.style.background = fullColor;
+    contacts[x].color = fullColor;
 }
 
 let savemean;
