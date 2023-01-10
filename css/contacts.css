@@ -122,9 +122,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    top: 0;
-    left: 0;
-    z-index: 9999;
+    top: 92px;
+    left: 200px;
     display: flex;
     background-color: #f6f7f8;
 }

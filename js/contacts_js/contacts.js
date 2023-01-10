@@ -1,3 +1,8 @@
+function initContacts() {
+    document.getElementById('contacts-container').style.zIndex = "9999";
+    renderContacts();
+}
+
 function renderContacts() {
     let place = document.getElementById('contacts-container');
     place.innerHTML = /*html*/ `
