@@ -76,7 +76,7 @@ function renderContact() {
         let id = contacts[x].name.charAt(0);
         let place = document.getElementById(id);
         place.innerHTML += /*html*/ `
-        <div class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x})">
+        <div class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x}); renderContactDetail(${x})">
             <div class="circle c-w d-flex justify-content-center align-items-center">${id}</div>
             <div>
                 <p>${contacts[x].name}</p>
@@ -110,7 +110,7 @@ function colorContacts(number) {
     savemean = mean;
 }
 
-function renderContactDetail() {
+function renderContactDetail(x) {
     let place = document.getElementById('contact-content');
     place.innerHTML = /*html*/ `
     <div class="d-flex align-items-center gap25">
@@ -118,7 +118,7 @@ function renderContactDetail() {
         <circle cx="21" cy="21" r="20.5" fill="#FF7A00" stroke="white"/>
         </svg>
         <div class="d-flex flex-column gap5">
-            <h2>Seppi</h2>
+            <h2>${contacts[x].name}</h2>
             <div class="c-b c-p d-flex align-items-center gap5"><p class="plus">+</p><p>Add Task</p></div>
         </div>
     </div>
@@ -135,11 +135,11 @@ function renderContactDetail() {
     <div class="d-flex flex-column gap25">
         <div class="gap10">
             <p class="b">E-Mail</p>
-            <p>test@test.com</p>
+            <p>${contacts[x].email}</p>
         </div>
         <div class="gap10">
             <p class="b">Phone Number</p>
-            <p>06232 21654</p>
+            <p>${contacts[x].phone}</p>
         </div>
     </div>
     `;
