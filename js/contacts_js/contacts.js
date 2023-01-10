@@ -35,18 +35,11 @@ function renderContacts() {
     `;
     renderLetters();
     renderContact();
-    renderContactDetail(1);
+    renderContactDetail(0);
 }
 
 // let contacts = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
 let letters = [];
-
-function sort() {
-    for (let x in contacts) {
-        contacts[x].name = contacts[x].name.charAt(0).toUpperCase() + contacts[x].name.slice(1);
-    }
-    contacts.sort();
-}
 
 function give() {
     for (let x in contacts) {
@@ -57,7 +50,7 @@ function give() {
 }
 
 function renderLetters() {
-    sort();
+    contacts.sort((a, b) => a.name.charCodeAt(0) - b.name.charCodeAt(0));
     give();
     let place = document.querySelector('.absolute-contacts');
     for (let x in letters) {
