@@ -38,7 +38,7 @@ function renderContacts() {
     renderContactDetail();
 }
 
-let contacts = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
+// let contacts = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
 let letters = [];
 
 function sort() {
