@@ -87,7 +87,7 @@ function addTask() {
                             <select id = "chgeCategory"   class="category" onchange="changeColor(this);" >                
                                 <option>Select task category</option>  
                                 <option >New category</option> 
-                                <option vlaue="#FC71FF">Sales</option>  
+                                <option >Sales</option>  
                                 <option vlaue="#1FD7C1">Backoffice</option>  
                             </select>
                     
@@ -213,7 +213,7 @@ function showTask(tasksArray) {
         html +=/*html*/ `
                 <div class="contant-card list-item" draggable="true">
                     <p class="category-desing">${task['category']}</p>
-                    <h3 >${task['titel']}</h3>
+                    <h3 >${task['title']}</h3>
                     <h2 >${task['description']}</h2>
                     <h2 >${task['assignedTo']}</h2>
                     <img src='${prios}'>
