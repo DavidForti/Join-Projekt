@@ -1,0 +1,21 @@
+.div-whatisjoin {
+    padding: 20px !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    word-break: break-all;
+}
+
+.back-arrow-black {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
