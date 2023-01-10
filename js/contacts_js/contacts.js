@@ -35,7 +35,7 @@ function renderContacts() {
     `;
     renderLetters();
     renderContact();
-    renderContactDetail();
+    renderContactDetail(1);
 }
 
 // let contacts = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
