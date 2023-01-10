@@ -1,6 +1,23 @@
 let timer = false;
 
-let color = ['FC71FF', '#1FD7C1']
+let color = ['FC71FF', '#1FD7C1'];
+
+let priority;
+
+let imgStatusPrio = [
+    {
+        "Name": "Urgent",
+        "src": "/img/prio alta.png",
+    },
+    {
+        "Name": "Medium",
+        "src": "/img/prio medium.png",
+    },
+    {
+        "Name": "Low",
+        "src": "/img/prio low.png",
+    }
+];
 
 function board() {
     document.getElementById('changeColor').classList.add("backgorund");
@@ -90,11 +107,13 @@ function addTask() {
                 <label for="due-date" class="correction-due-date">Due Date</label>
                 <input type="date" id="dueDate" class ="due-date">
                 <label for="status" class="correction-due-date">Prio</label>
+
                     <div class="status" id="chgeprio">
                         <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
                         <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
                         <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
                     </div>
+
                 <div class="bnts">
                     <button class="bnt-cancel" onclick="cancelBnt()" > Cancel <img src="img/cancelSymbol.png" ></button>
                     <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
@@ -117,6 +136,7 @@ function changeColor() {
 }
 
 function statusUrgent() {
+    priority = 'Urgent';
     document.getElementById('stautsUrgent').classList.add("backgorund-urgent-status");
     document.getElementById('imgStatusUrgent').classList.add("img-urgent-color-change");
     document.getElementById('statusMedium').classList.remove("backgorund-medium-status");
@@ -126,6 +146,7 @@ function statusUrgent() {
 }
 
 function statusMedium() {
+    priority = 'Medium';
     document.getElementById('statusMedium').classList.add("backgorund-medium-status");
     document.getElementById('imgStatusMedium').classList.add("img-medium-color-change");
     document.getElementById('stautsUrgent').classList.remove("backgorund-urgent-status");
@@ -136,6 +157,7 @@ function statusMedium() {
 }
 
 function statusLow() {
+    priority = 'Low';
     document.getElementById('statusLow').classList.add("backgorund-low-status");
     document.getElementById('imgStatusLow').classList.add("img-low-color-change");
     document.getElementById('statusMedium').classList.remove("backgorund-medium-status");
@@ -150,55 +172,53 @@ function closeTask() {
 
 function add() {
     document.getElementById('contantAddToTask').classList.add("d-none")
-    let titel = document.getElementById('title');
+    let title = document.getElementById('title');
     let description = document.getElementById('description');
     let category = document.getElementById('chgeCategory');
-    let assigned = document.getElementById('chgeAssigend');
+    let assignedTo = document.getElementById('chgeAssigend');
     let dueDate = document.getElementById('dueDate');
-    let prio = document.getElementById('chgeprio');
-    let subtask = document.getElementById('chgesubtask');
-    pushTaskInArr(titel, description, category, assigned, dueDate, prio);
+    pushTaskInArr(title, description, category, assignedTo, dueDate, priority);
 }
 
-async function pushTaskInArr(titel, description, category, assigned, dueDate, prio) {
+async function pushTaskInArr(title, description, category, assignedTo, dueDate, priority) {
     let headOfTask = {
-        "titel": titel.value,
+        "title": title.value,
         "description": description.value,
         "category": category.value,
-        "assigned": assigned.value,
+        "assignedTo": assignedTo.value,
         "dueDate": dueDate.value,
-        "prio": prio.value,
-
+        "priority": priority,
     };
 
     editTasks.push(headOfTask);
     await saveToBackend('tasks', editTasks);
     showTask(editTasks);
     console.log(editTasks);
-    // backgroundchange(category);
-    titel.value = '';
+    title.value = '';
     description.value = '';
     category.value = '';
-    assigned.value = '';
+    assignedTo.value = '';
     dueDate.value = '';
-    prio.value = '';
+    priority ='';
 
 }
-
 function showTask(tasksArray) {
     let contantToDo = document.querySelector('.list');
     contantToDo.innerHTML = '';
     let html = '';
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
+        let result = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == task.priority);
+        let prios = result[0]['src'];
         html +=/*html*/ `
                 <div class="contant-card list-item" draggable="true">
                     <p class="category-desing">${task['category']}</p>
                     <h3 >${task['titel']}</h3>
                     <h2 >${task['description']}</h2>
-                    <h2 >${task['assigned']}</h2>
-                    <h2 >${task['prio']}</h2>
+                    <h2 >${task['assignedTo']}</h2>
+                    <img src='${prios}'>
                 </div>
+                
          `;
     }
     contantToDo.innerHTML = html;
