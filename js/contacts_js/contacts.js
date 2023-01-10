@@ -33,19 +33,19 @@ function renderContacts() {
     renderContactDetail();
 }
 
-let contacts = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
+let test = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
 let letters = [];
 
 function sort() {
-    for (let x in contacts) {
-        contacts[x] = contacts[x].charAt(0).toUpperCase() + contacts[x].slice(1);
+    for (let x in test) {
+        test[x] = test[x].charAt(0).toUpperCase() + test[x].slice(1);
     }
-    contacts.sort();
+    test.sort();
 }
 
 function give() {
-    for (let x in contacts) {
-        if (!letters.includes(contacts[x].charAt(0))) {
+    for (let x in test) {
+        if (!letters.includes(test[x].charAt(0))) {
             letters.push(contacts[x].charAt(0));
         }
     }
@@ -67,8 +67,8 @@ function renderLetters() {
 }
 
 function renderContact() {
-    for (let x in contacts) {
-        let id = contacts[x].charAt(0);
+    for (let x in test) {
+        let id = test[x].charAt(0);
         let place = document.getElementById(id);
         place.innerHTML += /*html*/ `
         <div class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x})">
@@ -76,7 +76,7 @@ function renderContact() {
             <circle cx="21" cy="21" r="20.5" fill="#FF7A00" stroke="white"/>
             </svg>
             <div>
-                <p>${contacts[x]}</p>
+                <p>${test[x]}</p>
                 <p class="c-b">test@test.com</p>
             </div>
         </div>

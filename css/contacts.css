@@ -1,3 +1,43 @@
+.gap25 {
+    gap: 25px;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+.gap5 {
+    gap: 5px;
+}
+
+.c-t {
+    cursor: text;
+}
+
+.c-p {
+    cursor: pointer;
+}
+
+.c-w {
+    color: white;
+}
+
+.c-b {
+    color: #29ABE2;
+}
+
+.b {
+    font-weight: bold;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.mtb20 {
+    margin: 20px 0 !important;
+}
+
 .div-contacts {
     flex: 1;
     display: flex;
@@ -15,6 +55,51 @@
 
 .grey-stripe {
     border-bottom: solid 1px grey;
+    padding: 5px 15px !important;
+}
+
+.blue-stripe {
+    background-color: #29ABE2;
+    width: 3px;
+}
+
+.full-contact {
+    padding: 5px 15px !important;
+    border-radius: 10px;
+    transition: all 150ms;
+}
+
+.full-contact-effect {
+    background-color: #2A3647;
+    color: white;
+}
+
+.absolute-contact-detail {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.new-contact {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #2A3647 !important;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px !important;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.new-contact:hover {
+    background-color: #61cfff !important;
+
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+
+    transition: all 150ms;
 }
 
 #contact-view {
@@ -25,7 +110,18 @@
 #contact-list {
     width: 300px;
     background-color: white;
-    overflow-y: auto;
     box-shadow: 2px 0px 2px rgb(0 0 0 / 10%);
     position: relative;
+}
+
+#contact-detail {
+    flex: 1;
+}
+
+#contacts-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 33%;
+    left: 33%;
 }
