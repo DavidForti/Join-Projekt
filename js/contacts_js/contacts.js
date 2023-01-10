@@ -43,15 +43,15 @@ let letters = [];
 
 function sort() {
     for (let x in contacts) {
-        contacts[x] = contacts[x].charAt(0).toUpperCase() + contacts[x].slice(1);
+        contacts[x].name = contacts[x].name.charAt(0).toUpperCase() + contacts[x].name.slice(1);
     }
     contacts.sort();
 }
 
 function give() {
     for (let x in contacts) {
-        if (!letters.includes(contacts[x].charAt(0))) {
-            letters.push(contacts[x].charAt(0));
+        if (!letters.includes(contacts[x].name.charAt(0))) {
+            letters.push(contacts[x].name.charAt(0));
         }
     }
 }
@@ -73,14 +73,14 @@ function renderLetters() {
 
 function renderContact() {
     for (let x in contacts) {
-        let id = contacts[x].charAt(0);
+        let id = contacts[x].name.charAt(0);
         let place = document.getElementById(id);
         place.innerHTML += /*html*/ `
         <div class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x})">
             <div class="circle c-w d-flex justify-content-center align-items-center">${id}</div>
             <div>
-                <p>${contacts[x]}</p>
-                <p class="c-b">test@test.com</p>
+                <p>${contacts[x].name}</p>
+                <p class="c-b">${contacts[x].email}</p>
             </div>
         </div>
         `;
