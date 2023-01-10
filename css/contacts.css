@@ -113,6 +113,16 @@
     border: solid 2px white;
 }
 
+.big-circle {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: white;
+}
+
 #contact-view {
     flex: 1;
     padding: 20px !important;

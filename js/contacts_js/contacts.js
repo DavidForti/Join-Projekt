@@ -114,9 +114,7 @@ function renderContactDetail(x) {
     let place = document.getElementById('contact-content');
     place.innerHTML = /*html*/ `
     <div class="d-flex align-items-center gap25">
-        <svg width="100" height="100" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="21" cy="21" r="20.5" fill="#FF7A00" stroke="white"/>
-        </svg>
+        <div class="big-circle" style="background-color: ${contacts[x].color}"><h2>${letters[x]}</h2></div>
         <div class="d-flex flex-column gap5">
             <h2>${contacts[x].name}</h2>
             <div class="c-b c-p d-flex align-items-center gap5"><p class="plus">+</p><p>Add Task</p></div>
