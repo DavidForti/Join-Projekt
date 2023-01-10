@@ -1,5 +1,5 @@
 function initContacts() {
-    document.getElementById('contacts-container').style.zIndex = "9999";
+    document.getElementById('contacts-container').classList.remove('d-none');
     renderContacts();
 }
 
