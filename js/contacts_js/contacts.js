@@ -38,20 +38,20 @@ function renderContacts() {
     renderContactDetail();
 }
 
-let test = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
+let contacts = ["Audi", "aack", "Christan", "bohn", "Pepi", "magnus", "Miriam", "Jeremiah", "Solomon", "matthew", "Noah", "Toasti"];
 let letters = [];
 
 function sort() {
-    for (let x in test) {
-        test[x] = test[x].charAt(0).toUpperCase() + test[x].slice(1);
+    for (let x in contacts) {
+        contacts[x] = contacts[x].charAt(0).toUpperCase() + contacts[x].slice(1);
     }
-    test.sort();
+    contacts.sort();
 }
 
 function give() {
-    for (let x in test) {
-        if (!letters.includes(test[x].charAt(0))) {
-            letters.push(test[x].charAt(0));
+    for (let x in contacts) {
+        if (!letters.includes(contacts[x].charAt(0))) {
+            letters.push(contacts[x].charAt(0));
         }
     }
 }
@@ -72,21 +72,29 @@ function renderLetters() {
 }
 
 function renderContact() {
-    for (let x in test) {
-        let id = test[x].charAt(0);
+    for (let x in contacts) {
+        let id = contacts[x].charAt(0);
         let place = document.getElementById(id);
         place.innerHTML += /*html*/ `
         <div class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x})">
-            <svg width="30" height="30" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="21" cy="21" r="20.5" fill="#FF7A00" stroke="white"/>
-            </svg>
+            <div class="circle c-w d-flex justify-content-center align-items-center">${id}</div>
             <div>
-                <p>${test[x]}</p>
+                <p>${contacts[x]}</p>
                 <p class="c-b">test@test.com</p>
             </div>
         </div>
         `;
+        randomColor(x);
     }
+}
+
+function randomizer() {
+    return Math.floor(Math.random() * 200);
+}
+
+function randomColor(x) {
+    let item = document.getElementsByClassName('circle')[x];
+    item.style.background = `rgba(${randomizer()}, ${randomizer()}, ${randomizer()})`;
 }
 
 let savemean;
@@ -107,14 +115,14 @@ function renderContactDetail() {
         <svg width="100" height="100" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="21" cy="21" r="20.5" fill="#FF7A00" stroke="white"/>
         </svg>
-        <div>
+        <div class="d-flex flex-column gap5">
             <h2>Seppi</h2>
-            <div class="c-b d-flex align-items-center gap5 c-p"><p>+</p><p>Add Task</p></div>
+            <div class="c-b c-p d-flex align-items-center gap5"><p class="plus">+</p><p>Add Task</p></div>
         </div>
     </div>
     <div class="d-flex gap25 mtb20">
         <p>Contact Information</p>
-        <div class="d-flex gap5 c-p align-items-center">
+        <div class="d-flex gap5 align-items-center c-p">
             <svg width="20" height="20" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.87121 22.0156L7.69054 24.9405L20.3337 4.10842C20.6203 3.63628 20.4698 3.02125 19.9977 2.73471L16.8881 0.847482C16.4159 0.56094 15.8009 0.711391 15.5144 1.18353L2.87121 22.0156Z" fill="#2A3647"/>
             <path d="M2.28614 22.9794L7.10547 25.9043L2.37685 28.1892L2.28614 22.9794Z" fill="#2A3647"/>

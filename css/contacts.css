@@ -102,6 +102,16 @@
     transition: all 150ms;
 }
 
+.plus {
+    font-size: 15px;
+}
+
+.circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+}
+
 #contact-view {
     flex: 1;
     padding: 20px !important;
