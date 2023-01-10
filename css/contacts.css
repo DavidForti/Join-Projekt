@@ -110,6 +110,7 @@
     height: 30px;
     width: 30px;
     border-radius: 100%;
+    border: solid 2px white;
 }
 
 #contact-view {
