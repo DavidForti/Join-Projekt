@@ -1,5 +1,5 @@
 function renderContacts() {
-    let place = document.getElementById('content');
+    let place = document.getElementById('contacts-container');
     place.innerHTML = /*html*/ `
     <div class="div-contacts">
         <div id="contact-list">
@@ -46,7 +46,7 @@ function sort() {
 function give() {
     for (let x in test) {
         if (!letters.includes(test[x].charAt(0))) {
-            letters.push(contacts[x].charAt(0));
+            letters.push(test[x].charAt(0));
         }
     }
 }
