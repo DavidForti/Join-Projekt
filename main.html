@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/dragAndDrop.css">
     <link rel="stylesheet" href="css/contacts.css">
     <link rel="stylesheet" href="css/whatisjoin.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
     <title>Backend-Integration</title>
     <script src="js/contacts_js/contacts.js"></script>
     <script src="./js/mini_backend.js"></script>
@@ -29,7 +31,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body onload="summary()">
+<body onload=" summary();renderDiv()">
     <!-- return false nicht vergessen damit nicht neu geladen wird. Ansonsten gibt es Fehler beim speichern des Task im Backend !!! -->
     <form onsubmit="addTask(); return false;">
     </form>
