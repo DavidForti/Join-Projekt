@@ -44,13 +44,13 @@ function eventListener() {
         item.addEventListener('dragstart', function () {
             draggedItem = item;
             setTimeout(function () {
-                item.style.display = 'none';
+                item.style.visibility = 'hidden';
             }, 0)
         });
 
         item.addEventListener('dragend', function () {
             setTimeout(function () {
-                draggedItem.style.display = 'block';
+                draggedItem.style.visibility = 'visible';
             }, 0);
         })
 
