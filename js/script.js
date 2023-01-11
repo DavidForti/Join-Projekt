@@ -3,11 +3,12 @@ let editTasks = [];
 let contacts = [];
 let newUser = [];
 
-// Change BASE_SERVER_URL for smallest_backend_ever
+// BASE_SERVER_URL for smallest_backend_ever.
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
 
 /**
- * Get Users from Backend-Server
+ * Get Users from Backend-Server.
+ * @async
  */
 async function init() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -23,6 +24,10 @@ async function init() {
 }
 
 
+/**
+ *  Get Data (Users, Tasks, Contacts) from Backend.
+ *  @async
+ */
 async function initData() {
     // await deleteAll();
     // await saveUsersToBackend();
@@ -37,6 +42,10 @@ async function initData() {
 }
 
 
+/**
+ * Animate Join Logo - Move from the middle to the top left.
+ * In Mobile mode change from white to gray join logo.
+ */
 function animateLogo() {
     document.getElementById('join-animation-container').classList.add('join-animation-container-animate');
     document.getElementById('join-logo-gray').classList.add('join-logo-animate-gray');
@@ -44,18 +53,39 @@ function animateLogo() {
 }
 
 
+/**
+ * Get Join Users from Backend
+ * Save Users to global Variable joinUsers
+ * 
+ * @async
+ * @param {string} page - For Looging purpose to get page from which this page is called. 
+ */
 async function loadUsersFromBackend(page) {
     joinUsers = JSON.parse(await backend.getItem('users')) || [];
     console.log(`Users geladen (${page}):`, joinUsers);
 }
 
 
+/**
+ * Get Join Tasks from Backend
+ * Save Tasks to global Variable editTasks
+ * 
+ * @async
+ * @param {string} page - For Looging purpose to get page from which this page is called. 
+ */
 async function loadTasksFromBackend(page) {
     editTasks = JSON.parse(await backend.getItem('tasks')) || [];
     console.log(`Tasks geladen (${page}):`, editTasks);
 }
 
 
+/**
+ * Get Join Contacts from Backend
+ * Save Contacs to global Variable contacts
+ * 
+ * @async
+ * @param {string} page - For Looging purpose to get page from which this page is called. 
+ */
 async function loadContactsFromBackend(page) {
     contacts = JSON.parse(await backend.getItem('contacts')) || [];
     console.log(`Contacts geladen (${page}):`, contacts);
@@ -63,6 +93,7 @@ async function loadContactsFromBackend(page) {
 
 
 /**
+ * Get Join User based on Email Address
  * 
  * @param {string} email - Email address to check 
  * @returns - Founded user with the entered email address
@@ -72,13 +103,22 @@ function getUserFromEmailAddress(email) {
 }
 
 
+/**
+ * Save Array Variable to Backend
+ * 
+ * @async
+ * @param {string} arrayName 
+ * @param {Object[]} array 
+ */
 async function saveToBackend(arrayName, array) {
     await backend.setItem(arrayName, JSON.stringify(array));
 }
 
 
 /**
+ * Update User-Object Property
  * 
+ * @async
  * @param {object} user - User-Object
  * @param {string} key - User property that is updated
  * @param {string} value - Value that is stored
@@ -93,6 +133,10 @@ async function updateUser(user, keyValueArray) {
 }
 
 
+/**
+ * Save Example Users to Backend.
+ * @async
+ */
 async function saveUsersToBackend() {
     joinUsers = [
         {
@@ -133,6 +177,10 @@ async function saveUsersToBackend() {
 }
 
 
+/**
+ * Save Example Tasks to Backend.
+ * @async
+ */
 async function saveTasksToBackend() {
     editTasks = [
         {
@@ -214,6 +262,10 @@ async function saveTasksToBackend() {
 }
 
 
+/**
+ * Save Example Contacts to Backend.
+ * @async
+ */
 async function saveContactsToBackend() {
     contacts = [
         {
@@ -240,26 +292,57 @@ async function saveContactsToBackend() {
 }
 
 
+/**
+ * Delete complete saved Backend Data !!.
+ * @async
+ */
 async function deleteAll() {
     await backend.deleteItem('users');
     await backend.deleteItem('tasks');
 }
 
 
+/**
+ * Load / Show Web Page
+ * 
+ * @param {string} page - Web Page that is called.
+ * @param {string} message - Message that is passed as a url parameter msg
+ */
 function goToPage(page, message) {
     window.location.href = `${page}?msg=${message}`;
 }
 
+
+/**
+ * Save JSON-Object to Local Storage.
+ * 
+ * @param {string} key - Key name
+ * @param {JSON-Object} value - JSON-Object 
+ */
 function saveToLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
 
+/**
+ * Get JSON-Object based on Key Name from Local Storage. 
+ * 
+ * @param {string} key - Key Name
+ * @returns - JSON-Object based on Key Name
+ */
 function getFromLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
 }
 
 
+/**
+ * Show Notify Message with Move-Animation
+ * 
+ * @param {string} messageId - Element Id of Message Div Container
+ * @param {string} message - Message which is displayed
+ * @param {string} imageId - Element Id of the Image next to the Message
+ * @param {Boolean} show - Show Image next to the message
+ */
 function showNotifyMessage(messageId, message, imageId, show) {
     let notifyMsg = document.getElementById(messageId);
     notifyMsg.classList.remove('d-none');
@@ -274,6 +357,12 @@ function showNotifyMessage(messageId, message, imageId, show) {
 }
 
 
+/**
+ * Show or Hide Element based on Element id. 
+ * 
+ * @param {string} elementId 
+ * @param {boolean} show 
+ */
 function showElement(elementId, show) {
     let element = document.getElementById(elementId);
     if (show)
@@ -283,6 +372,11 @@ function showElement(elementId, show) {
 }
 
 
+/**
+ * Hide Input Fields.
+ * 
+ * @param {string[]} inputFields - Input Field Ids to hide
+ */
 function emtpyInputFields(inputFields) {
     for (let i = 0; i < inputFields.length; i++) {
         let inputField = document.getElementById(inputFields[i]);
@@ -292,7 +386,7 @@ function emtpyInputFields(inputFields) {
 
 
 /**
- * Hide displayed warning messages
+ * Hide displayed warning messages.
  */
 function resetWarningMessages(messageIds) {
     for (let i = 0; i < messageIds.length; i++) {
