@@ -6,6 +6,10 @@
     margin-bottom: 25px;
 }
 
+.pad20 {
+    padding: 20px;
+}
+
 .h2n {
     margin: unset;
 }

@@ -1,4 +1,4 @@
-function legalNotice() {
+/*function legalNotice() {
     document.getElementById('changeColorNotice').style.backgroundColor = "black";
     document.getElementById('changeColor').classList.add("backgorund");
     document.getElementById('changeColorboard').classList.add("backgorund");
@@ -10,10 +10,11 @@ function legalNotice() {
     let content = document.getElementById('contentNotice');
     content.innerHTML = showNotice();
 }
+*/
 
 function showNotice() {
-    return /*html*/`
-    <div class="position-relative">
+    document.getElementById('contacts-container').innerHTML = /*html*/`
+    <div class="position-relative pad20">
     <h1 class="h1n">
     Legal Notice
     </h1>
