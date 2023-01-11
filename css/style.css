@@ -25,3 +25,7 @@ h1 {
 .mt-6 {
     margin-top: 6px;
 }
+
+.d-div {
+    display: flex;
+}

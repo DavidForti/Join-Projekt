@@ -31,7 +31,6 @@ async function summary() {
     contantSummary.innerHTML += urgentBox();
     contantSummary.innerHTML += toDoBox();
     const joinUser = getFromLocalStorage('joinUser');
-
 }
 
 function summaryclick() {
@@ -59,19 +58,28 @@ function workflowPriority() {
     workflowUrgent = editTasks.filter(task => task.priority == taskPriority.urgent).length;
 }
 
+function renderDiv() {
+    document.getElementById('contacts-container').innerHTML = /*html*/ `
+    <div id="d-div"></div>
+    `;
+    hedalineSummary();
+    progrssesBox();
+    urgentBox();
+    toDoBox();
+}
+
 function hedalineSummary() {
-    return /*html*/`
+    document.getElementById('d-div').innerHTML = /*html*/`
     <div class=head-of-summary>
         <h1 class="head-summary">Summary</h1>
         <img src="/img/verticalLine.png" class="vertical-Line">
         <img src="/img/nutshell.png" class="nutshell">
     </div>
-    
     `;
 }
 
 function progrssesBox() {
-    return/*html*/`
+    document.getElementById('d-div').innerHTML += /*html*/`
     <div class="boxes">
         <div class="box"> ${editTasks.length}<div class="tasks-in-Board">Tasks in <br>Board </div></div>
         <div class="box"> ${workflowInProgress}<div class="tasks-in-Board">Tasks in <br>Progress </div></div>
@@ -84,7 +92,7 @@ function progrssesBox() {
 editTasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 
 function urgentBox(urgants) {
-    return /*html*/`
+    document.getElementById('d-div').innerHTML += /*html*/`
     <div class="urgent-box">
         <div class="urgent-style-box">
             <div class="red-circel">
@@ -106,7 +114,7 @@ function urgentBox(urgants) {
 }
 
 function toDoBox() {
-    return/*html*/`
+    document.getElementById('d-div').innerHTML += /*html*/`
     <div class="toDo-done-box">
         <div class="toDo-done">
             <div class="show-up-todo">
