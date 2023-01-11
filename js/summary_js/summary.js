@@ -11,7 +11,7 @@ const taskStatus = {
     inProgress: 'In Progress',
     awaitingFeedback: 'Awaiting Feedback',
     done: 'Done',
-    dueDate : 'dueDate'
+    dueDate: 'dueDate'
 
 }
 
@@ -33,7 +33,7 @@ async function summary() {
     contantSummary.innerHTML += urgentBox();
     contantSummary.innerHTML += toDoBox();
     const joinUser = getFromLocalStorage('joinUser');
-    
+
 }
 
 function summaryclick() {
@@ -84,6 +84,8 @@ function progrssesBox() {
     `;
 }
 
+editTasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+
 function urgentBox(urgants) {
     return /*html*/`
     <div class="urgent-box">
@@ -98,7 +100,7 @@ function urgentBox(urgants) {
             <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
             <div class="show-deadline">
                 
-                <h3 class="deadline">duedate muss hier stehen<img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
+                <h3 class="deadline">${editTasks[0].dueDate}<img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
             </div>            
         </div>
     </div>
