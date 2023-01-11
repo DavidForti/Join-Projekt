@@ -204,13 +204,13 @@ async function pushTaskInArr(title, description, category, assignedTo, dueDate, 
 }
 function showTask(tasksArray) {
     tasksToDo = tasksArray.filter(task => task.status == taskStatus.todo);
-    showTaskByPriority(tasksToDo,'todo-tasks');
+    showTaskByStatus(tasksToDo,'todo-tasks');
     tasksInProgress = tasksArray.filter(task => task.status == taskStatus.inProgress);
-    showTaskByPriority(tasksInProgress,'in-progress-tasks')    
+    showTaskByStatus(tasksInProgress,'in-progress-tasks')    
     tasksAwaitingFeedback = tasksArray.filter(task => task.status == taskStatus.awaitingFeedback);
-    showTaskByPriority(tasksAwaitingFeedback,'awaiting-feedback-tasks');
+    showTaskByStatus(tasksAwaitingFeedback,'awaiting-feedback-tasks');
     tasksDone = tasksArray.filter(task => task.status == taskStatus.done);
-    showTaskByPriority(tasksDone,'done-tasks');
+    showTaskByStatus(tasksDone,'done-tasks');
 
     // let contantToDo = document.querySelector('.list');
     // contantToDo.innerHTML = '';
@@ -236,7 +236,7 @@ function showTask(tasksArray) {
 }
 
 
-function showTaskByPriority(tasks, elementId) {
+function showTaskByStatus(tasks, elementId) {
     content = document.getElementById(elementId)
     content.innerHTML = '';
     let html = '';
