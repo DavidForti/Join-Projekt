@@ -1,5 +1,6 @@
 function renderWhatIsJoin() {
     let place = document.getElementById('contacts-container');
+    place.classList.remove('d-none');
     place.innerHTML = /*html*/ `
     <div class="div-whatisjoin d-flex gap25 flex-column">
         <h1>Help</h1>

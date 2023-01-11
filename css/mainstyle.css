@@ -35,7 +35,7 @@
     margin-top: 60px;
 }
 
-.backgorund{
+.backgorund {
     background-color: #2A3647 !important;
 }
 
@@ -45,13 +45,12 @@
 
 }
 
-#changeColorboard{
+#changeColorboard {
     width: 200px;
     height: 40px;
 }
 
-#changeColorNotice{
-    margin-top: 42%;
+#changeColorNotice {
     width: 200px;
     height: 40px;
 }

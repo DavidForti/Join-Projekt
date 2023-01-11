@@ -123,6 +123,59 @@
     color: white;
 }
 
+.anim-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.new-contact-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 800px;
+    animation: slide-in 1s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        left: 150%;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+.tbt {
+    background-color: #2A3647;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 20px !important;
+}
+
+.tbt-details {
+    background-color: white;
+    flex: 1;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 20px !important;
+}
+
+.blue-stripe2 {
+    background-color: #29ABE2;
+
+    height: 2px;
+    width: 50px;
+}
+
 #contact-view {
     flex: 1;
     padding: 20px !important;
