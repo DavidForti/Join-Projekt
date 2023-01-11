@@ -9,7 +9,7 @@ let workflowMedium = 0;
 
 const taskStatus = {
     todo: 'To do',
-    inProgress: 'In progress',
+    inProgress: 'In Progress',
     awaitingFeedback: 'Awaiting Feedback',
     done: 'Done',
 

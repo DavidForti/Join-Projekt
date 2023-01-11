@@ -1,3 +1,5 @@
+let currentDraggingTaskId
+
 function renderFields() {
     let content = document.getElementById('contantBoard');
     content.innerHTML = /*html*/ `
@@ -44,7 +46,9 @@ function eventListener() {
         item.addEventListener('dragstart', function () {
             draggedItem = item;
             setTimeout(function () {
+                currentDraggingTaskId = draggedItem.id;
                 item.style.visibility = 'hidden';
+
             }, 0)
         });
 
@@ -71,9 +75,10 @@ function eventListener() {
             });
 
             list.addEventListener('drop', function (e) {
-                console.log('drop');
+                // console.log('drop');
                 this.append(draggedItem);
                 this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                saveTaskStatus(e);
             });
         }
     }

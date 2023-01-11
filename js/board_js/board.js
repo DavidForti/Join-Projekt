@@ -199,18 +199,18 @@ async function pushTaskInArr(title, description, category, assignedTo, dueDate, 
     category.value = '';
     assignedTo.value = '';
     dueDate.value = '';
-    priority ='';
+    priority = '';
 
 }
 function showTask(tasksArray) {
     tasksToDo = tasksArray.filter(task => task.status == taskStatus.todo);
-    showTaskByStatus(tasksToDo,'todo-tasks');
+    showTaskByStatus(tasksToDo, 'todo-tasks');
     tasksInProgress = tasksArray.filter(task => task.status == taskStatus.inProgress);
-    showTaskByStatus(tasksInProgress,'in-progress-tasks')    
+    showTaskByStatus(tasksInProgress, 'in-progress-tasks')
     tasksAwaitingFeedback = tasksArray.filter(task => task.status == taskStatus.awaitingFeedback);
-    showTaskByStatus(tasksAwaitingFeedback,'awaiting-feedback-tasks');
+    showTaskByStatus(tasksAwaitingFeedback, 'awaiting-feedback-tasks');
     tasksDone = tasksArray.filter(task => task.status == taskStatus.done);
-    showTaskByStatus(tasksDone,'done-tasks');
+    showTaskByStatus(tasksDone, 'done-tasks');
 
     // let contantToDo = document.querySelector('.list');
     // contantToDo.innerHTML = '';
@@ -227,7 +227,7 @@ function showTask(tasksArray) {
     //                 <h2 >${task['assignedTo']}</h2>
     //                 <img src='${prios}'>
     //             </div>
-                
+
     //      `;
     // }
     // contantToDo.innerHTML = html;
@@ -236,6 +236,11 @@ function showTask(tasksArray) {
 }
 
 
+/**
+ * Show Task based on status in corresponding div element id
+ * @param {*} tasks - Task array to render
+ * @param {*} elementId - Element id of div container
+ */
 function showTaskByStatus(tasks, elementId) {
     content = document.getElementById(elementId)
     content.innerHTML = '';
@@ -245,17 +250,58 @@ function showTaskByStatus(tasks, elementId) {
         let result = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == task.priority);
         let prios = result[0]['src'];
         html +=/*html*/ `
-                <div class="contant-card list-item" draggable="true">
+                <div id=${task['id']} class="contant-card list-item" draggable="true">
                     <p class="category-desing">${task['category']}</p>
                     <h3 >${task['title']}</h3>
                     <h2 >${task['description']}</h2>
                     <h2 >${task['assignedTo']}</h2>
                     <img src='${prios}'>
                 </div>
-                
          `;
     }
     content.innerHTML = html;
+}
+
+
+/**
+ * Save Dragged Task to global Task Array and to Backend
+ * @param {event} e - Target Div-Container in which the task is dropped 
+ */
+async function saveTaskStatus(e) {
+    if (currentDraggingTaskId != -1) {
+        console.log(`${e.target.id} - ${currentDraggingTaskId}`);
+        let taskStatus = getTaskStatus(e.target.id);
+        editTasks[currentDraggingTaskId]['status'] = taskStatus;
+        await saveToBackend('tasks', editTasks);
+        currentDraggingTaskId = -1;
+    }
+}
+
+
+/**
+ * Get Task-Status based on Div-Container element id
+ * @param {int} elementId 
+ * @returns - Task Status - String
+ */
+function getTaskStatus(elementId) {
+    let taskStatus;
+    switch (elementId) {
+        case 'todo-tasks':
+            taskStatus = 'To do';
+            break;
+        case 'in-progress-tasks':
+            taskStatus = 'In Progress';
+            break;
+        case 'awaiting-feedback-tasks':
+            taskStatus = 'Awaiting Feedback';
+            break;
+        case 'done-tasks':
+            taskStatus = 'Done';
+            break;
+        default:
+            taskStatus = 'To do';
+    }
+    return taskStatus;
 }
 
 /**
