@@ -11,8 +11,6 @@ const taskStatus = {
     inProgress: 'In Progress',
     awaitingFeedback: 'Awaiting Feedback',
     done: 'Done',
-    dueDate: 'dueDate'
-
 }
 
 const taskPriority = {
@@ -53,7 +51,6 @@ function workflowStatus() {
     workflowInProgress = editTasks.filter(task => task.status == taskStatus.inProgress).length;
     workflowAwaitingFeedback = editTasks.filter(task => task.status == taskStatus.awaitingFeedback).length;
     workflowDone = editTasks.filter(task => task.status == taskStatus.done).length;
-    workflowDone = editTasks.filter(task => task.status == taskStatus.dueDate).length;
 }
 
 function workflowPriority() {
