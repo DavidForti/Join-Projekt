@@ -28,7 +28,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
+.boxes {
+    margin-top: 12%;
+    justify-content: space-between;
+    display: flex;
+    position: relative;
 }
 
 .box {
@@ -41,16 +47,18 @@
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-
+    cursor: pointer;
 }
 
-.boxes {
-    margin-top: 12%;
-    justify-content: space-between;
-    display: flex;
-    position: relative;
-
+.box:hover {
+    background-color: #2A3647;
+    color: #FFFFFF
 }
+
+.box:hover .tasks-in-Board {
+    color: #FFFFFF
+}
+
 
 .urgent-box {
     margin-top: 5%;
@@ -64,7 +72,23 @@
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
     border-radius: 30px;
+    cursor: pointer;
+}
 
+.urgent-box:hover {
+    background-color: #2A3647;
+}
+
+.urgent-box:hover .show-urgent {
+    color: #FFFFFF;
+}
+
+.urgent-box:hover .img-urgent-change-color {
+    filter: brightness(6)sepia(1);
+}
+
+.urgent-box:hover .updead-line {
+    filter: brightness(6)sepia(1);
 }
 
 .urgent-style-box {
@@ -139,9 +163,38 @@
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
     border-radius: 30px;
+    cursor: pointer;
 }
 
-.show-up-todo{
+.toDo-done:hover {
+    background-color: #2A3647;
+}
+
+.toDo-done:hover .show-up-style-1 {
+    color: #fefefe;
+}
+
+.toDo-done:hover .color-change-box-todo-done {
+    filter: brightness(6)sepia(1);
+}
+
+.toDo-done:hover .check-chop{
+    position: absolute;
+    margin-left: 14px;
+    filter: brightness(0)sepia(20);
+}
+
+.toDo-done:hover .pencil{
+    position: absolute;
+    margin-left: 22px;
+    filter: brightness(0)sepia(20);
+}
+
+.toDo-done:hover .img-check-todo-box{
+    filter: brightness(6)sepia(1);
+}
+
+.show-up-todo {
     font-size: 30px;
     font-weight: bold;
     display: flex;
@@ -149,13 +202,14 @@
     margin-top: 15%;
 }
 
-.show-up-style{
+.show-up-style {
     display: flex;
-   justify-content: space-between;
-   width: 60%;
-   align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
 }
-.show-up-style-1{
+
+.show-up-style-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,4 +241,3 @@
     align-items: center;
     width: 100%;
 }
-

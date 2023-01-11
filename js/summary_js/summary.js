@@ -6,7 +6,6 @@ let workflowUrgent = 0;
 let workflowLow = 0;
 let workflowMedium = 0;
 
-
 const taskStatus = {
     todo: 'To do',
     inProgress: 'In Progress',
@@ -20,8 +19,6 @@ const taskPriority = {
     medium: 'Medium',
     urgent: 'Urgent'
 }
-
-
 
 async function summary() {
     await initData();
@@ -63,34 +60,6 @@ function workflowPriority() {
     workflowUrgent = editTasks.filter(task => task.priority == taskPriority.urgent).length;
 }
 
-
-
-//function summaryclick()
-
-//await downloadFromServer();
-
-
-
-
-//async function downloadFromServer() {
-//  await init();
-//  const joinUser = getFromLocalStorage('joinUser');
-//  filterById(joinUser);
-//}
-
-
-//function amounts(){
-//  if (xxxx) {
-//      emptyscreen()
-//  }else{
-//  die restlichen funktionen
-//  }
-//}
-
-
-//function emptyscreen(){} => schreiben wenn keine task angelegt sind
-
-
 function hedalineSummary() {
     return /*html*/`
     <div class=head-of-summary>
@@ -122,7 +91,7 @@ function urgentBox(urgants) {
                     <img src="/img/Ellipse.png"  class="ellipse">  
                     <img src="/img/urgant.png" class="urgant">
                 </div>
-                <h1 class="show-urgent">${workflowUrgent} <img src="/img/text.png"></h1>
+                <h1 class="show-urgent">${workflowUrgent} <img  class="img-urgent-change-color" src="/img/text.png"></h1>
             </div>     
             <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
             <div class="show-deadline">
@@ -141,10 +110,11 @@ function toDoBox() {
         <div class="toDo-done">
             <div class="show-up-todo">
                 <div class="show-up-style">
-                    <img src="/img/todo.png">  
+                    <img class="img-check-todo-box" src="/img/todo.png">  
+                    <img src="/img/pencil.png" class="pencil">
                         <div class="show-up-style-1">
                             ${workflowToDo}
-                            <img src="/img/text-todo.png">
+                            <img class="color-change-box-todo-done" src="/img/text-todo.png">
                         </div>
                 </div>
             </div>
@@ -152,10 +122,11 @@ function toDoBox() {
         <div class="toDo-done">
             <div class="show-up-todo">
                 <div class="show-up-style">
-                    <img src="/img/done.png">  
+                    <img class="img-check-todo-box" src="/img/done.png">  
+                    <img src="/img/check chop.png" class="check-chop">
                         <div class="show-up-style-1">
                             ${workflowDone}
-                            <img src="/img/text-done.png">
+                            <img class="color-change-box-todo-done" src="/img/text-done.png">
                         </div>
                 </div>
             </div>
