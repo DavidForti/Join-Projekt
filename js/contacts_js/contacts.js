@@ -1,5 +1,4 @@
 function initContacts() {
-    document.getElementById('contacts-container').classList.remove('d-none');
     renderContacts();
 }
 
