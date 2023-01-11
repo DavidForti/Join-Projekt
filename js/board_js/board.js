@@ -181,7 +181,9 @@ function add() {
 }
 
 async function pushTaskInArr(title, description, category, assignedTo, dueDate, priority) {
+    let newTaskId = getNewTaskId();
     let headOfTask = {
+        "id": newTaskId,
         "title": title.value,
         "description": description.value,
         "category": category.value,
@@ -304,6 +306,7 @@ function getTaskStatus(elementId) {
     return taskStatus;
 }
 
+
 /**
  * Search Tasks based on task search input value
  * 
@@ -320,6 +323,17 @@ function searchTasks() {
         }, 250);
     }
 }
+
+
+/**
+ * 
+ * @returns - Number of Tasks
+ */
+function getNewTaskId() {
+    return editTasks.length;
+}
+
+
 
 /**
  * Get filterd Tasks or all tasks based on task search input value
