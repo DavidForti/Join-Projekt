@@ -136,6 +136,7 @@ async function saveUsersToBackend() {
 async function saveTasksToBackend() {
     editTasks = [
         {
+            "id": 0,
             "userId": 1,
             "title": "Webdesign redesign",
             "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
@@ -148,6 +149,7 @@ async function saveTasksToBackend() {
 
         },
         {
+            "id": 1,
             "userId": 2,
             "title": "Price increase",
             "description": "Price increase Description...",
@@ -159,6 +161,7 @@ async function saveTasksToBackend() {
             "status": 'To do'
         },
         {
+            "id": 2,
             "userId": 3,
             "title": "Task 3",
             "description": "Description Task 3...",
@@ -170,6 +173,7 @@ async function saveTasksToBackend() {
             "status": 'In Progress'
         },
         {
+            "id": 3,
             "userId": 2,
             "title": "Task 4",
             "description": "Description Task 4...",
@@ -181,6 +185,7 @@ async function saveTasksToBackend() {
             "status": 'Awaiting Feedback'
         },
         {
+            "id": 4,
             "userId": 2,
             "title": "Task 5",
             "description": "Description Task 5...",
@@ -192,6 +197,7 @@ async function saveTasksToBackend() {
             "status": 'Done'
         },
         {
+            "id": 5,
             "userId": 3,
             "title": "Task 6",
             "description": "Description Task 6...",
