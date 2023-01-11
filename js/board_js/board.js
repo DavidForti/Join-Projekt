@@ -203,11 +203,45 @@ async function pushTaskInArr(title, description, category, assignedTo, dueDate, 
 
 }
 function showTask(tasksArray) {
-    let contantToDo = document.querySelector('.list');
-    contantToDo.innerHTML = '';
+    tasksToDo = tasksArray.filter(task => task.status == taskStatus.todo);
+    showTaskByPriority(tasksToDo,'todo-tasks');
+    tasksInProgress = tasksArray.filter(task => task.status == taskStatus.inProgress);
+    showTaskByPriority(tasksInProgress,'in-progress-tasks')    
+    tasksAwaitingFeedback = tasksArray.filter(task => task.status == taskStatus.awaitingFeedback);
+    showTaskByPriority(tasksAwaitingFeedback,'awaiting-feedback-tasks');
+    tasksDone = tasksArray.filter(task => task.status == taskStatus.done);
+    showTaskByPriority(tasksDone,'done-tasks');
+
+    // let contantToDo = document.querySelector('.list');
+    // contantToDo.innerHTML = '';
+    // let html = '';
+    // for (let i = 0; i < tasksArray.length; i++) {
+    //     let task = tasksArray[i];
+    //     let result = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == task.priority);
+    //     let prios = result[0]['src'];
+    //     html +=/*html*/ `
+    //             <div class="contant-card list-item" draggable="true">
+    //                 <p class="category-desing">${task['category']}</p>
+    //                 <h3 >${task['title']}</h3>
+    //                 <h2 >${task['description']}</h2>
+    //                 <h2 >${task['assignedTo']}</h2>
+    //                 <img src='${prios}'>
+    //             </div>
+                
+    //      `;
+    // }
+    // contantToDo.innerHTML = html;
+    changeColor();
+    eventListener();
+}
+
+
+function showTaskByPriority(tasks, elementId) {
+    content = document.getElementById(elementId)
+    content.innerHTML = '';
     let html = '';
-    for (let i = 0; i < tasksArray.length; i++) {
-        let task = tasksArray[i];
+    for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
         let result = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == task.priority);
         let prios = result[0]['src'];
         html +=/*html*/ `
@@ -221,9 +255,7 @@ function showTask(tasksArray) {
                 
          `;
     }
-    contantToDo.innerHTML = html;
-    changeColor();
-    eventListener();
+    content.innerHTML = html;
 }
 
 /**
