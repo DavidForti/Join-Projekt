@@ -9,21 +9,21 @@ function renderFields() {
         </div>
     </div>
 <div class="main">
-    <div class="second">
+    <div id="todo-tasks" class="second">
         <h3>To Do</h3>
         <div class="list">
             <p class="list-item" draggable="true">1</p>
         </div>
     </div>
-    <div class="second">
+    <div id="in-progress-tasks" class="second">
         <h3>In Progress</h3>
         <div class="list"></div>
     </div>
-    <div class="second">
+    <div id="awaiting-feedback-tasks" class="second">
         <h3>Awaiting Feedback</h3>
         <div class="list"></div>
     </div>
-    <div class="second">
+    <div id="done-tasks" class="second">
         <h3>Done</h3>
         <div class="list"></div>
     </div>
