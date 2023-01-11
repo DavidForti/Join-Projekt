@@ -1,0 +1,310 @@
+@media screen and (max-width: 1000px) {
+    .summary-container {
+        left: 355px;
+        position: absolute;
+        justify-content: flex-start;
+        align-items: center;
+        width: 37%;
+        top: 16%;
+    }
+
+    .reander-contianer-summary {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 600px;
+        width: 120%;
+    }
+
+
+    .head-of-summary {
+        font-family: 'Inter';
+        font-style: normal;
+        line-height: 120%;
+        color: #000000;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boxes {
+
+        margin-top: 12%;
+        justify-content: space-between;
+        display: flex;
+        position: relative;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 120px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .box:hover {
+        background-color: #2A3647;
+        color: #FFFFFF
+    }
+
+    .box:hover .tasks-in-Board {
+        color: #FFFFFF
+    }
+
+    .urgent-box {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 28px 48px;
+        gap: 61px;
+        height: 150px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .urgent-box:hover {
+        background-color: #2A3647;
+    }
+
+    .urgent-box:hover .show-urgent {
+        color: #FFFFFF;
+    }
+
+    .urgent-box:hover .img-urgent-change-color {
+        filter: brightness(6)sepia(1);
+    }
+
+    .urgent-box:hover .updead-line {
+        filter: brightness(6)sepia(1);
+    }
+
+    .urgent-style-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .red-circel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 63%;
+        margin-left: -25%;
+    }
+
+    .put-pic-togheter {
+        display: flex;
+        position: relative;
+        margin-left: 40%;
+    }
+
+    .urgant {
+        z-index: 1;
+    }
+
+    .ellipse {
+        z-index: 0;
+        position: absolute;
+        margin-top: -14px;
+        margin-left: -12px;
+    }
+
+    .show-urgent {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+
+    .deadline {
+
+        left: 390px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .show-deadline {
+        display: flex;
+        margin-right: -6%;
+    }
+
+    .updead-line {
+        margin-top: 20px;
+        width: 148px;
+        height: 19px;
+        font-family: 'Inter';
+        font-style: normal;
+        color: #2A3647;
+    }
+
+    .toDo-done-box {
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .toDo-done {
+        width: 200px;
+        height: 120px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 4px rgb(0 0 0 / 10%);
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    .toDo-done:hover {
+        background-color: #2A3647;
+    }
+
+    .toDo-done:hover .show-up-style-1 {
+        color: #fefefe;
+    }
+
+    .toDo-done:hover .color-change-box-todo-done {
+        filter: brightness(6)sepia(1);
+    }
+
+    .toDo-done:hover .check-chop {
+        position: absolute;
+        margin-left: 14px;
+        filter: brightness(0)sepia(20);
+    }
+
+    .toDo-done:hover .pencil {
+        position: absolute;
+        margin-left: 22px;
+        filter: brightness(0)sepia(20);
+    }
+
+    .toDo-done:hover .img-check-todo-box {
+        filter: brightness(6)sepia(1);
+    }
+
+    .show-up-todo {
+        font-size: 30px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        margin-top: 15%;
+    }
+
+    .show-up-style {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        align-items: center;
+    }
+
+    .show-up-style-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .head-summary {
+        font-size: 50px;
+    }
+
+    .tasks-in-Board {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        align-items: center;
+        font-weight: normal;
+        color: #2A3647;
+        text-align: center;
+    }
+
+    .urgent-style-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width: 810px) {
+    .box {
+        font-size: 25px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+    }
+
+    .urgent-box {
+        height: 120px;
+    }
+
+    .ellipse {
+        margin-top: -11px;
+        margin-left: -19px;
+        width: 50px;
+    }
+
+    .urgant {
+        width: 30px;
+        margin-left: -9px;
+        margin-top: 2px;
+    }
+
+    .deadline {
+        margin-left: 30px;
+    }
+
+    .line-vertical-Urgent {
+        margin-left: 30px;
+    }
+
+    .show-urgent {
+        margin-left: 20px;
+        font-size: 25px;
+    }
+
+    .updead-line {
+        width: 120px;
+        height: 15px;
+    }
+
+    .toDo-done {
+        width: 160px;
+        height: 110px;
+    }
+
+    .img-check-todo-box {
+        width: 50px;
+    }
+
+    .pencil {
+        width: 20px;
+        position: absolute;
+        left: 17px;
+    }
+
+    .check-chop{
+        position: absolute;
+        width: 20px;
+    }
+
+}

@@ -178,13 +178,23 @@
     filter: brightness(6)sepia(1);
 }
 
+.check-chop{
+    display: none;
+}
+
 .toDo-done:hover .check-chop{
+    display: flex;
     position: absolute;
     margin-left: 14px;
     filter: brightness(0)sepia(20);
 }
 
+.pencil{
+    display: none;
+}
+
 .toDo-done:hover .pencil{
+    display: flex;
     position: absolute;
     margin-left: 22px;
     filter: brightness(0)sepia(20);

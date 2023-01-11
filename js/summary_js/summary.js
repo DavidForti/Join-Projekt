@@ -11,6 +11,7 @@ const taskStatus = {
     inProgress: 'In Progress',
     awaitingFeedback: 'Awaiting Feedback',
     done: 'Done',
+    dueDate : 'dueDate'
 
 }
 
@@ -52,6 +53,7 @@ function workflowStatus() {
     workflowInProgress = editTasks.filter(task => task.status == taskStatus.inProgress).length;
     workflowAwaitingFeedback = editTasks.filter(task => task.status == taskStatus.awaitingFeedback).length;
     workflowDone = editTasks.filter(task => task.status == taskStatus.done).length;
+    workflowDone = editTasks.filter(task => task.status == taskStatus.dueDate).length;
 }
 
 function workflowPriority() {
@@ -96,7 +98,7 @@ function urgentBox(urgants) {
             <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
             <div class="show-deadline">
                 
-                <h3 class="deadline">hier muss die deadline stehen von add Task <img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
+                <h3 class="deadline">duedate muss hier stehen<img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
             </div>            
         </div>
     </div>
