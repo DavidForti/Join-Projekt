@@ -63,8 +63,11 @@
     padding: 35px;
 }
 
-.input-container {
+html {
+    overflow: hidden;
+}
 
+.input-container {
     z-index: 1;
     justify-content: space-between;
     top: 150px;
@@ -452,4 +455,3 @@
     }
 
 }
-
