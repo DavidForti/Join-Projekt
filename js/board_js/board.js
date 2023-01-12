@@ -110,8 +110,8 @@ function test() {
                 </div>
 
             <div class="bnts">
-                <button class="bnt-cancel" onclick="cancelBnt()" > Cancel <img src="img/cancelSymbol.png" ></button>
-                <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
+                <button class="bnt-cancel" onclick="test()" > Cancel <img src="img/cancelSymbol.png" ></button>
+                <button class="bnt-Task" onclick="board(); color2(1); add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
             </div>  
         </div>     
     </div>
