@@ -21,6 +21,13 @@
     width: 120%;
 }
 
+.cloum-rev{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 340px;
+}
+
 
 .head-of-summary {
     font-family: 'Inter';
