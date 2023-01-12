@@ -244,6 +244,17 @@
 }
 
 @media screen and (max-width: 810px) {
+
+
+    .summary-div {
+        margin-top: -25%;
+        margin-left: 13%;
+        width: 60vh;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+  
     .box {
         font-size: 25px;
         font-weight: bold;
@@ -304,11 +315,11 @@
         left: 17px;
     }
 
-    .check-chop{
+    .check-chop {
         position: absolute;
         width: 20px;
     }
-    
+
     .head-summary {
         font-size: 40px;
     }
