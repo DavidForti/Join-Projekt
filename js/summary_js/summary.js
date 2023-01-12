@@ -76,8 +76,10 @@ function hedalineSummary() {
     document.getElementById('d-div').innerHTML = /*html*/`
     <div class=head-of-summary>
         <h1 class="head-summary">Summary</h1>
-        <img src="/img/verticalLine.png" class="vertical-Line">
-        <img src="/img/nutshell.png" class="nutshell">
+        <div class="cloum-rev"> 
+            <img src="/img/verticalLine.png" class="vertical-Line">
+            <img src="/img/nutshell.png" class="nutshell">
+        </div>
     </div>
     `;
 }

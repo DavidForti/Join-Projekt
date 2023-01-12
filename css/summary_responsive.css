@@ -324,4 +324,12 @@
         font-size: 40px;
     }
 
+    .head-of-summary{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vertical-Line{
+        transform: rotate(90deg);
+    }
 }
