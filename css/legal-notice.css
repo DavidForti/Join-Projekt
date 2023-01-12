@@ -41,9 +41,10 @@
     color: #CDCDCD;
     justify-content: space-between;
     display: flex;
-    width: 114px;
+    width: 125px;
     align-items: baseline;
-    margin-left: 25%;
+    margin-left: 7%;
+    margin-top: 90%;
 }
 
 .notice-logo {
@@ -59,4 +60,3 @@
 .d-none {
     display: none;
 }
-

@@ -23,12 +23,12 @@ function board() {
     document.getElementById('contacts-container').innerHTML = /*html*/ `
     <div id="d-board"></div>
     `;
-    document.getElementById('changeColor').classList.add("backgorund");
-    document.getElementById('changeColorboard').classList.remove("backgorund")
-    document.getElementById('changeColor').classList.add("backgorund");
-    document.getElementById('changeColorNotice').classList.add("backgorund")
-    document.getElementById('changeColorboard').style.backgroundColor = "black";
-    document.getElementById('contentNotice').classList.add("d-none");
+    // document.getElementById('changeColor').classList.add("backgorund");
+    // document.getElementById('changeColorboard').classList.remove("backgorund")
+    // document.getElementById('changeColor').classList.add("backgorund");
+    // document.getElementById('changeColorNotice').classList.add("backgorund")
+    // document.getElementById('changeColorboard').style.backgroundColor = "black";
+    // document.getElementById('contentNotice').classList.add("d-none");
     addAndRemove();
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';

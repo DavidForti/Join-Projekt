@@ -39,18 +39,11 @@
     background-color: #2A3647 !important;
 }
 
-#changeColor {
-    width: 200px;
-    height: 40px;
-
+.color-background{
+    background-color: #1d2631 
 }
 
-#changeColorboard {
-    width: 200px;
-    height: 40px;
-}
-
-#changeColorNotice {
+.change-Color{
     width: 200px;
     height: 40px;
 }
@@ -70,7 +63,6 @@
     display: flex;
     width: 100px;
     align-items: baseline;
-    margin-left: 25%;
 }
 
 .board-contianer {
@@ -102,7 +94,7 @@
     display: flex;
     width: 80px;
     align-items: baseline;
-    margin-left: 25%;
+    margin-left: -10%;
 }
 
 
@@ -165,4 +157,8 @@
 
 .join-logo{
     display: none;
+}
+
+h3{
+    margin-bottom: unset !important;
 }

@@ -42,27 +42,25 @@
         <div class="main-container">
             <img src="/img/join-logo-white.png" class="main-img">
             <div class="menu">
-                <div class="menu-list" onclick="renderDiv()">
-                    <div id="changeColor">
-                        <h3 class="headline-summary"> <img src="/img/summary.png" class="summary-logo">Summary </h3>
-                    </div>
+                <div class="menu-list" onclick="renderDiv() ;color2(0) ">
+                        <h3 class="headline-summary"> <img src="/img/summary.png" class="summary-logo">Summary </h3> 
                 </div>
-                <div class="menu-list" onclick="board()">
-                    <div id="changeColorboard">
+                <div class="menu-list" onclick="board() ;color2(1)">
                         <h3 class="headline-borad"><img src="/img/board.png" class="board-logo">Board</h3>
-                    </div>
                 </div>
-                <div class="menu-list" onclick="addTaskBnt()">
-                   <div class="task-div">
+                <div class="menu-list" onclick="addTaskBnt() ;color2(2)">
+                    <div class="task-div d-flex align-items-center gap10">
                         <h3 class="headline-addTask">Add Task</h3> <img src="/img/addTask.png" class="addTask-logo">
                     </div>
                 </div>
-                <div class="menu-list" onclick="initContacts()">
-                   <div class="contacts-div">
+                <div class="menu-list" onclick="initContacts() ;color2(3)">
+                    
+                    <div class="contacts-div d-flex align-items-center gap10">
                         <h3 class="headline-addTask">Contacts</h3> <img src="/img/addTask.png" class="addTask-logo">
                     </div>
                 </div>
-                <div class="menu-list" onclick="showNotice()">
+                <div class="menu-list" onclick="showNotice() ;color2(4)">
+                    
                     <div id="changeColorNotice">
                         <h3 class="headline-notice"> <img src="/img/legal-notice.png" class="notice-logo">Legal Notice
                         </h3>
