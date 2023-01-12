@@ -1,4 +1,4 @@
-let savemean2;
+let savemean2 = document.querySelectorAll('.menu-list')[0];
 
 function color2(number) {
     let mean = document.querySelectorAll('.menu-list')[number];
