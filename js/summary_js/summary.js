@@ -24,6 +24,9 @@ async function summary() {
     workflowStatus();
     workflowPriority();
     summaryclick();
+    document.getElementById('contacts-container').innerHTML = /*html*/ `
+    <div id="d-div"></div>
+    `;
     let contantSummary = document.getElementById('contantSummary');
     contantSummary.innerHTML = '';
     contantSummary.innerHTML = hedalineSummary();
@@ -31,6 +34,7 @@ async function summary() {
     contantSummary.innerHTML += urgentBox();
     contantSummary.innerHTML += toDoBox();
     const joinUser = getFromLocalStorage('joinUser');
+    renderDiv();
 }
 
 function summaryclick() {
@@ -91,7 +95,7 @@ function progrssesBox() {
 
 editTasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 
-function urgentBox(urgants) {
+function urgentBox() {
     document.getElementById('d-div').innerHTML += /*html*/`
     <div class="urgent-box">
         <div class="urgent-style-box">
