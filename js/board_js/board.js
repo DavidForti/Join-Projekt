@@ -20,6 +20,9 @@ let imgStatusPrio = [
 ];
 
 function board() {
+    document.getElementById('contacts-container').innerHTML = /*html*/ `
+    <div id="d-board"></div>
+    `;
     document.getElementById('changeColor').classList.add("backgorund");
     document.getElementById('changeColorboard').classList.remove("backgorund")
     document.getElementById('changeColor').classList.add("backgorund");
@@ -29,7 +32,6 @@ function board() {
     addAndRemove();
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';
-    contantBoard.innerHTML += headlineBoard();
     contantBoard.innerHTML += dragAndDrop();
     renderFields();
     showTask(editTasks);

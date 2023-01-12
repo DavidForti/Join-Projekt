@@ -1,8 +1,8 @@
 let currentDraggingTaskId
 
 function renderFields() {
-    let content = document.getElementById('contantBoard');
-    content.innerHTML = /*html*/ `
+    let content = document.getElementById('d-board');
+    content.innerHTML += /*html*/ `
     <div class="headline-board-continaer">
         <h1 class="headline-board">Board</h1>
         <div class="input-feld">
