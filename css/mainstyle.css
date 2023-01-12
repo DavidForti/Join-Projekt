@@ -33,17 +33,18 @@
     align-items: center;
     width: 200px;
     margin-top: 60px;
+    height: 60px;
 }
 
 .backgorund {
     background-color: #2A3647 !important;
 }
 
-.color-background{
-    background-color: #1d2631 
+.color-background {
+    background-color: #1d2631
 }
 
-.change-Color{
+.change-Color {
     width: 200px;
     height: 40px;
 }
@@ -155,10 +156,10 @@
     color: #000000;
 }
 
-.join-logo{
+.join-logo {
     display: none;
 }
 
-h3{
+h3 {
     margin-bottom: unset !important;
 }
