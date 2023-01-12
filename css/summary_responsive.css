@@ -322,7 +322,7 @@
 
     .head-summary {
         font-size: 40px;
-        
+
     }
 
     .head-of-summary {
@@ -343,37 +343,57 @@
         width: 3px;
         margin-top: -16px;
         height: 100px;
-    } 
+    }
 }
 
 @media screen and (max-width: 375px) {
 
-    .head-summary {
-        font-size: 40px;
-        margin-right: 70%;
+    .head-of-summary {
+        margin-left: -30px;
+        width: 322px;
     }
 
-    .head-of-summary {
-        flex-direction: column;
-        height: -5px;
-        padding: -107px;
-        height: 125px;
+    .head-summary {
+        margin-right: 43%;
     }
 
     .cloum-rev {
-        margin-top: 20px;
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
-        flex-direction: column-reverse;
-        margin-right: 50%;
+        margin-right: 5%;
     }
 
-    .vertical-Line {
-        transform: rotate(90deg);
-        margin-right: 200px;
-        width: 3px;
-        margin-top: -16px;
+
+    .urgent-box {
+        margin-left: -34px;
+        height: 90px;
+        width: 340px;
+    }
+
+    .boxes {
+        right: 7%;
+        /* margin-right: 36px; */
+        margin-left: -8px;
+    }
+
+    .line-vertical-Urgent {
+        height: 92px;
+    }
+
+    .toDo-done-box {}
+
+    .toDo-done {
+        width: 130px;
         height: 100px;
+    }
+
+    .menu {
+        margin-top: 0%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 37%; 
+        align-items: center; 
+        width: 123%;
+    }
+    .reander-contianer-summary{
+        display: none;
     }
 }
