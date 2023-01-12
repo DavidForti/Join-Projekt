@@ -1,4 +1,3 @@
-
 let savemean2;
 
 function color2(number) {

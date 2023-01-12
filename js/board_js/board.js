@@ -62,6 +62,11 @@ function headlineBoard() {
     `;
 }
 
+function test() {
+    let place = document.getElementById('contacts-container');
+    place.innerHTML = addTask();
+}
+
 function addTaskBnt() {
     document.getElementById('contantAddToTask').classList.remove("d-none");
     let contantAddToTask = document.getElementById('contantAddToTask');
