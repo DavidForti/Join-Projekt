@@ -1,0 +1,158 @@
+@media screen and (max-width: 810px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        position: absolute;
+        width: 100%;
+        height: 11%;
+        left: 0px;
+        top: 89vh;
+        z-index: 1;
+        background-color: #2A3647;
+    }
+
+    .main-img {
+        display: none;
+    }
+
+    .menu {
+
+        margin-top: -3%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 26%;
+
+    }
+
+    .menu-list {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        align-items: center;
+        width: 150px;
+        margin-top: 60px;
+    }
+
+    .backgorund {
+        background-color: #2A3647 !important;
+    }
+
+    #changeColor {
+        width: 200px;
+        height: 40px;
+
+    }
+
+    #changeColorboard {
+        width: 200px;
+        height: 40px;
+    }
+
+    #changeColorNotice {
+        width: 200px;
+        height: 40px;
+    }
+
+    .summary-logo {
+        top: 7px;
+        position: relative;
+    }
+
+
+    .headline-summary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+    }
+
+    .board-contianer {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100px;
+        top: 365.47px;
+    }
+
+    .board-logo {
+        top: 7px;
+        position: relative;
+        width: 22px;
+        height: 26px;
+        transform: rotate(-90deg);
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .headline-borad {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+    }
+
+
+    .addTask-contianer {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100px;
+        top: 426.97px;
+
+    }
+
+    .addTask-logo {
+        width: 30px;
+        height: 30px;
+        flex: none;
+    }
+
+    .headline-addTask {
+        height: 18px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: #CDCDCD;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+
+    .main-headline {
+        z-index: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 34px;
+        position: absolute;
+        width: 100%;
+        height: 89px;
+        left: 0px;
+        top: 0px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-headline-text {
+        left: 348px;
+        width: 335px;
+        height: 25px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 120%;
+        color: #000000;
+    }
+
+}

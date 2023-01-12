@@ -237,6 +237,9 @@
         width: 100%;
     }
 
+    .head-summary {
+        font-size: 45px;
+    }
 
 }
 
@@ -304,6 +307,10 @@
     .check-chop{
         position: absolute;
         width: 20px;
+    }
+    
+    .head-summary {
+        font-size: 40px;
     }
 
 }

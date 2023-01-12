@@ -64,7 +64,7 @@ function workflowPriority() {
 
 function renderDiv() {
     document.getElementById('contacts-container').innerHTML = /*html*/ `
-    <div id="d-div"></div>
+    <div  class="summary-div" id="d-div"></div>
     `;
     hedalineSummary();
     progrssesBox();
