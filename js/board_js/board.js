@@ -282,9 +282,9 @@ function showTaskByStatus(tasks, elementId) {
                 <div id=${task['id']} class="contant-card list-item" draggable="true">
                     <p class="category-desing">${task['category']}</p>
                     <h3 class="title-card" >${task['title']}</h3>
-                    <h2 >${task['description']}</h2>
-                    <h2 >${task['assignedTo']}</h2>
-                    <img src='${prios}'>
+                    <h2 class="description-card" >${task['description']}</h2>
+                    <h2 class="assingtTO-card" >${task['assignedTo']}</h2>
+                    <img class="img-prios"  src='${prios}'>
                 </div>
          `;
     }
