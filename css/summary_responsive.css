@@ -309,21 +309,69 @@
         width: 50px;
     }
 
+    .show-up-style-1{
+        margin-left: 8px;
+    }
+
+    .img-check-todo-box{
+        margin-left: 6px;
+    }
+
     .pencil {
         width: 20px;
-        position: absolute;
-        left: 17px;
     }
 
     .check-chop {
         position: absolute;
-        width: 20px;
+        width: 30px;
+    }
+
+    .headline-summary {
+        font-size: 15px;
+        margin-top: 5px;
+        margin-left: 7px;
+        height: 62px;
+    }
+
+
+    .menu {
+        margin-top: -5%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 46px;
+        align-items: center;
+        width: 104%;
+    }
+
+    .summary-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .headline-borad {
+        font-size: 15px;
+        margin-top: 5px;
+        margin-left: 7px;
+        height: 62px;
+    }
+
+    .board-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .headline-addTask {
+        font-size: 15px;
+    }
+
+    .addTask-logo {
+        width: 30px;
+        height: 30px;
     }
 
     .head-summary {
         font-size: 40px;
         margin-left: -39%;
-
     }
 
     .head-of-summary {
@@ -359,6 +407,13 @@
     .d-none-375px {
         display: none;
     }
+
+    .color-background {
+        width: 108px;
+        height: 76px;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -389,6 +444,7 @@
 
     .headline-summary {
         font-size: 15px;
+        height: 52px;
     }
 
     .summary-logo {
@@ -400,6 +456,7 @@
         font-size: 15px;
         margin-top: 1px;
         margin-left: 7px;
+        height: 52px;
     }
 
     .board-logo {
@@ -482,6 +539,10 @@
         display: none;
     }
 
+    .show-up-todo{
+        margin-right: 100px;
+    }
+    
     .color-background {
         width: 75px;
         height: 60px
