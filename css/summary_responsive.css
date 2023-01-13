@@ -355,6 +355,17 @@
         left: 4%;
         width: 60px;
     }
+
+    .d-none-375px {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-headline-text {
+        font-size: 15px;
+        margin-left: 47%;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -363,6 +374,8 @@
         position: absolute;
         left: 20px;
         margin-top: 180px;
+        margin-left: 1%;
+        font-size: 20px;
     }
 
     .head-of-summary {
