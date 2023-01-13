@@ -23,12 +23,6 @@ function board() {
     document.getElementById('contacts-container').innerHTML = /*html*/ `
     <div id="d-board"></div>
     `;
-    // document.getElementById('changeColor').classList.add("backgorund");
-    // document.getElementById('changeColorboard').classList.remove("backgorund")
-    // document.getElementById('changeColor').classList.add("backgorund");
-    // document.getElementById('changeColorNotice').classList.add("backgorund")
-    // document.getElementById('changeColorboard').style.backgroundColor = "black";
-    // document.getElementById('contentNotice').classList.add("d-none");
     addAndRemove();
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';
@@ -76,8 +70,6 @@ function test() {
             <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
             <!--dropDown-->
             <form class="form-container">
-              
-                   
                     <div class="bg">Category</div>
                         <select id = "chgeCategory"   class="category" onchange="changeColor(this);" >                
                             <option>Select task category</option>  
@@ -85,7 +77,6 @@ function test() {
                             <option >Sales</option>  
                             <option vlaue="#1FD7C1">Backoffice</option>  
                         </select>
-                
             </form>
             <form class="form-container">
                 <label for="assigned-to">Assigned to</label> 
@@ -124,7 +115,7 @@ function addTaskBnt() {
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
 }
-// funktion noch verkrüzen 
+
 function addTask() {
     return/*html*/`
         <div class="input-container animation">
@@ -138,17 +129,14 @@ function addTask() {
                 <label for="description">Description</label>   
                 <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
                 <!--dropDown-->
-                <form class="form-container">
-                  
-                       
+                <form class="form-container">            
                         <div class="bg">Category</div>
                             <select id = "chgeCategory"   class="category" onchange="changeColor(this);" >                
                                 <option>Select task category</option>  
                                 <option >New category</option> 
                                 <option >Sales</option>  
                                 <option vlaue="#1FD7C1">Backoffice</option>  
-                            </select>
-                    
+                            </select>    
                 </form>
                 <form class="form-container">
                     <label for="assigned-to">Assigned to</label> 
@@ -248,6 +236,7 @@ async function pushTaskInArr(title, description, category, assignedTo, dueDate, 
         "assignedTo": assignedTo.value,
         "dueDate": dueDate.value,
         "priority": priority,
+        "status": 'To do',
     };
 
     editTasks.push(headOfTask);
@@ -271,26 +260,6 @@ function showTask(tasksArray) {
     showTaskByStatus(tasksAwaitingFeedback, 'awaiting-feedback-tasks');
     tasksDone = tasksArray.filter(task => task.status == taskStatus.done);
     showTaskByStatus(tasksDone, 'done-tasks');
-
-    // let contantToDo = document.querySelector('.list');
-    // contantToDo.innerHTML = '';
-    // let html = '';
-    // for (let i = 0; i < tasksArray.length; i++) {
-    //     let task = tasksArray[i];
-    //     let result = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == task.priority);
-    //     let prios = result[0]['src'];
-    //     html +=/*html*/ `
-    //             <div class="contant-card list-item" draggable="true">
-    //                 <p class="category-desing">${task['category']}</p>
-    //                 <h3 >${task['title']}</h3>
-    //                 <h2 >${task['description']}</h2>
-    //                 <h2 >${task['assignedTo']}</h2>
-    //                 <img src='${prios}'>
-    //             </div>
-
-    //      `;
-    // }
-    // contantToDo.innerHTML = html;
     changeColor();
     eventListener();
 }
@@ -364,7 +333,6 @@ function getTaskStatus(elementId) {
     return taskStatus;
 }
 
-
 /**
  * Search Tasks based on task search input value
  * 
@@ -382,7 +350,6 @@ function searchTasks() {
     }
 }
 
-
 /**
  * 
  * @returns - Number of Tasks
@@ -390,7 +357,6 @@ function searchTasks() {
 function getNewTaskId() {
     return editTasks.length;
 }
-
 
 
 /**
