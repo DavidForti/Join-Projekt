@@ -281,7 +281,7 @@ function showTaskByStatus(tasks, elementId) {
         html +=/*html*/ `
                 <div id=${task['id']} class="contant-card list-item" draggable="true">
                     <p class="category-desing">${task['category']}</p>
-                    <h3 >${task['title']}</h3>
+                    <h3 class="title-card" >${task['title']}</h3>
                     <h2 >${task['description']}</h2>
                     <h2 >${task['assignedTo']}</h2>
                     <img src='${prios}'>

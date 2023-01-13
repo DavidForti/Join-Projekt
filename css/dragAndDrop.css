@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+   
     padding: 18px 19px;
     gap: 10px;
     background: #FFFFFF;
@@ -28,5 +28,4 @@
     overflow:auto;
     width: 100%;
     height: 100%;
-    
 }
