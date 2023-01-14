@@ -189,7 +189,7 @@ async function saveTasksToBackend() {
             "title": "Webdesign redesign",
             "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
             "category": "Sales",
-            "assignedTo": [1,2],
+            "assignedTo": ['Bernd Trossmann','Andreas Huber'],
             "dueDate": "01.01.2023",
             "priority": "Urgent",
             "subTasks": ['Create new icons'],
@@ -202,7 +202,7 @@ async function saveTasksToBackend() {
             "title": "Price increase",
             "description": "Price increase Description...",
             "category": "Backoffice",
-            "assignedTo": [3],
+            "assignedTo": ['Helmut Dunz'],
             "dueDate": "01.02.2023",
             "priority": "Medium",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
@@ -214,7 +214,7 @@ async function saveTasksToBackend() {
             "title": "Task 3",
             "description": "Description Task 3...",
             "category": "Backoffice",
-            "assignedTo": [1],
+            "assignedTo": ['Lionel Messi','Manuel Neuer','Cristiano Ronaldo'],
             "dueDate": "01.02.2023",
             "priority": "Urgent",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
@@ -226,10 +226,10 @@ async function saveTasksToBackend() {
             "title": "Task 4",
             "description": "Description Task 4...",
             "category": "Sales",
-            "assignedTo": [1,2,3],
+            "assignedTo": ['Andreas Huber','Manuel Neuer','Cristiano Ronaldo','Lionel Messi','Helmut Dunz'],
             "dueDate": "01.05.2023",
             "priority": "Low",
-            "subTasks": [],
+            "subTasks": ['Cristiano Ronaldo'],
             "status": 'Awaiting Feedback'
         },
         {
@@ -238,7 +238,7 @@ async function saveTasksToBackend() {
             "title": "Task 5",
             "description": "Description Task 5...",
             "category": "Sales",
-            "assignedTo": [3],
+            "assignedTo": ['Bernd Trossmann'],
             "dueDate": "01.06.2023",
             "priority": "Medium",
             "subTasks": [],
@@ -250,7 +250,7 @@ async function saveTasksToBackend() {
             "title": "Task 6",
             "description": "Description Task 6...",
             "category": "Sales",
-            "assignedTo": [1],
+            "assignedTo": ['Helmut Dunz'],
             "dueDate": "01.07.2023",
             "priority": "Low",
             "subTasks": [],
@@ -285,6 +285,24 @@ async function saveContactsToBackend() {
             "email": "h.dunz@web.de",
             "phone": "+49 2222 3333",
             "color": '#ed474b'
+        },
+        {
+            "name": "Lionel Messi",
+            "email": "l.messi@web.de",
+            "phone": "+41 111 1233",
+            "color": '#8a2be2'
+        },
+        {
+            "name": "Manuel Neuer",
+            "email": "m.neuer@web.de",
+            "phone": "+40 89 111 1233",
+            "color": '#d2691e'
+        },
+        {
+            "name": "Cristiano Ronaldo",
+            "email": "cr7@web.de",
+            "phone": "+33 11 222 3345",
+            "color": '#ee3b3b'
         }
     ];
 
