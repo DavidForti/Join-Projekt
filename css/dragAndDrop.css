@@ -6,7 +6,7 @@
 
 .second {
     
-    border: solid grey;
+    border: 0.1px solid #e9eced;
     display: flex;
     flex-direction: column;
     flex: 1;
