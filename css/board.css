@@ -425,26 +425,24 @@ html {
     align-items: center;
 }
 
-.category-desing{
-
+.title-desing {
+    font-family: 'Inter';
+    font-size: 22px;
 }
 
-.title-desing{
-
-}
-
-.descriptoin-desing{
+.descriptoin-desing {
     font-family: 'Inter';
     color: #A8A8A8;
     font-size: 15px;
 
 }
 
-.assingtTo-desing{
-
+.assingtTo-desing {
+    font-family: 'Inter';
+    font-size: 22px;
 }
 
-.pros-desing{
+.pros-desing {
     width: 25px;
     margin-left: 85%;
 
@@ -466,17 +464,17 @@ html {
     border-radius: 30px;
 }
 
-.title-card{
+.title-card {
     font-family: 'Inter';
 }
 
-.description-card{
+.description-card {
     font-family: 'Inter';
     font-size: 18px;
     color: #A8A8A8;
 }
 
-.img-prios{
+.img-prios {
     width: 20px;
     margin-left: 85%;
 }
