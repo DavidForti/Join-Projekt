@@ -425,6 +425,25 @@ html {
     align-items: center;
 }
 
+.category-desing{
+
+}
+
+.title-desing{
+
+}
+
+.descriptoin-desing{
+
+}
+
+.assingtTo-desing{
+
+}
+
+.pros-desing{
+
+}
 
 .add-todo-task {
     position: relative;
@@ -450,10 +469,6 @@ html {
     font-family: 'Inter';
     font-size: 18px;
     color: #A8A8A8;
-}
-
-.assingtTO-card{
-
 }
 
 .img-prios{
