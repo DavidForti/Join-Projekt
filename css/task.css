@@ -194,6 +194,14 @@ label {
     color: #000000;
 }
 
+.current-task-show-duedate span:nth-child(2) {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    color: #000000;
+}
+
 .current-task-show-assignedto-contact-box {
     display: flex;
     justify-content: flex-start;
