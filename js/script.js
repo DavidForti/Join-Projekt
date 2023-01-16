@@ -190,7 +190,7 @@ async function saveTasksToBackend() {
             "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
             "category": "Sales",
             "assignedTo": ['Bernd Trossmann','Andreas Huber'],
-            "dueDate": "01.01.2023",
+            "dueDate": "2023-01-01",
             "priority": "Urgent",
             "subTasks": ['Create new icons'],
             "status": 'To do'     // Es gibt noch die Werte: "In Progress", "Awaiting Feedback", "Done" ("To do" wird als Standart verwendet)
@@ -203,7 +203,7 @@ async function saveTasksToBackend() {
             "description": "Price increase Description...",
             "category": "Backoffice",
             "assignedTo": ['Helmut Dunz'],
-            "dueDate": "01.02.2023",
+            "dueDate": "2023-02-01",
             "priority": "Medium",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
             "status": 'To do'
@@ -215,7 +215,7 @@ async function saveTasksToBackend() {
             "description": "Description Task 3...",
             "category": "Backoffice",
             "assignedTo": ['Lionel Messi','Manuel Neuer','Cristiano Ronaldo'],
-            "dueDate": "01.02.2023",
+            "dueDate": "2023-04-10",
             "priority": "Urgent",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
             "status": 'In Progress'
@@ -227,7 +227,7 @@ async function saveTasksToBackend() {
             "description": "Description Task 4...",
             "category": "Sales",
             "assignedTo": ['Andreas Huber','Manuel Neuer','Cristiano Ronaldo','Lionel Messi','Helmut Dunz'],
-            "dueDate": "01.05.2023",
+            "dueDate": "2023-05-30",
             "priority": "Low",
             "subTasks": ['Cristiano Ronaldo'],
             "status": 'Awaiting Feedback'
@@ -239,7 +239,7 @@ async function saveTasksToBackend() {
             "description": "Description Task 5...",
             "category": "Sales",
             "assignedTo": ['Bernd Trossmann'],
-            "dueDate": "01.06.2023",
+            "dueDate": "2023-03-12",
             "priority": "Medium",
             "subTasks": [],
             "status": 'Done'
@@ -251,7 +251,7 @@ async function saveTasksToBackend() {
             "description": "Description Task 6...",
             "category": "Sales",
             "assignedTo": ['Helmut Dunz'],
-            "dueDate": "01.07.2023",
+            "dueDate": "2023-07-02",
             "priority": "Low",
             "subTasks": [],
             "status": 'Done'
