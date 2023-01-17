@@ -162,7 +162,7 @@ function animNewContact() {
                 </div>       
             </div>
 
-            <div class="tbt-details">
+            <div class="tbt-details justify-content-center">
                 <div class="nC-input" onclick="document.querySelectorAll('input')[0].focus()">
                     <input type="text" placeholder="name">
                     <svg width="20" height="20" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -184,6 +184,23 @@ function animNewContact() {
                     </svg>
                 </div>
 
+                <div class="d-flex align-items-center gap10">
+                <div class="d-flex align-items-center bright-button" onmouseover="document.querySelectorAll('svg')[3].setAttribute('fill', 'blue')">
+                    <p>Cancel</p>
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.501 6.49996L11.744 11.743M1.258 11.743L6.501 6.49996L1.258 11.743ZM11.744 1.25696L6.5 6.49996L11.744 1.25696ZM6.5 6.49996L1.258 1.25696L6.5 6.49996Z" stroke="#2A3647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                </div>
+
+                <div class="d-flex align-items-center dark-button">
+                    <p>Create Contact</p>
+                    <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 7.5L7 13.5L17 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                </div>
+                </div>
             </div>
         </div>
     </div>

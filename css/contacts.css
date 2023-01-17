@@ -201,6 +201,39 @@
     border: unset;
 }
 
+.bright-button {
+    font-weight: bold;
+    padding: 10px 15px !important;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #2A3647;
+}
+
+.dark-button {
+    background-color: #2A3647 !important;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px !important;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bright-button:hover {
+    border-color: #61cfff !important;
+    color: #61cfff !important;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+
+    transition: all 150ms;
+}
+
+.dark-button:hover {
+    background-color: #61cfff !important;
+
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+
+    transition: all 150ms;
+}
+
 #contact-view {
     flex: 1;
     padding: 20px !important;
