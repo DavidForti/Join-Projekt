@@ -80,7 +80,7 @@ function renderContact() {
         randomColor(x);
     }
 }
-let cap = [];
+
 function getBothLetters(i) {
     for (let x in contacts[i].name) {
         if (contacts[i].name[x] == " ") {
