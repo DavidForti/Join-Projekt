@@ -32,7 +32,7 @@ function board() {
     contantBoard.innerHTML += dragAndDrop();
     renderFields();
     showTask(editTasks);
-    eventListener();    
+    eventListener();
     currenttask(editTasks)
 }
 
@@ -287,34 +287,33 @@ function showTaskByStatus(tasks, elementId) {
                     <p class="category-desing">${task['category']}</p>
                     <h3  class="title-desing">${task['title']}</h3>
                     <h2 class="descriptoin-desing">${task['description']}</h2>
-                    <!-- <h2  class="assingtTo-desing">${task['assignedTo']}</h2> -->
+                    <h2  class="assingtTo-desing">${task['assignedTo']}</h2>
                     <img  class="pros-desing" src='${prios}'>
                 </div>
          `;
     }
     content.innerHTML = html;
+
 }
 
 
-
-function currenttask(editTasks){
+function currenttask(editTasks) {
+    let html = '<div>';
     let task = editTasks;
-    html += showAssingtTOInCutName(editTasks)['assignedTo'];
-    html += `       <div class="current-task-show-edit-box" onclick="currenttask(${task})">
-                        <img src="./img/edit.png" class="current-task-show-edit-img">
-                    </div>
-                </div>
-            </div>`;
+    html = showAssingtTOInCutName(editTasks)['assignedTo'];
+    html += `<div class="current-task-show-edit-box" onclick="currenttask(${task})">
+        `;
+    return html;
 }
 
-function showAssingtTOInCutName(editTasks){
+function showAssingtTOInCutName(editTasks) {
     let html = '';
     let contactNames = editTasks['assignedTo'];
     for (let i = 0; i < contactNames.length; i++) {
         const contactName = contactNames[i];
         let contact = getContact(contactName);
         html += getAssignedToHtml(contact, i);
-        
+
     }
     html += '</div>';
     return html;
