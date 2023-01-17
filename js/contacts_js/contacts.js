@@ -82,7 +82,21 @@ function renderContact() {
 }
 
 function getBothLetters(i) {
-    for (let x in contacts[i].name) { if (contacts[i].name[x] == " ") { x++; return contacts[i].name[0] + contacts[i].name[x] } }
+    for (let x in contacts[i].name) {
+        if (contacts[i].name[x] == " ") {
+            x++; return contacts[i].name[0] + contacts[i].name[x]
+        }
+    }
+}
+
+function uppercaseLetters(i) {
+    for (let x in contacts[i].name) {
+        if (contacts[i].name[x] == " ") {
+            let end = x;
+            x++;
+            contacts[i].name = (contacts[i].name[0].toUpperCase() + contacts[i].name.slice(1, end)) + " " + (contacts[i].name[x].toUpperCase() + contacts[i].name.slice(x + 1));
+        }
+    }
 }
 
 function randomizer() {
@@ -165,26 +179,28 @@ function animNewContact() {
             </div>
 
             <div class="tbt-details justify-content-center">
+                <form onsubmit="addNewContact(); return false;" class="d-flex flex-column gap25">
                 <div class="nC-input" onclick="document.querySelectorAll('input')[0].focus()">
-                    <input type="text" placeholder="Name">
+                    <input required id="name" type="text" placeholder="Name">
                     <svg width="20" height="20" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 21.5C0 19.3783 0.842855 17.3434 2.34315 15.8431C3.84344 14.3429 5.87827 13.5 8 13.5C10.1217 13.5 12.1566 14.3429 13.6569 15.8431C15.1571 17.3434 16 19.3783 16 21.5H14C14 19.9087 13.3679 18.3826 12.2426 17.2574C11.1174 16.1321 9.5913 15.5 8 15.5C6.4087 15.5 4.88258 16.1321 3.75736 17.2574C2.63214 18.3826 2 19.9087 2 21.5H0ZM8 12.5C4.685 12.5 2 9.815 2 6.5C2 3.185 4.685 0.5 8 0.5C11.315 0.5 14 3.185 14 6.5C14 9.815 11.315 12.5 8 12.5ZM8 10.5C10.21 10.5 12 8.71 12 6.5C12 4.29 10.21 2.5 8 2.5C5.79 2.5 4 4.29 4 6.5C4 8.71 5.79 10.5 8 10.5Z" fill="#A8A8A8"/>
                     </svg>
                 </div>
 
                 <div class="nC-input" onclick="document.querySelectorAll('input')[1].focus()">
-                    <input type="text" placeholder="E-Mail">
+                    <input required id="email" type="email" placeholder="E-Mail">
                     <svg width="20" height="20" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 0.5H19C19.2652 0.5 19.5196 0.605357 19.7071 0.792893C19.8946 0.98043 20 1.23478 20 1.5V17.5C20 17.7652 19.8946 18.0196 19.7071 18.2071C19.5196 18.3946 19.2652 18.5 19 18.5H1C0.734784 18.5 0.48043 18.3946 0.292893 18.2071C0.105357 18.0196 0 17.7652 0 17.5V1.5C0 1.23478 0.105357 0.98043 0.292893 0.792893C0.48043 0.605357 0.734784 0.5 1 0.5ZM18 4.738L10.072 11.838L2 4.716V16.5H18V4.738ZM2.511 2.5L10.061 9.162L17.502 2.5H2.511Z" fill="#A8A8A8"/>
                     </svg>
                 </div>
 
                 <div class="nC-input" onclick="document.querySelectorAll('input')[2].focus()">
-                    <input type="text" placeholder="Phone">
+                    <input required id="phone" type="text" placeholder="Phone">
                     <svg width="20" height="20" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.8965 9.07217C7.91303 10.858 9.39198 12.337 11.1778 13.3535L12.1355 12.0123C12.2895 11.7967 12.5172 11.645 12.7755 11.5859C13.0339 11.5268 13.3049 11.5644 13.5373 11.6917C15.0695 12.529 16.7616 13.0326 18.5023 13.1693C18.7739 13.1909 19.0275 13.314 19.2124 13.5142C19.3974 13.7144 19.5 13.9769 19.5 14.2494V19.0833C19.5001 19.3515 19.4006 19.6102 19.2209 19.8093C19.0412 20.0084 18.794 20.1338 18.5272 20.1612C17.953 20.2208 17.3745 20.25 16.7917 20.25C7.51833 20.25 0 12.7317 0 3.45833C0 2.8755 0.02925 2.297 0.0888334 1.72283C0.116193 1.45601 0.241566 1.20881 0.440689 1.0291C0.639812 0.849393 0.898523 0.749942 1.16675 0.75H6.00058C6.27311 0.749966 6.53564 0.852647 6.73582 1.03757C6.93601 1.2225 7.05914 1.47608 7.08067 1.74775C7.21741 3.48844 7.721 5.18049 8.55833 6.71267C8.68559 6.94511 8.72323 7.21614 8.66414 7.47446C8.60505 7.73279 8.45332 7.9605 8.23767 8.1145L6.8965 9.07217ZM4.97683 10.0808C4.42815 9.10413 4.80227 7.9048 5.71385 7.25374L6.22267 6.89033C5.63851 5.62944 5.2383 4.29124 5.03425 2.91667H2.1775C2.171 3.0965 2.16775 3.27742 2.16775 3.45833C2.16667 11.5357 8.71433 18.0833 16.7917 18.0833C16.9726 18.0833 17.1535 18.0801 17.3333 18.0725V15.2158C15.9588 15.0117 14.6206 14.6115 13.3597 14.0273L12.9963 14.5362C12.3452 15.4477 11.1459 15.8219 10.1693 15.2732L10.1064 15.2374C7.98154 14.0281 6.22189 12.2685 5.01258 10.1436L4.97683 10.0808Z" fill="#A8A8A8"/>
                     </svg>
                 </div>
+                
 
                 <div class="d-flex align-items-center gap25">
                 <div class="d-flex align-items-center bright-button gap10" onmouseout="document.querySelectorAll('svg')[7].querySelector('path').setAttribute('stroke', '#2A3647');" onmouseover="document.querySelectorAll('svg')[7].querySelector('path').setAttribute('stroke', '#61cfff');">
@@ -195,18 +211,48 @@ function animNewContact() {
 
                 </div>
 
-                <div class="d-flex align-items-center dark-button gap10">
+                <button type="submit" class="d-flex align-items-center dark-button gap10">
                     <p>Create Contact</p>
                     <svg width="20" height="20" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 7.5L7 13.5L17 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-
-                </div>
+                </button>
+                </form>
                 </div>
             </div>
         </div>
     </div>
     `;
+}
+
+function addNewContact() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let color = `rgba(${randomizer()}, ${randomizer()}, ${randomizer()})`;
+    pushContactInArray(name, email, phone, color);
+}
+
+async function pushContactInArray(name, email, phone, color) {
+    let newContact = {
+        "name": name,
+        "email": email,
+        "phone": phone,
+        "color": color,
+    };
+
+    if (!contactExists(email)) {
+        contacts.push(newContact);
+        uppercaseLetters(contacts.length - 1);
+        await saveToBackend("contacts", contacts);
+    } else {
+        alert("already exists!");
+    }
+}
+
+function contactExists(email) {
+    // In combination with two negation operators !! you’ll receive a boolean value. 
+    return !!(contacts.find(u => u.email == email))
 }
 
 function animEditContact() {
