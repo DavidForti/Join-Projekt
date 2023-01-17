@@ -66,6 +66,16 @@ html {
     font-family: 'Inter' !important;
 }
 
+.circle-name{
+    background: black;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 100%;
+}
+
 .input-container {
     z-index: 1;
     justify-content: space-between;
@@ -440,6 +450,12 @@ html {
 .assingtTo-desing {
     font-family: 'Inter';
     font-size: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:5px;
+    color: #F5F5F5;
+    justify-content: center;
+    align-items: center;
 }
 
 .pros-desing {

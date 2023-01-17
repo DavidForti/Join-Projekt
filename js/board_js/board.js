@@ -310,7 +310,7 @@ function renderAssigenTo(y,task) {
     for (let i = 0; i < task["assignedTo"].length; i++) {
         let content = document.getElementById(`assigentId${y}`);
         content.innerHTML +=/*html*/`
-            <div class="circle">
+            <div class="circle-name" style = "background: black">
                 ${letterNameCut(task['assignedTo'][i])}
             </div>
         
