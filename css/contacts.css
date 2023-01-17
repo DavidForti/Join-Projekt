@@ -176,6 +176,20 @@
     width: 50px;
 }
 
+.nC-logo {
+    position: absolute;
+    transform: translate(0, -70px);
+}
+
+.nC-input {
+    padding: 10px 15px;
+}
+
+.nC-input input {
+    outline: unset;
+    border: unset;
+}
+
 #contact-view {
     flex: 1;
     padding: 20px !important;
