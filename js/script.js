@@ -29,7 +29,7 @@ async function init() {
  *  @async
  */
 async function initData() {
-    // await deleteAll();
+    //  await deleteAll();
     // await saveUsersToBackend();
     // await saveTasksToBackend();
     // await saveContactsToBackend();

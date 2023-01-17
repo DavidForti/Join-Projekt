@@ -287,68 +287,36 @@ function showTaskByStatus(tasks, elementId) {
                     <p class="category-desing">${task['category']}</p>
                     <h3  class="title-desing">${task['title']}</h3>
                     <h2 class="descriptoin-desing">${task['description']}</h2>
-                    <h2  class="assingtTo-desing">${task['assignedTo']}</h2>
                     <img  class="pros-desing" src='${prios}'>
+                    <div id ="assigentId${i}"  class="assingtTo-desing"></div>
+                    
                 </div>
          `;
+        setTimeout (function(){renderAssigenTo(i, task)}, 2000);
     }
     content.innerHTML = html;
 
 }
 
+function letterNameCut(i) {
+    for (let x in i) {
+        if (i[x] == " ") {
+            x++; return i[0] + i[x]
+        }
+    }
+}
 
-function currenttask(editTasks) {
-    let html = '<div>';
-    let task = editTasks;
-    html = showAssingtTOInCutName(editTasks)['assignedTo'];
-    html += `<div class="current-task-show-edit-box" onclick="currenttask(${task})">
+function renderAssigenTo(y,task) {
+    for (let i = 0; i < task["assignedTo"].length; i++) {
+        let content = document.getElementById(`assigentId${y}`);
+        content.innerHTML +=/*html*/`
+            <div class="circle">
+                ${letterNameCut(task['assignedTo'][i])}
+            </div>
+        
         `;
-    return html;
-}
-
-function showAssingtTOInCutName(editTasks) {
-    let html = '';
-    let contactNames = editTasks['assignedTo'];
-    for (let i = 0; i < contactNames.length; i++) {
-        const contactName = contactNames[i];
-        let contact = getContact(contactName);
-        html += getAssignedToHtml(contact, i);
-
-    }
-    html += '</div>';
-    return html;
-}
-
-function getContact(contactName) {
-    return contacts.filter(c => c.name == contactName)[0];
-}
-
-function getAssignedToHtml(contact, counter) {
-    return `<div class="current-task-show-assignedto-contact-box">
-                <div id="name-initials${counter}" class="current-task-show-assignedto-letter-box">
-                    <span>${getNameInitials(contact['name'])}</span>
-                </div>
-                <div class="current-task-show-assignedto-contactname-box">
-                    <span>${contact['name']}</span>
-                </div>
-            </div>`;
-}
-
-function getNameInitials(contactName) {
-    let letters = contactName.match(/(^\S\S?|\b\S)?/g).join("").match(/(^\S|\S$)?/g).join("").toUpperCase();
-    return letters;
-}
-
-function colorNameInitials(taskId) {
-    let contactNames = editTasks[taskId]['assignedTo'];
-    for (let i = 0; i < contactNames.length; i++) {
-        const contactName = contactNames[i];
-        let contact = getContact(contactName);
-        let elementId = 'name-initials' + i;
-        document.getElementById(elementId).style.background = contact['color'];
     }
 }
-
 
 
 /**
