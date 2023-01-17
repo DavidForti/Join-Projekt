@@ -71,19 +71,19 @@ function eventListener() {
             });
 
             list.addEventListener('dragleave', function (e) {
-                this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                this.style.backgroundColor = 'unset';
             });
 
             list.addEventListener('drop', function (e) {
                 // console.log('drop');
                 this.append(draggedItem);
-                this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                this.style.backgroundColor = 'unset';
                 saveTaskStatus(e);
             });
         }
     }
 }
 
-function addTaskBnt2(){
+function addTaskBnt2() {
     addTaskBnt();
 }
