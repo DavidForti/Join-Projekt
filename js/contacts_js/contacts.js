@@ -185,7 +185,7 @@ function animNewContact() {
                 </div>
 
                 <div class="d-flex align-items-center gap25">
-                <div class="d-flex align-items-center bright-button gap10" onmouseover="document.querySelectorAll('svg')[3].setAttribute('fill', 'blue')">
+                <div class="d-flex align-items-center bright-button gap10" onmouseover="document.querySelectorAll('svg')[7].querySelector('path').setAttribute('stroke', '#61cfff');">
                     <p>Cancel</p>
                     <svg width="20" height="20" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.501 6.49996L11.744 11.743M1.258 11.743L6.501 6.49996L1.258 11.743ZM11.744 1.25696L6.5 6.49996L11.744 1.25696ZM6.5 6.49996L1.258 1.25696L6.5 6.49996Z" stroke="#2A3647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
