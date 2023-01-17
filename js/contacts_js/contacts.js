@@ -80,11 +80,16 @@ function renderContact() {
         randomColor(x);
     }
 }
-
+let cap = [];
 function getBothLetters(i) {
     for (let x in contacts[i].name) {
         if (contacts[i].name[x] == " ") {
-            x++; return contacts[i].name[0] + contacts[i].name[x]
+            x++;
+            cap.push({
+               letter : contacts[i].name[0] + contacts[i].name[x],
+                id: x,
+            });
+            return contacts[i].name[0] + contacts[i].name[x]
         }
     }
 }

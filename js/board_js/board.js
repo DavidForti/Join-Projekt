@@ -33,6 +33,7 @@ function board() {
     renderFields();
     showTask(editTasks);
     eventListener();
+    renderLoad();
     currenttask(editTasks)
 }
 
@@ -292,7 +293,7 @@ function showTaskByStatus(tasks, elementId) {
                     
                 </div>
          `;
-        setTimeout (function(){renderAssigenTo(i, task)}, 2000);
+        setTimeout(function () { renderAssigenTo(i, task) }, 2000);
     }
     content.innerHTML = html;
 
@@ -306,15 +307,30 @@ function letterNameCut(i) {
     }
 }
 
-function renderAssigenTo(y,task) {
+function renderAssigenTo(y, task) {
     for (let i = 0; i < task["assignedTo"].length; i++) {
         let content = document.getElementById(`assigentId${y}`);
-        content.innerHTML +=/*html*/`
-            <div class="circle-name" style = "background: black">
-                ${letterNameCut(task['assignedTo'][i])}
-            </div>
-        
-        `;
+
+        for (let k = 0; k < contacts.length; k++) {
+
+            if (letterNameCut(contacts[k].name) == cap.letter) {
+                alert("das ist ein test");
+                content.innerHTML +=/*html*/`
+                <div class="circle-name" style = "background: ${contacts[k].color} ">
+                    ${letterNameCut(task['assignedTo'][i])}
+                </div>
+            `;
+            }
+
+        }
+    }
+}
+
+function renderLoad() {
+    for (let x in contacts) {
+        getBothLetters(x);
+        let fullColor = `rgba(${randomizer()}, ${randomizer()}, ${randomizer()})`;
+        contacts[x].color = fullColor;
     }
 }
 
