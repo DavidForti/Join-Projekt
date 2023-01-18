@@ -33,7 +33,7 @@ function board() {
     renderFields();
     showTask(editTasks);
     eventListener();
-    currenttask(editTasks)
+    // currenttask(editTasks);
 }
 
 function addAndRemove() {
