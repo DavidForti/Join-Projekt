@@ -60,7 +60,7 @@ function headlineBoard() {
     `;
 }
 
-function test() {
+function renderAddTask() {
     let place = document.getElementById('contacts-container');
     place.innerHTML = /*html*/`
     <div class="input-container2">
@@ -105,7 +105,7 @@ function test() {
                 </div>
 
             <div class="bnts">
-                <button class="bnt-cancel" onclick="test()" > Cancel <img src="img/cancelSymbol.png" ></button>
+                <button class="bnt-cancel" onclick="renderAddTask()" > Cancel <img src="img/cancelSymbol.png" ></button>
                 <button class="bnt-Task" onclick="board(); color2(1); add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
             </div>  
         </div>     
@@ -291,10 +291,8 @@ function showTaskByStatus(tasks, elementId) {
                     <div id ="assigentId${i}"  class="assingtTo-desing"></div>
                 </div>
          `;
-        console.log(task['description']);
     }
     content.innerHTML = html;
-
 }
 
 function letterNameCut(i) {
