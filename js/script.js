@@ -272,37 +272,37 @@ async function saveContactsToBackend() {
             "name": "Bernd Trossmann",
             "email": "mcptopgun@gmail.com",
             "phone": "+49 6666 1111",
-            "color": '#df7821'
+            "color": "rgba(7, 65, 92)"
         },
         {
             "name": "Andreas Huber",
             "email": "a.huber@web.de",
             "phone": "+49 4444 9999",
-            "color": '#85c1e0'
+            "color": "rgba(3, 24, 139)"
         },
         {
             "name": "Helmut Dunz",
             "email": "h.dunz@web.de",
             "phone": "+49 2222 3333",
-            "color": '#ed474b'
+            "color": "rgba(149, 16, 197)"
         },
         {
             "name": "Lionel Messi",
             "email": "l.messi@web.de",
             "phone": "+41 111 1233",
-            "color": '#8a2be2'
+            "color": "rgba(27, 150, 24)"
         },
         {
             "name": "Manuel Neuer",
             "email": "m.neuer@web.de",
             "phone": "+40 89 111 1233",
-            "color": '#d2691e'
+            "color": "rgba(19, 140, 153)"
         },
         {
             "name": "Cristiano Ronaldo",
             "email": "cr7@web.de",
             "phone": "+33 11 222 3345",
-            "color": '#ee3b3b'
+            "color": "rgba(188, 103, 153)"
         }
     ];
 
