@@ -45,24 +45,24 @@
         <div class="main-container">
             <img src="/img/join-logo-white.png" class="main-img">
             <div class="menu">
-                <div class="menu-list" onclick="renderDiv() ;color2(0) ">
+                <div  id="summaryId" class="menu-list" onclick="renderDiv() ;color2(0) ">
                     <h3 class="headline-summary"> <img src="/img/summary.png" class="summary-logo">Summary </h3>
                 </div>
-                <div class="menu-list" onclick="board() ;color2(1)">
+                <div id="boardId"  class="menu-list" onclick="board() ;color2(1)">
                     <h3 class="headline-borad"><img src="/img/board.png" class="board-logo">Board</h3>
                 </div>
-                <div class="menu-list" onclick="renderAddTask() ;color2(2)">
+                <div id="addTaskId"  class="menu-list" onclick="renderAddTask() ;color2(2)">
                     <div class="task-div d-flex align-items-center gap10">
                         <h3 class="headline-addTask">Add Task</h3> <img src="/img/addTask.png" class="addTask-logo">
                     </div>
                 </div>
-                <div class="menu-list" onclick="initContacts() ;color2(3)">
+                <div  id="contactsId" class="menu-list" onclick="initContacts() ;color2(3)">
 
                     <div class="contacts-div d-flex align-items-center gap10">
                         <h3 class="headline-addTask">Contacts</h3> <img src="/img/addTask.png" class="addTask-logo">
                     </div>
                 </div>
-                <div class="menu-list d-none-375px" onclick="showNotice() ;color2(4)">
+                <div  id="showNoticeId" class="menu-list d-none-375px" onclick="showNotice() ;color2(4)">
 
                     <div id="changeColorNotice">
                         <h3 class="headline-notice"> <img src="/img/legal-notice.png" class="notice-logo">Legal Notice
