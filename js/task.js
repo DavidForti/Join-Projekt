@@ -6,16 +6,15 @@ let currentTask;
  * 
  * @param {int} taskId - Task-Id of selected Task
  */
-function openCurrentTaskShowMode(taskId, para) {
-    if (para === 1) {
-        let html = '';
-        let body = document.body;
+function openCurrentTaskShowMode(taskId) {
+    let html = '';
+    let body = document.body;
 
-        // Copy (not reference) selected Task-Object to new variable
-        currentTask = JSON.parse(JSON.stringify(editTasks[taskId]));
+    // Copy (not reference) selected Task-Object to new variable
+    currentTask = JSON.parse(JSON.stringify(editTasks[taskId]));
 
-        let priority = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == currentTask.priority);
-        html = `
+    let priority = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == currentTask.priority);
+    html = /*html*/ `
             <div id="current-task-container" class="current-task-container">
                 <div class="current-task-show-box">
                     <div class="current-task-show-header ${currentTask['category'].toLowerCase()}">
@@ -41,17 +40,14 @@ function openCurrentTaskShowMode(taskId, para) {
                     <div class="current-task-show-assigned">
                        <span class="current-task-show-label">Assigned To:</span>
                     </div>`;
-        html += getAssignedToContactsHtml();
-        html += `       <div class="current-task-show-edit-box" onclick="openCurrentTaskEditMode()">
+    html += getAssignedToContactsHtml();
+    html += `       <div class="current-task-show-edit-box" onclick="openCurrentTaskEditMode()">
                         <img src="./img/edit.png" class="current-task-show-edit-img">
                     </div>
                 </div>
             </div>`;
-        body.innerHTML += html;
-        colorNameInitials();
-    } else {
-        
-    }
+    body.innerHTML += html;
+    colorNameInitials();
 }
 
 

@@ -283,7 +283,7 @@ function showTaskByStatus(tasks, elementId) {
         let result = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == task.priority);
         let prios = result[0]['src'];
         html +=/*html*/ `
-                <div id=${task['id']} class="contant-card list-item" draggable="true" onclick="openCurrentTaskShowMode(${task['id']}, 1)">
+                <div id=${task['id']} class="contant-card list-item" draggable="true" onclick="openCurrentTaskShowMode(${task['id']})">
                     <p class="category-desing">${task['category']}</p>
                     <h3  class="title-desing">${task['title']}</h3>
                     <h2 class="descriptoin-desing">${task['description']}</h2>
