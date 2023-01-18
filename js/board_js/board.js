@@ -289,10 +289,9 @@ function showTaskByStatus(tasks, elementId) {
                     <h2 class="descriptoin-desing">${task['description']}</h2>
                     <img  class="pros-desing" src='${prios}'>
                     <div id ="assigentId${i}"  class="assingtTo-desing"></div>
-                    
                 </div>
          `;
-        setTimeout(function () { renderAssigenTo(i, task) }, 1000);
+        console.log(task['description']);
     }
     content.innerHTML = html;
 
@@ -303,17 +302,6 @@ function letterNameCut(i) {
         if (i[x] == " ") {
             x++; return i[0] + i[x]
         }
-    }
-}
-
-function renderAssigenTo(y, task) {
-    for (let i = 0; i < task["assignedTo"].length; i++) {
-        let content = document.getElementById(`assigentId${y}`);
-        content.innerHTML +=/*html*/`
-        <div class="circle-name" style = "background: ${contacts[i].color} ">
-            ${letterNameCut(task['assignedTo'][i])}
-        </div>
-        `;
     }
 }
 

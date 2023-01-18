@@ -67,10 +67,10 @@ function renderContact() {
     for (let x in contacts) {
         let id = contacts[x].name.charAt(0);
         let place = document.getElementById(id);
-        let test = getBothLetters(x);
+        let bothLetters = getBothLetters(x);
         place.innerHTML += /*html*/ `
         <div class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x}); renderContactDetail(${x})">
-            <div class="circle c-w d-flex justify-content-center align-items-center">${test}</div>
+            <div class="circle c-w d-flex justify-content-center align-items-center">${bothLetters}</div>
             <div>
                 <p>${contacts[x].name}</p>
                 <p class="c-b">${contacts[x].email}</p>
@@ -85,10 +85,6 @@ function getBothLetters(i) {
     for (let x in contacts[i].name) {
         if (contacts[i].name[x] == " ") {
             x++;
-            cap.push({
-               letter : contacts[i].name[0] + contacts[i].name[x],
-                id: x,
-            });
             return contacts[i].name[0] + contacts[i].name[x]
         }
     }
@@ -129,10 +125,10 @@ function colorContacts(number) {
 
 function renderContactDetail(x) {
     let place = document.getElementById('contact-content');
-    let test = getBothLetters(x);
+    let bothLetters = getBothLetters(x);
     place.innerHTML = /*html*/ `
     <div class="d-flex align-items-center gap25">
-        <div class="big-circle" style="background-color: ${contacts[x].color}"><h2>${test}</h2></div>
+        <div class="big-circle" style="background-color: ${contacts[x].color}"><h2>${bothLetters}</h2></div>
         <div class="d-flex flex-column gap5">
             <h2>${contacts[x].name}</h2>
             <div class="c-b c-p d-flex align-items-center gap5" onclick="addTaskBnt()"><p class="plus">+</p><p>Add Task</p></div>
