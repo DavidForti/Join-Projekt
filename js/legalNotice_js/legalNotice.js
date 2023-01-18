@@ -13,6 +13,7 @@
 */
 
 function showNotice() {
+    removeBackgorund();
     document.getElementById('contacts-container').innerHTML = /*html*/`
     <div class="position-relative pad20">
     <h1 class="h1n">
@@ -65,4 +66,13 @@ function showNotice() {
 
 function last() {
     document.querySelectorAll('.menu-list')[0].onclick();
+}
+
+function removeBackgorund(){
+    document.getElementById('summaryId').classList.remove("color-background");
+    document.getElementById('boardId').classList.remove("color-background");
+    document.getElementById('addTaskId').classList.remove("color-background");
+    document.getElementById('contactsId').classList.remove("color-background");
+    // document.getElementById('showNoticeId').classList.add("color-background");
+
 }

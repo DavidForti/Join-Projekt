@@ -1,6 +1,18 @@
 function initContacts() {
     renderContacts();
+    removeContacts();
 }
+
+function  removeContacts(){
+    document.getElementById('summaryId').classList.remove("color-background");
+    document.getElementById('boardId').classList.remove("color-background");
+    document.getElementById('addTaskId').classList.remove("color-background");
+    document.getElementById('contactsId').classList.add("color-background");
+    document.getElementById('showNoticeId').classList.remove("color-background");
+
+}
+
+
 
 function renderContacts() {
     let place = document.getElementById('contacts-container');
