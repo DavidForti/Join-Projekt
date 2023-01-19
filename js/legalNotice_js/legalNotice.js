@@ -73,6 +73,5 @@ function removeBackgorund(){
     document.getElementById('boardId').classList.remove("color-background");
     document.getElementById('addTaskId').classList.remove("color-background");
     document.getElementById('contactsId').classList.remove("color-background");
-    // document.getElementById('showNoticeId').classList.add("color-background");
-
+    document.getElementById('showNoticeId').classList.add("color-background");
 }

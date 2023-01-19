@@ -27,6 +27,7 @@ function board() {
     <div id="d-board"></div>
     `;
     addAndRemove();
+    boardChangeBackground();
     let contantBoard = document.getElementById('contantBoard');
     contantBoard.innerHTML = '';
     contantBoard.innerHTML += dragAndDrop();
@@ -35,6 +36,15 @@ function board() {
     eventListener();
     // currenttask(editTasks);
 }
+
+function boardChangeBackground(){
+    document.getElementById('summaryId').classList.remove("color-background");
+    document.getElementById('boardId').classList.add("color-background");
+    document.getElementById('addTaskId').classList.remove("color-background");
+    document.getElementById('contactsId').classList.remove("color-background");
+    document.getElementById('showNoticeId').classList.remove("color-background");
+}
+
 
 function addAndRemove() {
     document.getElementById('contantSummary').classList.add("d-none");
@@ -59,8 +69,9 @@ function headlineBoard() {
         
     `;
 }
-
+// Render addToTask
 function renderAddTask() {
+    taskChangeBackgpound();
     let place = document.getElementById('contacts-container');
     place.innerHTML = /*html*/`
     <div class="input-container2">
@@ -112,6 +123,17 @@ function renderAddTask() {
     </div>
 `;;
 }
+
+function taskChangeBackgpound(){
+    document.getElementById('summaryId').classList.remove("color-background");
+    document.getElementById('boardId').classList.remove("color-background");
+    document.getElementById('addTaskId').classList.add("color-background");
+    document.getElementById('contactsId').classList.remove("color-background");
+    document.getElementById('showNoticeId').classList.remove("color-background");
+
+}
+
+
 
 function addTaskBnt() {
     document.getElementById('contantAddToTask').classList.remove("d-none");

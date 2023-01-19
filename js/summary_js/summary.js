@@ -20,20 +20,31 @@ const taskPriority = {
 }
 
 async function summary() {
+    summaryChangeBackground();
     await initData();
     // summaryclick();
     document.getElementById('contacts-container').innerHTML = /*html*/ `
     <div id="d-div"></div>
     `;
+     renderDiv();
     let contantSummary = document.getElementById('contantSummary');
     contantSummary.innerHTML = '';
     contantSummary.innerHTML = hedalineSummary();
     contantSummary.innerHTML += progrssesBox();
     contantSummary.innerHTML += urgentBox();
     contantSummary.innerHTML += toDoBox();
-    const joinUser = getFromLocalStorage('joinUser');
-    renderDiv();
+    const joinUser = getFromLocalStorage('joinUser');   
 }
+
+function summaryChangeBackground(){
+    document.getElementById('summaryId').classList.add("color-background");
+    document.getElementById('boardId').classList.remove("color-background");
+    document.getElementById('addTaskId').classList.remove("color-background");
+    document.getElementById('contactsId').classList.remove("color-background");
+    document.getElementById('showNoticeId').classList.remove("color-background");
+}
+
+
 
 function workflowStatus() {
     workflowToDo = editTasks.filter(task => task.status == taskStatus.todo).length;
@@ -52,6 +63,7 @@ function renderDiv() {
     document.getElementById('contacts-container').innerHTML = /*html*/ `
     <div  class="summary-div" id="d-div"></div>
     `;
+    summaryChangeBackground();
     workflowStatus();
     workflowPriority();
     hedalineSummary();

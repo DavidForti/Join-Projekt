@@ -12,8 +12,6 @@ function removeContacts() {
 
 }
 
-
-
 function renderContacts() {
     let place = document.getElementById('contacts-container');
     place.innerHTML = /*html*/ `
