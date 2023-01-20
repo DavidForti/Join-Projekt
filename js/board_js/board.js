@@ -330,7 +330,9 @@ function showTaskByStatus(tasks, elementId) {
          `;
     }
     content.innerHTML = html;
-    renderShortName();
+    setTimeout(function() {
+        renderShortName(), 1000
+    });
 }
 
 function renderShortName() {
