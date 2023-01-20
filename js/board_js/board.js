@@ -306,6 +306,7 @@ function showTask(tasksArray) {
     showTaskByStatus(tasksAwaitingFeedback, 'awaiting-feedback-tasks');
     tasksDone = tasksArray.filter(task => task.status == taskStatus.done);
     showTaskByStatus(tasksDone, 'done-tasks');
+    renderShortName();
     changeColor();
     eventListener();
 }
@@ -333,20 +334,24 @@ function showTaskByStatus(tasks, elementId) {
                     <div id="assigentId${i}" class="assingtTo-desing"></div>
                 </div>
          `;
+         
     }
     content.innerHTML = html;
-    setTimeout(function() {
-        renderShortName(), 1000
-    });
+    
 }
+
+
 
 function renderShortName() {
     for (let i = 0; i < editTasks.length; i++) {
         let content = document.getElementById(`${i}test`);
         for (let x = 0; x < editTasks[i]["assignedTo"].length; x++) {
             content.innerHTML += /*html*/ `
-            <div class="circle" style="background: black">${letterNameCut(x)}</div>
+            <div class="circle-name" style="background-color:rgb(${randomizer()},${randomizer()},${randomizer()})">
+                ${letterNameCut(editTasks[i].assignedTo[x])}
+            </div>
         `;
+
         }
     }
 }
