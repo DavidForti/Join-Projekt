@@ -359,7 +359,6 @@ function renderShortName() {
 function autoBackgroundColor(x){
     for (let i = 0; i <  contacts.length; i++) {
         if (contacts[i].name == x){
-            console.log(contacts[i].color)
           return  contacts[i].color;
         }
     }
@@ -388,7 +387,7 @@ async function saveTaskStatus(e) {
     if (currentDraggingTaskId != -1) {
         console.log(`${e.target.id} - ${currentDraggingTaskId}`);
         let taskStatus = getTaskStatus(e.target.id);
-        editTasks[currentDraggingTaskId]['status'] = taskStatus;
+        editTasks[currentDraggingTaskId.charAt(0)]['status'] = taskStatus;
         await saveToBackend('tasks', editTasks);
         currentDraggingTaskId = -1;
     }
