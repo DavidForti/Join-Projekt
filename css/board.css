@@ -116,10 +116,8 @@ html {
     display: flex;
     flex-direction: column;
     padding: -6px;
-    height: 52%;
-    width: 42%;
-    margin-top: 12%;
-    margin-right: 5%;
+    height: 53.5%;
+    margin-top: 11%;
 }
 
 .long-vertical-line {
@@ -334,6 +332,12 @@ html {
     filter: brightness(6) sepia(1);
 }
 
+.formular{
+    display: flex;
+    justify-content: space-evenly;
+    width: 150%;
+    height: 71%;
+}
 
 .bnts {
     top: 31%;
