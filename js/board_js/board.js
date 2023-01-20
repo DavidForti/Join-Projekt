@@ -347,11 +347,20 @@ function renderShortName() {
         let content = document.getElementById(`${i}test`);
         for (let x = 0; x < editTasks[i]["assignedTo"].length; x++) {
             content.innerHTML += /*html*/ `
-            <div class="circle-name" style="background-color:rgb(${randomizer()},${randomizer()},${randomizer()})">
+            <div class="circle-name" style="background-color: ${autoBackgroundColor(editTasks[i].assignedTo[x])}">
                 ${letterNameCut(editTasks[i].assignedTo[x])}
             </div>
         `;
 
+        }
+    }
+}
+
+function autoBackgroundColor(x){
+    for (let i = 0; i <  contacts.length; i++) {
+        if (contacts[i].name == x){
+            console.log(contacts[i].color)
+          return  contacts[i].color;
         }
     }
 }
