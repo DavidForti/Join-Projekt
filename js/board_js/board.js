@@ -37,7 +37,7 @@ function board() {
     // currenttask(editTasks);
 }
 
-function boardChangeBackground() {
+function boardChangeBackground(){
     document.getElementById('summaryId').classList.remove("color-background");
     document.getElementById('boardId').classList.add("color-background");
     document.getElementById('addTaskId').classList.remove("color-background");
@@ -137,7 +137,7 @@ function renderAddTask() {
 `;
 }
 
-function taskChangeBackgpound() {
+function taskChangeBackgpound(){
     document.getElementById('summaryId').classList.remove("color-background");
     document.getElementById('boardId').classList.remove("color-background");
     document.getElementById('addTaskId').classList.add("color-background");
@@ -157,11 +157,14 @@ function addTaskBnt() {
 
 function addTask() {
     return/*html*/`
-        <div class="input-container animation">
-            <div class ="headlinetask-container">
-            <p class="headline-task">Add Task</p>
-            <img src="/img/close.png" class="close-button" onclick="closeTask()">
-        </div>
+
+        <div class="formular2">
+            <div class="input-container animation">
+                <div class ="headlinetask-container">
+                <p class="headline-task">Add Task</p>
+                <img src="/img/close.png" class="close-button" onclick="closeTask()">
+            </div>
+
             <div class="selections">
                 <label for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
                 <input required type="Enter a title"  placeholder="Enter a title" class="title" id="title">  
@@ -169,17 +172,17 @@ function addTask() {
                 <textarea required="required" placeholder="Enter a Description" id="description" class="description"></textarea>
                 <!--dropDown-->
 
-                <div class="form-container">            
-                        <div class="bg">Category</div>
-                            <select required id = "chgeCategory"   class="category" onchange="changeColor(this);" >                
-                                <option>Select task category</option>  
-                                <option >New category</option> 
-                                <option >Sales</option>  
-                                <option vlaue="#1FD7C1">Backoffice</option>  
-                            </select>    
-                </div>
+            <div class="form-container">            
+                <div class="bg">Category</div>
+                    <select required id = "chgeCategory"   class="category" onchange="changeColor(this);" >                
+                        <option>Select task category</option>  
+                        <option >New category</option> 
+                        <option >Sales</option>  
+                        <option vlaue="#1FD7C1">Backoffice</option>  
+                    </select>    
+            </div>
 
-                <form class="form-container">
+                <div class="form-container">
                     <label for="assigned-to">Assigned to</label> 
                     <select required id = "chgeAssigend"  class="assigned-to">
                         <option>Selsect contacts to assing</option>  
@@ -187,19 +190,21 @@ function addTask() {
                         <option>Musstermann</option>  
                         <option>Invite new contact</option>  
                     </select>
-                </form>    
-            </div> 
+                </div>
+
+            
             <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>  
             <div class="selections-sec">
+
                 <label for="due-date" class="correction-due-date">Due Date</label>
                 <input type="date" id="dueDate" class ="due-date">
                 <label for="status" class="correction-due-date">Prio</label>
 
-                    <div class="status" id="chgeprio">
-                        <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
-                        <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
-                        <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
-                    </div>
+                <div class="status" id="chgeprio">
+                    <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
+                    <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
+                    <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
+                </div>
 
                 <div class="bnts">
                     <button class="bnt-cancel" onclick="cancelBnt()" > Cancel <img src="img/cancelSymbol.png" ></button>
