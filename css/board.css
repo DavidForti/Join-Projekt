@@ -116,8 +116,8 @@ html {
     display: flex;
     flex-direction: column;
     padding: -6px;
-    height: 53.5%;
-    margin-top: 11%;
+    height: 44.5%;
+    margin-top: 13%;
 }
 
 .long-vertical-line {
@@ -339,8 +339,24 @@ html {
     height: 71%;
 }
 
+.formular2{
+    display: flex;
+    justify-content: space-evenly;
+    width: 150%;
+    height: 71%;
+}
+
+.sec-one{
+
+}
+
+.sec-tow{
+    width: 40%;
+    margin: 6%;
+}
+
 .bnts {
-    top: 31%;
+    top: 76%;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -352,8 +368,8 @@ html {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 177px;
-    height: 61px;
+    width: 140px;
+    height: 50px;
     background: #F5F5F5;
     border-radius: 10px;
     flex: none;
@@ -368,14 +384,18 @@ html {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 177px;
-    height: 61px;
+    width: 150px;
+    height: 50px;
     background: #2A3647;
     border-radius: 10px;
     flex: none;
     order: 1;
     color: white;
     flex-grow: 0;
+}
+
+.vert-line{
+    margin-left: 25px;
 }
 
 .check-symbol {
@@ -454,18 +474,24 @@ html {
 .assingtTo-desing {
     font-family: 'Inter';
     font-size: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    color: #F5F5F5;
+  
     justify-content: center;
     align-items: center;
+}
+
+.desing-assingt{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .pros-desing {
     width: 25px;
     margin-left: 85%;
+}
 
+.test{
+    display: flex;
+  align-items: stretch;
 }
 
 .add-todo-task {

@@ -80,7 +80,7 @@ function renderAddTask() {
     </div>
 
 
-<form onsubmit="board(); color2(1); add(); return false;">
+<form onsubmit="board();add(); return false;">
 
     <div class="formular">
         <div class="selections">
@@ -104,9 +104,11 @@ function renderAddTask() {
                 <label for="assigned-to">Assigned to</label> 
                 <select required id = "chgeAssigend"  class="assigned-to">
                     <option>Selsect contacts to assing</option>  
-                    <option>You</option> 
-                    <option>Musstermann</option>  
-                    <option>Invite new contact</option>  
+                    <option>Don Pablo</option> 
+                    <option>Max Musstermann</option>  
+                    <option>Bernd Trossmann</option>  
+                    <option>David Forti</option> 
+
                 </select>
             </div>   
         </div>
@@ -157,8 +159,10 @@ function addTaskBnt() {
 
 function addTask() {
     return/*html*/`
-
+    <form onsubmit="add(); return false;">
         <div class="formular2">
+                <div class="sec-one">
+
             <div class="input-container animation">
                 <div class ="headlinetask-container">
                 <p class="headline-task">Add Task</p>
@@ -169,7 +173,8 @@ function addTask() {
                 <label for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
                 <input required type="Enter a title"  placeholder="Enter a title" class="title" id="title">  
                 <label for="description">Description</label>   
-                <textarea required="required" placeholder="Enter a Description" id="description" class="description"></textarea>
+                <textarea required placeholder="Enter a Description" id="description" class="description"></textarea>
+
                 <!--dropDown-->
 
             <div class="form-container">            
@@ -186,18 +191,24 @@ function addTask() {
                     <label for="assigned-to">Assigned to</label> 
                     <select required id = "chgeAssigend"  class="assigned-to">
                         <option>Selsect contacts to assing</option>  
-                        <option>You</option> 
-                        <option>Musstermann</option>  
-                        <option>Invite new contact</option>  
+                        <option>Don Pablo</option> 
+                        <option>Max Musstermann</option>  
+                        <option>Bernd Trossmann</option>  
+                        <option>David Forti</option>  
                     </select>
                 </div>
 
+            </div>
+
             
             <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>  
+
+        <div class="sec-tow">
+
             <div class="selections-sec">
 
                 <label for="due-date" class="correction-due-date">Due Date</label>
-                <input type="date" id="dueDate" class ="due-date">
+                <input required type="date" id="dueDate" class ="due-date">
                 <label for="status" class="correction-due-date">Prio</label>
 
                 <div class="status" id="chgeprio">
@@ -208,10 +219,13 @@ function addTask() {
 
                 <div class="bnts">
                     <button class="bnt-cancel" onclick="cancelBnt()" > Cancel <img src="img/cancelSymbol.png" ></button>
-                    <button class="bnt-Task" onclick="add()">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
+                    <button  task="submit" class="bnt-Task">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
                 </div>  
-            </div>     
+            </div>  
+            
+            </div>  
         </div>
+    </form>
     `;
 }
 
@@ -292,7 +306,7 @@ async function pushTaskInArr(title, description, category, assignedTo, dueDate, 
     title.value = '';
     description.value = '';
     category.value = '';
-    assignedTo.value = '';
+    assignedTo = '';
     dueDate.value = '';
     priority = '';
 
@@ -331,29 +345,32 @@ function showTaskByStatus(tasks, elementId) {
                     <h3  class="title-desing">${task['title']}</h3>
                     <h2 class="descriptoin-desing">${task['description']}</h2>
                     <img  class="pros-desing" src='${prios}'>
-                    <div id="assigentId${i}" class="assingtTo-desing"></div>
-                </div>
-         `;
-
+                    <div class="desing-assingt" id=${task['id'] + "test"}>
+                        <div id="assigentId${i}" class="assingtTo-desing"></div>
+                    </div>
+                </div>      
+            `;
+        }
+        content.innerHTML = html;
     }
-    content.innerHTML = html;
-
-}
 
 
 
 function renderShortName() {
     for (let i = 0; i < editTasks.length; i++) {
-        let content = document.getElementById(`${i}`);
+        let content = document.getElementById(`${i}test`);
         for (let x = 0; x < editTasks[i]["assignedTo"].length; x++) {
-            content.innerHTML += /*html*/ `
-            <div class="circle-name" style="background-color: ${autoBackgroundColor(editTasks[i].assignedTo[x])}">
-                ${letterNameCut(editTasks[i].assignedTo[x])}
-            </div>
-        `;
-
+            content.innerHTML += testThis(i,x);
         }
     }
+}
+
+function testThis(i,x){
+    return/*html*/ `
+        <div class="circle-name" style="background-color: ${autoBackgroundColor(editTasks[i].assignedTo[x])}">
+            ${letterNameCut(editTasks[i].assignedTo[x])}
+        </div> 
+    `;
 }
 
 function autoBackgroundColor(x) {
@@ -387,7 +404,7 @@ async function saveTaskStatus(e) {
     if (currentDraggingTaskId != -1) {
         console.log(`${e.target.id} - ${currentDraggingTaskId}`);
         let taskStatus = getTaskStatus(e.target.id);
-        editTasks[currentDraggingTaskId]['status'] = taskStatus;
+        editTasks[currentDraggingTaskId.charAt(0)]['status'] = taskStatus;
         await saveToBackend('tasks', editTasks);
         currentDraggingTaskId = -1;
     }
