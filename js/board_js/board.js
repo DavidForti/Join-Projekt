@@ -37,7 +37,7 @@ function board() {
     // currenttask(editTasks);
 }
 
-function boardChangeBackground(){
+function boardChangeBackground() {
     document.getElementById('summaryId').classList.remove("color-background");
     document.getElementById('boardId').classList.add("color-background");
     document.getElementById('addTaskId').classList.remove("color-background");
@@ -137,7 +137,7 @@ function renderAddTask() {
 `;
 }
 
-function taskChangeBackgpound(){
+function taskChangeBackgpound() {
     document.getElementById('summaryId').classList.remove("color-background");
     document.getElementById('boardId').classList.remove("color-background");
     document.getElementById('addTaskId').classList.add("color-background");
@@ -326,7 +326,7 @@ function showTaskByStatus(tasks, elementId) {
         let result = imgStatusPrio.filter(imgStatusPrio => imgStatusPrio.Name == task.priority);
         let prios = result[0]['src'];
         html +=/*html*/ `
-                <div id=${task['id'] + "test"} class="contant-card list-item" draggable="true" onclick="openCurrentTaskShowMode(${task['id']})">
+                <div id=${task['id']} class="contant-card list-item" draggable="true" onclick="openCurrentTaskShowMode(${task['id']})">
                     <p class="category-desing">${task['category']}</p>
                     <h3  class="title-desing">${task['title']}</h3>
                     <h2 class="descriptoin-desing">${task['description']}</h2>
@@ -334,17 +334,17 @@ function showTaskByStatus(tasks, elementId) {
                     <div id="assigentId${i}" class="assingtTo-desing"></div>
                 </div>
          `;
-         
+
     }
     content.innerHTML = html;
-    
+
 }
 
 
 
 function renderShortName() {
     for (let i = 0; i < editTasks.length; i++) {
-        let content = document.getElementById(`${i}test`);
+        let content = document.getElementById(`${i}`);
         for (let x = 0; x < editTasks[i]["assignedTo"].length; x++) {
             content.innerHTML += /*html*/ `
             <div class="circle-name" style="background-color: ${autoBackgroundColor(editTasks[i].assignedTo[x])}">
@@ -356,10 +356,10 @@ function renderShortName() {
     }
 }
 
-function autoBackgroundColor(x){
-    for (let i = 0; i <  contacts.length; i++) {
-        if (contacts[i].name == x){
-          return  contacts[i].color;
+function autoBackgroundColor(x) {
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].name == x) {
+            return contacts[i].color;
         }
     }
 }
@@ -387,7 +387,7 @@ async function saveTaskStatus(e) {
     if (currentDraggingTaskId != -1) {
         console.log(`${e.target.id} - ${currentDraggingTaskId}`);
         let taskStatus = getTaskStatus(e.target.id);
-        editTasks[currentDraggingTaskId.charAt(0)]['status'] = taskStatus;
+        editTasks[currentDraggingTaskId]['status'] = taskStatus;
         await saveToBackend('tasks', editTasks);
         currentDraggingTaskId = -1;
     }

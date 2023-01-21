@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+body {
+    cursor: default;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
