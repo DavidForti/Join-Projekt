@@ -245,16 +245,6 @@
 
 @media screen and (max-width: 810px) {
 
-
-    .summary-div {
-        margin-top: -25%;
-        margin-left: 13%;
-        width: 60vh;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-    }
-
     .box {
         font-size: 25px;
         font-weight: bold;
@@ -326,23 +316,6 @@
         width: 30px;
     }
 
-    .headline-summary {
-        font-size: 15px;
-        margin-top: 5px;
-        margin-left: 7px;
-        height: 62px;
-    }
-
-
-    .menu {
-        margin-top: -5%;
-        display: flex;
-        justify-content: space-between;
-        margin-left: 46px;
-        align-items: center;
-        width: 104%;
-    }
-
     .summary-logo {
         width: 30px;
         height: 30px;
@@ -407,13 +380,6 @@
     .d-none-375px {
         display: none;
     }
-
-    .color-background {
-        width: 108px;
-        height: 76px;
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -424,6 +390,12 @@
 }
 
 @media screen and (max-width: 375px) {
+
+    .summary-div {
+        margin-top: 20%;
+        margin-left: 14%;
+        width: 75vh;
+    }
 
     .main-headline-text {
         position: absolute;
@@ -541,10 +513,5 @@
 
     .show-up-todo{
         margin-right: 100px;
-    }
-    
-    .color-background {
-        width: 75px;
-        height: 60px
     }
 }

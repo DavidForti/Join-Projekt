@@ -7,6 +7,13 @@ body {
     cursor: default;
 }
 
+.main-btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130%;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -36,7 +43,6 @@ body {
     cursor: pointer;
     align-items: center;
     width: 200px;
-    margin-top: 60px;
     height: 60px;
 }
 
