@@ -174,7 +174,7 @@ function openCurrentTaskEditMode() {
                     </div>
                     <div class="current-task-edit-assigned">
                         <label>Assigned To</label>`;
-    html += getAssignedToDropDown(currentTask['assignedTo']);
+    html += getAssignedToDropDownHtml(currentTask['assignedTo']);
     html += `       </div>
                     <div class="current-task-edit-ok-box">
                         <button type="submit" name="edit-task-button">
@@ -194,11 +194,10 @@ function openCurrentTaskEditMode() {
 /**
  * Get Html to render Multiselect Dropdown List to assign Contacts to Task
  * 
- * @param {int} taskId 
- * @param {Array} taskAssignedTo 
+ * @param {editTasks['assignedTo']} taskAssignedTo 
  * @returns - Html to render Dropdown list
 */
-function getAssignedToDropDown(taskAssignedToContacts) {
+function getAssignedToDropDownHtml(taskAssignedToContacts) {
     let html;
     let contactsSortByName = sortContactsByName();
     html = `<div class="form-group col-sm-12">
@@ -311,7 +310,7 @@ function onCheckboxStatusChange() {
     if (selectedContacts.length == 0)
         assignedToMultiSelectSelected.innerHTML = "Nothing is selected";
     else
-        renderAssignedToMultiSelectSelectedArea(selectedContacts);
+        renderAssignedToMultiSelectSelectedArea(selectedContacts, 'assigned-to-multiselect-selected');
 
 }
 
@@ -321,8 +320,8 @@ function onCheckboxStatusChange() {
  * 
  * @param {string[]} contactNames - Current Task AssignedTo Contacts Fullname
  */
-function renderAssignedToMultiSelectSelectedArea(contactNames) {
-    let assignedToMultiSelectSelected = document.getElementById('assigned-to-multiselect-selected');
+function renderAssignedToMultiSelectSelectedArea(contactNames, elementId) {
+    let assignedToMultiSelectSelected = document.getElementById(elementId);
     let html = '';
     for (let i = 0; i < contactNames.length; i++) {
         const contact = getContact(contactNames[i]);

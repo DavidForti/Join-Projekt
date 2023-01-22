@@ -54,7 +54,9 @@ function addAndRemove() {
 }
 
 function cancelBnt() {
-    document.getElementById('contantAddToTask').classList.add("d-none");
+    removeNewTaskEventListener();
+    document.getElementById('content-add-to-task-box').remove();
+    // document.getElementById('contantAddToTask').classList.add("d-none");
 }
 
 function headlineBoard() {
@@ -155,14 +157,16 @@ function addTaskBnt() {
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
+    initNewTaskAssignedToContactsMultiSelect();
 }
 
 function addTask() {
-    return/*html*/`
+    let html = `
+            <div id="content-add-to-task-box">
             <form onsubmit="add(); return false;">
                 <div class="formular2">
                     <div class="sec-one">
-                        <div class="input-container animation">
+                        <div id="new-task-input-container" class="input-container animation">
                             <div class="headlinetask-container">
                                 <p class="headline-task">Add Task</p>
                                 <img src="/img/close.png" class="close-button" onclick="closeTask()">
@@ -182,14 +186,9 @@ function addTask() {
                                     </select>
                                 </div>
                                 <div class="form-container">
-                                    <label for="assigned-to">Assigned to</label>
-                                    <select required id="chgeAssigend" class="assigned-to">
-                                        <option>Select contacts to assign</option>
-                                        <option>Don Pablo</option>
-                                        <option>Max Musstermann</option>
-                                        <option>Bernd Trossmann</option>
-                                        <option>David Forti</option>
-                                    </select>
+                                    <label for="assigned-to">Assigned to</label>`;
+        html += getNewTaskAssignedToDropDownHtml();
+        html += `
                                 </div>
                             </div>
                             <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>
@@ -208,15 +207,17 @@ function addTask() {
                                             <img src="/img/prio low.png" id="imgStatusLow"></div>
                                     </div>
                                     <div class="bnts">
-                                        <button class="bnt-cancel" onclick="cancelBnt()"> Cancel <img src="img/cancelSymbol.png"></button>
-                                        <button task="submit" class="bnt-Task">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
+                                        <button class="bnt-cancel" onclick="cancelBnt(); return false;"> Cancel <img src="img/cancelSymbol.png"></button>
+                                        <button type="submit" class="bnt-Task">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>    `;
+            </form>
+            </div>`;
+            return html;
 }
 
 function changeColor() {
@@ -263,27 +264,31 @@ function statusLow() {
 }
 
 function closeTask() {
-    document.getElementById('contantAddToTask').classList.add("d-none");
+    removeNewTaskEventListener();
+    document.getElementById('content-add-to-task-box').remove();
+    // document.getElementById('contantAddToTask').classList.add("d-none");
 }
 
 function add() {
-    document.getElementById('contantAddToTask').classList.add("d-none")
     let title = document.getElementById('title');
     let description = document.getElementById('description');
     let category = document.getElementById('chgeCategory');
-    let assignedTo = document.getElementById('chgeAssigend');
     let dueDate = document.getElementById('dueDate');
-    pushTaskInArr(title, description, category, assignedTo, dueDate, priority);
+    pushTaskInArr(title, description, category, dueDate);
+
+    removeNewTaskEventListener();
+    document.getElementById('content-add-to-task-box').remove();
+    // document.getElementById('contantAddToTask').classList.add("d-none");
 }
 
-async function pushTaskInArr(title, description, category, assignedTo, dueDate, priority) {
+async function pushTaskInArr(title, description, category, dueDate) {
     let newTaskId = getNewTaskId();
     let headOfTask = {
         "id": newTaskId,
         "title": title.value,
         "description": description.value,
         "category": category.value,
-        "assignedTo": assignedTo.value,
+        "assignedTo": newTaskSelectedContacts,
         "dueDate": dueDate.value,
         "priority": priority,
         "status": 'To do',
@@ -296,11 +301,11 @@ async function pushTaskInArr(title, description, category, assignedTo, dueDate, 
     title.value = '';
     description.value = '';
     category.value = '';
-    assignedTo = '';
     dueDate.value = '';
     priority = '';
-
 }
+
+
 function showTask(tasksArray) {
     tasksToDo = tasksArray.filter(task => task.status == taskStatus.todo);
     showTaskByStatus(tasksToDo, 'todo-tasks');

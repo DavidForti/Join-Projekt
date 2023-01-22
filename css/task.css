@@ -76,15 +76,6 @@
     cursor: pointer;
 }
 
-label {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-family: 'Inter';
-    font-size: 21px;
-    color: #000000;
-}
-
 .task-priority-box {
     width: 131px;
     height: 33px;
@@ -291,6 +282,15 @@ label {
     border-radius: 30px;
 }
 
+.current-task-edit-box label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Inter';
+    font-size: 21px;
+    color: #000000;
+} 
+
 .current-task-edit-priority {
     width: var(--form-elements-default-width);
 }
@@ -396,6 +396,43 @@ label {
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
+}
+/*#endregion*/
+
+
+
+/* NEW-TASK: - DROPDOWN*/
+/*#region*/
+.new-task-assigned-to-select-box {
+    position: relative;
+}
+
+#new-task-assigned-to-select-options {
+    display: none;
+    border: 0.5px #d1d1d1 solid;
+    max-height: 159px;
+    overflow-y: scroll;
+}
+
+#new-task-assigned-to-select-options label {
+    display: block;
+    padding: 0 0.75rem;
+}
+
+#new-task-assigned-to-select-options label:hover {
+    background-color: #d1d1d1;
+}
+
+#new-task-assigned-to-multiselect-selected {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
 }
 /*#endregion*/
 

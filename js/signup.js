@@ -1,11 +1,15 @@
 /**
- * Get Users from Backend-Server
+ * Document onLoad-Event
  */
 async function init() {
     initData();
 }
 
 
+/**
+ * Register New User and save to global Array joinUsers and to Backend
+ * 
+ */
 async function signUpNewUser() {
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
@@ -29,7 +33,7 @@ async function signUpNewUser() {
  * @param {string} name - Fullname of User
  * @param {string} email - Email of User
  * @param {string} password - Password of User
- * @returns {user} - User - JSON-Object
+ * @returns {Object} - User - JSON-Object
  */
 function getUserAsObject(name, email, password) {
     let newUserId = getMaxUserId(); 
@@ -43,9 +47,9 @@ function getUserAsObject(name, email, password) {
 
 
 /**
- * Get Max User-Id 
+ * Get Max User-Id to save a new registered User
  * 
- * @returns {number} - 
+ * @returns {number} - Max User Id
  */
 function getMaxUserId() {
     return joinUsers.length;
@@ -53,9 +57,10 @@ function getMaxUserId() {
 
 
 /**
+ * Check if a User with the specified Email Address exists
  * 
  * @param {string} email - Email address to check 
- * @returns - True/False if user with email address exists
+ * @returns {Boolean} - True/False if user with email address exists
  */
 function userExists(email) {
     // In combination with two negation operators !! you’ll receive a boolean value. 
