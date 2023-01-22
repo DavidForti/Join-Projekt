@@ -6,10 +6,19 @@
     width: 37%;
     top: 16%;
 }
-.summary-div{
+
+.summary-div {
     margin-top: 5%;
     margin-left: 7%;
     width: 75vh;
+}
+
+.hello {
+    min-height: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .reander-contianer-summary {
@@ -21,7 +30,7 @@
     width: 120%;
 }
 
-.cloum-rev{
+.cloum-rev {
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -30,7 +39,7 @@
 
 
 .head-of-summary {
-    
+
     font-family: 'Inter';
     font-style: normal;
     line-height: 120%;
@@ -104,7 +113,7 @@
     filter: brightness(6)sepia(1);
 }
 
-.urgent-box:hover .deadline{
+.urgent-box:hover .deadline {
     color: #FFFFFF;
 }
 
@@ -194,29 +203,29 @@
     filter: brightness(6)sepia(1);
 }
 
-.check-chop{
+.check-chop {
     display: none;
 }
 
-.toDo-done:hover .check-chop{
+.toDo-done:hover .check-chop {
     display: flex;
     position: absolute;
     margin-left: 14px;
     filter: brightness(0)sepia(20);
 }
 
-.pencil{
+.pencil {
     display: none;
 }
 
-.toDo-done:hover .pencil{
+.toDo-done:hover .pencil {
     display: flex;
     position: absolute;
     margin-left: 22px;
     filter: brightness(0)sepia(20);
 }
 
-.toDo-done:hover .img-check-todo-box{
+.toDo-done:hover .img-check-todo-box {
     filter: brightness(6)sepia(1);
 }
 

@@ -26,17 +26,17 @@ async function summary() {
     document.getElementById('contacts-container').innerHTML = /*html*/ `
     <div id="d-div"></div>
     `;
-     renderDiv();
+    renderDiv();
     let contantSummary = document.getElementById('contantSummary');
     contantSummary.innerHTML = '';
     contantSummary.innerHTML = hedalineSummary();
     contantSummary.innerHTML += progrssesBox();
     contantSummary.innerHTML += urgentBox();
     contantSummary.innerHTML += toDoBox();
-    const joinUser = getFromLocalStorage('joinUser');   
+    const joinUser = getFromLocalStorage('joinUser');
 }
 
-function summaryChangeBackground(){
+function summaryChangeBackground() {
     document.getElementById('summaryId').classList.add("color-background");
     document.getElementById('boardId').classList.remove("color-background");
     document.getElementById('addTaskId').classList.remove("color-background");
@@ -70,6 +70,7 @@ function renderDiv() {
     progrssesBox();
     urgentBox();
     toDoBox();
+    hello();
 }
 
 function hedalineSummary() {
@@ -146,6 +147,28 @@ function toDoBox() {
                 </div>
             </div>
         </div>
+    </div>
+    `;
+}
+
+function timeOfDay() {
+    let time = new Date().getHours();
+    if (time < 10 && time > 5) {
+        return "Good Morning";
+    }
+    else if (time > 10 && time < 17) {
+        return "Good Day";
+    }
+    else {
+        return "Good Evening";
+    }
+}
+
+function hello() {
+    let content = document.getElementById('contacts-container');
+    content.innerHTML += /*html*/ `
+    <div class="hello d-flex gap10">
+        ${timeOfDay()} <b>${JSON.parse(localStorage.getItem('joinUser')).name}</b>
     </div>
     `;
 }
