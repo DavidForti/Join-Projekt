@@ -74,6 +74,8 @@ html {
     align-items: center;
     display: flex;
     border-radius: 100%;
+    margin-left: -10px;
+    border: solid white 2px;
 }
 
 .input-container {
