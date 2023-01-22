@@ -23,6 +23,14 @@ async function signUpNewUser() {
 }
 
 
+/**
+ * Get User as JSON-Object
+ * 
+ * @param {string} name - Fullname of User
+ * @param {string} email - Email of User
+ * @param {string} password - Password of User
+ * @returns {user} - User - JSON-Object
+ */
 function getUserAsObject(name, email, password) {
     let newUserId = getMaxUserId(); 
     return {
@@ -33,6 +41,12 @@ function getUserAsObject(name, email, password) {
     };
 }
 
+
+/**
+ * Get Max User-Id 
+ * 
+ * @returns {number} - 
+ */
 function getMaxUserId() {
     return joinUsers.length;
 }
