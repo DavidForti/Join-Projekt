@@ -67,7 +67,7 @@ html {
 }
 
 .circle-name {
-    color:#FFFFFF;
+    color: #FFFFFF;
     width: 50px;
     height: 50px;
     justify-content: center;
@@ -341,14 +341,14 @@ html {
     height: 71%;
 }
 
-.formular2{
+.formular2 {
     display: flex;
     justify-content: space-evenly;
     width: 150%;
     height: 71%;
 }
 
-.sec-tow{
+.sec-tow {
     width: 40%;
     margin: 6%;
 }
@@ -392,7 +392,7 @@ html {
     flex-grow: 0;
 }
 
-.vert-line{
+.vert-line {
     margin-left: 25px;
 }
 
@@ -472,14 +472,15 @@ html {
 .assingtTo-desing {
     font-family: 'Inter';
     font-size: 22px;
-  
+
     justify-content: center;
     align-items: center;
 }
 
-.desing-assingt{
+.desing-assingt {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 10px;
 }
 
 .pros-desing {
@@ -487,9 +488,9 @@ html {
     margin-left: 85%;
 }
 
-.test{
+.test {
     display: flex;
-  align-items: stretch;
+    align-items: stretch;
 }
 
 .add-todo-task {
