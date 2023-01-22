@@ -58,7 +58,13 @@ function openCurrentTaskShowMode(taskId) {
  */
 function getAssignedToContactsHtml() {
     let html = '<div>';
-    let contactNames = currentTask['assignedTo'].sort();
+    let contactNames;
+    if (typeof currentTask['assignedTo'] !== "object") {
+        console.log(typeof currentTask['assignedTo']);
+        contactNames = new Array(currentTask['assignedTo']);
+    } else {
+        contactNames = currentTask['assignedTo'];
+    }
     for (let i = 0; i < contactNames.length; i++) {
         const contactName = contactNames[i];
         const contact = getContact(contactName);
