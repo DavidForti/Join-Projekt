@@ -19,7 +19,7 @@ function openCurrentTaskShowMode(taskId) {
                 <div class="current-task-show-box">
                     <div class="current-task-show-header ${currentTask['category'].toLowerCase()}">
                        <span>${currentTask['category']}</span>
-                       <img src="./img/close.png" onclick="closeCurrentTask('Show')" class="current-task-show-close-img">
+                       <img src="./img/close.png" onclick="closeCurrentTask('Show'); eventListener()" class="current-task-show-close-img">
                     </div>
                     <div class="current-task-show-title">
                        <h2>${currentTask['title']}</h2>
@@ -97,7 +97,7 @@ function getAssignedToContactHtml(contact) {
  */
 function getNameInitialsCircleHtml(contactName, contactColor, layout) {
     let marginLeftStyle = '';
-    if (layout == 'horizontal') 
+    if (layout == 'horizontal')
         marginLeftStyle = 'ml-negative-8'
 
     return `<div class="current-task-show-assignedto-letter-box ${marginLeftStyle}" style="background-color: ${contactColor}">
@@ -306,7 +306,7 @@ function onCheckboxStatusChange() {
         assignedToMultiSelectSelected.innerHTML = "Nothing is selected";
     else
         renderAssignedToMultiSelectSelectedArea(selectedContacts);
-    
+
 }
 
 

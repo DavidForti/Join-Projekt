@@ -79,7 +79,7 @@ function renderContact() {
         let place = document.getElementById(id);
         let bothLetters = getBothLetters(x);
         place.innerHTML += /*html*/ `
-        <div class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x}); renderContactDetail(${x})">
+        <div id="${x}" class="d-flex align-items-center gap25 c-p full-contact" onclick="colorContacts(${x}); renderContactDetail(${x})">
             <div class="circle c-w d-flex justify-content-center align-items-center">${bothLetters}</div>
             <div>
                 <p>${contacts[x].name}</p>
@@ -121,16 +121,15 @@ function randomColor(x) {
     contacts[x].color = fullColor;
 }
 
-let savemean;
 let selected;
 
 function colorContacts(number) {
-    let mean = document.querySelectorAll('.full-contact')[number];
-    if (savemean) {
-        savemean.classList.toggle('full-contact-effect');
+    if (document.querySelectorAll('.full-contact-effect')) {
+        for (let x = 0; x < document.querySelectorAll('.full-contact-effect').length; x++) {
+            document.querySelectorAll('.full-contact-effect')[x].classList.remove('full-contact-effect');
+        }
     }
-    mean.classList.toggle('full-contact-effect');
-    savemean = mean;
+    document.getElementById(number).classList.add('full-contact-effect');
 }
 
 function renderContactDetail(x) {
@@ -171,7 +170,7 @@ function renderContactDetail(x) {
 function animNewContact() {
     let place = document.body;
     place.innerHTML += /*html*/ `
-    <div id="a-b" class="anim-background" onclick="document.getElementById('a-b').remove(); initContacts()">
+    <div id="a-b" class="anim-background" onclick="document.getElementById('a-b').remove()">
         <div class="new-contact-card d-flex" onclick="event.stopPropagation()">
             <div class="tbt c-w d-flex flex-column justify-content-center gap5">
                 <svg class="nC-logo" width="50" height="50" viewBox="0 0 55 67" fill="none" xmlns="http://www.w3.org/2000/svg">
