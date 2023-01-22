@@ -1,4 +1,4 @@
-let contactCheckboxEpanded = false;
+// Copy (not reference) of selected Task-Object
 let currentTask;
 
 /**
@@ -19,7 +19,7 @@ function openCurrentTaskShowMode(taskId) {
                 <div class="current-task-show-box">
                     <div class="current-task-show-header ${currentTask['category'].toLowerCase()}">
                        <span>${currentTask['category']}</span>
-                       <img src="./img/close.png" onclick="closeCurrentTask()" class="current-task-show-close-img">
+                       <img src="./img/close.png" onclick="closeCurrentTask('Show')" class="current-task-show-close-img">
                     </div>
                     <div class="current-task-show-title">
                        <h2>${currentTask['title']}</h2>
@@ -47,7 +47,7 @@ function openCurrentTaskShowMode(taskId) {
                 </div>
             </div>`;
     body.innerHTML += html;
-    colorNameInitials();
+    // colorNameInitials();
 }
 
 
@@ -61,8 +61,8 @@ function getAssignedToContactsHtml() {
     let contactNames = currentTask['assignedTo'].sort();
     for (let i = 0; i < contactNames.length; i++) {
         const contactName = contactNames[i];
-        let contact = getContact(contactName);
-        html += getAssignedToContactHtml(contact, i);
+        const contact = getContact(contactName);
+        html += getAssignedToContactHtml(contact);
     }
     html += '</div>';
     return html;
@@ -73,17 +73,35 @@ function getAssignedToContactsHtml() {
  * Get Html to render Circle of single Contact Initials
  * 
  * @param {object} contact - Contact-Object
- * @param {int} counter    - Value for Element-Id
- * @returns 
+ * @returns - Html
  */
-function getAssignedToContactHtml(contact, counter) {
-    return `<div class="current-task-show-assignedto-contact-box">
-                <div id="name-initials${counter}" class="current-task-show-assignedto-letter-box">
-                    <span>${getNameInitials(contact['name'])}</span>
-                </div>
-                <div class="current-task-show-assignedto-contactname-box">
+function getAssignedToContactHtml(contact) {
+    let html = '';
+    html = `<div class="current-task-show-assignedto-contact-box">`;
+    html += getNameInitialsCircleHtml(contact['name'], contact['color'], 'vertical');
+    html += `   <div class="current-task-show-assignedto-contactname-box">
                     <span>${contact['name']}</span>
                 </div>
+            </div>`;
+    return html;
+}
+
+
+/**
+ * Get Html for Name Intials as Circle with Background Color of Contact
+ * 
+ * @param {string} contactName - Contact Fullname
+ * @param {string} contactColor - Background Color of Contact
+ * @param {string} layout - Orientation how circles are aligned (Horizontal or vertical). To overlap the circles in Horizontal Layout add negative margin-left.
+ * @returns - Html for Name Intials as Circle with Background Color of Contact
+ */
+function getNameInitialsCircleHtml(contactName, contactColor, layout) {
+    let marginLeftStyle = '';
+    if (layout == 'horizontal') 
+        marginLeftStyle = 'ml-negative-8'
+
+    return `<div class="current-task-show-assignedto-letter-box ${marginLeftStyle}" style="background-color: ${contactColor}">
+                <span>${getNameInitials(contactName)}</span>
             </div>`;
 }
 
@@ -112,19 +130,6 @@ function getNameInitials(contactName) {
 
 
 /**
- * Set Background Color of Initials of selected task assignedTo contacts
- */
-function colorNameInitials() {
-    let contactNames = currentTask['assignedTo'];
-    for (let i = 0; i < contactNames.length; i++) {
-        const contactName = contactNames[i];
-        let contact = getContact(contactName);
-        let elementId = 'name-initials' + i;
-        document.getElementById(elementId).style.background = contact['color'];
-    }
-}
-
-/**
  * Get Html to Render Selected Task in Edit Mode
  */
 function openCurrentTaskEditMode() {
@@ -133,9 +138,9 @@ function openCurrentTaskEditMode() {
     let body = document.body;
     html = `<form id="edit-task-form" onsubmit="saveEditedCurrentTask(); return false;">
             <div id="current-task-container" class="current-task-container">
-                <div class="current-task-edit-box">
+                <div id="current-task-edit-box" class="current-task-edit-box">
                     <div class="current-task-edit-header">
-                       <img src="./img/close.png" onclick="closeCurrentTask()" class="current-task-edit-close-img">
+                       <img src="./img/close.png" onclick="closeCurrentTask('Edit')" class="current-task-edit-close-img">
                     </div>
                     <div class="current-task-edit-title d-flex flex-column">
                        <label for="task-edit-title">Title</label>
@@ -163,7 +168,7 @@ function openCurrentTaskEditMode() {
                     </div>
                     <div class="current-task-edit-assigned">
                         <label>Assigned To</label>`;
-    html += getAssignedToDropDown(currentTask['id'], currentTask['assignedTo']);
+    html += getAssignedToDropDown(currentTask['assignedTo']);
     html += `       </div>
                     <div class="current-task-edit-ok-box">
                         <button type="submit" name="edit-task-button">
@@ -175,41 +180,149 @@ function openCurrentTaskEditMode() {
             </div>
             </form>`;
     body.innerHTML += html;
+
+    initAssignedToContactsMultiSelect();
 }
 
 
 /**
- * Get Html to render Dropdown List to assign Contacts to Task
+ * Get Html to render Multiselect Dropdown List to assign Contacts to Task
  * 
  * @param {int} taskId 
  * @param {Array} taskAssignedTo 
  * @returns - Html to render Dropdown list
-
-TODO:
-<input type="checkbox" id="chk${i}" ${setCheckboxContactIsAssignedByTask(taskAssignedTo, contactName)} onclick="setContactCheckbox('chk${i}','${contactName}')">
 */
-
-function getAssignedToDropDown(taskId, taskAssignedTo) {
+function getAssignedToDropDown(taskAssignedToContacts) {
     let html;
     let contactsSortByName = sortContactsByName();
-    html = `<div class="assigned-to-multiselect-container">
-                <div class="assigned-to-select-box" onclick="showAssignedToCheckboxes()">
-                    <select>
-                        <option>Select contacts to assign</option>
-                    </select>
-                    <div class="overSelect"></div>
-            </div>
-            <div id="contact-checkboxes">`;
+    html = `<div class="form-group col-sm-12">
+                <div id="assigned-to-multiselect-container">
+                    <div id="assigned-to-select-box" class="assigned-to-select-box" onclick="toggleAssignedToContactsCheckboxArea()">
+                        <select class="form-select">
+                            <option>Select contacts to assign</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="assigned-to-select-options">`;
     for (let i = 0; i < contactsSortByName.length; i++) {
         const contactName = contactsSortByName[i]['name'];
-        html += `<div class="checkbox-container d-flex flex-row justify-content-between align-items-center" onclick="setContactCheckbox('chk${i}','${contactName}')">
-                   <label for="chk${i}">${contactName}</label>
-                   <input type="checkbox" id="chk${i}" ${setCheckboxContactIsAssignedByTask(taskAssignedTo, contactName)}>
-                 </div>`;
+        html += `<label for="chk${i}" class="d-flex flex-row justify-content-between align-items-center">
+                    <span>${contactName}</span>
+                    <input type="checkbox" id="chk${i}" onchange="onCheckboxStatusChange()" value="${contactName}" ${setCheckboxContactIsAssignedByTask(taskAssignedToContacts, contactName)}> 
+                </label>`;
     }
-    html += `   </div>
-            </div>`;
+    html += `       </div>
+                </div>
+            </div id="">
+            <div id="assigned-to-multiselect-selected"></div>`;
     return html;
+}
+
+
+/**
+ * Init Multiselect Dropdown to assign Contacts to Task
+ * Add Event-Listener for click-Event to fold out and in the Multiselect Checkboxes
+ */
+function initAssignedToContactsMultiSelect() {
+    onCheckboxStatusChange();
+
+    let editbox = document.getElementById('current-task-edit-box');
+    editbox.addEventListener("click", onSelectAssignContactsDropdown);
+}
+
+
+/**
+ * Click-Event Handler-Function for the Multiselect Dropdown
+ * 
+ * @param {Object} event 
+ * @returns 
+ */
+function onSelectAssignContactsDropdown(event) {
+    let flyoutElement = document.getElementById('assigned-to-multiselect-container');
+    let targetElement = event.target; // clicked element
+
+    do {
+        if (targetElement == flyoutElement) {
+            // This is a click inside. Do nothing, just return.
+            // console.log('click inside');
+            return;
+        }
+
+        // Go up the DOM
+        targetElement = targetElement.parentNode;
+    } while (targetElement);
+
+    // This is a click outside.
+    toggleAssignedToContactsCheckboxArea(true);
+    // console.log('click outside');
+}
+
+
+/**
+ * Remove Click-EventListener when closing or saving the Edited Task Form
+ */
+function removeEditBoxEventListener() {
+    let editbox = document.getElementById('current-task-edit-box');
+    editbox.removeEventListener("click", onSelectAssignContactsDropdown);
+}
+
+
+/**
+ * Show or Hide AssignedTo Contacts Dropdown list
+ * 
+ * @param {boolean}} onlyHide - Hide true/false
+ */
+function toggleAssignedToContactsCheckboxArea(onlyHide = false) {
+    let checkboxes = document.getElementById("assigned-to-select-options");
+    let displayValue = checkboxes.style.display;
+
+    if (displayValue != "block") {
+        if (onlyHide == false) {
+            checkboxes.style.display = "block";
+        }
+    } else {
+        checkboxes.style.display = "none";
+    }
+}
+
+
+/**
+ * OnChange Event-Handler when Checkbox-Status of the Multiselect Dropdown changed
+ */
+function onCheckboxStatusChange() {
+    let assignedToMultiSelectSelected = document.getElementById('assigned-to-multiselect-selected');
+    let assignedToSelectOptions = document.getElementById("assigned-to-select-options");
+    let checkedCheckboxes = assignedToSelectOptions.querySelectorAll('input[type=checkbox]:checked');
+    let selectedContacts = [];
+
+    for (let i = 0; i < checkedCheckboxes.length; i++) {
+        const contactName = checkedCheckboxes[i].getAttribute('value');
+        selectedContacts.push(contactName);
+    }
+    saveAssignedContactToContactsArray(selectedContacts);
+
+    // Show selected Contacts under the Dropdown
+    if (selectedContacts.length == 0)
+        assignedToMultiSelectSelected.innerHTML = "Nothing is selected";
+    else
+        renderAssignedToMultiSelectSelectedArea(selectedContacts);
+    
+}
+
+
+/**
+ * Render Html under the Dropdown with the Name Initials of the selected Contacts as Circles
+ * 
+ * @param {string[]} contactNames - Current Task AssignedTo Contacts Fullname
+ */
+function renderAssignedToMultiSelectSelectedArea(contactNames) {
+    let assignedToMultiSelectSelected = document.getElementById('assigned-to-multiselect-selected');
+    let html = '';
+    for (let i = 0; i < contactNames.length; i++) {
+        const contact = getContact(contactNames[i]);
+        html += getNameInitialsCircleHtml(contact.name, contact.color, 'horizontal');
+    }
+    assignedToMultiSelectSelected.innerHTML = html;
 }
 
 
@@ -224,45 +337,12 @@ function sortContactsByName() {
 
 
 /**
- * Check or uncheck Checkbox and Add or Remove Contact from AssignedTo Contacts of Selected Task
+ * Add Selected Contact Names to Current Task AssignedTo Property
  * 
- * @param {string} checkboxId - Id of Checkbox Element
- * @param {string} contactName - Contact Name based on Checkbox to Add or Remove from Selected Task AssignedTo Contacts
+ * @param {*} contactNames 
  */
-function setContactCheckbox(checkboxId, contactName) {
-    let clickedCheckbox = document.getElementById(checkboxId);
-
-    if (clickedCheckbox.checked == false) {
-        clickedCheckbox.checked = true;
-        addAssignedContactToContactsArray(contactName);
-    } else {
-        removeAssignedContactFromContactsArray(contactName);
-        clickedCheckbox.checked = false;
-    }
-}
-
-
-/**
- * Add Contact Name to Selected Task AssignedTo Contacts
- * 
- * @param {string} contactName 
- */
-
-function addAssignedContactToContactsArray(contactName) {
-    if (currentTask['assignedTo'].indexOf(contactName) == -1)
-        currentTask['assignedTo'].push(contactName);
-}
-
-
-/**
- * Remove Contact Name from Selected Task AssignedTo Contacts
- * 
- * @param {string} contactName 
- */
-function removeAssignedContactFromContactsArray(contactName) {
-    let indexPos = currentTask['assignedTo'].indexOf(contactName);
-    if (indexPos > -1)
-        currentTask['assignedTo'].splice(indexPos, 1);
+function saveAssignedContactToContactsArray(contactNames) {
+    currentTask['assignedTo'] = contactNames;
 }
 
 
@@ -278,22 +358,6 @@ function setCheckboxContactIsAssignedByTask(taskAssignedTo, contactName) {
         return 'checked'
     else
         return null;
-}
-
-
-/**
- * Show or Hide AssignedTo Contacts Dropdown list
- * 
- */
-function showAssignedToCheckboxes() {
-    let contactCheckboxes = document.getElementById("contact-checkboxes");
-    if (!contactCheckboxEpanded) {
-        contactCheckboxes.style.display = "block";
-        contactCheckboxEpanded = true;
-    } else {
-        contactCheckboxes.style.display = "none";
-        contactCheckboxEpanded = false;
-    }
 }
 
 
@@ -407,6 +471,7 @@ async function saveEditedCurrentTask() {
     currentTask['dueDate'] = dueDate;
     await saveCurrentTaskToArray();
     await saveToBackend('tasks', editTasks);
+    removeEditBoxEventListener();
     document.getElementById('current-task-container').remove();
     showTask(editTasks);
 }
@@ -429,6 +494,9 @@ async function saveCurrentTaskToArray() {
 /**
  * Close and remove selected or edited modal div container
  */
-function closeCurrentTask() {
+function closeCurrentTask(taskMode) {
+    if (taskMode == 'Edit')
+        removeEditBoxEventListener();
+
     document.getElementById('current-task-container').remove();
 }

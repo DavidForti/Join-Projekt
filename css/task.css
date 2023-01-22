@@ -226,10 +226,8 @@ label {
     align-items: center;
     /* padding: 10px 8px; */
     gap: 10px;
-    background: #9327FF;
     border: 2px solid #FFFFFF;
     border-radius: 58px;
-    margin-right: 25px;
 }
 
 .current-task-show-assignedto-letter-box span {
@@ -242,6 +240,9 @@ label {
     color: #FFFFFF;
 }
 
+.current-task-show-assignedto-contactname-box {
+    margin-left: 25px;
+}
 .current-task-show-assignedto-contactname-box span {
     /* width: 161px; */
     /* height: 25px; */
@@ -322,10 +323,11 @@ label {
     background: var(--color-background);
     border-radius: 10px;
 }
+
 .current-task-edit-ok-box button {
     width: 48px;
     border: 0;
-    background-color:  var(--color-background);
+    background-color: var(--color-background);
     color: #FFFFFF;
     font-family: 'Inter';
     font-style: normal;
@@ -336,6 +338,7 @@ label {
     align-items: center;
 
 }
+
 .current-task-edit-ok-box img {
     width: 15px;
     height: 15px;
@@ -346,46 +349,55 @@ label {
 
 /* CURRENT-TASK: EDIT-MODE - DROPDOWN*/
 /*#region*/
-.assigned-to-multiselect-container {
-    width: var(--form-elements-default-width);
-  }
-  
-  .assigned-to-select-box {
+.assigned-to-select-box {
     position: relative;
-  }
-  
-  .assigned-to-select-box select {
+}
+
+.assigned-to-select-box select {
     width: 100%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 21px;
     color: #000000;
-  }
-  
-  .overSelect {
+}
+
+.overSelect {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    border: 1px solid #D1D1D1;
-  }
-  
-  #contact-checkboxes {
-    display: none;
-    border: 1px solid #d1d1d1;
-  }
-  
-  #contact-checkboxes label {
-    display: block;
-  }
-  
-  .checkbox-container {
-    margin: 0 10px
-  }
+}
 
-  .checkbox-container:hover {
-    background-color: lightgrey;
-  }
-  /*#endregion*/
+#assigned-to-select-options {
+    display: none;
+    border: 0.5px #d1d1d1 solid;
+    max-height: 159px;
+    overflow-y: scroll;
+}
+
+#assigned-to-select-options label {
+    display: block;
+    padding: 0 0.75rem;
+}
+
+#assigned-to-select-options label:hover {
+    background-color: #d1d1d1;
+}
+
+#assigned-to-multiselect-selected {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+}
+/*#endregion*/
+
+
+
