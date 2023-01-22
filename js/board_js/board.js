@@ -24,7 +24,7 @@ let imgStatusPrio = [
 
 function board() {
     document.getElementById('contacts-container').innerHTML = /*html*/ `
-    <div id="d-board"></div>
+    <div class="d-board"id="d-board"></div>
     `;
     addAndRemove();
     boardChangeBackground();

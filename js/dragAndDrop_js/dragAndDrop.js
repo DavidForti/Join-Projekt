@@ -12,21 +12,21 @@ function renderFields() {
     </div>
 <div class="main">
     <div class="second">
-        <h3>To Do <img onclick="addTaskBnt2()"class="add-button" src="/img/add button.png"></h3>
+        <h3 class="h3-Task">To Do <img onclick="addTaskBnt2()"class="add-button" src="/img/add button.png"></h3>
         <div id="todo-tasks" class="list">
             <p class="list-item" draggable="true">1</p>
         </div>
     </div>
     <div class="second">
-        <h3>In Progress <img onclick="addTaskBnt2()"class="add-button" src="/img/add button.png"></h3>
+        <h3 class="h3-Task">In Progress <img onclick="addTaskBnt2()"class="add-button" src="/img/add button.png"></h3>
         <div id="in-progress-tasks" class="list"></div>
     </div>
     <div class="second">
-        <h3>Awaiting Feedback <img   onclick="addTaskBnt2()"class="add-button"src="/img/add button.png"></h3>
+        <h3 class="h3-Task">Awaiting Feedback <img   onclick="addTaskBnt2()"class="add-button"src="/img/add button.png"></h3>
         <div id="awaiting-feedback-tasks" class="list"></div>
     </div>
     <div class="second">
-        <h3>Done <img onclick="addTaskBnt2()" class="add-button" src="/img/add button.png"></h3>
+        <h3 class="h3-Task">Done <img onclick="addTaskBnt2()" class="add-button" src="/img/add button.png"></h3>
         <div id="done-tasks" class="list"></div>
     </div>
 </div>

@@ -1,7 +1,9 @@
 .main {
     display: flex;
     justify-content: space-around;
-    height: 650px;
+    height: 70%;
+    width: 90%;
+    margin-left: 4%;
 }
 
 .second {
