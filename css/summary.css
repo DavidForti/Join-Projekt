@@ -21,6 +21,16 @@
     align-items: center;
 }
 
+.hello p {
+    font-size: 50px;
+    color: #2A3647;
+}
+
+.hello b {
+    font-size: 70px;
+    color: #29ABE2;
+}
+
 .reander-contianer-summary {
     position: relative;
     display: flex;
