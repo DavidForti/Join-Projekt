@@ -172,7 +172,7 @@ function addTask() {
                                 <img src="/img/close.png" class="close-button" onclick="closeTask()">
                             </div>
                             <div class="selections">
-                                <label for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
+                                <label class="title-in-form" for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
                                 <input required type="Enter a title" placeholder="Enter a title" class="title" id="title">
                                 <label for="description">Description</label>
                                 <textarea required placeholder="Enter a Description" id="description" class="description"></textarea>
@@ -196,7 +196,7 @@ function addTask() {
                                 <div class="selections-sec">
                                     <label for="due-date" class="correction-due-date">Due Date</label>
                                     <input required type="date" id="dueDate" class="due-date">
-                                    <label for="status" class="correction-due-date">Prio</label>
+                                    <label for="status" class="title-in-Prio">Prio</label>
 
                                     <div class="status" id="chgeprio">
                                         <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent

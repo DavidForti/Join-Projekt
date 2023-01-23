@@ -1,9 +1,55 @@
+@media screen and (max-width: 1047px) {
+    .bnts {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: -65%;
+        gap: 10px;
+    }
+
+    .title-in-Prio{
+        margin-top: 20px;
+    }
+
+    .status {
+        flex-direction: column;
+        margin-top: 24px;
+        margin-left: -44%;
+    }
+
+    .selections{
+        margin-top: 5.5%;
+    }
+
+    .sec-tow{
+        margin-top: 70px;
+    }
+
+    .title-in-form{
+        margin-top: 81px;
+    }
+}
+
+
+
+@media screen and (max-width: 810px) {
+    .input-container {
+        position: absolute;
+        left: 0;
+        height: auto;
+        width: 100%;
+    }
+
+    .bnts{
+        margin-top: -40%;
+    }
+}
+
+
 @media screen and (max-width: 825px) {
     .input-feld {
         margin-right: 0%;
     }
 }
-
 
 @media screen and (max-width: 597px) {
     .input-feld {
