@@ -76,15 +76,15 @@ function renderAddTask() {
     taskChangeBackgpound();
     let place = document.getElementById('contacts-container');
     let html = `
-        <div id="content-add-to-task-box">
+        <div id="content-add-to-task-box" class="container-add-to-task">
             <div class="input-container2">
                 <div class ="headlinetask-container">
                 <p class="headline-task">Add Task</p>
             </div>
 
             <form onsubmit="add(); board(); return false;">
-                <div class="formular">
-                    <div id="new-task-input-container" class="selections">
+                <div class="formular new-formular">
+                    <div id="new-task-input-container" class="selections new-selections">
                         <label for="title">Title</label>
                         <input required type="Enter a title"  placeholder="Enter a title" class="title" id="title">  
                         <label for="description">Description</label>   
@@ -106,9 +106,9 @@ function renderAddTask() {
     html += `           </div>   
                     </div>
 
-                    <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>  
+                    <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line new-vertical-line"></div>  
 
-                    <div class="selections-sec">
+                    <div class="selections-sec fix-due-date">
                         <div class="due-date1">
                             <label for="due-date" class="correction-due-date">Due Date</label>
                             <input required type="date" id="dueDate" class ="due-date">
@@ -121,7 +121,7 @@ function renderAddTask() {
                             <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
                         </div>
 
-                        <div class="bnts">
+                        <div class="bnts bnts-responsive">
                             <button class="bnt-cancel" onclick="clearAddTask(); return false;"> Clear <img src="img/cancelSymbol.png"></button>
                             <button type="submit" class="bnt-Task">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
                         </div>

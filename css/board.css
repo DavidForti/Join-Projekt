@@ -43,7 +43,7 @@
     border-radius: 10px;
 }
 
-.input-feld{
+.input-feld {
     margin-right: 5%;
 }
 
@@ -68,6 +68,26 @@
 html {
     overflow: hidden;
     font-family: 'Inter' !important;
+}
+
+.container-add-to-task {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.new-formular{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.fix-due-date {
+    margin-top: 13% !important;
+    margin-left: 5%;
+}
+
+.bnts-responsive {
+    top: 50% !important;
+    ;
 }
 
 .circle-name {
@@ -130,6 +150,10 @@ html {
 .long-vertical-line {
     height: 475px;
     margin-top: 104px;
+}
+
+.new-vertical-line{
+    margin-top: 66px !important;
 }
 
 .headlinetask-container {
@@ -342,9 +366,13 @@ html {
 .formular {
     display: flex;
     justify-content: space-evenly;
-    width: 150%;
     height: 71%;
 }
+
+.new-selections{
+    margin-top: 13%;
+}
+
 
 .formular2 {
     display: flex;
@@ -445,11 +473,11 @@ html {
     flex-grow: 0;
 }
 
-.responsive-selec-sec{
+.responsive-selec-sec {
     margin-top: 14%;
 }
 
-.bnts-sec{
+.bnts-sec {
     top: 64%;
 }
 
