@@ -315,7 +315,7 @@ function showTask(tasksArray) {
     showTaskByStatus(tasksAwaitingFeedback, 'awaiting-feedback-tasks');
     tasksDone = tasksArray.filter(task => task.status == taskStatus.done);
     showTaskByStatus(tasksDone, 'done-tasks');
-    renderShortName();
+    renderShortName(tasksArray);
     changeColor();
     eventListener();
 }
@@ -351,10 +351,10 @@ function showTaskByStatus(tasks, elementId) {
 
 
 
-function renderShortName() {
-    for (let i = 0; i < editTasks.length; i++) {
-        let content = document.getElementById(`${i}test`);
-        for (let x = 0; x < editTasks[i]["assignedTo"].length; x++) {
+function renderShortName(tasks) {
+    for (let i = 0; i < tasks.length; i++) {
+        let content = document.getElementById(`${tasks[i]['id']}test`);
+        for (let x = 0; x < tasks[i]["assignedTo"].length; x++) {
             content.innerHTML += testThis(i,x);
         }
     }
