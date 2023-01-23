@@ -75,70 +75,68 @@ function headlineBoard() {
 function renderAddTask() {
     taskChangeBackgpound();
     let place = document.getElementById('contacts-container');
-    place.innerHTML = /*html*/`
-    <div class="input-container2">
-        <div class ="headlinetask-container">
-        <p class="headline-task">Add Task</p>
-    </div>
-
-
-<form onsubmit="board();add(); return false;">
-
-    <div class="formular">
-        <div class="selections">
-            <label for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
-            <input required type="Enter a title"  placeholder="Enter a title" class="title" id="title">  
-            <label for="description">Description</label>   
-            <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
-            <!--dropDown-->
-
-            <div class="form-container">
-                    <div class="bg">Category</div>
-                        <select required id = "chgeCategory"   class="category" onchange="changeColor(this);" >                
-                            <option>Select task category</option>  
-                            <option >New category</option> 
-                            <option >Sales</option>  
-                            <option vlaue="#1FD7C1">Backoffice</option>  
-                        </select>
+    let html = `
+        <div id="content-add-to-task-box">
+            <div class="input-container2">
+                <div class ="headlinetask-container">
+                <p class="headline-task">Add Task</p>
             </div>
 
-            <div class="form-container">
-                <label for="assigned-to">Assigned to</label> 
-                <select required id = "chgeAssigend"  class="assigned-to">
-                    <option>Selsect contacts to assing</option>  
-                    <option>Don Pablo</option> 
-                    <option>Max Musstermann</option>  
-                    <option>Bernd Trossmann</option>  
-                    <option>David Forti</option> 
+            <form onsubmit="add(); board(); return false;">
+                <div class="formular">
+                    <div id="new-task-input-container" class="selections">
+                        <label for="title">Title</label>
+                        <input required type="Enter a title"  placeholder="Enter a title" class="title" id="title">  
+                        <label for="description">Description</label>   
+                        <textarea required="" placeholder="Enter a Description" id="description" class="description"></textarea>
 
-                </select>
-            </div>   
+                        <div class="form-container">
+                            <div class="bg">Category</div>
+                            <select required id="chgeCategory" class="category" onchange="changeColor(this);">                
+                                <option>Select task category</option>  
+                                <option>New category</option> 
+                                <option>Sales</option>  
+                                <option>Backoffice</option>  
+                            </select>
+                        </div>
+
+                        <div class="form-container">
+                            <label for="assigned-to">Assigned to</label>`;
+    html += getNewTaskAssignedToDropDownHtml();
+    html += `           </div>   
+                    </div>
+
+                    <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>  
+
+                    <div class="selections-sec">
+                        <div class="due-date1">
+                            <label for="due-date" class="correction-due-date">Due Date</label>
+                            <input required type="date" id="dueDate" class ="due-date">
+                            <label for="status" class="correction-due-date">Prio</label>
+                        </div>
+
+                        <div type="submit" class="status" id="chgeprio">
+                            <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
+                            <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
+                            <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
+                        </div>
+
+                        <div class="bnts">
+                            <button class="bnt-cancel" onclick="clearAddTask(); return false;"> Clear <img src="img/cancelSymbol.png"></button>
+                            <button type="submit" class="bnt-Task">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
+                        </div>
+                    </div> 
+                </div>
+            </form>
         </div>
-        
+        `;
+    place.innerHTML = html;
+    initNewTaskAssignedToContactsMultiSelect();
+}
 
-            <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>  
-
-            <div class="selections-sec">
-                <div class="due-date1">
-                    <label for="due-date" class="correction-due-date">Due Date</label>
-                    <input required type="date" id="dueDate" class ="due-date">
-                    <label for="status" class="correction-due-date">Prio</label>
-                </div>
-
-                <div type="submit" class="status" id="chgeprio">
-                    <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
-                    <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
-                    <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
-                </div>
-
-                <div class="bnts">
-                    <button class="bnt-cancel" onclick="renderAddTask()" > Cancel <img src="img/cancelSymbol.png" ></button>
-                    <button type="submit" class="bnt-Task">Create Task<img src="img/checkSymbol.png" class="check-symbol"></button>
-                </div>
-            </div> 
-    </div>
-</form>
-`;
+function clearAddTask() {
+    removeNewTaskEventListener();
+    renderAddTask();
 }
 
 function taskChangeBackgpound() {
@@ -147,14 +145,12 @@ function taskChangeBackgpound() {
     document.getElementById('addTaskId').classList.add("color-background");
     document.getElementById('contactsId').classList.remove("color-background");
     document.getElementById('showNoticeId').classList.remove("color-background");
-
 }
 
 
-
 function addTaskBnt() {
-    document.getElementById('contantAddToTask').classList.remove("d-none");
     let contantAddToTask = document.getElementById('contantAddToTask');
+    contantAddToTask.classList.remove("d-none");
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
     initNewTaskAssignedToContactsMultiSelect();
