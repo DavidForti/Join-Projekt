@@ -14,10 +14,6 @@
     cursor: text;
 }
 
-.c-d {
-    cursor: default !important;
-}
-
 .c-p {
     cursor: pointer;
 }

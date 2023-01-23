@@ -445,6 +445,14 @@ html {
     flex-grow: 0;
 }
 
+.responsive-selec-sec{
+    margin-top: 14%;
+}
+
+.bnts-sec{
+    top: 64%;
+}
+
 .category-desing {
     display: flex;
     flex-direction: column;
