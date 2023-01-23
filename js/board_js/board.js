@@ -187,8 +187,8 @@ function addTask() {
                                 </div>
                                 <div class="form-container">
                                     <label for="assigned-to">Assigned to</label>`;
-        html += getNewTaskAssignedToDropDownHtml();
-        html += `
+    html += getNewTaskAssignedToDropDownHtml();
+    html += `
                                 </div>
                             </div>
                             <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>
@@ -217,7 +217,7 @@ function addTask() {
                 </div>
             </form>
             </div>`;
-            return html;
+    return html;
 }
 
 function changeColor() {
@@ -340,27 +340,27 @@ function showTaskByStatus(tasks, elementId) {
                     <h3  class="title-desing">${task['title']}</h3>
                     <h2 class="descriptoin-desing">${task['description']}</h2>
                     <img  class="pros-desing" src='${prios}'>
-                    <div class="desing-assingt" id=${task['id'] + "test"}>
+                    <div class="desing-assingt" id=${task['id'] + "task"}>
                         <div id="assigentId${i}" class="assingtTo-desing"></div>
                     </div>
                 </div>      
             `;
-        }
-        content.innerHTML = html;
     }
+    content.innerHTML = html;
+}
 
 
 
 function renderShortName(tasks) {
     for (let i = 0; i < tasks.length; i++) {
-        let content = document.getElementById(`${tasks[i]['id']}test`);
+        let content = document.getElementById(`${tasks[i]['id']}task`);
         for (let x = 0; x < tasks[i]["assignedTo"].length; x++) {
-            content.innerHTML += testThis(i,x);
+            content.innerHTML += circleContacts(i, x);
         }
     }
 }
 
-function testThis(i,x){
+function circleContacts(i, x) {
     return/*html*/ `
         <div class="circle-name" style="background-color: ${autoBackgroundColor(editTasks[i].assignedTo[x])}">
             ${letterNameCut(editTasks[i].assignedTo[x])}
