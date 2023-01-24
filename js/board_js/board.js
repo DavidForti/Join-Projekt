@@ -34,7 +34,6 @@ function board() {
     renderFields();
     showTask(editTasks);
     eventListener();
-    // currenttask(editTasks);
 }
 
 function boardChangeBackground() {
@@ -111,7 +110,7 @@ function renderAddTask() {
                     <div class="selections-sec fix-due-date">
                         <div class="due-date1">
                             <label for="due-date" class="correction-due-date">Due Date</label>
-                            <input required type="date" id="dueDate" class ="due-date">
+                            <input id="due-date" required type="date" id="dueDate" class ="due-date">
                             <label for="status" class="correction-due-date">Prio</label>
                         </div>
 
@@ -132,6 +131,7 @@ function renderAddTask() {
         `;
     place.innerHTML = html;
     initNewTaskAssignedToContactsMultiSelect();
+    setInputDueDateDefaultDate();
 }
 
 function clearAddTask() {
@@ -154,6 +154,7 @@ function addTaskBnt() {
     contantAddToTask.innerHTML = '';
     contantAddToTask.innerHTML += addTask();
     initNewTaskAssignedToContactsMultiSelect();
+    setInputDueDateDefaultDate();
 }
 
 function addTask() {
@@ -191,7 +192,7 @@ function addTask() {
                             <div class="sec-tow">
                                 <div class="selections-sec">
                                     <label for="due-date" class="correction-due-date">Due Date</label>
-                                    <input required type="date" id="dueDate" class="due-date">
+                                    <input id="due-date" required type="date" id="dueDate" class="due-date">
                                     <label for="status" class="title-in-Prio">Prio</label>
 
                                     <div class="status" id="chgeprio">
@@ -214,6 +215,10 @@ function addTask() {
             </form>
             </div>`;
     return html;
+}
+
+function setInputDueDateDefaultDate() {
+    document.getElementById('due-date').defaultValue = new Date().toLocaleDateString('en-CA');
 }
 
 function changeColor() {
