@@ -78,7 +78,7 @@ function renderAddTask() {
         <div id="content-add-to-task-box" class="container-add-to-task">
             <div class="input-container2">
                 <div class ="headlinetask-container">
-                <p class="headline-task">Add Task</p>
+                <p class="headline-task new-hedline-task">Add Task</p>
             </div>
 
             <form onsubmit="add(); board(); return false;">
@@ -105,7 +105,7 @@ function renderAddTask() {
     html += `           </div>   
                     </div>
 
-                    <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line new-vertical-line"></div>  
+                    <div class="vert-line new-vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line new-vertical-line"></div>  
 
                     <div class="selections-sec fix-due-date">
                         <div class="due-date1">

@@ -27,8 +27,13 @@
 }
 
 .hello b {
-    font-size: 70px;
+    font-size: 60px;
     color: #29ABE2;
+}
+.none{
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
 }
 
 .reander-contianer-summary {

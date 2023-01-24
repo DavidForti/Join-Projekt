@@ -172,8 +172,10 @@ function timeOfDay() {
 function hello() {
     let content = document.getElementById('contacts-container');
     content.innerHTML += /*html*/ `
+    <div class="none">
     <div class="hello d-flex gap10 flex-column">
         <p>${timeOfDay()},</p><b>${JSON.parse(localStorage.getItem('joinUser')).name}</b>
+    </div>
     </div>
     `;
 }

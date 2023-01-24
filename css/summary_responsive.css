@@ -1,3 +1,10 @@
+@media screen and (max-width: 1189px){
+    .none{
+        display: none;
+    }
+}
+
+
 @media screen and (max-width: 1000px) {
     .summary-container {
         left: 355px;
@@ -356,7 +363,7 @@
     }
 
     .cloum-rev {
-        margin-top: 20px;
+        margin-top: 16px;
         flex-direction: column-reverse;
     }
 
@@ -411,7 +418,7 @@
     }
 
     .head-summary {
-        margin-right: 4%;
+        margin-right: -22%;
     }
 
     .headline-summary {
