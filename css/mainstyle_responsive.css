@@ -12,6 +12,10 @@
         height: 74px;
     }
 
+    .menu {
+        justify-content: unset;
+    }
+
     .main-container {
         width: 100%;
         top: 91vh;
@@ -172,10 +176,9 @@
 }
 
 @media screen and (max-width: 375px) {
-    .main-btns{
+    .main-btns {
         margin-top: 13%;
         margin-left: 0%;
         align-items: center;
     }
 }
-  
