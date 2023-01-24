@@ -44,8 +44,9 @@ function onSubmitResetUserPassword(event) {
         return;
     }
 
-    if (newPassword == confirmPassword)
+    if (newPassword == confirmPassword) {
         resetUserPassword(newPassword);
+    }
     else
         showNotifyMessage('notification-reset-password-container', 'The passwords do not match !!');
 }
@@ -71,6 +72,9 @@ async function resetUserPassword(newPassword) {
         userProperties.push({ 'key': 'resetPasswordTimestamp', 'value': 0 });
         await updateUser(user, userProperties);
         showNotifyMessage('notification-reset-password-container', 'You reset your password');
+        setTimeout(() => {
+            goToPage('../index.html');
+        }, 2000);
     }
 }
 
