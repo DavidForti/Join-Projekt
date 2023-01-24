@@ -15,7 +15,7 @@
 function showNotice() {
     removeBackgorund();
     document.getElementById('contacts-container').innerHTML = /*html*/`
-    <div class="position-relative pad20">
+    <div class="position-relative pad20" style="overflow: auto">
     <h1 class="h1n">
     Legal Notice
     </h1>
