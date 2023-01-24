@@ -177,8 +177,41 @@
 
 @media screen and (max-width: 375px) {
     .main-btns {
-        margin-top: 13%;
-        margin-left: 0%;
-        align-items: center;
+        margin-top: 14%;
+        margin-left: 19%;
+        width: 108%;
+    }
+
+    .main-container {
+        top: 84vh;
+        height: 9.5%;
+    }
+
+    .headline-summary {
+        font-size: 10px;
+        height: 47px;
+        font-family: 'Inter';
+    }
+
+    .headline-borad {
+        font-size: 10px !important;
+        height: 47px !important;
+        font-family: 'Inter';
+    }
+
+    .headline-addTask {
+        font-size: 10px !important;
+        height: 47px;
+        font-family: 'Inter';
+    }
+
+    .headline-addTask {
+        font-size: 10px;
+        height: 47px;
+        font-family: 'Inter';
+    }
+
+    .task-div {
+        margin-top: 10px;
     }
 }
