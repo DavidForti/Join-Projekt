@@ -112,12 +112,17 @@ function urgentBox() {
             <img src="/img/lineUrgent.png" class="line-vertical-Urgent">
             <div class="show-deadline">
                 
-                <h3 class="deadline">${editTasks[0].dueDate}<img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
+                <h3 class="deadline">${convertIntoDate()}<img  class="updead-line" src="/img/UpcomingDeadline.png" ></h2>
             </div>            
         </div>
     </div>
 
     `;
+}
+
+function convertIntoDate() {
+    let thisDate = new Date(editTasks[0].dueDate);
+    return thisDate.toDateString();
 }
 
 function toDoBox() {
