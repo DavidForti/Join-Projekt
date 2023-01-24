@@ -3,6 +3,12 @@ let email;
 let timeStampFromEmail;
 
 
+/**
+ * Document on load function to get url email and timestamp parameter 
+ * for resetting the user password
+ * 
+ * @async
+ */
 async function init() {
     urlParams = getUrlParameter();
     email = urlParams.get('email');
@@ -11,6 +17,10 @@ async function init() {
 }
 
 
+/**
+ * Get url parameter as key value pair
+ * @returns - Array of key value url parameter
+ */
 function getUrlParameter() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -18,6 +28,11 @@ function getUrlParameter() {
 }
 
 
+/**
+ * Function which get reset user password form data on submit as event 
+ * 
+ * @param {Object} event - Form data
+ */
 function onSubmitResetUserPassword(event) {
     event.preventDefault();
     let formData = new FormData(event.target); // Create FormData based on Form Element in HTML
@@ -36,6 +51,12 @@ function onSubmitResetUserPassword(event) {
 }
 
 
+/**
+ * Reset user password
+ * 
+ * @param {string} newPassword 
+ * @async
+ */
 async function resetUserPassword(newPassword) {
     let user = getUserFromEmailAddress(email);
 
@@ -54,6 +75,12 @@ async function resetUserPassword(newPassword) {
 }
 
 
+/**
+ * Check if timestamp is within the valid range for resetting the user password
+ * 
+ * @param {*} user 
+ * @returns {boolean} - True/False
+ */
 function checkTimestampIsValid(user) {
     if (user['resetPasswordTimestamp'] == timeStampFromEmail && timeStampIsInTime())
         return true;
@@ -62,6 +89,11 @@ function checkTimestampIsValid(user) {
 }
 
 
+/**
+ * Calc time difference between now and the timestamp from the url parameter
+ * 
+ * @returns {boolean} - True/False
+ */
 function timeStampIsInTime() {
     let timeDifference = new Date(Date.now() - timeStampFromEmail).getMinutes();
     if (timeDifference <= 10)

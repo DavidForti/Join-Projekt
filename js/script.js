@@ -1,10 +1,15 @@
+// Join User Array from Backend
 let joinUsers = [];
+// Task Array from Backend
 let editTasks = [];
+// Contacts Array from Backend
 let contacts = [];
-let newUser = [];
+
+// let newUser = [];
 
 // BASE_SERVER_URL for smallest_backend_ever.
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
+
 
 /**
  * Get Users from Backend-Server.

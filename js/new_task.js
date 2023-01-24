@@ -1,3 +1,4 @@
+// Array to store temporarily the selected contacts
 let newTaskSelectedContacts = [];
 
 /**
@@ -25,7 +26,6 @@ function removeNewTaskEventListener() {
  * Click-Event Handler-Function for the Multiselect Dropdown
  * 
  * @param {Object} event 
- * @returns 
  */
 function onNewTaskSelectAssignContactsDropdown(event) {
     let flyoutElement = document.getElementById('new-task-assigned-to-multiselect-container');
@@ -46,8 +46,6 @@ function onNewTaskSelectAssignContactsDropdown(event) {
     toggleNewTaskAssignedToContactsCheckboxArea(true);
     // console.log('click outside');
 }
-
-
 
 
 /**
@@ -114,7 +112,6 @@ function onNewTaskCheckboxStatusChange() {
         const contactName = checkedCheckboxes[i].getAttribute('value');
         newTaskSelectedContacts.push(contactName);
     }
-    // saveAssignedContactToContactsArray(selectedContacts);
 
     // Show selected Contacts under the Dropdown
     if (newTaskSelectedContacts.length == 0)
