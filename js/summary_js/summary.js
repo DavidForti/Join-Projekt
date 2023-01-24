@@ -88,9 +88,9 @@ function hedalineSummary() {
 function progrssesBox() {
     document.getElementById('d-div').innerHTML += /*html*/`
     <div class="boxes">
-        <div class="box"> ${editTasks.length}<div class="tasks-in-Board">Tasks in <br>Board </div></div>
-        <div class="box"> ${workflowInProgress}<div class="tasks-in-Board">Tasks in <br>Progress </div></div>
-        <div class="box"> ${workflowAwaitingFeedback}<div class="tasks-in-Board">Awaiting<br>Feedback</div></div>
+        <div onclick="board()" class="box"> ${editTasks.length}<div class="tasks-in-Board">Tasks in <br>Board </div></div>
+        <div onclick="board()" class="box"> ${workflowInProgress}<div class="tasks-in-Board">Tasks in <br>Progress </div></div>
+        <div onclick="board()" class="box"> ${workflowAwaitingFeedback}<div class="tasks-in-Board">Awaiting<br>Feedback</div></div>
     </div>
     
     `;
@@ -100,7 +100,7 @@ editTasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 
 function urgentBox() {
     document.getElementById('d-div').innerHTML += /*html*/`
-    <div class="urgent-box">
+    <div class="urgent-box" onclick="board()">
         <div class="urgent-style-box">
             <div class="red-circel">
                 <div class="put-pic-togheter">
@@ -123,7 +123,7 @@ function urgentBox() {
 function toDoBox() {
     document.getElementById('d-div').innerHTML += /*html*/`
     <div class="toDo-done-box">
-        <div class="toDo-done">
+        <div class="toDo-done" onclick="board()">
             <div class="show-up-todo">
                 <div class="show-up-style">
                     <img class="img-check-todo-box" src="/img/todo.png">  
@@ -135,7 +135,7 @@ function toDoBox() {
                 </div>
             </div>
         </div>
-        <div class="toDo-done">
+        <div class="toDo-done" onclick="board()">
             <div class="show-up-todo">
                 <div class="show-up-style">
                     <img class="img-check-todo-box" src="/img/done.png">  
