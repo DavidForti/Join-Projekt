@@ -94,7 +94,7 @@ function renderAddTask() {
                             <div class="bg">Category</div>
                             <select required id="chgeCategory" class="category" onchange="changeColor(this);">                
                                 <option>Select task category</option>  
-                                <option>New category</option> 
+                                <option>Marketing</option> 
                                 <option>Sales</option>  
                                 <option>Backoffice</option>  
                             </select>
@@ -176,9 +176,9 @@ function addTask() {
                                     <div class="bg">Category</div>
                                     <select required id="chgeCategory" class="category" onchange="changeColor(this);">
                                         <option>Select task category</option>
-                                        <option>New category</option>
+                                        <option>Marketing</option>
                                         <option>Sales</option>
-                                        <option vlaue="#1FD7C1">Backoffice</option>
+                                        <option>Backoffice</option>
                                     </select>
                                 </div>
                                 <div class="form-container">
