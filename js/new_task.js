@@ -7,7 +7,6 @@ let newTaskSelectedContacts = [];
  */
 function initNewTaskAssignedToContactsMultiSelect() {
     onNewTaskCheckboxStatusChange();
-
     let newTaskContainer = document.getElementById('new-task-input-container');
     newTaskContainer.addEventListener("click", onNewTaskSelectAssignContactsDropdown);
 }
@@ -25,7 +24,7 @@ function removeNewTaskEventListener() {
 /**
  * Click-Event Handler-Function for the Multiselect Dropdown
  * 
- * @param {Object} event 
+ * @param {Object} event - Object who raised the click event
  */
 function onNewTaskSelectAssignContactsDropdown(event) {
     let flyoutElement = document.getElementById('new-task-assigned-to-multiselect-container');

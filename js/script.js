@@ -34,7 +34,7 @@ async function init() {
  *  @async
  */
 async function initData() {
-    //  await deleteAll();
+    // await deleteAll();
     // await saveUsersToBackend();
     // await saveTasksToBackend();
     // await saveContactsToBackend();
@@ -111,9 +111,9 @@ function getUserFromEmailAddress(email) {
 /**
  * Save Array Variable to Backend
  * 
- * @async
  * @param {string} arrayName 
  * @param {Object[]} array 
+ * @async
  */
 async function saveToBackend(arrayName, array) {
     await backend.setItem(arrayName, JSON.stringify(array));
@@ -123,10 +123,10 @@ async function saveToBackend(arrayName, array) {
 /**
  * Update User-Object Property
  * 
- * @async
- * @param {object} user - User-Object
+ * @param {Object} user - User-Object
  * @param {string} key - User property that is updated
  * @param {string} value - Value that is stored
+ * @async
  */
 async function updateUser(user, keyValueArray) {
     for (let i = 0; i < keyValueArray.length; i++) {

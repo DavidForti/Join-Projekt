@@ -239,8 +239,7 @@ function initAssignedToContactsMultiSelect() {
 /**
  * Click-Event Handler-Function for the Multiselect Dropdown
  * 
- * @param {Object} event 
- * @returns 
+ * @param {Object} - Event 
  */
 function onSelectAssignContactsDropdown(event) {
     let flyoutElement = document.getElementById('assigned-to-multiselect-container');
@@ -333,8 +332,8 @@ function renderAssignedToMultiSelectSelectedArea(contactNames, elementId) {
 
 /**
  * Sort Contacts-Object By Name Property
- * @returns - Sorted Contacts By Name
  * 
+ * @returns - Sorted Contacts By Name
  */
 function sortContactsByName() {
     return contacts.sort((a, b) => a.name.localeCompare(b.name));
@@ -344,7 +343,7 @@ function sortContactsByName() {
 /**
  * Add Selected Contact Names to Current Task AssignedTo Property
  * 
- * @param {*} contactNames 
+ * @param {string[]} contactNames 
  */
 function saveAssignedContactToContactsArray(contactNames) {
     currentTask['assignedTo'] = contactNames;
@@ -352,7 +351,8 @@ function saveAssignedContactToContactsArray(contactNames) {
 
 
 /**
- * Check if Contact Name exists in AssignedTo Array of Selected Task
+ * Check if contact name exists in AssignedTo Array of Selected Task
+ * to set or uncheck checkbox
  * 
  * @param {object} taskAssignedTo 
  * @param {string} contactName 
@@ -444,7 +444,7 @@ function getTaskPriorityImgSrc(priority) {
 /**
  * Format Date as dd.MM.jjjj
  * 
- * @param {date} date 
+ * @param {date} - Date 
  * @returns  - Date formated as dd.MM.jjjj
  */
 function formatDate(date) {
