@@ -239,6 +239,12 @@
     padding: 20px !important;
 }
 
+#contact-view h1 {
+    height: 80px;
+    font-weight: 700;
+    font-size: 60px;
+}
+
 #contact-list {
     width: 320px;
     background-color: white;
