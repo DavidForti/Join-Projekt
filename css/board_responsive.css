@@ -28,8 +28,30 @@
         margin-top: 81px;
     }
 
-    .new-formular{
+    .new-formular {
         margin-top: 22%;
+    }
+
+    .fix-due-date {
+        margin-top: 14% !important;
+    }
+
+    .responsive-Status {
+        margin-left: 10%;
+        margin-top: -16%;
+    }
+
+    .bnts-responsive {
+        margin-left: 16%;
+    }
+
+    .new-selections {
+        margin-top: 14%;
+        height: 72%;
+    }
+
+    .new-vertical-line{
+        margin-top: 42px !important;
     }
 }
 

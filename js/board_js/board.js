@@ -115,7 +115,7 @@ function renderAddTask() {
                             <label for="status" class="correction-due-date">Prio</label>
                         </div>
 
-                        <div type="submit" class="status" id="chgeprio">
+                        <div type="submit" class="status responsive-Status" id="chgeprio">
                             <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
                             <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
                             <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
