@@ -8,4 +8,9 @@
         width: auto;
         height: 100%;
     }
+
+    .current-task-edit-box{
+        width: auto;
+        min-height: 100%;
+    }
 }
