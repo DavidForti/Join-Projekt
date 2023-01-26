@@ -234,6 +234,7 @@
 .current-task-show-assignedto-contactname-box {
     margin-left: 25px;
 }
+
 .current-task-show-assignedto-contactname-box span {
     /* width: 161px; */
     /* height: 25px; */
@@ -289,7 +290,7 @@
     font-family: 'Inter';
     font-size: 21px;
     color: #000000;
-} 
+}
 
 .current-task-edit-priority {
     width: var(--form-elements-default-width);
@@ -397,6 +398,7 @@
     font-weight: 400;
     font-size: 21px;
 }
+
 /*#endregion*/
 
 
@@ -412,6 +414,8 @@
     border: 0.5px #d1d1d1 solid;
     max-height: 159px;
     overflow-y: scroll;
+    position: relative;
+    z-index: 1;
 }
 
 #new-task-assigned-to-select-options label {
@@ -434,7 +438,5 @@
     font-weight: 400;
     font-size: 16px;
 }
+
 /*#endregion*/
-
-
-
