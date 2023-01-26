@@ -1,18 +1,34 @@
-@media screen and (max-width: 913px){
-    #contact-view{
-        display: none!important;
-    }
-    #contact-list{
-        width: 100%;
+@media screen and (max-width: 913px) {
+    
+    .div-contacts{
+        flex-direction: column !important;
         overflow: auto;
-        height: 110%;
     }
+    
+    .flex-column {
+        flex-direction: column!important;
+        position: relative;
+        height:90%
+    }
+    
+    #contact-list{
+        width: auto;
+    }
+
+    #contact-view{
+        min-height: 100%;
+    }
+    .new-contact{
+        
+        bottom: 224%;
+    }
+
 }
 
 
 
 @media screen and (max-width: 810px) {
-    #contacts-container{
+    #contacts-container {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -21,4 +37,8 @@
         display: flex;
         background-color: #f6f7f8;
     }
+}
+
+@media screen and (max-width: 375px) {
+   
 }
