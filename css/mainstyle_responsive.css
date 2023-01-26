@@ -9,7 +9,7 @@
 
     .menu-list {
         width: 35%;
-        height: 74px;
+        height: 89px;
     }
 
     .menu {
@@ -56,7 +56,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 50px;
+        height: 60px;
+        margin-top: 9px;
     }
 
     .board-contianer {
@@ -166,12 +167,50 @@
 
 }
 
+
+@media screen and (max-width: 517px){
+
+    .main-btns{
+        width: 119%;
+        margin-left: -9%;
+    }
+    
+}
+
+@media screen and (max-width: 464px){
+    .main-btns{
+        width: 102%;
+        margin-left: -5%;
+    }
+}
+
 @media screen and (max-width: 400px) {
     .main-btns {
         margin-left: -13%;
-        justify-content: space-between;
-        flex-direction: row;
         width: 110%;
+    }
+    .headline-summary {
+        font-size: 10px !important;
+        height: 47px !important;
+        font-family: 'Inter';
+    }
+
+    .headline-borad {
+        font-size: 10px !important;
+        height: 47px !important;
+        font-family: 'Inter';
+    }
+
+    .headline-addTask {
+        font-size: 10px !important;
+        height: 47px;
+        font-family: 'Inter';
+    }
+
+    .headline-addTask {
+        font-size: 10px;
+        height: 47px;
+        font-family: 'Inter';
     }
 }
 
@@ -186,11 +225,13 @@
         height: 9.5%;
     }
 
-    .main-container{margin-top: 0%};
+    .main-container {
+        margin-top: 0%;
+    }
 
     .headline-summary {
-        font-size: 10px;
-        height: 47px;
+        font-size: 10px !important;
+        height: 47px !important;
         font-family: 'Inter';
     }
 
@@ -214,5 +255,5 @@
 
     .task-div {
         margin-top: 10px;
-    }    
+    }
 }

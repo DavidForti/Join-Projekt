@@ -179,9 +179,8 @@
     .new-formular {
         display: flex;
         flex-direction: column;
-        width: auto;
         overflow: auto;
-        margin-top: 30%;
+        margin-top: 17%;
         margin-left: -4%;
     }
 
@@ -189,8 +188,11 @@
         height: 66%;
     }
 
-    .new-formular{
-        width: 83%;
-        height: 84%;
+    .due-date{
+        width: 109%;
+    }
+
+    .fix-due-date{
+       
     }
 }

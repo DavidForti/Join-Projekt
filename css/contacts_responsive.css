@@ -1,31 +1,59 @@
 @media screen and (max-width: 913px) {
-    
-    .div-contacts{
+
+    .div-contacts {
         flex-direction: column !important;
         overflow: auto;
     }
-    
+
     .flex-column {
-        flex-direction: column!important;
+        flex-direction: column !important;
         position: relative;
-        height:90%
+        height: 90%
     }
-    
-    #contact-list{
+
+    #contact-list {
         width: auto;
     }
 
-    #contact-view{
+    #contact-view {
         min-height: 100%;
     }
-    .new-contact{
-        
+
+    .new-contact {
         bottom: 224%;
     }
 
+    .tbt-details {
+        height: 90%;
+    }
 }
 
+@media screen and (max-width: 800px) {
 
+    .new-contact-card {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .nC-logo {
+        display: none;
+    }
+
+    .tbt {
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0px;
+        height: 50%;
+    }
+
+    .tbt-details {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 30px;
+    }
+
+   
+   
+}
 
 @media screen and (max-width: 810px) {
     #contacts-container {
@@ -39,6 +67,21 @@
     }
 }
 
+@media screen and (max-width: 744px) {
+    .new-contact {
+        bottom: 222%;
+    }
+}
+
+
 @media screen and (max-width: 375px) {
+    .responsive-kanban {
+        display: none;
+    }
+
+    .new-contact {
+        bottom: 222%;
+    }
+
    
 }
