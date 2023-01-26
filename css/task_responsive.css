@@ -1,16 +1,77 @@
-@media screen and (max-width: 625px){
-    .current-task-show-box{
+@media screen and (max-width: 625px) {
+    .current-task-show-box {
         width: auto;
         min-height: 100%;
     }
 
-    .current-task-show-title h2{
+    .current-task-show-title h2 {
         width: auto;
         height: 100%;
     }
 
-    .current-task-edit-box{
+    .current-task-edit-box {
         width: auto;
         min-height: 100%;
+    }
+
+    .current-task-edit-close-img {
+        left: 93%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form-input-box {
+        width: auto;
+        margin-left: 21%;
+    }
+
+    .current-task-edit-duedate {
+        width: 100%;
+        margin-left: 18%;
+    }
+
+    .current-task-edit-title {
+        width: 100%;
+        margin-left: -25%;
+    }
+
+    .current-task-edit-description {
+        width: 100%;
+        margin-left: -25%;
+    }
+
+    .current-task-edit-assigned {
+        width: 100%;
+        position: relative;
+    }
+
+    .title-head-card {
+        margin-left: 22%;
+    }
+
+    .description-head-card {
+        margin-left: 22%;
+    }
+
+    .responsive-due-date {
+        margin-right: 23%;
+        margin-left: -2%;
+    }
+
+    .black {
+        font-size: 12px !important;
+    }
+
+    .task-priority-box {
+        width: 30%;
+      
+    }
+
+    .task-priority-box span {
+        font-size: 11px;
+    }
+
+    .responsive-prio{
+        width: 100%;
     }
 }

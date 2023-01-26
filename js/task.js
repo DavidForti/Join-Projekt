@@ -149,24 +149,24 @@ function openCurrentTaskEditMode() {
                        <img src="./img/close.png" onclick="closeCurrentTask('Edit')" class="current-task-edit-close-img">
                     </div>
                     <div class="current-task-edit-title d-flex flex-column">
-                       <label for="task-edit-title">Title</label>
-                       <div class="form-input-box">                       
+                       <label for="task-edit-title" class="title-head-card">Title</label>
+                       <div class="form-input-box ">                       
                             <input type="text" placeholder="Enter a title" id="task-edit-title" value="${currentTask['title']}" required>                    
                        </div>
                     </div>
                     <div class="current-task-edit-description d-flex flex-column">
-                       <label for="task-edit-description">Description</label>
+                       <label for="task-edit-description" class="description-head-card">Description</label>
                        <div class="form-input-box">      
                             <textarea id="task-edit-description" rows="2" name="text" placeholder="Enter a description" required>${currentTask['description']}</textarea>                 
                        </div>
                     </div>
                     <div class="current-task-edit-duedate">
                        <label for="task-edit-duedate">Due date</label>                       
-                        <div class="form-input-box">      
+                        <div class="form-input-box responsive-due-date">      
                            <input type="date" placeholder="Enter a due date" id="task-edit-duedate" value="${currentTask['dueDate']}">                    
                        </div>
                     </div>
-                    <div class="current-task-edit-priority d-flex flex-column">
+                    <div class="current-task-edit-priority d-flex flex-column responsive-prio">
                         <label>Priority</label>
                         <div id="priority-container">`;
     html += getPriorityHtml();
