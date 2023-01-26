@@ -51,8 +51,12 @@
         border-bottom-left-radius: 30px;
     }
 
-   
-   
+    .responsive-big-circle {
+        position: relative;
+        margin-top: -98%;
+        left: 40%;
+    }
+
 }
 
 @media screen and (max-width: 810px) {
@@ -83,5 +87,5 @@
         bottom: 222%;
     }
 
-   
+
 }

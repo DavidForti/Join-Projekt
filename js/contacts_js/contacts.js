@@ -285,7 +285,7 @@ function animEditContact() {
 
             <form onsubmit="overwrite(); return false" class="tbt-details justify-content-center">
                 <div class="d-flex align-items-center gap25">
-                    <div class="big-circle" style="background-color: ${contacts[selected].color}">
+                    <div class="big-circle responsive-big-circle" style="background-color: ${contacts[selected].color}">
                         <h2>
                             ${getBothLetters(selected)}
                         </h2>
