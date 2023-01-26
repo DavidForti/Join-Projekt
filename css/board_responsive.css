@@ -191,4 +191,12 @@
     .due-date{
         width: 109%;
     }
+
+    .selections-sec{
+        margin-top: 62%;
+    }
+
+    .fix-due-date{
+        margin-top: 62% !important;
+    }
 }
