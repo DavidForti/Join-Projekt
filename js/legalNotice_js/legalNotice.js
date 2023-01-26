@@ -74,4 +74,7 @@ function removeBackgorund(){
     document.getElementById('addTaskId').classList.remove("color-background");
     document.getElementById('contactsId').classList.remove("color-background");
     document.getElementById('showNoticeId').classList.add("color-background");
+    if (document.getElementById('content-add-to-task-box')) {
+        document.getElementById('content-add-to-task-box').classList.add("d-none");
+    }
 }
