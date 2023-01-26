@@ -233,6 +233,9 @@ function changeColor() {
         if (categoryDesing[i].innerHTML == 'Backoffice') {
             categoryDesing[i].style.background = "#1FD7C1";
         }
+        if (categoryDesing[i].innerHTML == 'Marketing') {
+            categoryDesing[i].style.background = "#00FF00";
+        }
     }
 }
 
