@@ -393,6 +393,8 @@
     .main-headline-text {
         font-size: 15px;
         margin-left: 47%;
+        height: 70%;
+        margin-top: 6%; 
     }
 }
 

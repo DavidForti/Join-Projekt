@@ -73,10 +73,10 @@
 
     .new-formular {
         margin-top: 12%;
-        margin-left: 15% ;
+        margin-left: 15%;
     }
 
-    .input-container2{
+    .input-container2 {
         z-index: 0;
     }
 }
@@ -88,8 +88,8 @@
     }
 }
 
-@media screen and (max-width: 625px){
-    .new-formular{
+@media screen and (max-width: 625px) {
+    .new-formular {
         margin-left: -8%;
     }
 }
@@ -115,6 +115,7 @@
 
     .selections {
         width: auto;
+        margin-top: 23%;
     }
 
     .sec-tow {
@@ -134,6 +135,29 @@
         display: flex;
         flex-direction: initial;
     }
+
+    .new-formular {
+        display: flex;
+        flex-direction: column;
+        margin-top: 31%;
+        margin-left: -5%;
+        overflow: auto;
+        width: auto;
+    }
+    
+    .fix-due-date{
+        width: 85%;
+        margin-left: 5%;
+    }
+    .responsive-Status{
+        margin-left: -1%;
+    }
+}
+
+@media screen and (max-width: 461px){
+    .new-formular{
+        width: 83%;
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -150,5 +174,23 @@
         flex-direction: column;
         align-items: baseline;
         margin-top: 30px;
+    }
+
+    .new-formular {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        overflow: auto;
+        margin-top: 30%;
+        margin-left: -4%;
+    }
+
+    .new-selections {
+        height: 66%;
+    }
+
+    .new-formular{
+        width: 83%;
+        height: 84%;
     }
 }
