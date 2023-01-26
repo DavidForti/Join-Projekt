@@ -24,12 +24,15 @@
 .hello p {
     font-size: 50px;
     color: #2A3647;
+  
 }
 
 .hello b {
     font-size: 60px;
     color: #29ABE2;
+    margin-left: 28%;
 }
+
 .none{
     display: flex;
     align-items: center;

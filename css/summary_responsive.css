@@ -389,6 +389,12 @@
     }
 }
 
+@media screen and (max-width: 500px){
+    .boxes{
+        margin-top: 25%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .main-headline-text {
         font-size: 15px;
