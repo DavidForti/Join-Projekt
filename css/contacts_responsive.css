@@ -20,7 +20,7 @@
     }
 
     .new-contact {
-        bottom: 224%;
+        bottom: 1677px;
     }
 
     .tbt-details {
@@ -54,9 +54,16 @@
     .responsive-big-circle {
         position: relative;
         margin-top: -98%;
-        left: 40%;
+        left: 50%;
     }
 
+    .responsive-Edit{
+        margin-right: 18%;
+    }
+
+    .dark-button{
+        margin-right: 4%;
+    }
 }
 
 @media screen and (max-width: 810px) {
@@ -72,9 +79,7 @@
 }
 
 @media screen and (max-width: 744px) {
-    .new-contact {
-        bottom: 222%;
-    }
+   
 }
 
 
@@ -84,8 +89,9 @@
     }
 
     .new-contact {
-        bottom: 222%;
+        bottom: 1484px;
+
     }
 
-
+    
 }

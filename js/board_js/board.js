@@ -78,7 +78,7 @@ function renderAddTask() {
         <div id="content-add-to-task-box" class="container-add-to-task">
             <div class="input-container2">
                 <div class ="headlinetask-container">
-                <p class="headline-task new-hedline-task">Add Task</p>
+                <p class="headline-task">Add Task</p>
             </div>
 
             <form onsubmit="add(); board(); return false;">
@@ -274,7 +274,7 @@ function add() {
     let title = document.getElementById('title');
     let description = document.getElementById('description');
     let category = document.getElementById('chgeCategory');
-    let dueDate = document.getElementById('dueDate');
+    let dueDate = document.getElementById('due-date');
     pushTaskInArr(title, description, category, dueDate);
 
     removeNewTaskEventListener();
