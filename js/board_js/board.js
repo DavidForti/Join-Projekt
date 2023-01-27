@@ -7,18 +7,18 @@ let priority;
 let imgStatusPrio = [
     {
         "Name": "Urgent",
-        "src": "/img/prio alta.png",
-        "src_white": "/img/prio alta white.png"
+        "src": "/img/prio_alta.png",
+        "src_white": "/img/prio_alta_white.png"
     },
     {
         "Name": "Medium",
-        "src": "/img/prio medium.png",
-        "src_white": "/img/prio medium white.png"
+        "src": "/img/prio_medium.png",
+        "src_white": "/img/prio_medium_white.png"
     },
     {
         "Name": "Low",
-        "src": "/img/prio low.png",
-        "src_white": "/img/prio low white.png"
+        "src": "/img/prio_low.png",
+        "src_white": "/img/prio_low_white.png"
     }
 ];
 
@@ -105,7 +105,7 @@ function renderAddTask() {
     html += `           </div>   
                     </div>
 
-                    <div class="vert-line new-vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line new-vertical-line"></div>  
+                    <div class="vert-line new-vert-line"><img src="/img/long_verticalLine.png" class="long-vertical-line new-vertical-line"></div>  
 
                     <div class="selections-sec fix-due-date">
                         <div class="due-date1">
@@ -115,9 +115,9 @@ function renderAddTask() {
                         </div>
 
                         <div type="submit" class="status responsive-Status" id="chgeprio">
-                            <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
-                            <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio medium.png" id="imgStatusMedium"></div>
-                            <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio low.png" id="imgStatusLow"></div>
+                            <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent <img src="/img/prio_alta.png" id="imgStatusUrgent"></div>
+                            <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium<img src="/img/prio_medium.png" id="imgStatusMedium"></div>
+                            <div class="low-status" id="statusLow" onclick="statusLow()">Low<img src="/img/prio_low.png" id="imgStatusLow"></div>
                         </div>
 
                         <div class="bnts bnts-responsive">
@@ -191,7 +191,7 @@ function addTask() {
     html += `
                                 </div>
                             </div>
-                            <div class="vert-line"><img src="/img/long verticalLine.png" class="long-vertical-line"></div>
+                            <div class="vert-line"><img src="/img/long_verticalLine.png" class="long-vertical-line"></div>
                             <div class="sec-tow">
                                 <div class="selections-sec">
                                     <label for="due-date" class="correction-due-date">Due Date</label>
@@ -200,11 +200,11 @@ function addTask() {
 
                                     <div class="status" id="chgeprio">
                                         <div class="urgent-status" id="stautsUrgent" onclick="statusUrgent()">Urgent
-                                            <img src="/img/prio alta.png" id="imgStatusUrgent"></div>
+                                            <img src="/img/prio_alta.png" id="imgStatusUrgent"></div>
                                         <div class="medium-status" id="statusMedium" onclick="statusMedium()">Medium
-                                            <img src="/img/prio medium.png" id="imgStatusMedium"></div>
+                                            <img src="/img/prio_medium.png" id="imgStatusMedium"></div>
                                         <div class="low-status" id="statusLow" onclick="statusLow()">Low
-                                            <img src="/img/prio low.png" id="imgStatusLow"></div>
+                                            <img src="/img/prio_low.png" id="imgStatusLow"></div>
                                     </div>
                                     <div class="bnts">
                                         <button class="bnt-cancel" onclick="cancelBnt(); return false;"> Cancel <img src="img/cancelSymbol.png"></button>
@@ -404,7 +404,7 @@ function letterNameCut(i) {
  */
 async function saveTaskStatus(e) {
     if (currentDraggingTaskId != -1) {
-        console.log(`${e.target.id} - ${currentDraggingTaskId}`);
+        // console.log(`${e.target.id} - ${currentDraggingTaskId}`);
         let taskStatus = getTaskStatus(e.target.id);
         editTasks[currentDraggingTaskId.charAt(0)]['status'] = taskStatus;
         await saveToBackend('tasks', editTasks);
