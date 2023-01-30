@@ -4,6 +4,8 @@ let joinUsers = [];
 let editTasks = [];
 // Contacts Array from Backend
 let contacts = [];
+// Task-Categories Array from Backend
+let categories = [];
 
 
 // BASE_SERVER_URL for smallest_backend_ever.
@@ -37,12 +39,14 @@ async function initData() {
     // await saveUsersToBackend();
     // await saveTasksToBackend();
     // await saveContactsToBackend();
-
+    // await saveCategoriesToBackend();
+    
     await downloadFromServer();
 
     await loadUsersFromBackend('script.js');
     await loadTasksFromBackend('script.js');
     await loadContactsFromBackend('script.js');
+    await loadCategoriesFromBackend('script.js');
 }
 
 
@@ -93,6 +97,19 @@ async function loadTasksFromBackend(page) {
 async function loadContactsFromBackend(page) {
     contacts = JSON.parse(await backend.getItem('contacts')) || [];
     console.log(`Contacts geladen (${page}):`, contacts);
+}
+
+
+/**
+ * Get Join Task-Categories from Backend
+ * Save Categories to global Variable categories
+ * 
+ * @async
+ * @param {string} page - For Looging purpose to get page from which this page is called. 
+ */
+async function loadCategoriesFromBackend(page) {
+    categories = JSON.parse(await backend.getItem('categories')) || [];
+    console.log(`Categories geladen (${page}):`, categories);
 }
 
 
@@ -237,7 +254,7 @@ async function saveTasksToBackend() {
             "title": "Task 3",
             "description": "Description Task 3...",
             "category": "Backoffice",
-            "assignedTo": [3,4,5],
+            "assignedTo": [3, 4, 5],
             "dueDate": "2023-04-10",
             "priority": "Urgent",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
@@ -249,7 +266,7 @@ async function saveTasksToBackend() {
             "title": "Task 4",
             "description": "Description Task 4...",
             "category": "Sales",
-            "assignedTo": [1,4,5,3,2],
+            "assignedTo": [1, 4, 5, 3, 2],
             "dueDate": "2023-05-30",
             "priority": "Low",
             "subTasks": ['Cristiano Ronaldo'],
@@ -339,12 +356,24 @@ async function saveContactsToBackend() {
 
 
 /**
+ * Save Sample Categories to Backend.
+ * @async
+ */
+async function saveCategoriesToBackend() {
+    categories = ["Backoffice","Marketing","Sales"];
+    await backend.setItem('categories', JSON.stringify(categories));
+}
+
+
+/**
  * Delete complete saved Backend Data !!.
  * @async
  */
 async function deleteAll() {
     await backend.deleteItem('users');
     await backend.deleteItem('tasks');
+    await backend.deleteItem('contacts');
+    await backend.deleteItem('categories');
 }
 
 

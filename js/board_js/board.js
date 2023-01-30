@@ -92,13 +92,10 @@ function renderAddTask() {
                         <div class="form-container">
                             <div class="bg">Category</div>
                             <select required id="chgeCategory" class="category" onchange="changeColor(this);">                
-                                <option>Select task category</option>  
-                                <option>Backoffice</option>  
-                                <option>Marketing</option> 
-                                <option>Sales</option>  
-                            </select>
+                                <option>Select task category</option>`;
+                        html += getCategories();
+                        html += `</select>
                         </div>
-
                         <div class="form-container">
                             <label for="assigned-to">Assigned to</label>`;
     html += getNewTaskAssignedToDropDownHtml();
@@ -132,6 +129,15 @@ function renderAddTask() {
     place.innerHTML = html;
     initNewTaskAssignedToContactsMultiSelect();
     setInputDueDateDefaultDate();
+}
+
+function getCategories() {
+    let html ='';
+    for (let i = 0; i < categories.length; i++) {
+        const category = categories[i];
+        html += `<option>${category}</option>`  
+    }
+    return html;    
 }
 
 function clearAddTask() {
@@ -179,11 +185,9 @@ function addTask() {
                                 <div class="form-container">
                                     <div class="bg">Category</div>
                                     <select required id="chgeCategory" class="category" onchange="changeColor(this);">
-                                        <option>Select task category</option>
-                                        <option>Backoffice</option>
-                                        <option>Marketing</option>
-                                        <option>Sales</option>
-                                    </select>
+                                        <option>Select task category</option>`;
+                                html += getCategories();
+                                html += `</select>
                                 </div>
                                 <div class="form-container">
                                     <label for="assigned-to">Assigned to</label>`;
