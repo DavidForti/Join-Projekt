@@ -274,36 +274,42 @@ async function saveTasksToBackend() {
 async function saveContactsToBackend() {
     contacts = [
         {
+            "id": 0,    
             "name": "Bernd Trossmann",
             "email": "mcptopgun@gmail.com",
             "phone": "+49 6666 1111",
             "color": "rgba(7, 65, 92)"
         },
         {
+            "id": 1,    
             "name": "Andreas Huber",
             "email": "a.huber@web.de",
             "phone": "+49 4444 9999",
             "color": "rgba(3, 24, 139)"
         },
         {
+            "id": 2,    
             "name": "Helmut Dunz",
             "email": "h.dunz@web.de",
             "phone": "+49 2222 3333",
             "color": "rgba(149, 16, 197)"
         },
         {
+            "id": 3,    
             "name": "Lionel Messi",
             "email": "l.messi@web.de",
             "phone": "+41 111 1233",
             "color": "rgba(27, 150, 24)"
         },
         {
+            "id": 4,    
             "name": "Manuel Neuer",
             "email": "m.neuer@web.de",
             "phone": "+40 89 111 1233",
             "color": "rgba(19, 140, 153)"
         },
         {
+            "id": 5,    
             "name": "Cristiano Ronaldo",
             "email": "cr7@web.de",
             "phone": "+33 11 222 3345",
