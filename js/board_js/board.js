@@ -362,17 +362,21 @@ function renderShortName(tasks) {
     for (let i = 0; i < tasks.length; i++) {
         let content = document.getElementById(`${tasks[i]['id']}task`);
         for (let x = 0; x < tasks[i]["assignedTo"].length; x++) {
-            content.innerHTML += circleContacts(i, x);
+            let contactId = tasks[i]["assignedTo"][x];
+            content.innerHTML += circleContacts(contactId);
         }
     }
 }
 
-function circleContacts(i, x) {
-    return/*html*/ `
-        <div class="circle-name" style="background-color: ${autoBackgroundColor(editTasks[i].assignedTo[x])}">
-            ${letterNameCut(editTasks[i].assignedTo[x])}
+function circleContacts(contactId) {
+    let html = '';
+    let contactName = getContactFromId(contactId).name;
+    html = `
+        <div class="circle-name" style="background-color: ${autoBackgroundColor(contactName)}">
+            ${letterNameCut(contactName)}
         </div> 
     `;
+    return html;
 }
 
 function autoBackgroundColor(x) {
@@ -383,20 +387,14 @@ function autoBackgroundColor(x) {
     }
 }
 
-function letterNameCut(i) {
-    for (let x in i) {
-        if (i[x] == " ") {
-            x++; return i[0] + i[x];
+function letterNameCut(contactName) {
+    for (let x in contactName) {
+        if (contactName[x] == " ") {
+            x++; return contactName[0] + contactName[x];
         }
     }
 }
 
-
-/*function b() {
- for () {
-
- }   
-}*/
 
 /**
  * Save Dragged Task to global Task Array and to Backend

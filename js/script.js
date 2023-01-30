@@ -5,7 +5,6 @@ let editTasks = [];
 // Contacts Array from Backend
 let contacts = [];
 
-// let newUser = [];
 
 // BASE_SERVER_URL for smallest_backend_ever.
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
@@ -109,6 +108,26 @@ function getUserFromEmailAddress(email) {
 
 
 /**
+ * 
+ * @returns - Number of Contacts
+ */
+function getNewContactId() {
+    return contacts.length;
+}
+
+
+/**
+ * Get Contact-Object of specific Contact Id
+ * 
+ * @param {number} id - Contact-Id 
+ * @returns {object} - Contact-Object
+ */
+function getContactFromId(id) {
+    return contacts.find(contact => contact.id == id);
+}
+
+
+/**
  * Save Array Variable to Backend
  * 
  * @param {string} arrayName 
@@ -194,12 +213,11 @@ async function saveTasksToBackend() {
             "title": "Webdesign redesign",
             "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
             "category": "Sales",
-            "assignedTo": ['Bernd Trossmann','Andreas Huber'],
+            "assignedTo": [0, 1],
             "dueDate": "2023-01-01",
             "priority": "Urgent",
             "subTasks": ['Create new icons'],
             "status": 'To do'     // Es gibt noch die Werte: "In Progress", "Awaiting Feedback", "Done" ("To do" wird als Standart verwendet)
-
         },
         {
             "id": 1,
@@ -207,7 +225,7 @@ async function saveTasksToBackend() {
             "title": "Price increase",
             "description": "Price increase Description...",
             "category": "Backoffice",
-            "assignedTo": ['Helmut Dunz'],
+            "assignedTo": [2],
             "dueDate": "2023-02-01",
             "priority": "Medium",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
@@ -219,7 +237,7 @@ async function saveTasksToBackend() {
             "title": "Task 3",
             "description": "Description Task 3...",
             "category": "Backoffice",
-            "assignedTo": ['Lionel Messi','Manuel Neuer','Cristiano Ronaldo'],
+            "assignedTo": [3,4,5],
             "dueDate": "2023-04-10",
             "priority": "Urgent",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
@@ -231,7 +249,7 @@ async function saveTasksToBackend() {
             "title": "Task 4",
             "description": "Description Task 4...",
             "category": "Sales",
-            "assignedTo": ['Andreas Huber','Manuel Neuer','Cristiano Ronaldo','Lionel Messi','Helmut Dunz'],
+            "assignedTo": [1,4,5,3,2],
             "dueDate": "2023-05-30",
             "priority": "Low",
             "subTasks": ['Cristiano Ronaldo'],
@@ -243,7 +261,7 @@ async function saveTasksToBackend() {
             "title": "Task 5",
             "description": "Description Task 5...",
             "category": "Sales",
-            "assignedTo": ['Bernd Trossmann'],
+            "assignedTo": [0],
             "dueDate": "2023-03-12",
             "priority": "Medium",
             "subTasks": [],
@@ -255,14 +273,13 @@ async function saveTasksToBackend() {
             "title": "Task 6",
             "description": "Description Task 6...",
             "category": "Sales",
-            "assignedTo": ['Helmut Dunz'],
+            "assignedTo": [2],
             "dueDate": "2023-07-02",
             "priority": "Low",
             "subTasks": [],
             "status": 'Done'
         }
     ];
-
     await backend.setItem('tasks', JSON.stringify(editTasks));
 }
 
@@ -274,42 +291,42 @@ async function saveTasksToBackend() {
 async function saveContactsToBackend() {
     contacts = [
         {
-            "id": 0,    
+            "id": 0,
             "name": "Bernd Trossmann",
             "email": "mcptopgun@gmail.com",
             "phone": "+49 6666 1111",
             "color": "rgba(7, 65, 92)"
         },
         {
-            "id": 1,    
+            "id": 1,
             "name": "Andreas Huber",
             "email": "a.huber@web.de",
             "phone": "+49 4444 9999",
             "color": "rgba(3, 24, 139)"
         },
         {
-            "id": 2,    
+            "id": 2,
             "name": "Helmut Dunz",
             "email": "h.dunz@web.de",
             "phone": "+49 2222 3333",
             "color": "rgba(149, 16, 197)"
         },
         {
-            "id": 3,    
+            "id": 3,
             "name": "Lionel Messi",
             "email": "l.messi@web.de",
             "phone": "+41 111 1233",
             "color": "rgba(27, 150, 24)"
         },
         {
-            "id": 4,    
+            "id": 4,
             "name": "Manuel Neuer",
             "email": "m.neuer@web.de",
             "phone": "+40 89 111 1233",
             "color": "rgba(19, 140, 153)"
         },
         {
-            "id": 5,    
+            "id": 5,
             "name": "Cristiano Ronaldo",
             "email": "cr7@web.de",
             "phone": "+33 11 222 3345",

@@ -66,9 +66,10 @@ function getNewTaskAssignedToDropDownHtml() {
                     <div id="new-task-assigned-to-select-options">`;
     for (let i = 0; i < contactsSortByName.length; i++) {
         const contactName = contactsSortByName[i]['name'];
+        const contactId = contactsSortByName[i]['id'];
         html += `<label for="chk${i}" class="d-flex flex-row justify-content-between align-items-center">
                     <span>${contactName}</span>
-                    <input type="checkbox" id="chk${i}" onchange="onNewTaskCheckboxStatusChange()" value="${contactName}"> 
+                    <input type="checkbox" id="chk${i}" onchange="onNewTaskCheckboxStatusChange()" value="${contactId}"> 
                 </label>`;
     }
     html += `       </div>
@@ -108,8 +109,8 @@ function onNewTaskCheckboxStatusChange() {
     newTaskSelectedContacts = [];
 
     for (let i = 0; i < checkedCheckboxes.length; i++) {
-        const contactName = checkedCheckboxes[i].getAttribute('value');
-        newTaskSelectedContacts.push(contactName);
+        const contactId = checkedCheckboxes[i].getAttribute('value');
+        newTaskSelectedContacts.push(contactId);
     }
 
     // Show selected Contacts under the Dropdown

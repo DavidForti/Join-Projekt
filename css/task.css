@@ -265,6 +265,7 @@
     bottom: 30px;
     background: var(--color-background);
     border-radius: 10px;
+    cursor: pointer;
     z-index: 1;
 }
 

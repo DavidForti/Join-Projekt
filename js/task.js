@@ -58,16 +58,17 @@ function openCurrentTaskShowMode(taskId) {
  */
 function getAssignedToContactsHtml() {
     let html = '<div>';
-    let contactNames;
+    let contactIds;
+    // let contactNames;
     if (typeof currentTask['assignedTo'] !== "object") {
-        console.log(typeof currentTask['assignedTo']);
-        contactNames = new Array(currentTask['assignedTo']);
+        // console.log(typeof currentTask['assignedTo']);
+        contactIds = new Array(currentTask['assignedTo']);
     } else {
-        contactNames = currentTask['assignedTo'];
+        contactIds = currentTask['assignedTo'];
     }
-    for (let i = 0; i < contactNames.length; i++) {
-        const contactName = contactNames[i];
-        const contact = getContact(contactName);
+    for (let i = 0; i < contactIds.length; i++) {
+        const contactId = contactIds[i];
+        const contact = getContactFromId(contactId);
         html += getAssignedToContactHtml(contact);
     }
     html += '</div>';
@@ -109,17 +110,6 @@ function getNameInitialsCircleHtml(contactName, contactColor, layout) {
     return `<div class="current-task-show-assignedto-letter-box ${marginLeftStyle}" style="background-color: ${contactColor}">
                 <span>${getNameInitials(contactName)}</span>
             </div>`;
-}
-
-
-/**
- * Get Contact-Object of specific Contact name
- * 
- * @param {string} contactName 
- * @returns 
- */
-function getContact(contactName) {
-    return contacts.filter(c => c.name == contactName)[0];
 }
 
 
@@ -211,9 +201,10 @@ function getAssignedToDropDownHtml(taskAssignedToContacts) {
                     <div id="assigned-to-select-options">`;
     for (let i = 0; i < contactsSortByName.length; i++) {
         const contactName = contactsSortByName[i]['name'];
+        const contactId = contactsSortByName[i]['id'];
         html += `<label for="chk${i}" class="d-flex flex-row justify-content-between align-items-center">
                     <span>${contactName}</span>
-                    <input type="checkbox" id="chk${i}" onchange="onCheckboxStatusChange()" value="${contactName}" ${setCheckboxContactIsAssignedByTask(taskAssignedToContacts, contactName)}> 
+                    <input type="checkbox" id="chk${i}" onchange="onCheckboxStatusChange()" value="${contactId}" ${setCheckboxContactIsAssignedByTask(taskAssignedToContacts, contactId)}> 
                 </label>`;
     }
     html += `       </div>
@@ -300,8 +291,8 @@ function onCheckboxStatusChange() {
     let selectedContacts = [];
 
     for (let i = 0; i < checkedCheckboxes.length; i++) {
-        const contactName = checkedCheckboxes[i].getAttribute('value');
-        selectedContacts.push(contactName);
+        const contactId = checkedCheckboxes[i].getAttribute('value');
+        selectedContacts.push(contactId);
     }
     saveAssignedContactToContactsArray(selectedContacts);
 
@@ -317,13 +308,13 @@ function onCheckboxStatusChange() {
 /**
  * Render Html under the Dropdown with the Name Initials of the selected Contacts as Circles
  * 
- * @param {string[]} contactNames - Current Task AssignedTo Contacts Fullname
+ * @param {number[]} contactIds - Current Task AssignedTo Contacts Id's
  */
-function renderAssignedToMultiSelectSelectedArea(contactNames, elementId) {
+function renderAssignedToMultiSelectSelectedArea(contactIds, elementId) {
     let assignedToMultiSelectSelected = document.getElementById(elementId);
     let html = '';
-    for (let i = 0; i < contactNames.length; i++) {
-        const contact = getContact(contactNames[i]);
+    for (let i = 0; i < contactIds.length; i++) {
+        const contact = getContactFromId(contactIds[i]);
         html += getNameInitialsCircleHtml(contact.name, contact.color, 'horizontal');
     }
     assignedToMultiSelectSelected.innerHTML = html;
@@ -343,10 +334,10 @@ function sortContactsByName() {
 /**
  * Add Selected Contact Names to Current Task AssignedTo Property
  * 
- * @param {string[]} contactNames 
+ * @param {number[]} contactIds 
  */
-function saveAssignedContactToContactsArray(contactNames) {
-    currentTask['assignedTo'] = contactNames;
+function saveAssignedContactToContactsArray(contactIds) {
+    currentTask['assignedTo'] = contactIds;
 }
 
 
@@ -355,11 +346,11 @@ function saveAssignedContactToContactsArray(contactNames) {
  * to set or uncheck checkbox
  * 
  * @param {object} taskAssignedTo 
- * @param {string} contactName 
+ * @param {number} contactId
  * @returns - 'checked' or null to check or uncheck checkbox
  */
-function setCheckboxContactIsAssignedByTask(taskAssignedTo, contactName) {
-    if (taskAssignedTo.indexOf(contactName) != -1)
+function setCheckboxContactIsAssignedByTask(taskAssignedTo, contactId) {
+    if (taskAssignedTo.indexOf(contactId) != -1)
         return 'checked'
     else
         return null;
