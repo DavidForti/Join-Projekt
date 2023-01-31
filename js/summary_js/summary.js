@@ -146,7 +146,7 @@ function toDoBox() {
             <div class="show-up-todo">
                 <div class="show-up-style">
                     <img class="img-check-todo-box" src="/img/done.png">  
-                    <img src="/img/check chop.png" class="check-chop">
+                    <img src="/img/check_chop.png" class="check-chop">
                         <div class="show-up-style-1">
                             ${workflowDone}
                             <img class="color-change-box-todo-done" src="/img/text-done.png">
