@@ -209,4 +209,8 @@
     .fix-due-date {
         margin-top: 12% !important;
     }
+
+    .input-container{
+        margin-top: -10%;
+    }
 }
