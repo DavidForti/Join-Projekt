@@ -6,6 +6,11 @@
 
 body {
     cursor: default;
+   
+}
+
+body ::-webkit-scrollbar{
+    display: none;
 }
 
 .main-btns {

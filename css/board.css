@@ -237,6 +237,7 @@ html {
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .assigned-to {
