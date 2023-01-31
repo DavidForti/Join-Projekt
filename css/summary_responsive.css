@@ -404,6 +404,14 @@
     }
 }
 
+@media screen and (max-width: 393px){
+    .responsive-kanban{
+        margin-top: -3%;
+    }
+    
+}
+
+
 @media screen and (max-width: 375px) {
 
     .summary-div {

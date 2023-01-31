@@ -110,7 +110,7 @@ html {
 }
 
 .input-container {
-    z-index: 1;
+    z-index: 2;
     justify-content: space-between;
     top: 150px;
     display: flex;
@@ -595,6 +595,10 @@ html {
 
 .new-background-color{
     background-color:rgba(0, 0, 0, 0.6) !important;
+    height: 100%;
+    z-index: 1;
+    margin-left: 0;
+    margin-top: auto;
 }
 
 @keyframes slidein {

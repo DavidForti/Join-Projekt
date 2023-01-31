@@ -1,9 +1,4 @@
 @media screen and (max-width: 625px) {
-    .current-task-show-box {
-        width: auto;
-        min-height: 100%;
-    }
-
     .current-task-show-title h2 {
         width: auto;
         height: 100%;
