@@ -93,8 +93,8 @@ function renderAddTask() {
                             <div class="bg">Category</div>
                             <select required id="chgeCategory" class="category" onchange="changeColor(this);">                
                                 <option>Select task category</option>`;
-                        html += getCategories();
-                        html += `</select>
+    html += getCategories();
+    html += `</select>
                         </div>
                         <div class="form-container">
                             <label for="assigned-to">Assigned to</label>`;
@@ -132,12 +132,11 @@ function renderAddTask() {
 }
 
 function getCategories() {
-    let html ='';
-    for (let i = 0; i < categories.length; i++) {
-        const category = categories[i];
-        html += `<option>${category}</option>`  
+    let html = '';
+    for (let category in categories) {
+        html += `<option>${category}</option>`
     }
-    return html;    
+    return html;
 }
 
 function clearAddTask() {
@@ -189,8 +188,8 @@ function addTask() {
                                     <div class="bg">Category</div>
                                     <select required id="chgeCategory" class="category" onchange="changeColor(this);">
                                         <option>Select task category</option>`;
-                                html += getCategories();
-                                html += `</select>
+    html += getCategories();
+    html += `</select>
                                 </div>
                                 <div class="form-container">
                                     <label for="assigned-to">Assigned to</label>`;
@@ -234,15 +233,8 @@ function setInputDueDateDefaultDate() {
 function changeColor() {
     let categoryDesing = document.querySelectorAll('.category-desing');
     for (let i = 0; i < categoryDesing.length; i++) {
-        if (categoryDesing[i].innerHTML == 'Sales') {
-            categoryDesing[i].style.background = "#FC71FF";
-        }
-        if (categoryDesing[i].innerHTML == 'Backoffice') {
-            categoryDesing[i].style.background = "#1FD7C1";
-        }
-        if (categoryDesing[i].innerHTML == 'Marketing') {
-            categoryDesing[i].style.background = "#00FF00";
-        }
+        let categoryColor = categories[categoryDesing[i].innerHTML];
+        categoryDesing[i].style.background = categoryColor;
     }
 }
 

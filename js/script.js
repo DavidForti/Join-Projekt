@@ -7,7 +7,6 @@ let contacts = [];
 // Task-Categories Array from Backend
 let categories = [];
 
-
 // BASE_SERVER_URL for smallest_backend_ever.
 setURL('https://gruppe-411.developerakademie.net/smallest_backend_ever');
 
@@ -40,7 +39,7 @@ async function initData() {
     // await saveTasksToBackend();
     // await saveContactsToBackend();
     // await saveCategoriesToBackend();
-    
+
     await downloadFromServer();
 
     await loadUsersFromBackend('script.js');
@@ -360,7 +359,7 @@ async function saveContactsToBackend() {
  * @async
  */
 async function saveCategoriesToBackend() {
-    categories = ["Backoffice","Marketing","Sales"];
+    categories = { Backoffice: "#1FD7C1", Marketing: "#00FF00", Sales: "#FC71FF" };
     await backend.setItem('categories', JSON.stringify(categories));
 }
 

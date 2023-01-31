@@ -17,7 +17,7 @@ function openCurrentTaskShowMode(taskId) {
     html = /*html*/ `
             <div id="current-task-container" class="current-task-container">
                 <div class="current-task-show-box">
-                    <div class="current-task-show-header ${currentTask['category'].toLowerCase()}">
+                    <div id="current-task-show-header" class="current-task-show-header">
                        <span>${currentTask['category']}</span>
                        <img src="./img/close.png" onclick="closeCurrentTask('Show'); eventListener()" class="current-task-show-close-img">
                     </div>
@@ -47,7 +47,18 @@ function openCurrentTaskShowMode(taskId) {
                 </div>
             </div>`;
     body.innerHTML += html;
-    // colorNameInitials();
+    setCategoryBackgroundColor(currentTask['category'],'current-task-show-header');
+}
+
+
+/**
+ * Set Category background color
+ * 
+ * @param {string} category - Category Name
+ * @param {*} elementId - Element-Id of div-container to set the background color
+ */
+function setCategoryBackgroundColor(category, elementId) {
+    document.getElementById(elementId).style.backgroundColor = categories[category];
 }
 
 
@@ -169,7 +180,7 @@ function openCurrentTaskEditMode() {
                     <div class="current-task-edit-ok-box">
                         <button type="submit" name="edit-task-button">
                            <span>Ok</span>
-                           <img src="./img/check chop.png">
+                           <img src="./img/check_chop.png">
                         </button>
                     </div>
                 </div>
