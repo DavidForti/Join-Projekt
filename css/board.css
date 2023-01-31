@@ -190,6 +190,7 @@ html {
 }
 
 .title {
+    outline: none;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -201,6 +202,7 @@ html {
 }
 
 .description {
+    outline: none;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
