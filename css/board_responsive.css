@@ -110,7 +110,7 @@
         margin-top: -5%;
     }
 
-    .selections-sec{
+    .selections-sec {
         margin-top: 45%;
     }
 
@@ -190,8 +190,8 @@
         margin-left: -4%;
     }
 
-    .new-selections {
-        height: 66%;
+    .selections{
+        margin-top: 60%;
     }
 
     .title {
@@ -211,10 +211,10 @@
     }
 
     .fix-due-date {
-        margin-top: 12% !important;
+        margin-top: 32% !important;
     }
 
-    .input-container{
+    .input-container {
         margin-top: -10%;
     }
 }
