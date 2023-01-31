@@ -63,7 +63,8 @@
     .input-container {
         position: absolute;
         left: 0;
-        height: auto;
+        height: 73%;
+        top: 136px;
         width: 100%;
     }
 
@@ -126,7 +127,7 @@
     .status {
         margin-top: 10px;
         display: flex;
-        margin-left: -5%;
+        margin-left: 0%;
         flex-direction: initial;
     }
 
@@ -144,18 +145,19 @@
         overflow: auto;
         width: auto;
     }
-    
-    .fix-due-date{
+
+    .fix-due-date {
         width: 85%;
         margin-left: 5%;
     }
-    .responsive-Status{
+
+    .responsive-Status {
         margin-left: -1%;
     }
 }
 
-@media screen and (max-width: 461px){
-    .new-formular{
+@media screen and (max-width: 461px) {
+    .new-formular {
         width: 83%;
     }
 }
@@ -188,15 +190,23 @@
         height: 66%;
     }
 
-    .due-date{
-        width: 109%;
+    .title {
+        width: 98%;
     }
 
-    .selections-sec{
+    .description {
+        width: 98%;
+    }
+
+    .due-date {
+        width: 100%;
+    }
+
+    .selections-sec {
         margin-top: 62%;
     }
 
-    .fix-due-date{
+    .fix-due-date {
         margin-top: 12% !important;
     }
 }
