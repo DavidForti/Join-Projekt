@@ -168,6 +168,10 @@ html {
     height: 405px;
 }
 
+.form-select{
+    background-position: right -0.19rem center !important;
+}
+
 .headlinetask-container {
     display: flex;
     position: absolute;

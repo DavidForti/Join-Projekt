@@ -2,6 +2,23 @@
     --form-elements-default-width: 428px;
 }
 
+/* TASK-CATEGORY-COLOR*/
+/*#region*/
+.sales {
+    background-color: #FC71FF;
+}
+
+.backoffice {
+    background-color: #1FD7C1;
+}
+
+.marketing {
+    background-color: #00FF00;
+}
+
+
+/*#endregion*/
+
 /* TASK-PRIORITY-COLOR*/
 /*#region*/
 .low {
