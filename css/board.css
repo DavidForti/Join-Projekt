@@ -34,6 +34,7 @@
 }
 
 .input {
+    outline:none;
     box-sizing: border-box;
     flex-direction: row;
     width: 50%;
@@ -589,6 +590,10 @@ html {
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
     animation-name: slidein;
+}
+
+.new-background-color{
+    background-color:rgba(0, 0, 0, 0.6) !important;
 }
 
 @keyframes slidein {

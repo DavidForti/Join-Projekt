@@ -158,6 +158,9 @@ function taskChangeBackgpound() {
 
 
 function addTaskBnt() {
+    document.getElementById('contacts-container').classList.add("new-background-color");
+    document.getElementById('d-board').classList.add("d-none");
+    document.getElementById("dad-container").classList.add("d-none")
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.classList.remove("d-none");
     contantAddToTask.innerHTML = '';
@@ -277,7 +280,8 @@ function statusLow() {
 function closeTask() {
     removeNewTaskEventListener();
     document.getElementById('content-add-to-task-box').remove();
-    // document.getElementById('contantAddToTask').classList.add("d-none");
+    document.getElementById('contacts-container').classList.remove("new-background-color")
+    document.getElementById('d-board').classList.remove("d-none");
 }
 
 function add() {
@@ -289,7 +293,6 @@ function add() {
 
     removeNewTaskEventListener();
     document.getElementById('content-add-to-task-box').remove();
-    // document.getElementById('contantAddToTask').classList.add("d-none");
 }
 
 async function pushTaskInArr(title, description, category, dueDate) {
@@ -485,7 +488,7 @@ function getFilteredTasks(searchInputValue) {
 
 function dragAndDrop() {
     return/*html*/`
-   <div class="dad-container">
+   <div class="dad-container" id="dad-container">
    <div class="main-contant-todo">
         <div>Todo</div>
         <div id="contantToDo" class="contant-todo"></div>
