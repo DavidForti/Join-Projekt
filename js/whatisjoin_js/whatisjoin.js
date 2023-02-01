@@ -5,8 +5,8 @@ function renderWhatIsJoin() {
     <div class="div-whatisjoin d-flex gap25 flex-column">
         <h1>Help</h1>
         <div>
-            <h2>What Is Join?</h2>
-            <p>Lorem ipsum  elit.ma, rerum nobis temporibus consequatur facilis excepturi ducimuss ut doloribus temporibus c Aut velit repudiandae facilis quam sit expedita quod neque, harum rerum placeat totam provident veniam tempora, reprehenderit voluptates fuga vitae hic dicta.</p>
+            <h2>What Is A Kanban?</h2>
+            <p>Kanban is a scheduling system for lean manufacturing. Taiichi Ohno, an industrial engineer at Toyota, developed kanban to improve manufacturing efficiency. The system takes its name from the cards that track production within a factory. Kanban is also known as the Toyota nameplate system in the automotive industry.</p>
         </div>
         <div class="d-flex gap25 flex-column">
             <h2>How To Use It</h2>
@@ -14,21 +14,20 @@ function renderWhatIsJoin() {
                 <h2>
                     1.
                 </h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eos quos nemo labore eveniet pariatur est dignissimos laudantium numquam explicabo dolore esse ullam possimus ut, aliquid aperiam maxime ipsum cum.
-                Numquam quibusdam ab rerum tibus minima, rerum nobis temporibus consequatur facilis excepturi ducimuss ut doloribus temporibus cumque qui id deserunt! Similique sit repudiandae fugit suscipit. Corrupti saepe incidunt sequi. Sit?</p>
+                <p class="d-flex align-items-center">Summary gives you an oversight of the currently existing tasks and their status. It also shows the most urgent task with its due date, and the number of unfinished and finished tasks.</p>
             </div>
             <div class="d-flex gap25">
                 <h2>
                     2.
                 </h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eos quos nemo labore eveniet pariatur est dignissimos laudantium numquam explicabo dolore esse ullam possimus ut, aliquid aperiam maxime ipsum cum.
+                <p class="d-flex align-items-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eos quos nemo labore eveniet pariatur est dignissimos laudantium numquam explicabo dolore esse ullam possimus ut, aliquid aperiam maxime ipsum cum.
                 Numquam quibusdam ab rerum odit debitma, rerum nobis temporibus consequatur facilis excepturi ducimus hic reprehenderit quos porro officiis non pere qui id deserunt! Similique sit repudiandae fugit suscipit. Corrupti saepe incidunt sequi. Sit?</p>
             </div>
             <div class="d-flex gap25">
                 <h2>
                     3.
                 </h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eos quos nemo labore eveniet pariatur est dignissimos laudantium numquam explicabo dolore esse ullam possimus ut, aliquid aperiam maxime ipsum cum.
+                <p class="d-flex align-items-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eos quos nemo labore eveniet pariatur est dignissimos laudantium numquam explicabo dolore esse ullam possimus ut, aliquid aperiam maxime ipsum cum.
                 Numquam quibusdam ab rerum odit debitis earum suscipit deleniti, doloremque dolor accusantium obcaecati! Alias, delectus nam nobis sunt nulla eum deserunt ratione, quisquam ofugit suscipit. Corrupti saepe incidunt sequi. Sit?</p>
             </div>
         </div>
