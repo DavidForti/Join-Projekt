@@ -50,7 +50,6 @@
         position: relative;
     }
 
-
     .headline-summary {
         display: flex;
         flex-direction: column;
@@ -171,8 +170,8 @@
 @media screen and (max-width: 517px){
 
     .main-btns{
-        width: 119%;
-        margin-left: -9%;
+        width: 131%;
+        margin-left: -16%;
     }
     
 }
