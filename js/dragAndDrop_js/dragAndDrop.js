@@ -10,7 +10,7 @@ function renderFields() {
             <button class="bnt-board" onclick="addTaskBnt()"> Add task +</button>
         </div>
     </div>
-<div class="main">
+<div class="main search-main">
     <div class="second">
         <h3 class="h3-Task">To Do <img onclick="addTaskBnt2()"class="add-button" src="/img/add button.png"></h3>
         <div id="todo-tasks" class="list">
