@@ -10,7 +10,7 @@
 .summary-div {
     margin-top: 5%;
     margin-left: 7%;
-    width: 75vh;
+    width: 70vh;
 }
 
 .hello {
@@ -57,7 +57,6 @@
 
 
 .head-of-summary {
-
     font-family: 'Inter';
     font-style: normal;
     line-height: 120%;
@@ -82,12 +81,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .box:hover {
@@ -181,7 +182,7 @@
 
 .show-deadline {
     display: flex;
-    margin-right: -6%;
+    margin-right: 8%;
 }
 
 .updead-line {
@@ -275,11 +276,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.box {
-    font-size: 30px;
-    font-weight: bold;
 }
 
 .tasks-in-Board {
