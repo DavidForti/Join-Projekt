@@ -5,14 +5,13 @@
     width: 90%;
     margin-left: 4%;
     flex-wrap: wrap;
+    overflow: auto;
 }
 
 .second {
+    overflow: auto;
     margin-top: 50px;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    
+    width: 280px;    
 }
 
 .list-item {
