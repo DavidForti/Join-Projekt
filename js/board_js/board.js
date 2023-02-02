@@ -49,13 +49,13 @@ function addAndRemove() {
     document.getElementById('contantSummary').classList.add("d-none");
     document.getElementById('contantAddToTask').classList.add("d-none");
     document.getElementById('contantBoard').classList.remove("d-none");
-
 }
 
 function cancelBnt() {
     removeNewTaskEventListener();
     document.getElementById('content-add-to-task-box').remove();
-    // document.getElementById('contantAddToTask').classList.add("d-none");
+    document.getElementById('contacts-container').classList.remove("new-background-color");
+    document.getElementById('d-board').classList.remove("d-none"); 
 }
 
 function headlineBoard() {
@@ -72,6 +72,7 @@ function headlineBoard() {
 }
 // Render addToTask
 function renderAddTask() {
+    document.getElementById('contacts-container').classList.remove("new-background-color")
     taskChangeBackgpound();
     let place = document.getElementById('contacts-container');
     let html = `

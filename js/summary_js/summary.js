@@ -37,6 +37,9 @@ async function summary() {
 }
 
 function summaryChangeBackground() {
+    document.getElementById('contacts-container').classList.remove("new-background-color");
+
+
     document.getElementById('summaryId').classList.add("color-background");
     document.getElementById('boardId').classList.remove("color-background");
     document.getElementById('addTaskId').classList.remove("color-background");

@@ -4,6 +4,8 @@ function initContacts() {
 }
 
 function removeContacts() {
+    document.getElementById('contacts-container').classList.remove("d-none");
+    document.getElementById('contacts-container').classList.remove("new-background-color")
     document.getElementById('summaryId').classList.remove("color-background");
     document.getElementById('boardId').classList.remove("color-background");
     document.getElementById('addTaskId').classList.remove("color-background");

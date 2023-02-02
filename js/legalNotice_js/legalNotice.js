@@ -93,6 +93,8 @@ function last() {
 }
 
 function removeBackgorund() {
+    document.getElementById('new-task-input-container').classList.add("d-none");
+    document.getElementById('contacts-container').classList.remove("new-background-color");
     document.getElementById('summaryId').classList.remove("color-background");
     document.getElementById('boardId').classList.remove("color-background");
     document.getElementById('addTaskId').classList.remove("color-background");
