@@ -145,7 +145,7 @@ function renderContactDetail(x) {
         <div class="big-circle" style="background-color: ${contacts[x].color}"><h2>${bothLetters}</h2></div>
         <div class="d-flex flex-column gap5">
             <h2>${contacts[x].name}</h2>
-            <div class="c-b c-p d-flex align-items-center gap5" onclick="addTaskBnt()"><p class="plus">+</p><p>Add Task</p></div>
+            <div class="c-b c-p d-flex align-items-center gap5" onclick="newAddTaskBnt()"><p class="plus">+</p><p>Add Task</p></div>
         </div>
     </div>
     <div class="layout responsive-none gap25 mtb20">
@@ -170,6 +170,10 @@ function renderContactDetail(x) {
     </div>
     `;
     selected = x;
+}
+
+function newAddTaskBnt(){
+    newAddTaskBntSecond();
 }
 
 function animNewContact() {

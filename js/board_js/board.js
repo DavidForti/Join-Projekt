@@ -169,6 +169,16 @@ function addTaskBnt() {
     setInputDueDateDefaultDate();
 }
 
+function newAddTaskBntSecond(){
+    document.getElementById('contacts-container').classList.add("new-background-color");
+    let contantAddToTask = document.getElementById('contantAddToTask');
+    contantAddToTask.classList.remove("d-none");
+    contantAddToTask.innerHTML = '';
+    contantAddToTask.innerHTML += addTask();
+    initNewTaskAssignedToContactsMultiSelect();
+    setInputDueDateDefaultDate();
+}
+
 function addTask() {
     let html = `
             <div id="content-add-to-task-box">
