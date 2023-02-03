@@ -173,12 +173,12 @@ function renderContactDetail(x) {
 }
 
 function newAddTaskBnt(){
-    document.getElementById('div-contacts').classList.add('d-none')
+   if( document.getElementById('div-contacts')) document.getElementById('div-contacts').classList.add('d-none');
     newAddTaskBntSecond();
 }
 
 function newCloseTask(){
-    document.getElementById('div-contacts').classList.remove('d-none')
+    if(document.getElementById('div-contacts'))document.getElementById('div-contacts').classList.remove('d-none');
     document.getElementById('contacts-container').classList.remove("new-background-color");
 }
 
