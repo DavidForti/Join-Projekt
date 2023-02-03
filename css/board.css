@@ -2,6 +2,10 @@
     display: none;
 }
 
+.layout{
+    display: flex;
+}
+
 .board-container {
     margin-top: 188px;
     align-items: baseline;

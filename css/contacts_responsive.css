@@ -1,26 +1,36 @@
 @media screen and (max-width: 913px) {
 
+    .responsive-none {
+        display: none !important;
+    }
+
+    .responsive-375 {
+        bottom: 98%;
+        right: -2px;
+        width: 160px;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
     .div-contacts {
-        flex-direction: column !important;
+
         overflow: auto;
     }
 
     .flex-column {
-        flex-direction: column !important;
+
         position: relative;
         height: 90%
     }
 
     #contact-list {
-        width: auto;
+        width: 100%;
     }
 
     #contact-view {
-        min-height: 100%;
-    }
-
-    .new-contact {
-        bottom: 1677px;
+        margin-left: -40px;
     }
 
     .tbt-details {
@@ -57,11 +67,11 @@
         left: 50%;
     }
 
-    .responsive-Edit{
+    .responsive-Edit {
         margin-right: 18%;
     }
 
-    .dark-button{
+    .dark-button {
         margin-right: 4%;
     }
 }
@@ -78,9 +88,7 @@
     }
 }
 
-@media screen and (max-width: 744px) {
-   
-}
+@media screen and (max-width: 744px) {}
 
 
 @media screen and (max-width: 375px) {
@@ -91,9 +99,9 @@
     .new-contact {
         bottom: 1484px;
     }
-    
-    .responsive-big-circle{
+
+    .responsive-big-circle {
         margin-top: -79%;
     }
-    
+
 }

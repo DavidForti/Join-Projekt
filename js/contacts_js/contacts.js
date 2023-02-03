@@ -27,7 +27,7 @@ function renderContacts() {
 
         <div id="contact-view" class="d-flex flex-column">
             <div class="d-flex justify-content-center align-items-center mb20">
-                <div class="d-flex gap25">
+                <div class="layout gap25 responsive-none">
                     <h1>Contacts</h1>
                     <div class="blue-stripe"></div>
                     <p class="d-flex justify-content-center align-items-center">Better With A Team</p>
@@ -141,14 +141,14 @@ function renderContactDetail(x) {
     let place = document.getElementById('contact-content');
     let bothLetters = getBothLetters(x);
     place.innerHTML = /*html*/ `
-    <div class="d-flex align-items-center gap25">
+    <div class="layout responsive-none align-items-center gap25">
         <div class="big-circle" style="background-color: ${contacts[x].color}"><h2>${bothLetters}</h2></div>
         <div class="d-flex flex-column gap5">
             <h2>${contacts[x].name}</h2>
             <div class="c-b c-p d-flex align-items-center gap5" onclick="addTaskBnt()"><p class="plus">+</p><p>Add Task</p></div>
         </div>
     </div>
-    <div class="d-flex gap25 mtb20">
+    <div class="layout responsive-none gap25 mtb20">
         <p>Contact Information</p>
         <div class="d-flex gap5 align-items-center c-p" onclick="animEditContact()">
             <svg width="20" height="20" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +158,7 @@ function renderContactDetail(x) {
             <p>Edit Contact</p>
         </div>
     </div>
-    <div class="d-flex flex-column gap25">
+    <div class="layout responsive-none flex-column gap25">
         <div class="gap10">
             <p class="b">E-Mail</p>
             <p>${contacts[x].email}</p>
