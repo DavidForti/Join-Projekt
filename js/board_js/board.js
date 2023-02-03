@@ -158,6 +158,7 @@ function taskChangeBackgpound() {
 
 
 function addTaskBnt() {
+    newAddTaskBnt();
     document.getElementById('contacts-container').classList.add("new-background-color");
     document.getElementById('d-board').classList.add("d-none");
     document.getElementById("dad-container").classList.add("d-none")
@@ -188,7 +189,7 @@ function addTask() {
                         <div id="new-task-input-container" class="input-container animation">
                             <div class="headlinetask-container">
                                 <p class="headline-task">Add Task</p>
-                                <img src="/img/close.png" class="close-button" onclick="closeTask()">
+                                <img src="/img/close.png" class="close-button" onclick="newCloseTask();closeTask() ">
                             </div>
                             <div class="selections">
                                 <label class="title-in-form" for="title">Title</label> <!-- onsubmit noch eintragen in diefoerm taks -->
@@ -282,9 +283,11 @@ function statusLow() {
 
 function closeTask() {
     removeNewTaskEventListener();
+    document.getElementById('new-task-input-container').classList.add("d-none");
     document.getElementById('content-add-to-task-box').remove();
-    document.getElementById('contacts-container').classList.remove("new-background-color")
-    document.getElementById('d-board').classList.remove("d-none");
+    document.getElementById('contacts-container').classList.remove("new-background-color");
+    if(document.getElementById('d-board'))document.getElementById('d-board').classList.remove("d-none");
+    
 }
 
 function add() {
@@ -293,7 +296,6 @@ function add() {
     let category = document.getElementById('chgeCategory');
     let dueDate = document.getElementById('due-date');
     pushTaskInArr(title, description, category, dueDate);
-
     removeNewTaskEventListener();
     document.getElementById('content-add-to-task-box').remove();
 }

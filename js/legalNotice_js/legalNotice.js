@@ -1,16 +1,3 @@
-/*function legalNotice() {
-    document.getElementById('changeColorNotice').style.backgroundColor = "black";
-    document.getElementById('changeColor').classList.add("backgorund");
-    document.getElementById('changeColorboard').classList.add("backgorund");
-    document.getElementById('changeColorNotice').classList.remove("backgorund")
-    document.getElementById('contantSummary').classList.add("d-none");
-    document.getElementById('contantBoard').classList.add("d-none");
-    document.getElementById('contantAddToTask').classList.add("d-none");
-    document.getElementById('contentNotice').classList.remove("d-none");
-    let content = document.getElementById('contentNotice');
-    content.innerHTML = showNotice();
-}
-*/
 
 function showNotice() {
     removeBackgorund();
@@ -93,7 +80,7 @@ function last() {
 }
 
 function removeBackgorund() {
-    document.getElementById('new-task-input-container').classList.add("d-none");
+    if(document.getElementById('new-task-input-container'))document.getElementById('new-task-input-container').classList.add("d-none");
     document.getElementById('contacts-container').classList.remove("new-background-color");
     document.getElementById('summaryId').classList.remove("color-background");
     document.getElementById('boardId').classList.remove("color-background");

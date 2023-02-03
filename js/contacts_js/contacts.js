@@ -1,5 +1,5 @@
 function initContacts() {
-    renderContacts();
+    renderContacts();   
     removeContacts();
 }
 
@@ -20,7 +20,7 @@ function removeContacts() {
 function renderContacts() {
     let place = document.getElementById('contacts-container');
     place.innerHTML = /*html*/ `
-    <div class="div-contacts">
+    <div class="div-contacts" id="div-contacts">
         <div id="contact-list">
             <div class="absolute-contacts d-flex flex-column gap25"></div>
         </div>
@@ -173,7 +173,13 @@ function renderContactDetail(x) {
 }
 
 function newAddTaskBnt(){
+    document.getElementById('div-contacts').classList.add('d-none')
     newAddTaskBntSecond();
+}
+
+function newCloseTask(){
+    document.getElementById('div-contacts').classList.remove('d-none')
+    document.getElementById('contacts-container').classList.remove("new-background-color");
 }
 
 function animNewContact() {
