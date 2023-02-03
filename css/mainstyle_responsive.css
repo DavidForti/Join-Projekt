@@ -1,19 +1,24 @@
 @media screen and (max-width: 810px) {
+    .menu-list {
+        width: 0;
+
+    }
 
     .main-btns {
-        margin-left: -19%;
-        justify-content: space-between;
         align-items: center;
         flex-direction: row;
     }
 
     .color-background {
-        width: 100px;
+        width: 90px;
         height: 89px;
     }
 
     .menu {
         justify-content: unset;
+        justify-content: unset;
+        width: 83%;
+        margin-left: -4%;
     }
 
     .main-container {
