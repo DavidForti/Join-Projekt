@@ -273,6 +273,7 @@ html {
     padding: 18px 21px;
     gap: 10px;
     isolation: isolate;
+    width: 100%;
     height: 51px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
