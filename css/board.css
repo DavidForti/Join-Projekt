@@ -176,6 +176,7 @@ html {
 }
 
 .form-select{
+    height: 50px;
     background-position: right -0.19rem center !important;
 }
 
