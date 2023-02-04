@@ -55,7 +55,7 @@ function cancelBnt() {
     removeNewTaskEventListener();
     document.getElementById('content-add-to-task-box').remove();
     document.getElementById('contacts-container').classList.remove("new-background-color");
-    document.getElementById('d-board').classList.remove("d-none"); 
+    document.getElementById('d-board').classList.remove("d-none");
 }
 
 function headlineBoard() {
@@ -170,7 +170,7 @@ function addTaskBnt() {
     setInputDueDateDefaultDate();
 }
 
-function newAddTaskBntSecond(){
+function newAddTaskBntSecond() {
     document.getElementById('contacts-container').classList.add("new-background-color");
     let contantAddToTask = document.getElementById('contantAddToTask');
     contantAddToTask.classList.remove("d-none");
@@ -239,7 +239,10 @@ function addTask() {
 }
 
 function setInputDueDateDefaultDate() {
-    document.getElementById('due-date').defaultValue = new Date().toLocaleDateString('en-CA');
+    let newDate = new Date().toLocaleDateString('en-CA');
+    let dueDate = document.getElementById('due-date');
+    dueDate.defaultValue = newDate;
+    dueDate.setAttribute('min',newDate);
 }
 
 function changeColor() {
@@ -286,8 +289,8 @@ function closeTask() {
     document.getElementById('new-task-input-container').classList.add("d-none");
     document.getElementById('content-add-to-task-box').remove();
     document.getElementById('contacts-container').classList.remove("new-background-color");
-    if(document.getElementById('d-board'))document.getElementById('d-board').classList.remove("d-none");
-    
+    if (document.getElementById('d-board')) document.getElementById('d-board').classList.remove("d-none");
+
 }
 
 function add() {
