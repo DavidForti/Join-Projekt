@@ -20,15 +20,13 @@ function renderWhatIsJoin() {
                 <h2>
                     2.
                 </h2>
-                <p class="d-flex align-items-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eos quos nemo labore eveniet pariatur est dignissimos laudantium numquam explicabo dolore esse ullam possimus ut, aliquid aperiam maxime ipsum cum.
-                Numquam quibusdam ab rerum odit debitma, rerum nobis temporibus consequatur facilis excepturi ducimus hic reprehenderit quos porro officiis non pere qui id deserunt! Similique sit repudiandae fugit suscipit. Corrupti saepe incidunt sequi. Sit?</p>
+                <p class="d-flex align-items-center">In board and in add task, you can create new tasks and change the status of already existing tasks. There is also a search field if you are looking for a specific task. All tasks consist of a title with a description, a category, the contact to whom the task is assigned to, the due date and a priority.</p>
             </div>
             <div class="d-flex gap25">
                 <h2>
                     3.
                 </h2>
-                <p class="d-flex align-items-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eos quos nemo labore eveniet pariatur est dignissimos laudantium numquam explicabo dolore esse ullam possimus ut, aliquid aperiam maxime ipsum cum.
-                Numquam quibusdam ab rerum odit debitis earum suscipit deleniti, doloremque dolor accusantium obcaecati! Alias, delectus nam nobis sunt nulla eum deserunt ratione, quisquam ofugit suscipit. Corrupti saepe incidunt sequi. Sit?</p>
+                <p class="d-flex align-items-center">In contacts you can see the details of a single contact, for example name and surname, e-mail and phone number. You can also edit existing contacts or add new ones.</p>
             </div>
         </div>
         <div class="back-arrow-black" onclick="renderDiv(), last()">
