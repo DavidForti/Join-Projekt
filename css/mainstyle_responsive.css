@@ -187,9 +187,9 @@
 
 }
 
-@media screen and (max-width: 412px){
+@media screen and (max-width: 412px) {
 
-    .menu-list{
+    .menu-list {
         width: 70px;
     }
 
@@ -201,45 +201,14 @@
 }
 
 @media screen and (max-width: 375px) {
+    .menu-list {
+        width: 70px;
+    }
+
     .main-btns {
-        margin-top: 14%;
-        margin-left: 19%;
-        width: 108%;
+        width: 160px;
+        margin-left: -60%;
     }
 
-    .main-container {
-        height: 9.5%;
-    }
 
-    .main-container {
-        margin-top: 0%;
-    }
-
-    .headline-summary {
-        font-size: 10px !important;
-        height: 47px !important;
-        font-family: 'Inter';
-    }
-
-    .headline-borad {
-        font-size: 10px !important;
-        height: 47px !important;
-        font-family: 'Inter';
-    }
-
-    .headline-addTask {
-        font-size: 10px !important;
-        height: 47px;
-        font-family: 'Inter';
-    }
-
-    .headline-addTask {
-        font-size: 10px;
-        height: 47px;
-        font-family: 'Inter';
-    }
-
-    .task-div {
-        margin-top: 10px;
-    }
 }

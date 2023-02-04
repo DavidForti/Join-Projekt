@@ -472,28 +472,8 @@
         margin-left: -15%;
     }
 
-    .summary-logo {
-        width: 20px;
-        height: 20px;
-    }
-
-    .board-logo {
-        width: 20px;
-        height: 20px;
-    }
-
-    .addTask-logo {
-        width: 20px;
-        height: 20px;
-    }
-
     .cloum-rev {
         margin-right: 5%;
-    }
-
-    .addTask-logo {
-        width: 20px;
-        height: 20px;
     }
 
     .show-deadline {
@@ -527,14 +507,6 @@
     .toDo-done {
         width: 155px;
         height: 100px;
-    }
-
-    .menu {
-        margin-top: -13%;
-        display: flex;
-        justify-content: space-between;
-        margin-left: -100px;
-        align-items: center;
     }
 
     .reander-contianer-summary {
