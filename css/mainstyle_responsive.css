@@ -1,6 +1,6 @@
 @media screen and (max-width: 810px) {
     .menu-list {
-        width: 96px;
+
         height: 89px;
     }
 
@@ -167,7 +167,7 @@
 @media screen and (max-width: 650px) {
 
     .main-btns {
-       width: 550px;
+        width: 550px;
     }
 
 }
@@ -179,38 +179,25 @@
 }
 
 @media screen and (max-width: 450px) {
-    
+
     .main-btns {
-        width: 350px;
+        width: 423px;
+        margin-left: -1%;
     }
 
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 412px){
 
-    .headline-summary {
-        font-size: 10px !important;
-        height: 47px !important;
-        font-family: 'Inter';
+    .menu-list{
+        width: 70px;
     }
 
-    .headline-borad {
-        font-size: 10px !important;
-        height: 47px !important;
-        font-family: 'Inter';
+    .main-btns {
+        width: 360px;
+        margin-left: -0%;
     }
 
-    .headline-addTask {
-        font-size: 10px !important;
-        height: 47px;
-        font-family: 'Inter';
-    }
-
-    .headline-addTask {
-        font-size: 10px;
-        height: 47px;
-        font-family: 'Inter';
-    }
 }
 
 @media screen and (max-width: 375px) {
