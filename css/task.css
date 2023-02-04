@@ -418,9 +418,11 @@
 }
 
 #new-task-assigned-to-select-options {
+    border-radius: 10px;
+    margin-left: 0%;
+    margin-right: -2%;
     display: none;
     border: 0.5px #d1d1d1 solid;
-    max-height: 159px;
     overflow-y: scroll;
     position: relative;
     z-index: 1;

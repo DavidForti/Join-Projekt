@@ -147,7 +147,7 @@ html {
     padding: -6px;
     height: 54%;
     width: 42%;
-    margin-top: 14%;
+    margin-top: 10%;
     margin-left: 5%;
 }
 
@@ -157,7 +157,7 @@ html {
     flex-direction: column;
     padding: -6px;
     height: 41.5%;
-    margin-top: 9%;
+    margin-top: -2%;
 }
 
 .long-vertical-line {
@@ -421,7 +421,7 @@ html {
 }
 
 .bnts {
-    top: 70%;
+    top: 81%;
     position: relative;
     display: flex;
     justify-content: space-between;
