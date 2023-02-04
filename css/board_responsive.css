@@ -4,17 +4,26 @@
     }
 }
 
-@media screen and (max-width: 1048px){
-    .bnts{
-        
+@media screen and (max-width: 1094px){
+    .selections{
+        margin-top: 15%;
+    }
+
+    .selections-sec{
+        margin-top: 9%;
     }
 }
+
+@media screen and (max-width: 1048px){
+    
+}
+
 
 @media screen and (max-width: 1047px) {
     .bnts {
         display: flex;
         flex-direction: column-reverse;
-        margin-top: -65%;
+        margin-top: -53%;
         gap: 10px;
     }
 
@@ -81,7 +90,7 @@
     }
 
     .bnts {
-        margin-top: -40%;
+        margin-top: -66%;
     }
 
     .new-formular {
