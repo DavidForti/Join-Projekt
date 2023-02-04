@@ -1,27 +1,21 @@
 @media screen and (max-width: 810px) {
     .menu-list {
-        width: 0;
+        width: 96px;
+        height: 89px;
     }
 
     .main-btns {
         flex-direction: revert;
-        align-items: center;
-        width: 100%;
-        margin-top: -119%;
-    }
-
-    .color-background {
-        width: 90px;
-        height: 89px;
+        width: 650px;
     }
 
     .menu {
-        width: 83%;
+        justify-content: normal;
     }
 
     .main-container {
         width: 100%;
-        top: 92vh;
+        top: 91vh;
     }
 
     .main-img {
@@ -170,19 +164,17 @@
 }
 
 
-@media screen and (max-width: 517px) {
+@media screen and (max-width: 650px) {
 
     .main-btns {
-        width: 116%;
-        margin-left: -7%;
+       width: 550px;
     }
 
 }
 
-@media screen and (max-width: 466px) {
+@media screen and (max-width: 550px) {
     .main-btns {
-        width: 116%;
-        margin-left: -10%;
+        width: 450px;
     }
 }
 
