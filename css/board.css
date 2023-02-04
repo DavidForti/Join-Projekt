@@ -176,8 +176,10 @@ html {
 }
 
 .form-select{
+    width: 102.5% !important;
     height: 50px;
     background-position: right -0.19rem center !important;
+    border-radius: 10px !important;
 }
 
 .headlinetask-container {
@@ -237,6 +239,7 @@ html {
 }
 
 .category {
+    width: 102.5%;
     padding: 2%;
     outline: none;
     box-sizing: border-box;
