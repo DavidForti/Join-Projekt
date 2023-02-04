@@ -14,7 +14,7 @@ function renderWhatIsJoin() {
                 <h2>
                     1.
                 </h2>
-                <p class="d-flex align-items-center">Summary gives you an oversight of the currently existing tasks and their status. It also shows the most urgent task with its due date, and the number of unfinished and finished tasks.</p>
+                <p class="d-flex align-items-center">In Summary you get an oversight of the currently existing tasks and their status. It also shows the most urgent task with its due date, and the number of unfinished and finished tasks.</p>
             </div>
             <div class="d-flex gap25">
                 <h2>
