@@ -1,12 +1,13 @@
 @media screen and (max-width: 810px) {
     .menu-list {
         width: 0;
-
     }
 
     .main-btns {
+        flex-direction: revert;
         align-items: center;
-        flex-direction: row;
+        width: 100%;
+        margin-top: -119%;
     }
 
     .color-background {
@@ -15,15 +16,12 @@
     }
 
     .menu {
-        justify-content: unset;
-        justify-content: unset;
         width: 83%;
-        margin-left: -4%;
     }
 
     .main-container {
         width: 100%;
-        top: 91vh;
+        top: 92vh;
     }
 
     .main-img {
