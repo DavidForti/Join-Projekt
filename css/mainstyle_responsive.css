@@ -178,15 +178,12 @@
     }
 }
 
-@media screen and (max-width: 444px) {
-    .menu {
-        width: 100%;
+@media screen and (max-width: 450px) {
+    
+    .main-btns {
+        width: 350px;
     }
 
-    .main-btns {
-        width: 100%;
-        margin-left: -1%;
-    }
 }
 
 @media screen and (max-width: 400px) {
