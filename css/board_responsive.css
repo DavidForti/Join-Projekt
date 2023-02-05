@@ -256,16 +256,20 @@
     }
 
     .due-date {
-        width: 105%;
+        width: 111%;
     }
 
+    .new-due-date{
+        width: 110%;
+    }
     .selections-sec {
         margin-top: 55%;
-        width: 100%;
+        width: 88%;
     }
 
     .fix-due-date {
         margin-top: 24% !important;
+        width: 81%;
     }
 
     .input-container {

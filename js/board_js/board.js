@@ -108,7 +108,7 @@ function renderAddTask() {
                     <div class="selections-sec fix-due-date">
                         <div class="due-date1">
                             <label for="due-date" class="correction-due-date">Due Date</label>
-                            <input id="due-date" required type="date" id="dueDate" class ="due-date" min="2023-01-31">
+                            <input id="due-date" required type="date" id="dueDate" class ="due-date new-due-date" min="2023-01-31">
                             <label for="status" class="correction-due-date">Prio</label>
                         </div>
 
