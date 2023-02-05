@@ -276,3 +276,9 @@
         margin-top: -10%;
     }
 }
+
+@media screen and (max-height: 812px){
+    .selections-sec{
+        margin-top: 78%;
+    }
+} 
