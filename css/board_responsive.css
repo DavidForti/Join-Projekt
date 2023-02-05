@@ -117,6 +117,19 @@
 }
 
 @media screen and (max-width: 500px) {
+
+    .due-date{
+        width: 111%;
+    }
+
+    .category{
+        width: 101.9%;
+    }
+
+    .form-select{
+        width: 101.9% !important;
+    }
+
     .input-container {
         overflow: auto;
         display: flex;
@@ -126,7 +139,7 @@
     }
 
     .selections-sec {
-        margin-top: 45%;
+        margin-top: 230px;
     }
 
     .vert-line {
@@ -138,7 +151,7 @@
         margin-top: 10%;
     }
     .new-selections{
-        margin-top: 22%;
+        margin-top: 44%;
     }
 
     .sec-tow {
@@ -171,6 +184,7 @@
     .fix-due-date {
         width: 85%;
         margin-left: 5%;
+        margin-top: 112px !important;
     }
 
     .responsive-Status {
@@ -196,6 +210,15 @@
 }
 
 @media screen and (max-width: 375px) {
+
+    .category{
+        width: 100%;
+    }
+
+    .form-select{
+        width: 100% !important;
+    }
+
     .headline-board-continaer {
         margin-left: -14px;
         flex-direction: column;
@@ -227,7 +250,7 @@
     }
 
     .due-date {
-        width: 100%;
+        width: 107%;
     }
 
     .selections-sec {
