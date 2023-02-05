@@ -139,7 +139,8 @@
     }
 
     .selections-sec {
-        margin-top: 230px;
+        margin-top: 172px;
+        margin-right: 9%;
     }
 
     .vert-line {
@@ -149,7 +150,9 @@
     .selections {
         width: auto;
         margin-top: 10%;
+        margin-right: 5%;
     }
+
     .new-selections{
         margin-top: 44%;
     }
@@ -162,6 +165,7 @@
     .status {
         margin-top: 10px;
         display: flex;
+        margin-right: -10%;
         margin-left: 0%;
         flex-direction: initial;
     }
@@ -182,7 +186,7 @@
     }
 
     .fix-due-date {
-        width: 85%;
+        width: 88%;
         margin-left: 5%;
         margin-top: 112px !important;
     }
@@ -194,7 +198,7 @@
 
 @media screen and (max-width: 461px) {
     .new-selections{
-        margin-top: 26%;
+        margin-top: 53%;
     }
     .new-formular {
         width: 83%;
@@ -250,11 +254,11 @@
     }
 
     .due-date {
-        width: 107%;
+        width: 105%;
     }
 
     .selections-sec {
-        margin-top: 85%;
+        margin-top: 55%;
     }
 
     .fix-due-date {

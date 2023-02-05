@@ -59,14 +59,21 @@
 
     .task-priority-box {
         width: 30%;
-      
+
     }
 
     .task-priority-box span {
         font-size: 11px;
     }
 
-    .responsive-prio{
+    .responsive-prio {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    #new-task-assigned-to-select-options {
+        margin-right: 0%;
     }
 }
