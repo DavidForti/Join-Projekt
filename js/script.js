@@ -226,11 +226,11 @@ async function saveTasksToBackend() {
         {
             "id": 0,
             "userId": 1,
-            "title": "Webdesign redesign",
-            "description": "Modify the contents of the main website. Adjust the UI to the company's brand design.",
-            "category": "Sales",
+            "title": "Design Website Homepage",
+            "description": "Create a visually appealing design for the website homepage, including all necessary elements such as a header, footer, and images.",
+            "category": "Frontend",
             "assignedTo": [0, 1],
-            "dueDate": "2023-01-01",
+            "dueDate": "2023-02-10",
             "priority": "Urgent",
             "subTasks": ['Create new icons'],
             "status": 'To do'     // Es gibt noch die Werte: "In Progress", "Awaiting Feedback", "Done" ("To do" wird als Standart verwendet)
@@ -238,33 +238,21 @@ async function saveTasksToBackend() {
         {
             "id": 1,
             "userId": 2,
-            "title": "Price increase",
-            "description": "Price increase Description...",
-            "category": "Backoffice",
+            "title": "Develop Mobile App",
+            "description": "Design and develop a mobile app that provides a seamless experience for users on both iOS and Android platforms.",
+            "category": "Frontend",
             "assignedTo": [2],
-            "dueDate": "2023-02-01",
+            "dueDate": "2023-02-21",
             "priority": "Medium",
             "subTasks": ['Inform customers', 'Sales Manager Meeting'],
             "status": 'To do'
         },
         {
             "id": 2,
-            "userId": 3,
-            "title": "Task 3",
-            "description": "Description Task 3...",
-            "category": "Backoffice",
-            "assignedTo": [3, 4, 5],
-            "dueDate": "2023-04-10",
-            "priority": "Urgent",
-            "subTasks": ['Inform customers', 'Sales Manager Meeting'],
-            "status": 'In Progress'
-        },
-        {
-            "id": 3,
             "userId": 2,
-            "title": "Task 4",
-            "description": "Description Task 4...",
-            "category": "Sales",
+            "title": "Refactor Code",
+            "description": "Review the codebase and identify areas that need to be refactored to improve performance and maintainability.",
+            "category": "Backend",
             "assignedTo": [1, 4, 5, 3, 2],
             "dueDate": "2023-05-30",
             "priority": "Low",
@@ -272,11 +260,11 @@ async function saveTasksToBackend() {
             "status": 'Awaiting Feedback'
         },
         {
-            "id": 4,
+            "id": 3,
             "userId": 2,
-            "title": "Task 5",
-            "description": "Description Task 5...",
-            "category": "Sales",
+            "title": "Implement Security Measures",
+            "description": "Research and implement security measures to protect the website and user data from potential cyber threats.",
+            "category": "Backend",
             "assignedTo": [0],
             "dueDate": "2023-03-12",
             "priority": "Medium",
@@ -284,14 +272,62 @@ async function saveTasksToBackend() {
             "status": 'Done'
         },
         {
-            "id": 5,
+            "id": 4,
             "userId": 3,
-            "title": "Task 6",
-            "description": "Description Task 6...",
-            "category": "Sales",
+            "title": "Optimize Database",
+            "description": "Analyze the database and implement optimizations to improve its performance and speed.",
+            "category": "Backend",
             "assignedTo": [2],
             "dueDate": "2023-07-02",
             "priority": "Low",
+            "subTasks": [],
+            "status": 'Done'
+        },
+        {
+            "id": 5,
+            "userId": 2,
+            "title": "Write Technical Documentation",
+            "description": "Write comprehensive technical documentation for the website and mobile app, including API references and user guides.",
+            "category": "Backend",
+            "assignedTo": [1,4],
+            "dueDate": "2023-05-13",
+            "priority": "Medium",
+            "subTasks": [],
+            "status": 'In Progress'
+        },
+        {
+            "id": 6,
+            "userId": 1,
+            "title": "Write Blog Posts",
+            "description": "Write three blog posts related to the latest trends in the tech industry. Ensure the posts are well-researched, engaging, and SEO optimized.",
+            "category": "Content",
+            "assignedTo": [2,3],
+            "dueDate": "2023-06-12",
+            "priority": "Low",
+            "subTasks": [],
+            "status": 'Awaiting Feedback'
+        },
+        {
+            "id": 7,
+            "userId": 2,
+            "title": "Update Website Content",
+            "description": "Review and update all website content to ensure accuracy and relevance, and add new pages as needed.",
+            "category": "Content",
+            "assignedTo": [3,4,5],
+            "dueDate": "2023-06-31",
+            "priority": "Low",
+            "subTasks": [],
+            "status": 'To do'
+        },
+        {
+            "id": 8,
+            "userId": 1,
+            "title": "Plan Marketing Campaign",
+            "description": "Collaborate with the marketing team to plan a comprehensive digital marketing campaign to reach a wider audience and increase website traffic.",
+            "category": "Marketing",
+            "assignedTo": [5],
+            "dueDate": "2023-06-22",
+            "priority": "Urgent",
             "subTasks": [],
             "status": 'Done'
         }
@@ -359,7 +395,7 @@ async function saveContactsToBackend() {
  * @async
  */
 async function saveCategoriesToBackend() {
-    categories = { Backoffice: "#1FD7C1", Marketing: "#00FF00", Sales: "#FC71FF" };
+    categories = { Backend: "#1FD7C1", Frontend: "#00FF00", Content: "#FC71FF", Marketing: "#B8860B" };
     await backend.setItem('categories', JSON.stringify(categories));
 }
 
