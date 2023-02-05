@@ -212,3 +212,15 @@
 
 
 }
+
+@media screen and (max-height: 812px) {
+    .main-container{
+        top:90vh;
+    }
+}
+
+@media screen and (max-height: 744px) {
+    .main-container{
+        top:88vh;
+    }
+}
