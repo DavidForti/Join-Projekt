@@ -14,8 +14,6 @@
     }
 }
 
-@media screen and (max-width: 1048px) {}
-
 @media screen and (max-width: 1047px) {
     .bnts {
         display: flex;
@@ -81,7 +79,7 @@
     .input-container {
         position: absolute;
         left: 0;
-        height: 73%;
+        height: 75%;
         top: 136px;
         width: 100%;
     }
@@ -132,12 +130,12 @@
         overflow: auto;
         display: flex;
         flex-direction: column;
-        height: 78%;
+        height: 77%;
         margin-top: -5%;
     }
 
     .selections-sec {
-        margin-top: 172px;
+        margin-top: 180px;
         margin-right: 9%;
     }
 
@@ -263,7 +261,6 @@
         width: 110%;
     }
     .selections-sec {
-        margin-top: 55%;
         width: 88%;
     }
 
@@ -275,47 +272,15 @@
     .input-container {
         margin-top: -10%;
     }
+
+    /* .sec-tow{
+        margin-top: 140px
+    } */
 }
 
-@media screen and (max-height: 914px){
+@media  only screen and (max-height : 812px){
     .selections-sec{
-        margin-top: 78%;
+        margin-top: 260px;
     }
-} 
 
-@media screen and (max-height: 824px){
-    .selections-sec{
-        margin-top: 78%;
-    }
-} 
-
-
-@media screen and (max-height: 812px){
-    .selections-sec{
-        margin-top: 78%;
-    }
-} 
-
-@media screen and (max-height: 878px){
-    .selections-sec{
-        margin-top: 32vh;
-    }
-} 
-
-@media screen and (max-height: 810px){
-    .selections-sec{
-        margin-top: 37vh;
-    }
-} 
-
-@media screen and (max-height: 754px){
-    .selections-sec{
-        margin-top: 40vh;
-    }
 }
-
-@media screen and (max-height: 732px){
-    .selections-sec{
-        margin-top: 41vh;
-    }
-} 
