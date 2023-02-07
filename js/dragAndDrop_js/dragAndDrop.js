@@ -75,7 +75,6 @@ function eventListener() {
             });
 
             list.addEventListener('drop', function (e) {
-                // console.log('drop');
                 this.append(draggedItem);
                 this.style.backgroundColor = 'unset';
                 saveTaskStatus(e);

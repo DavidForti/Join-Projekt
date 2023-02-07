@@ -69,7 +69,7 @@ function animateLogo() {
  */
 async function loadUsersFromBackend(page) {
     joinUsers = JSON.parse(await backend.getItem('users')) || [];
-    console.log(`Users geladen (${page}):`, joinUsers);
+    // console.log(`Users geladen (${page}):`, joinUsers);
 }
 
 
@@ -82,7 +82,7 @@ async function loadUsersFromBackend(page) {
  */
 async function loadTasksFromBackend(page) {
     editTasks = JSON.parse(await backend.getItem('tasks')) || [];
-    console.log(`Tasks geladen (${page}):`, editTasks);
+    // console.log(`Tasks geladen (${page}):`, editTasks);
 }
 
 
@@ -95,7 +95,7 @@ async function loadTasksFromBackend(page) {
  */
 async function loadContactsFromBackend(page) {
     contacts = JSON.parse(await backend.getItem('contacts')) || [];
-    console.log(`Contacts geladen (${page}):`, contacts);
+    // console.log(`Contacts geladen (${page}):`, contacts);
 }
 
 
@@ -108,7 +108,7 @@ async function loadContactsFromBackend(page) {
  */
 async function loadCategoriesFromBackend(page) {
     categories = JSON.parse(await backend.getItem('categories')) || [];
-    console.log(`Categories geladen (${page}):`, categories);
+    // console.log(`Categories geladen (${page}):`, categories);
 }
 
 

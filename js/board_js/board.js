@@ -319,7 +319,6 @@ async function pushTaskInArr(title, description, category, dueDate) {
     editTasks.push(headOfTask);
     await saveToBackend('tasks', editTasks);
     showTask(editTasks);
-    console.log(editTasks);
     title.value = '';
     description.value = '';
     category.value = '';
